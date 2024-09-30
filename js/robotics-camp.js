@@ -91,6 +91,20 @@ function displayQuizzes() {
       .map((student) => `<img src="${student.profilePicture}" alt="${student.name}" title="${student.name}" />`)
       .join("");
 
+    let statusBgColor = "";  // Initialize variable for status background color
+    let statusTxtColor = "";
+
+    if (quiz.QuizStatus === "Not Started") {
+      statusBgColor = "bg-gray-200";  // Not Started - gray
+      statusTxtColor = "text-[black]"
+    } else if (quiz.QuizStatus === "In Progress") {
+      statusBgColor = "bg-[#ffbb59]";  // In Progress - yellow
+      statusTxtColor = "text-[black]"
+    } else if (quiz.QuizStatus === "Completed") {
+      statusBgColor = "bg-[#f8740b]";  // Completed - orange
+      statusTxtColor = "text-[white]"
+    }
+
     quizElement.innerHTML = `
       <div class="flex justify-between">
         <p class="font-medium">${quiz.quizName}</p>
@@ -113,7 +127,7 @@ function displayQuizzes() {
 
       <div class="flex justify-between mt-2">
         <div><span class="font-semibold">${quiz.students.length} </span>Total Students</div>
-        <div class="px-2 py-1 bg-gray-200 rounded-lg text-xs font-medium">${quiz.QuizStatus}</div>
+        <div class="px-2 py-1 ${statusTxtColor} ${statusBgColor} rounded-lg text-xs font-medium">${quiz.QuizStatus}</div>
       </div>
     `;
 
