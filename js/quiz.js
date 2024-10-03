@@ -23,7 +23,7 @@ const quizData = {
         "Actual Intelligence in computers",
         "Advanced Integration of systems"
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "educoinForThisQuestion": 2
     },
     {
@@ -38,42 +38,6 @@ const quizData = {
       "correctAnswer": 0,
       "educoinForThisQuestion": 1
     },
-    {
-      "questionType": "Multiple Choice Question",
-      "question": "In what ways can drones be classified within the realm of robotics?",
-      "options": [
-        "As flying robots for various purposes",
-        "As ground-based autonomous machines",
-        "As intelligent robotic pets",
-        "As mobile applications"
-      ],
-      "correctAnswer": 0,
-      "educoinForThisQuestion": 1
-    },
-    {
-      "questionType": "Multiple Choice Question",
-      "question": "How does automation enhance productivity in modern industries?",
-      "options": [
-        "By enabling automatic operation of machines",
-        "By requiring manual intervention in processes",
-        "By facilitating human oversight",
-        "By creating robotic art"
-      ],
-      "correctAnswer": 0,
-      "educoinForThisQuestion": 1
-    },
-    {
-      "questionType": "Multiple Choice Question",
-      "question": "What is coding, and why is it essential for programming robots?",
-      "options": [
-        "It involves writing instructions for software",
-        "It relates to creating music compositions",
-        "It focuses on designing graphics and visuals",
-        "It encompasses culinary skills"
-      ],
-      "correctAnswer": 0,
-      "educoinForThisQuestion": 2
-    }
   ],
   "totalEducoins": 10
 };
@@ -201,50 +165,8 @@ function selectOption(selectedDiv, questionName) {
   input.checked = true;
 }
 
-// Function to trigger the confetti
-function triggerConfetti() {
-  confetti({
-    particleCount: 200, // Number of confetti particles
-    spread: 70, // Spread of the confetti
-    origin: { y: 0.6 }, // Origin of the confetti (centered vertically)
-    colors: ['#FFA500', '#FF8C00', '#FF4500', '#FFD700'], // Shades of orange
-  });
-}
 
-// Function to show quiz result
-function showQuizResult() {
-  const totalQuestions = quizData.totalQuestions.length;
-  let earnedEducoins = 0;
 
-  // Loop through user answers to calculate total Educoins earned
-  userQuizAnswers.forEach(answer => {
-    const question = quizData.totalQuestions[answer.questionId]; // Get the corresponding question
-    if (answer.answer === question.correctAnswer) { // Check if the answer is correct
-      earnedEducoins += question.educoinForThisQuestion; // Add Educoins for the correct answer
-    }
-  });
-
-  // Update progress circle dynamically
-  const progressCircle = document.getElementById("progressCircle");
-  const progressText = document.getElementById("progressText");
-  const percentageCorrect = (correctQuizAnswers / totalQuestions) * 100;
-
-  const circleDashArray = 283; // Full circumference of circle
-  const dashOffset = circleDashArray - (circleDashArray * percentageCorrect) / 100;
-  progressCircle.style.strokeDashoffset = dashOffset;
-  progressText.innerText = `${correctQuizAnswers}`;
-
-  quizResultEducoinEarnedElem.innerText = earnedEducoins;
-
-  document.querySelector(".quizCorrectAnswers").innerText = correctQuizAnswers;
-
-  // Show the popup
-  quizCompletionPopup.classList.remove('hidden');
-  quizCompletionPopup.classList.add('flex');
-
-  // Trigger any celebration animation (if required)
-  triggerConfetti();
-}
 // Event listener for the next button
 quizNextBtn.addEventListener("click", () => {
 

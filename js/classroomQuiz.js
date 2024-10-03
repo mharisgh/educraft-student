@@ -233,42 +233,6 @@ document.getElementById("quizCompletionPopupCloseBtn").addEventListener('click',
 });
 
 
-// Handle Next button click
-document.getElementById("nextBtn").addEventListener("click", () => {
-  const selectedOption = document.querySelector(
-    `input[name="question_${questions[currentQuestion].id}"]:checked`
-  );
-  if (!selectedOption) {
-    alert("Please select an option before continuing.");
-    return;
-  }
-
-  answers[currentQuestion] = selectedOption.value;
-
-  if (currentQuestion < questions.length - 1) {
-    currentQuestion++;
-    renderQuestion();
-    updateProgressBar();
-    // document.getElementById("prevBtn").disabled = false;
-    // document.getElementById("prevBtn").style.remove = "opacity-0";
-    // document.getElementById("prevBtn").style.remove = "opacity-0";
-    document.getElementById("prevBtn").classList.remove("opacity-0");
-
-
-  } else if (currentQuestion === questions.length - 1) {
-    document.getElementById("questionContainer").style.display = "none";
-    document.getElementById("ratingContainer").style.display = "block";
-    document.getElementById("nextBtn").style.display = "none";
-    document.getElementById("prevBtn").style.display = "none";
-
-    document.getElementById("submitFinalBtn").style.display = "block";
-    updateProgressBar();
-
-    // Change button container class to align buttons to the right
-    document.getElementById("buttonContainer").classList.remove("justify-between");
-    document.getElementById("buttonContainer").classList.add("justify-end");
-  }
-});
 
 // Handle Previous button click
 document.getElementById("prevBtn").addEventListener("click", () => {
@@ -286,30 +250,6 @@ document.getElementById("prevBtn").addEventListener("click", () => {
   }
 });
 
-// Handle Star Rating click
-const stars = document.querySelectorAll('.student-rating-star');
-
-stars.forEach((star, index) => {
-  star.addEventListener('click', () => {
-    stars.forEach((s, i) => {
-      s.setAttribute('fill', i <= index ? 'rgba(255,186,7,1)' : 'rgba(216,205,200,1)');
-    });
-    // Store rating value
-    rating = index + 1;
-  });
-});
-
-// Update Star Rating UI
-function updateStarRating(rating) {
-  document.querySelectorAll('.student-rating-star').forEach(star => {
-    const value = star.getAttribute('data-value');
-    if (value <= rating) {
-      star.classList.add('active');
-    } else {
-      star.classList.remove('active');
-    }
-  });
-}
 
 // Handle Submit Final button click
 document.getElementById("submitFinalBtn").addEventListener("click", () => {
@@ -362,158 +302,45 @@ function triggerConfetti() {
   });
 }
 
-// ============================================
-// Timeline accordion
-// ============================================
 
-document.querySelectorAll('.accordion-header').forEach(header => {
-  const content = header.nextElementSibling;
-  const arrow = header.querySelector('.arrow');
 
-  // Check if the header has the active class
-  if (header.classList.contains('timeline-active')) {
-    content.style.display = 'flex';
-    arrow.style.transform = 'rotate(180deg)';
-  }
 
-  header.addEventListener('click', () => {
-    // Toggle active class
-    header.classList.toggle('timeline-active');
-
-    // Toggle content visibility
-    content.style.display = content.style.display === 'flex' ? 'none' : 'flex';
-
-    // Rotate the arrow
-    arrow.style.transform = content.style.display === 'flex' ? 'rotate(180deg)' : 'rotate(0deg)';
+// Function to trigger the confetti
+function triggerConfetti() {
+  confetti({
+    particleCount: 200, // Number of confetti particles
+    spread: 70, // Spread of the confetti
+    origin: { y: 0.6 }, // Origin of the confetti (centered vertically)
+    colors: ['#FFA500', '#FF8C00', '#FF4500', '#FFD700'], // Shades of orange
   });
-});
-
-
-// ============================================
-// Overivew, Comments, Downloads - Tabs
-// ============================================
-
-document.querySelectorAll('.course-view-tab').forEach(tab => {
-  tab.addEventListener('click', function () {
-
-    // Remove tab-active class from all tabs
-    document.querySelectorAll('.course-view-tab').forEach(t => t.classList.remove('tab-active'));
-
-    // Add tab-active class to the clicked tab
-    this.classList.add('tab-active');
-
-    // Hide all tab contents
-    document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none');
-
-    // Show the corresponding tab content
-    const tabContent = document.getElementById(this.getAttribute('data-tab'));
-    tabContent.style.display = 'block';
-  });
-});
-
-// ====================================
-// Comment section 
-// ====================================
-
-function formatTime(timestamp) {
-  const now = new Date();
-  const postTime = new Date(timestamp);
-  const timeDifference = now - postTime;
-
-  const msInDay = 24 * 60 * 60 * 1000;
-
-  if (timeDifference < msInDay && now.getDate() === postTime.getDate()) {
-    return `Today ${postTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
-  } else if (timeDifference < msInDay * 2 && now.getDate() !== postTime.getDate()) {
-    return `Yesterday ${postTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
-  } else if (timeDifference < msInDay * 7) {
-    const daysAgo = Math.floor(timeDifference / msInDay);
-    return `${daysAgo} days ago ${postTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
-  } else {
-    return postTime.toLocaleDateString([], { day: 'numeric', month: 'short', year: 'numeric' }) + ` ${postTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
-  }
 }
 
+// Initialize the progress bar globally so that it can be accessed in the function
+let bar; 
 
-
-   // Ensure the code runs after the DOM is fully loaded
-   window.onload = function() {
-    // Create a new circular progress bar
-    var bar = new ProgressBar.Circle('#progress-container', {
-      color: '#FFA500',  // Progress color
-      trailColor: '#d3d3d3',  // Background circle color
-      strokeWidth: 14,  // Thickness of the progress bar
-      trailWidth: 14,  // Thickness of the background circle
-      duration: 1400,  // Animation duration in ms
-      easing: 'easeInOut',  // Animation easing style (use `easeInOut` instead of bounce)
-      text: {
-        autoStyleContainer: false
-      },
-      from: { color: '#FFEA82', width: 14 },  // Start color
-      to: { color: '#FF8C00', width: 14 },  // End color
-      step: function (state, circle) {
-        circle.path.setAttribute('stroke', state.color); // Update stroke color dynamically
-        circle.setText(Math.round(circle.value() * 100) + '%'); // Update text inside the circle
-        document.getElementById('progressText').textContent = Math.round(circle.value() * 100) + '%'; // Sync text with progress
-      }
-    });
-
-    // Function to update progress
-    function updatePieProgress(progress) {
-      bar.animate(progress / 100); // Progress from 0 to 1
+// Ensure the code runs after the DOM is fully loaded
+window.onload = function () {
+  // Create a new circular progress bar
+  bar = new ProgressBar.Circle('#progress-container', {
+    color: '#FFA500',  // Progress color
+    trailColor: '#fdefde',  // Background circle color
+    strokeWidth: 14,  // Thickness of the progress bar
+    trailWidth: 14,  // Thickness of the background circle
+    duration: 1400,  // Animation duration in ms
+    easing: 'easeInOut',  // Animation easing style (use `easeInOut` instead of bounce)
+    text: {
+      autoStyleContainer: false
+    },
+    from: { color: '#ffc46b', width: 14 },  // Start color
+    to: { color: '#fda837', width: 14 },  // End color
+    step: function (state, circle) {
+      circle.path.setAttribute('stroke', state.color); // Update stroke color dynamically
+      // circle.setText(Math.round(circle.value() * 100) + '%'); // Update text inside the circle
+      document.getElementById('progressText').textContent = correctQuizAnswers; // Sync text with progress
     }
-
-    // Example usage: Call the function to update progress
-    updatePieProgress(0);   // 0% progress initially
-    setTimeout(() => updatePieProgress(50), 2000);  // 50% after 2 seconds
-    setTimeout(() => updatePieProgress(100), 4000);  // 100% after 4 seconds
-  };
-
-// ====================================
-// Timeline details
-// ====================================
-
-const timelineBadgeBtn = document.querySelector('.timeline-badge-btn')
-const timelineWindow = document.getElementById('timeline-window');
-const timelineInsideBtn = document.getElementById("timeline-inside-btn")
-
-document.querySelector('.timeline-badge-btn').addEventListener('click', function () {
-
-  // toggle width and padding when click the shrink button
-  timelineBadgeBtn.classList.toggle('hidden');
-  timelineWindow.classList.toggle('hidden');
-})
-
-document.getElementById('timeline-inside-btn').addEventListener('click', function () {
-
-
-
-  const accordion = document.querySelector('.accordion');
-
-  // toggle width and padding when click the shrink button
-  timelineBadgeBtn.classList.toggle('hidden');
-  timelineWindow.classList.toggle('hidden');
-
-});
-
-// ====================================
-// Slider details
-// ====================================
-
-document.addEventListener('DOMContentLoaded', function () {
-
-  // Initialize Swiper
-  var swiper = new Swiper(".courseSlide", {
-    pagination: {
-      el: ".swiper-pagination",
-      type: "fraction",
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
   });
-});
+};
+
 
 // Function to show quiz result
 function showQuizResult() {

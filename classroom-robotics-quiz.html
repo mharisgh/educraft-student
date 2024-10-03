@@ -14,7 +14,9 @@
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
+   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@latest/dist/confetti.browser.min.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/progressbar.js/dist/progressbar.min.js"></script>
 
   <style>
     /* Hover effect for std-review-radio-option class */
@@ -415,7 +417,7 @@
     <!-- ============================= -->
 
     <div id="quizCompletionPopup"
-      class="fixed top-0 left-0 w-full h-full bg-black/50 justify-center items-center z-[80] hidden  ">
+      class="fixed top-0 left-0 w-full h-full bg-black/50 justify-center items-center z-[80] hidden">
 
       <div
         class="bg-gradient-to-b from-[#fffbf0] to-[#feeec6] p-6 rounded-xl shadow-lg min-w-[700px] min-h-[500px] flex flex-col justify-around items-center relative ">
@@ -424,29 +426,19 @@
 
         <div class=" flex flex-col justify-center items-center relative">
 
-          <div class="relative w-32 h-32 ">
-            <!-- Full background circle (gray) -->
-            <svg class="absolute inset-0 w-full h-full">
-              <circle cx="50%" cy="50%" r="45%" stroke="#ffefc5" stroke-width="14" fill="none" />
-            </svg>
 
-            <!-- Progress circle (orange) -->
-            <svg class="absolute inset-0 w-full h-full transform -rotate-90">
-              <circle id="progressCircle" cx="50%" cy="50%" r="45%" stroke="orange" stroke-width="14" fill="none"
-                stroke-dasharray="283" stroke-dashoffset="283" />
-            </svg>
-
+          <div class="relative w-36 h-36 ">
+            <div id="progress-container" class="relative w-36 h-36"></div> <!-- Progress circle container -->
+        
             <!-- Text in the middle of the circle -->
             <div class="absolute inset-0 flex items-center justify-center text-4xl font-bold text-orange-500 -mt-10"
               id="progressText">
-              0%
+              0
             </div>
-
-            <p class="font-medium text-md absolute bottom-8 right-10 leading-4">correct <br>answers
+        
+            <p class="font-medium text-md absolute bottom-10 right-11 text-center leading-4">correct <br>answers
             </p>
-
           </div>
-
 
           <p class="animate-slide-up text-3xl font-bold mb-3">You're Awesome!</p>
 
@@ -466,24 +458,21 @@
           questions correct on this quiz,
         </p>
 
-
         <!-- close x button -->
         <button id="quizCompletionPopupCloseBtn"
           class="bg-[#f4f4f4] hover:bg-[#e4e2e2] absolute top-4 right-4 p-1.5 rounded-full">
           <img class="w-5 h-5" src="/assets/icons/close-line.svg" alt="close">
         </button>
 
-
         <div class="flex flex-col gap-2 items-center">
           <button id="quizContinueBtn"
             class="bg-[#bf4b00] text-white px-4 py-2 rounded-lg w-full lg:min-w-[240px]">Continue</button>
-          <button id="cancelBtn" class="border border-black/40 px-4 py-2 rounded-lg w-full lg:min-w-[240px]">Review
-            Answer</button>
         </div>
 
       </div>
 
     </div>
+
 
     <!-- ============================= -->
     <!-- student review emoji & rating suggestion  popup  -->
@@ -641,11 +630,11 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <!-- custom script -->
-  <!-- <script src="./js/courseDetailsCompletion.js"></script> -->
+  <script src="./js/classroomQuiz.js"></script>
   <script src="./js/main.js"></script>
   <script src="./js/quiz.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@latest/dist/confetti.browser.min.js"></script>
+
 
 
 
