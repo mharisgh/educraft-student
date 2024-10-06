@@ -45,6 +45,7 @@ const quizData = {
 
 
 // Variable names
+
 let currentQuizQuestion = 0;
 let correctQuizAnswers = 0;
 const userQuizAnswers = [];
@@ -99,7 +100,7 @@ function loadQuizQuestion() {
   const quizProgressPercentage = ((currentQuizQuestion) / quizData.totalQuestions.length) * 100;
   quizQuestionProgressBarElem.style.width = `${quizProgressPercentage}%`;
 
-  const quizEducyFlyProgress = (currentQuizQuestion / quizData.totalQuestions.length) * 96; // Move image to max 96%
+  const quizEducyFlyProgress = (currentQuizQuestion / quizData.totalQuestions.length) * 98; // Move image to max 96%
   document.getElementById("quizProgressEducy").style.left = `${quizEducyFlyProgress}%`;
 
   quizQuestionTextElem.classList.add("font-semibold", "text-lg");
@@ -165,6 +166,72 @@ function selectOption(selectedDiv, questionName) {
   input.checked = true;
 }
 
+loadQuizQuestion();
+
+
+// Function to show quiz result
+function showQuizResult() {
+  const totalQuestions = quizData.totalQuestions.length;
+  let earnedEducoins = 0;
+
+  // Loop through user answers to calculate total Educoins earned
+  userQuizAnswers.forEach(answer => {
+    const question = quizData.totalQuestions[answer.questionId]; // Get the corresponding question
+    if (answer.answer === question.correctAnswer) { // Check if the answer is correct
+      earnedEducoins += question.educoinForThisQuestion; // Add Educoins for the correct answer
+    }
+  });
+
+  // Calculate percentage of correct answers
+  const percentageCorrect = (correctQuizAnswers / totalQuestions) * 100;
+
+  // Update progress circle using ProgressBar.js
+  bar.animate(percentageCorrect / 100); // ProgressBar.js expects a value between 0 and 1
+
+  // Update text inside the circle
+  document.getElementById('progressText').textContent = `${correctQuizAnswers}`;
+
+  // Update the earned Educoins element
+  quizResultEducoinEarnedElem.innerText = earnedEducoins;
+
+  // Update correct answers element
+  document.querySelector(".quizCorrectAnswers").innerText = correctQuizAnswers;
+
+  // Show the quiz completion popup
+  quizCompletionPopup.classList.remove('hidden');
+  quizCompletionPopup.classList.add('flex');
+
+  // Trigger any celebration animation (if required)
+  triggerConfetti();
+}
+
+// updatePieProgress - Ensure the code runs after the DOM is fully loaded
+window.onload = function () {
+  // Create a new circular progress bar
+    bar = new ProgressBar.Circle('#progress-container', {
+    color: '#feab3b',  // Progress color
+    trailColor: '#fdefde',  // Background circle color
+    strokeWidth: 12,  // Thickness of the progress bar
+    trailWidth: 12,  // Thickness of the background circle
+    duration: 1400,  // Animation duration in ms
+    easing: 'easeInOut',  // Animation easing style (use `easeInOut` instead of bounce)
+    text: {
+      autoStyleContainer: false
+    },
+    from: { color: '#fd9817', width: 12 },  // Start color
+    to: { color: '#ffc66d', width: 12 },  // End color
+    step: function (state, circle) {
+      circle.path.setAttribute('stroke', state.color); // Update stroke color dynamically
+      document.getElementById('progressText').textContent = correctQuizAnswers; // Sync text with progress
+    }
+  });
+
+  // Function to update progress
+  function updatePieProgress(progress) {
+    bar.animate(progress / 100); // Progress from 0 to 1
+  }
+
+};
 
 
 // Event listener for the next button
@@ -207,10 +274,13 @@ quizNextBtn.addEventListener("click", () => {
     // Show results after the last question is answered
     console.log("User's Answers:", JSON.stringify(userQuizAnswers));
     console.log(`Correct Answers: ${correctQuizAnswers}`);
-    showQuizResult();
 
+    showQuizResult();
 
   }
 });
 
-loadQuizQuestion();
+
+
+
+

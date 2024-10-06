@@ -6,14 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Course Detail Page</title>
 
+  <!-- Links -->
   <script src="https://cdn.tailwindcss.com"></script>
-
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
   <link href="output.css" rel="stylesheet">
-
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Progres Pie -->
+  <script src="https://cdn.jsdelivr.net/npm/progressbar.js/dist/progressbar.min.js"></script>
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@latest/dist/confetti.browser.min.js"></script>
 
 
   <style>
@@ -187,23 +190,18 @@
 
     @keyframes scaleAndMove {
       0% {
-        transform: scale(0) translateY(100px);
+        transform: scale(0) rotate(-20deg) translateY(-100px);
         /* Start at scale 0 and 100px below */
       }
-
-      50% {
-        transform: scale(1.2) translateY(0);
-        /* Scale up to 120% and move to original position */
-      }
-
+      
       100% {
-        transform: scale(1) translateY(0);
+        transform: scale(1) rotate(-0deg) translateY(0);
         /* Scale back to 100% and stay at original position */
       }
     }
 
     .animate-scale-move {
-      animation: scaleAndMove 1.6s ease-out;
+      animation: scaleAndMove 1.4s ease-out;
       /* Animation duration, easing, delay, and forward fill-mode */
     }
 
@@ -1491,28 +1489,19 @@
 
         <div class=" flex flex-col justify-center items-center relative">
 
-          <div class="relative w-32 h-32 ">
-            <!-- Full background circle (gray) -->
-            <svg class="absolute inset-0 w-full h-full">
-              <circle cx="50%" cy="50%" r="45%" stroke="#ffefc5" stroke-width="14" fill="none" />
-            </svg>
-
-            <!-- Progress circle (orange) -->
-            <svg class="absolute inset-0 w-full h-full transform -rotate-90">
-              <circle id="progressCircle" cx="50%" cy="50%" r="45%" stroke="orange" stroke-width="14" fill="none"
-                stroke-dasharray="283" stroke-dashoffset="283" />
-            </svg>
+          <div class="relative w-36 h-36 ">
+            <div id="progress-container" class="relative w-36 h-36"></div> <!-- Progress circle container -->
 
             <!-- Text in the middle of the circle -->
             <div class="absolute inset-0 flex items-center justify-center text-4xl font-bold text-orange-500 -mt-10"
               id="progressText">
-              0%
+              0
             </div>
 
-            <p class="font-medium text-md absolute bottom-8 right-10 leading-4">correct <br>answers
+            <p class="font-medium text-md absolute bottom-10 right-11 text-center leading-4">correct <br>answers
             </p>
-
           </div>
+
 
 
           <p class="animate-slide-up text-3xl font-bold mb-3">You're Awesome!</p>
@@ -1543,9 +1532,12 @@
 
         <div class="flex flex-col gap-2 items-center">
           <button id="quizContinueBtn"
-            class="bg-[#bf4b00] text-white px-4 py-2 rounded-lg w-full lg:min-w-[240px]">Continue</button>
-          <button id="cancelBtn" class="border border-black/40 px-4 py-2 rounded-lg w-full lg:min-w-[240px]">Review
-            Answer</button>
+            class="bg-[#bf4b00] text-white px-4 py-2 rounded-lg w-full lg:min-w-[240px]">Continue
+          </button>
+
+          <!-- <button id="cancelBtn" class="border border-black/40 px-4 py-2 rounded-lg w-full lg:min-w-[240px]">Review
+            Answer
+          </button> -->
         </div>
 
       </div>
@@ -1665,15 +1657,25 @@
       <div
         class="bg-gradient-to-b from-[#fffbf0] to-[#feeec6] p-6 rounded-xl shadow-lg min-w-[700px] min-h-[500px] flex flex-col justify-around items-center relative">
 
-        <p class="animate-slide-up">Keep up the momentum and continue your learning journey!</p>
+        <p class="animate-slide-up text-black/60">Keep up the momentum and continue your learning journey!</p>
 
         <div class=" flex flex-col justify-center items-center relative">
-          <img class="absolute top-0 w-[120px] animate-scale-move" src="assets/img/educoin-big.png" alt="">
-          <p class="animate-slide-up text-3xl font-bold mb-3 mt-[120px]">Congratulations!</p>
-          <p class="animate-slide-up text-primaryDark font-semibold max-w-[70%] text-center">You've successfully
-            completed this unit and
-            earned 8 Educoins</p>
-          <p class="animate-slide-up font-semibold pb-4 pt-6">Great Progress!</p>
+          <div class="animate-scale-move relative flex justify-center items-center w-[130px] h-[130px] overflow-hidden">
+            <img class="" src="assets/img/educoin-big.webp" alt="">
+            <p id="educoinDynamicValue" class="absolute text-white font-bold text-5xl top-6">5</p>
+          </div>
+          <p class="animate-slide-up text-3xl font-bold mb-3 ">Congratulations!</p>
+
+
+          <p class="animate-slide-up text-primaryDark font-semibold  text-center pb-6">You've successfully
+            completed this unit</p>
+
+          <div class="flex gap-1 animate-slide-up items-center justify-center">
+            <p class="  text-center">And Earned</p>
+            <img src="assets/img/educoin-sm.png" class=" w-8 flex gap-2 items-center justify-center" alt="">
+            <p class="text-primaryDark font-semibold"><span>5</span> Educoins</p>
+          </div>
+
         </div>
 
         <!-- buttons -->
@@ -1704,17 +1706,10 @@
   </div>
 
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
   <!-- custom script -->
-  <!-- <script src="./js/courseDetailsCompletion.js"></script> -->
-  <script src="./js/main.js"></script>
+  <script src="./js/courseDetailsCompletion.js"></script>
   <script src="./js/quiz.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@latest/dist/confetti.browser.min.js"></script>
-
-
+  <script src="./js/main.js"></script>
 
 </body>
 

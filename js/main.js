@@ -10,9 +10,15 @@ const menuData = [
 ];
 
 
-// Function to render menu items
 function renderMenuItems() {
   const menuItemsContainer = document.getElementById('menu-items');
+  
+  // Check if the element exists
+  if (!menuItemsContainer) {
+    // console.error('menu-items container not found');
+    return;
+  }
+
   const currentPage = window.location.pathname.split("/").pop(); // Get the current page
 
   menuData.forEach(item => {
@@ -41,6 +47,7 @@ function renderMenuItems() {
   });
 }
 
+
 // Function to toggle the menu
 function toggleMenu() {
   const menu = document.getElementById('menu');
@@ -48,10 +55,16 @@ function toggleMenu() {
 }
 
 // Event listener for the hamburger button
-document.getElementById('hamburger').addEventListener('click', toggleMenu);
+const hamburgerButton = document.getElementById('hamburger');
+if(hamburgerButton){
+  hamburgerButton.addEventListener('click',toggleMenu)
+}
 
 // Event listener for the close button
-document.getElementById('close-menu').addEventListener('click', toggleMenu);
+const menuCloseButton = document.getElementById('close-menu');
+if(menuCloseButton){
+  menuCloseButton.addEventListener('click',toggleMenu)
+}
 
 // Render menu items when the page loads
 window.onload = renderMenuItems;

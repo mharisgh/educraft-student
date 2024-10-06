@@ -326,6 +326,7 @@ document.getElementById("submitFinalBtn").addEventListener("click", () => {
     rating,
     comment
   };
+
   triggerConfetti()
   console.log("Final Submission:", finalData);
 
@@ -436,38 +437,38 @@ function formatTime(timestamp) {
 
 
 
-   // Ensure the code runs after the DOM is fully loaded
-   window.onload = function() {
-    // Create a new circular progress bar
-    var bar = new ProgressBar.Circle('#progress-container', {
-      color: '#FFA500',  // Progress color
-      trailColor: '#d3d3d3',  // Background circle color
-      strokeWidth: 14,  // Thickness of the progress bar
-      trailWidth: 14,  // Thickness of the background circle
-      duration: 1400,  // Animation duration in ms
-      easing: 'easeInOut',  // Animation easing style (use `easeInOut` instead of bounce)
-      text: {
-        autoStyleContainer: false
-      },
-      from: { color: '#FFEA82', width: 14 },  // Start color
-      to: { color: '#FF8C00', width: 14 },  // End color
-      step: function (state, circle) {
-        circle.path.setAttribute('stroke', state.color); // Update stroke color dynamically
-        circle.setText(Math.round(circle.value() * 100) + '%'); // Update text inside the circle
-        document.getElementById('progressText').textContent = Math.round(circle.value() * 100) + '%'; // Sync text with progress
-      }
-    });
-
-    // Function to update progress
-    function updatePieProgress(progress) {
-      bar.animate(progress / 100); // Progress from 0 to 1
+// updatePieProgress - Ensure the code runs after the DOM is fully loaded
+window.onload = function () {
+  // Create a new circular progress bar
+    bar = new ProgressBar.Circle('#progress-container', {
+    color: '#FFA500',  // Progress color
+    trailColor: '#d3d3d3',  // Background circle color
+    strokeWidth: 14,  // Thickness of the progress bar
+    trailWidth: 14,  // Thickness of the background circle
+    duration: 1400,  // Animation duration in ms
+    easing: 'easeInOut',  // Animation easing style (use `easeInOut` instead of bounce)
+    text: {
+      autoStyleContainer: false
+    },
+    from: { color: '#FFEA82', width: 14 },  // Start color
+    to: { color: '#FF8C00', width: 14 },  // End color
+    step: function (state, circle) {
+      circle.path.setAttribute('stroke', state.color); // Update stroke color dynamically
+      circle.setText(Math.round(circle.value() * 100) + '%'); // Update text inside the circle
+      document.getElementById('progressText').textContent = Math.round(circle.value() * 100) + '%'; // Sync text with progress
     }
+  });
 
-    // Example usage: Call the function to update progress
-    updatePieProgress(0);   // 0% progress initially
-    setTimeout(() => updatePieProgress(50), 2000);  // 50% after 2 seconds
-    setTimeout(() => updatePieProgress(100), 4000);  // 100% after 4 seconds
-  };
+  // Function to update progress
+  function updatePieProgress(progress) {
+    bar.animate(progress / 100); // Progress from 0 to 1
+  }
+
+  // Example usage: Call the function to update progress
+  updatePieProgress(0);   // 0% progress initially
+  setTimeout(() => updatePieProgress(50), 2000);  // 50% after 2 seconds
+  setTimeout(() => updatePieProgress(100), 4000);  // 100% after 4 seconds
+};
 
 // ====================================
 // Timeline details
@@ -535,7 +536,7 @@ function showQuizResult() {
   bar.animate(percentageCorrect / 100); // ProgressBar.js expects a value between 0 and 1
 
   // Update text inside the circle
-  document.getElementById('progressText').textContent = `${correctQuizAnswers}`; 
+  document.getElementById('progressText').textContent = `${correctQuizAnswers}`;
 
   // Update the earned Educoins element
   quizResultEducoinEarnedElem.innerText = earnedEducoins;

@@ -16,12 +16,14 @@ const stdReviewCloseBtn = document.getElementById('stdReviewCloseBtn');
 // Hide the popup when either the OK or Cancel button is clicked
 quizContinueBtn.addEventListener('click', () => {
   quizCompletionPopup.classList.add('hidden');
-  studentReviewPopup.classList.remove('hidden');
-  studentReviewPopup.classList.add('flex');
+  // studentReviewPopup.classList.remove('hidden');
+  // studentReviewPopup.classList.add('flex');
+
 });
 
 cancelBtn.addEventListener('click', () => {
   quizCompletionPopup.classList.add('hidden');
+
 });
 
 function selectOption(selectedDiv, questionName) {
@@ -316,7 +318,7 @@ function triggerConfetti() {
 }
 
 // Initialize the progress bar globally so that it can be accessed in the function
-let bar; 
+let bar;
 
 // Ensure the code runs after the DOM is fully loaded
 window.onload = function () {
@@ -362,7 +364,7 @@ function showQuizResult() {
   bar.animate(percentageCorrect / 100); // ProgressBar.js expects a value between 0 and 1
 
   // Update text inside the circle
-  document.getElementById('progressText').textContent = `${correctQuizAnswers}`; 
+  document.getElementById('progressText').textContent = `${correctQuizAnswers}`;
 
   // Update the earned Educoins element
   quizResultEducoinEarnedElem.innerText = earnedEducoins;

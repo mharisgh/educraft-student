@@ -14,8 +14,9 @@
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@latest/dist/confetti.browser.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@latest/dist/confetti.browser.min.js"></script>
+  
+  <!-- Progress bar -->
   <script src="https://cdn.jsdelivr.net/npm/progressbar.js/dist/progressbar.min.js"></script>
 
   <style>
@@ -327,21 +328,10 @@
     <main id="main"
       class=" bg-primaryLight  max-w-screen-2xl mx-auto transition-all ease-out duration-300  flex flex-col lg:flex-row overflow-auto lg:overflow-hidden h-[calc(100vh-3.5rem)] relative">
 
-      <!-- bg and train animation -->
-      <!-- <div class="w-full h-full absolute">
-
-        <img class="h-[190px] absolute bottom-0 opacity-40 w-full" src="/assets/img/skillmap/skill-bg.webp" alt="">
-
-        <img class="absolute bottom-[42px] w-[160px] move-hide opacity-60" src="/assets/img/skillmap/train.png"
-          alt="">
-
-        <img class="absolute bottom-0  opacity-40 w-full" src="/assets/img/skillmap/skill-bg-bld.webp" alt="">
-
-      </div> -->
-
       <!-- main section-->
       <section class="w-full p-4 flex flex-col gap-4 lg:overflow-auto scrollbar-hide lg:h-full ">
 
+        <!-- breadcrumbs and nav -->
         <div class="text-black/50 font-medium flex items-center gap-2">
           <a href="#" onclick="history.back(); return false;"
             class="pl-2 pr-6 h-[40px] rounded-xl bg-white  border border-black/20 hover:border-black/50 flex items-center gap-1 w-fit">
@@ -397,15 +387,6 @@
           </div>
 
 
-          <!-- Modal Popup -->
-          <div id="resultModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 items-center justify-center hidden">
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h2 class="text-xl font-bold mb-4">Quiz Results</h2>
-              <p id="resultText"></p>
-              <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded" onclick="location.reload()">Restart</button>
-            </div>
-          </div>
-
         </div>
 
       </section>
@@ -429,13 +410,13 @@
 
           <div class="relative w-36 h-36 ">
             <div id="progress-container" class="relative w-36 h-36"></div> <!-- Progress circle container -->
-        
+
             <!-- Text in the middle of the circle -->
             <div class="absolute inset-0 flex items-center justify-center text-4xl font-bold text-orange-500 -mt-10"
               id="progressText">
               0
             </div>
-        
+
             <p class="font-medium text-md absolute bottom-10 right-11 text-center leading-4">correct <br>answers
             </p>
           </div>
@@ -590,7 +571,7 @@
         <p class="animate-slide-up">Keep up the momentum and continue your learning journey!</p>
 
         <div class=" flex flex-col justify-center items-center relative">
-          <img class="absolute top-0 w-[120px] animate-scale-move" src="assets/img/educoin-big.png" alt="">
+          <img class="absolute top-0 w-[120px] animate-scale-move" src="assets/img/educoin-big.webp" alt="">
           <p class="animate-slide-up text-3xl font-bold mb-3 mt-[120px]">Congratulations!</p>
           <p class="animate-slide-up text-primaryDark font-semibold max-w-[70%] text-center">You've successfully
             completed this unit and
