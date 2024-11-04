@@ -326,6 +326,10 @@ document.getElementById('studentCmtPostBtn').addEventListener('click', function 
 const timelineBadgeBtn = document.querySelector('.timeline-badge-btn')
 const timelineWindow = document.getElementById('timeline-window');
 const timelineInsideBtn = document.getElementById("timeline-inside-btn")
+const viewFullscreen = document.getElementById("viewFullscreen")
+const detailSection = document.getElementById("detailSection")
+const fullScreenText = document.getElementById("fullScreenText")
+
 
 document.querySelector('.timeline-badge-btn').addEventListener('click', function () {
 
@@ -336,13 +340,63 @@ document.querySelector('.timeline-badge-btn').addEventListener('click', function
 
 document.getElementById('timeline-inside-btn').addEventListener('click', function () {
 
+  const accordion = document.querySelector('.accordion');
+
+  // toggle width and padding when click the shrink button
+  timelineBadgeBtn.classList.toggle('hidden');
+  timelineWindow.classList.toggle('hidden');
+});
 
 
+viewFullscreen.addEventListener('click', function () {
+
+  viewFullscreen.classList.toggle('mr-10');
+  detailSection.classList.toggle('hidden');
+
+  // Toggle the text of `fullScreenText` based on current text
+  if (fullScreenText.innerText === 'View in Fullscreen') {
+    fullScreenText.innerText = 'Exit Fullscreen';
+  } else {
+    fullScreenText.innerText = 'View in Fullscreen';
+  }
   const accordion = document.querySelector('.accordion');
 
   // toggle width and padding when click the shrink button
   timelineBadgeBtn.classList.toggle('hidden');
   timelineWindow.classList.toggle('hidden');
 
-});
 
+
+  // toggle width and padding when click the shrink button
+  sidebar.classList.toggle('w-24');
+  sidebar.classList.toggle('w-72');
+
+
+  // hide logo text when sidemenu shrink
+  logoText.classList.toggle('hidden');
+
+  // toggle btn will center when sidemenu shrink
+  toggleBtnArea.classList.toggle('justify-end');
+  toggleBtnArea.classList.toggle('justify-center');
+
+
+  toggleBtn.classList.toggle('rotate-180')
+
+  educatSidemenuBigBtn.classList.toggle('hidden')
+  educatSidemenuSmBtn.classList.toggle('flex')
+  educatSidemenuSmBtn.classList.toggle('hidden')
+
+  // center the logo when sidemenu shrink
+  sidemenuLogo.classList.toggle('justify-center');
+
+  // hide the side menu list text when shrink
+  sidebarTexts.forEach(text => text.classList.toggle('hidden'));
+
+  // center the menu icons when shrink the side menu bar
+  sidemenuList.forEach(li => {
+    li.classList.toggle('justify-center');
+    li.classList.toggle('pl-4');
+    li.classList.toggle('pl-0');
+  });
+
+});
