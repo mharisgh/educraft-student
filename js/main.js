@@ -1,9 +1,9 @@
 // Sample JSON data for the menu
 const menuData = [
-  { "name": "Home", "link": "#", "type": "menu" },
-  { "name": "Courses", "link": "#", "type": "menu" },
-  { "name": "Learning Journey", "link": "#", "type": "menu" },
-  { "name": "Classroom Chat", "link": "c#", "type": "menu" },
+  { "name": "Home", "link": "/index.html", "type": "menu" },
+  { "name": "Courses", "link": "/mycourses.html", "type": "menu" },
+  { "name": "Learning Journey", "link": "/learning-journey.html", "type": "menu" },
+  { "name": "Classroom", "link": "/classroom.html", "type": "menu" },
   { "name": "Chat", "link": "#", "type": "menu" },
   { "type": "separator" }, // Separator
   { "name": "Logout", "link": "#", "type": "menu" }

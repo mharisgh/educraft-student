@@ -58,7 +58,7 @@ function displayMaterials() {
 
   materials.forEach((material) => {
     const materialElement = document.createElement("a");
-    materialElement.className = "bg-white border border-black/20 p-4 rounded-xl relative lg:min-w-[194px] group hover:border-black/40";
+    materialElement.className = "bg-white border border-black/20 p-4 rounded-xl relative w-full lg:max-w-[194px] group hover:border-black/40";
     materialElement.href = material.downloadLink;
     materialElement.target = "_blank";
 
@@ -83,7 +83,7 @@ function displayQuizzes() {
 
   quizzes.forEach((quiz) => {
     const quizElement = document.createElement("a");
-    quizElement.className = "bg-white border border-black/20 p-4 rounded-xl lg:min-w-[300px] group hover:border-black/40";
+    quizElement.className = "bg-white border border-black/20 p-4 rounded-xl w-full lg:max-w-[300px] group hover:border-black/40";
     quizElement.href = quiz.quizLink;  // Set the link for the quiz
     // quizElement.target = "_blank";      // Open link in a new tab
 

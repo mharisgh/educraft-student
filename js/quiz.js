@@ -83,7 +83,7 @@ quizName.forEach((element) => {
 function loadQuizQuestion() {
   const questionData = quizData.totalQuestions[currentQuizQuestion];
 
-  quizQuestionCurrentEducoinElem.innerHTML = `<p class="flex gap-2 items-center text-black/70 "> For this question you will earn 
+  quizQuestionCurrentEducoinElem.innerHTML = `<p class="flex gap-2 items-center text-black/70 ">Earn 
     <span class="font-bold flex items-center gap-1 ">  
     ${questionData.educoinForThisQuestion}
     <img class="w-[26px]" src="/assets/img/educoin-sm.png"/>

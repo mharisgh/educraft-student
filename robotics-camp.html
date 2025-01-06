@@ -191,7 +191,7 @@
       class=" bg-primaryLight  max-w-screen-2xl mx-auto transition-all ease-out duration-300  flex flex-col lg:flex-row overflow-auto lg:overflow-hidden h-[calc(100vh-3.5rem)]">
 
       <!-- main section-->
-      <section class="bg-primaryLight p-4 flex flex-col gap-4 lg:overflow-auto scrollbar-hide lg:h-full ">
+      <section class="bg-primaryLight p-4 flex flex-col gap-4 lg:overflow-auto scrollbar-hide lg:h-full w-full">
 
         <div class="flex gap-4 items-center ">
           <a href="#" onclick="history.back(); return false;"
@@ -206,7 +206,7 @@
         </div>
 
         <p class="text-lg-custom mt-6">Quiz</p>
-        <div id="classroomClassQuizes" class="flex flex-wrap gap-4"></div>
+        <div id="classroomClassQuizes" class="flex flex-col lg:flex-row lg:flex-wrap gap-4 "></div>
 
         <p class="text-lg-custom mt-2">Materials</p>
         <div id="classroomClassContents" class="flex flex-wrap gap-4"></div>

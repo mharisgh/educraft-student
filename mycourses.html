@@ -166,12 +166,12 @@
 
     <header id="header-menu"
       class="  bg-white  flex justify-between w-full h-14 items-center  transition-all ease-out duration-300  p-4 border border-b-black/10">
-      <p class="text-xl-custom">My Courses</p>
+      <p class="lg:text-xl-custom font-bold">My Courses</p>
 
       <!-- Search Input -->
-      <div class="relative w-1/3">
+      <div class="relative w-[40px] lg:w-1/3">
         <input type="text" placeholder="Search"
-          class="w-full pl-12 pr-4 py-2 rounded-full bg-[#fffaf4] focus:outline-none focus:border-primary border border-gray-200">
+          class="hidden lg:block w-full pl-12 pr-4 py-2 rounded-full bg-[#fffaf4] focus:outline-none focus:border-primary border border-gray-200">
         <img src="assets/icons/search-bar.svg" alt="Search Icon"
           class="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-red-700" />
       </div>
@@ -215,7 +215,7 @@
               class="bg-white border border-black/10  p-2 rounded-2xl flex flex-col justify-between lg:flex-row gap-4 ">
 
               <!-- course thumbnail image -->
-              <img class="w-full lg:w-[180px] max-h-[240px] lg:h-[100px] object-cover rounded-xl "
+              <img class="w-full lg:w-[180px] max-h-[240px] lg:h-[100px] h-[180px] object-cover rounded-xl "
                 src="assets/img/unit2.webp" alt="Courses">
 
               <div class="w-full flex flex-col lg:flex-row justify-between lg:items-center gap-4">
@@ -265,7 +265,7 @@
                 <!-- dynamic button -->
                 <a href="/course-detail.html">
                   <button
-                    class="px-6 py-3 h-[40px] w-fit rounded-xl bg-primaryDark text-white hover:bg-primary flex items-center gap-2">
+                    class="px-6 py-3  lg:w-fit w-full justify-center rounded-xl bg-primaryDark text-white hover:bg-primary flex items-center gap-2">
                     Resume
                     <span><img src="assets/icons/Play.svg" alt="play"></span>
                   </button>

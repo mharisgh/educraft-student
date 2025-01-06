@@ -1,5 +1,5 @@
 // skill map course list
-const courseData = [
+const courseDataMobile = [
   {
     id: "1",
     coinCount: 5,
@@ -67,15 +67,15 @@ const courseData = [
 
 
 // Initialize a counter to track completed course status
-let completedCounter = 0;
+let completedCounterMobile = 0;
 
 // Function to set the image based on course status
 function getImageForStatus(status) {
   switch (status) {
     case 'completed':
-      completedCounter++; // Increment the counter for each completed course
+      completedCounterMobile++; // Increment the counter for each completed course
       // Alternate between the two completed images
-      return completedCounter % 2 === 0 ? 'course-icon-2.png' : 'course-icon-1.png';
+      return completedCounterMobile % 2 === 0 ? 'course-icon-2.png' : 'course-icon-1.png';
     case 'now':
       return 'course-icon-now.png';
     case 'locked':
@@ -106,25 +106,25 @@ function getCourseClasses(status, imageSrc) {
 
 // Function to generate the course card HTML based on JSON data
 function generateCourseCards() {
-  const container = document.getElementById("skillMapCourseContainer");
+  const container = document.getElementById("skillMapCourseContainerMobile");
 
-  courseData.map((course, index) => {
+  courseDataMobile.map((course, index) => {
     // Set the image based on the courseStatus
     course.imageSrc = getImageForStatus(course.courseStatus);
 
     // Determine whether to hide the pathLine for first and last objects
     let pathLine = "visible";
-    if (index === 0 || index === courseData.length - 1) {
+    if (index === 0 || index === courseDataMobile.length - 1) {
       pathLine = "hidden";
     }
 
     // Create a new div for left-right margin for skill map course
     const courseOuterDiv = document.createElement("div");
-    courseOuterDiv.classList.add("lg:w-[48%]", "mx-auto", "grid", "relative");
+    courseOuterDiv.classList.add("lg:w-[48%]","w-[80%]", "mx-auto", "grid", "relative");
 
     // Alternate between 'justify-self-start' and 'justify-self-end' for every other course
-    const alignmentClass = index % 2 === 0 ? 'justify-self-start' : 'justify-self-end';
-    const pathImage = index % 2 === 0 ? 'path-right.svg' : 'path-left.svg';
+    // const alignmentClass = index % 2 === 0 ? 'justify-self-start' : 'justify-self-end';
+    // const pathImage = index % 2 === 0 ? 'path-right.svg' : 'path-left.svg';
 
     // Create a new div for each course
     const courseDiv = document.createElement("a");
@@ -132,7 +132,7 @@ function generateCourseCards() {
     // Determine if 'custom-ping' should be added
     const customPingClass = course.courseStatus === 'now' ? 'custom-ping' : '';
     
-    courseDiv.classList.add("cursor-pointer", "lg:w-[340px]", "border-[.2rem]", "px-2", "py-1", "rounded-[1.5rem]", alignmentClass, "h-[80px]", "flex", "z-[12]", ...courseClasses);
+    courseDiv.classList.add("cursor-pointer","w-full", "lg:w-[340px]", "border-[.2rem]", "px-2", "py-1", "rounded-[1.5rem]",  "h-[80px]", "flex", "z-[12]", ...courseClasses);
     courseDiv.href = course.courseLink;
 
     // Function to capitalize the first letter of each word
@@ -178,17 +178,17 @@ function generateCourseCards() {
     courseOuterDiv.appendChild(courseDiv);
 
     // Add the path image (except for the last object)
-    if (index !== courseData.length - 1) {
+    if (index !== courseDataMobile.length - 1) {
       const pathImg = document.createElement("img");
 
       // Determine if the path should be positioned left or right based on alignmentClass
-      const positionClass = alignmentClass === 'justify-self-start' ? '-right-[80px]' : '-left-[80px]';
+      // const positionClass = alignmentClass === 'justify-self-start' ? '-right-[80px]' : '-left-[80px]';
 
       // Add multiple classes to pathImg
       pathImg.classList.add(
         "w-[240px]",
         "absolute",
-        positionClass, // Use the determined position class
+         // Use the determined position class
         "top-[30px]",
         "z-[10]",
       );
@@ -199,8 +199,8 @@ function generateCourseCards() {
       }
 
       // Set the source and alt attributes
-      pathImg.src = `/assets/img/skillmap/${pathImage}`;
-      pathImg.alt = `${alignmentClass} path`;
+      // pathImg.src = `/assets/img/skillmap/test.png`;
+      // pathImg.alt = `${alignmentClass} path`;
 
       // Append the path image based on alignment
       courseOuterDiv.appendChild(pathImg);

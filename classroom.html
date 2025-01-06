@@ -149,7 +149,7 @@
   <!-- Main -->
   <!-- =========================================== -->
 
-  <div class="w-full h-screen  overflow-hidden">
+  <div class="w-full lg:h-screen lg:overflow-hidden">
 
     <!-- =========================================== -->
     <!-- Top Header Menu -->
@@ -188,10 +188,10 @@
     <!-- =========================================== -->
 
     <main id="main"
-      class=" bg-primaryLight  max-w-screen-2xl mx-auto transition-all ease-out duration-300  flex flex-col lg:flex-row overflow-auto lg:overflow-hidden h-[calc(100vh-3.5rem)]">
+      class=" bg-primaryLight  max-w-screen-2xl mx-auto transition-all ease-out duration-300  flex flex-col lg:flex-row overflow-auto lg:overflow-hidden lg:h-[calc(100vh-3.5rem)]">
 
       <!-- main section-->
-      <section class="bg-primaryLight lg:w-2/3 p-4 flex flex-col gap-4 lg:overflow-auto scrollbar-hide lg:h-full">
+      <section class="bg-primaryLight lg:w-2/3 p-4 pb-8 flex flex-col gap-4 lg:overflow-auto scrollbar-hide ">
 
         <div class="w-full flex justify-between">
           <p class="text-lg-custom h-10">All Classes</p>
@@ -199,16 +199,15 @@
         </div>
 
 
-        <div id="classFoldersContainer" class="flex flex-wrap gap-x-4 gap-y-8"></div>
+        <div id="classFoldersContainer" class="flex flex-wrap gap-x-4 gap-y-8 "></div>
 
 
       </section>
 
       <!-- right side section -->
-      <section
-        class="bg-white border border-l-black/20 flex flex-col lg:w-1/3 p-4 gap-4 lg:overflow-auto scrollbar-custom">
+      <section class="bg-white border border-l-black/20 flex flex-col lg:w-1/3 p-4 gap-4 lg:overflow-auto scrollbar-custom">
 
-        <p class="text-lg-custom h-10">Announcements</p>
+        <p class="text-lg-custom h-10 font-semibold">Announcements</p>
 
         <div id="announcementContainer" class="flex flex-col gap-5">
           <!-- Announcements will be injected here by JavaScript -->
