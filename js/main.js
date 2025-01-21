@@ -99,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const sidebar = document.getElementById('sidebar');
 const logoText = document.getElementById('logo-text');
 const toggleBtn = document.getElementById('toggleBtn');
+const bottomFixedLeftGap = document.getElementById('bottomFixedLeftGap');
 const sidebarTexts = document.querySelectorAll('.sidebar-text');
 const main = document.getElementById('main');
 const headerMenu = document.getElementById('header-menu');
@@ -113,8 +114,11 @@ const menuItems = document.querySelectorAll('nav ul li');
 toggleBtn.addEventListener('click', () => {
 
   // toggle width and padding when click the shrink button
-  sidebar.classList.toggle('w-24');
-  sidebar.classList.toggle('w-72');
+  sidebar.classList.toggle('min-w-24');
+  sidebar.classList.toggle('min-w-[15rem]');
+  bottomFixedLeftGap.classList.toggle('min-w-24');
+  bottomFixedLeftGap.classList.toggle('min-w-[15rem]');
+
 
 
   // hide logo text when sidemenu shrink

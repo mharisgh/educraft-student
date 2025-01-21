@@ -323,29 +323,42 @@ document.getElementById('studentCmtPostBtn').addEventListener('click', function 
 // Timeline details
 // ====================================
 
-const timelineBadgeBtn = document.querySelector('.timeline-badge-btn')
+const timelineBadgeBtn = document.querySelector('.timeline-badge-btn');
 const timelineWindow = document.getElementById('timeline-window');
-const timelineInsideBtn = document.getElementById("timeline-inside-btn")
-const viewFullscreen = document.getElementById("viewFullscreen")
-const detailSection = document.getElementById("detailSection")
-const fullScreenText = document.getElementById("fullScreenText")
+const bottomFixedRightGap = document.getElementById('bottomFixedRightGap');
+const timelineInsideBtn = document.getElementById("timeline-inside-btn");
+const viewFullscreen = document.getElementById("viewFullscreen");
+const detailSection = document.getElementById("detailSection");
+const fullScreenText = document.getElementById("fullScreenText");
 
-
-document.querySelector('.timeline-badge-btn').addEventListener('click', function () {
-
-  // toggle width and padding when click the shrink button
+function toggleVisibility() {
+  // Toggle width and padding
   timelineBadgeBtn.classList.toggle('hidden');
   timelineWindow.classList.toggle('hidden');
-})
 
-document.getElementById('timeline-inside-btn').addEventListener('click', function () {
+  // Toggle visibility of bottomFixedRightGap based on screen size
+  if (window.innerWidth >= 1024) {
+    // Toggle visibility using style.display for large screens
+    bottomFixedRightGap.style.display = bottomFixedRightGap.style.display === 'none' ? 'block' : 'none';
+  }
+}
 
-  const accordion = document.querySelector('.accordion');
+document.querySelector('.timeline-badge-btn').addEventListener('click', toggleVisibility);
+document.getElementById('timeline-inside-btn').addEventListener('click', toggleVisibility);
 
-  // toggle width and padding when click the shrink button
-  timelineBadgeBtn.classList.toggle('hidden');
-  timelineWindow.classList.toggle('hidden');
-});
+// Ensure initial visibility on page load or window resize
+function setInitialVisibility() {
+  if (window.innerWidth >= 1024) {
+    bottomFixedRightGap.style.display = 'block';  // Show on large screens
+  } else {
+    bottomFixedRightGap.style.display = 'none';   // Hide on smaller screens
+  }
+}
+
+window.addEventListener('resize', setInitialVisibility);
+window.addEventListener('DOMContentLoaded', setInitialVisibility);
+
+
 
 
 viewFullscreen.addEventListener('click', function () {

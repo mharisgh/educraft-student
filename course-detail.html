@@ -170,7 +170,7 @@
   <!-- =========================================== -->
 
   <aside id="sidebar"
-    class="bg-primary z-50 text-white w-72 h-screen transition-all ease-out duration-300 hidden lg:block ">
+    class="bg-primary z-50 text-white min-w-[15rem] h-screen transition-all ease-out duration-300 hidden lg:block ">
 
     <div class="h-full overflow-y-auto px-4 flex flex-col justify-between scrollbar-custom">
 
@@ -345,8 +345,43 @@
       class=" bg-primaryLight  max-w-screen-2xl mx-auto transition-all ease-out duration-300  flex flex-col lg:flex-row overflow-auto lg:overflow-hidden h-[calc(100vh-3.5rem)] relative">
 
       <!-- main section-->
-      <section class="w-full px-4 py-2 flex flex-col gap-4 lg:overflow-auto scrollbar-hide lg:h-full ">
+      <section
+        class="relative  px-4 py-2 flex flex-col gap-4 lg:overflow-auto scrollbar-hide lg:h-full w-full">
 
+        <!-- bottom fixed NEXT buttom  -->
+        <section class="w-full h-16  z-[10] fixed bottom-0 left-0 flex">
+
+          <div id="bottomFixedLeftGap" class=" min-w-[15rem] h-full hidden lg:block"></div>
+
+          <div class="max-w-screen-2xl w-full  mx-auto h-full flex">
+
+            <!-- content here -->
+            <div
+              class="bg-white shadow-[0_-5px_60px_rgba(0,0,0,0.15)] w-full border border-t-black/20 grid justify-items-stretch items-center px-4">
+
+              <!-- dynamic button -->
+              <a href="#">
+                <button
+                  class="justify-self-end px-6 py-3   lg:w-fit w-full justify-center rounded-xl bg-primaryDark text-white hover:bg-primary flex items-center gap-2">
+                  Next : article
+                  <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z">
+                    </path>
+                  </svg>
+                </button>
+              </a>
+
+            </div>
+
+            <div id="bottomFixedRightGap" class=" min-w-[20rem]"></div>
+          </div>
+
+
+
+        </section>
+
+        <!-- back, bredcrums, full screen button -->
         <div class="flex justify-between items-center">
 
           <div class="flex gap-4 items-center">
@@ -370,25 +405,18 @@
 
         </div>
 
-        <!-- ============================================
-         Video
-         ============================================ -->
-        <div>
 
+        <!-- Video -->
+        <div>
           <video id="videoPlayer" class="rounded-2xl max-h-[80vh] w-full" controls muted>
             <source src="/assets/videos/pixar.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-
         </div>
 
 
-
-        <!-- ============================================
-         Overivew, Comments, Downloads - Tabs
-         ============================================ -->
-
-        <div class="tabs" id="detailSection">
+        <!-- Overivew, Comments,Tabs -->
+        <div class="tabs mb-16" id="detailSection">
 
           <div class="tab-header">
             <div class="course-view-tab tab-active" data-tab="overview">
@@ -668,11 +696,15 @@
 
           </div>
 
+        </div>
+
+
+
       </section>
 
       <!-- right side section -->
       <section id="timeline-window"
-        class="shrinked bg-white border border-l-black/20 flex flex-col lg:w-[40%] p-4 gap-4 lg:overflow-auto scrollbar-hide ">
+        class="shrinked bg-white border border-l-black/20 flex flex-col lg:min-w-[20rem] p-4 gap-4 lg:overflow-auto scrollbar-hide z-[25]">
 
         <div class="timeline-badge flex justify-between">
           <p class="timeline-text text-lg-custom ">Timeline</p>
