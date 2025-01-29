@@ -467,7 +467,7 @@ video {
 /* Base body text */
 
 .text-md-custom {
-  font-size: 16px;
+  font-size: .9rem;
   font-weight: 400;
 }
 
@@ -4305,7 +4305,7 @@ video {
 }
 
 body {
-  font-size: 14px;
+  font-size: 12px;
   /* Global font size */
 }
 
