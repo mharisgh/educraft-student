@@ -1,0 +1,597 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Educraft Academy</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <link href="output.css" rel="stylesheet">
+
+
+
+
+  <style>
+    .active {
+      background-color: #fa9d53;
+    }
+  </style>
+</head>
+
+<body class="flex font-sans">
+
+  <!-- =========================================== -->
+  <!-- Nav menu left sidebar -->
+  <!-- =========================================== -->
+
+  <aside id="sidebar"
+    class="bg-primary z-50 text-white w-72 h-screen transition-all ease-out duration-300 hidden lg:block ">
+
+    <div class="h-full overflow-y-auto px-4 flex flex-col justify-between scrollbar-custom">
+
+      <div>
+        <!-- educraft logo -->
+        <div id="sidemenu-logo" class="mt-4 flex items-center  gap-2 ">
+          <img src="./assets/img/educraft-logo-white.svg" alt="educraft logo">
+          <span id="logo-text" class="font-bold text-2xl">EduCraft</span>
+        </div>
+
+        <!-- shrink expand button -->
+        <div id="toggle-btn-area" class="w-full flex justify-end py-4 ">
+          <button id="toggleBtn" class="bg-white/20 p-2  rounded-lg">
+            <img class="w-3 h-3 " src="assets/icons/small.svg" alt="menu expand button">
+          </button>
+        </div>
+
+        <!-- top menu list -->
+        <nav class="flex flex-col justify-between ">
+          <ul class="flex flex-col gap-1">
+
+            <a href="/index.html">
+              <li id="sidemenu-list"
+                class="h-12 flex items-center hover:bg-[#fa9d53] rounded-xl pl-4 transition-all ease-out duration-300 sidemenu-list  cursor-pointer ">
+                <div class="flex gap-4 ">
+                  <img class="w-6 h-6" src="assets/icons/home.svg" alt="home">
+                  <span class="sidebar-text">Home</span>
+                </div>
+              </li>
+            </a>
+
+            <a href="mycourses.html">
+              <li id="sidemenu-list"
+                class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300 cursor-pointer ">
+                <div class="flex gap-4 items-center">
+                  <img class="w-6 h-6" src="assets/icons/my-courses.svg" alt="home">
+                  <span class="sidebar-text">Courses</span>
+                </div>
+              </li>
+            </a>
+            <li id="sidemenu-list"
+              class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300 cursor-pointer">
+              <a href="learning-journey.html" class="flex gap-4 items-center">
+                <img class="w-6 h-6" src="assets/icons/learning-journey.svg" alt="home">
+                <span class="sidebar-text">Learning Journey</span>
+              </a>
+            </li>
+            <a href="/classroom.html">
+              <li id="sidemenu-list"
+                class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300 cursor-pointer ">
+                <div class="flex gap-4 items-center">
+                  <img class="w-6 h-6" src="assets/icons/clasroom.svg" alt="home">
+                  <span class="sidebar-text">Classroom</span>
+                </div>
+              </li>
+            </a>
+            <a href="/educraft-academy.html">
+              <li id="sidemenu-list"
+                class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300 cursor-pointer active">
+                <div class="flex gap-4 items-center">
+                  <img class="w-6 h-6" src="assets/icons/edu-academy.svg" alt="home">
+                  <span class="sidebar-text">Educraft Academy</span>
+                </div>
+              </li>
+            </a>
+
+          </ul>
+
+        </nav>
+      </div>
+
+
+      <!-- bottom menu list -->
+      <div>
+
+        <!-- expanded educat chatbot button-->
+        <div id="educat-sidemenu-big" class="lg:min-h-[100px] bg-white/20  rounded-2xl relative my-6 overflow-hidden">
+          <img class="absolute z-10  w-[90px] top-2 -right-2 " src="assets/img/educy.webp" alt="chat bot">
+          <div class="px-3 py-3">
+            <p class="">I'm</p>
+            <p class="font-bold text-lg tracking-tight -mt-1">EduCat<span class="text-xs font-base">&nbsp;2.0</span></p>
+
+            <p class="mt-6">Your AI</p>
+            <p class=" text-sm tracking-tight">Learning Assistant</p>
+
+            <button
+              class=" ecChatBotBtn bg-white text-[#bf4b00] mt-4 w-full py-2 text-semibold flex gap-1 rounded-lg justify-center items-center font-lg font-semibold hover:shadow-sm">
+              <img src="assets/icons/chat-regular.svg" alt="chat with educat">
+              Let's Chat
+            </button>
+
+
+          </div>
+
+        </div>
+
+        <!-- shrink educat chatbot button -->
+        <button id="educat-sidemenu-sm"
+          class="ecChatBotBtnSm bg-white text-[#bf4b00] my-6 w-full py-2 text-semibold hidden rounded-lg justify-center items-center">
+          <img src="assets/icons/chat-regular.svg" alt="chat with educat">
+
+        </button>
+
+        <!-- bottom menu list -->
+        <nav class="pb-4">
+          <ul class="flex flex-col gap-1">
+            <!-- <li id="sidemenu-list"
+              class="h-12 flex items-center hover:bg-[#fa9d53] rounded-xl pl-4 transition-all ease-out duration-300 sidemenu-list">
+              <a href="#" class="flex gap-4">
+                <img class="w-6 h-6" src="assets/icons/help-center.svg" alt="home">
+                <span class="sidebar-text">Help</span>
+              </a>
+            </li> -->
+
+
+            <!-- sperator -->
+            <li class="w-full h-[2px] bg-white/20"></li>
+
+            <li id="sidemenu-list"
+              class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300">
+              <a href="#" class="flex gap-4 items-center">
+                <img class="w-6 h-6" src="assets/icons/logout.svg" alt="home">
+                <span class="sidebar-text">Logout</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+  </aside>
+
+
+  <!-- =========================================== -->
+  <!-- Main -->
+  <!-- =========================================== -->
+
+  <div class="w-full h-screen  overflow-hidden relative z-[10]">
+
+    <!-- =========================================== -->
+    <!-- Top Header Menu -->
+    <!-- =========================================== -->
+
+    <header id="header-menu"
+      class="  bg-white  flex justify-between w-full h-14 items-center  transition-all ease-out duration-300  p-4 border border-b-black/10">
+      <p class="lg:text-xl font-semibold">Educraft Academy</p>
+
+      <!-- Search Input -->
+      <div class="relative w-[40px] lg:w-1/3">
+        <input type="text" placeholder="Search"
+          class="hidden lg:block w-full pl-12 pr-4 py-2 rounded-full bg-[#fffaf4] focus:outline-none focus:border-primary border border-gray-200">
+        <img src="assets/icons/search-bar.svg" alt="Search Icon"
+          class="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-red-700" />
+      </div>
+
+      <div>
+        <!-- notification -->
+        <div class="bg-[#fdf0e7] rounded-full w-10 h-10 flex justify-center items-center relative">
+          <span
+            class="w-4 h-4 bg-[#ffbc00] absolute top-1 right-1 rounded-full flex justify-center text-xs font-semibold items-center">4</span>
+          <img src="assets/icons/bell.svg" alt="">
+        </div>
+      </div>
+
+      <!-- user profile -->
+      <div class="flex gap-2 justify-center items-center">
+        <p class="font-semibold">Faisal Saleem</p>
+        <img class="w-10 h-10 rounded-full border-2 border-primary" src="assets/img/user.png" alt="user profile">
+      </div>
+    </header>
+
+    <!-- =========================================== -->
+    <!-- Main Content Area - Dashboard -->
+    <!-- =========================================== -->
+
+    <main id="main"
+      class=" bg-primaryLight  max-w-screen-2xl mx-auto transition-all ease-out duration-300  flex flex-col lg:flex-row overflow-auto lg:overflow-hidden h-[calc(100vh-3.5rem)]">
+
+      <!-- section-->
+      <section class="px-4 pb-4 flex flex-col gap-4 lg:overflow-auto scrollbar-hide lg:h-full ">
+
+        <!-- educraft academy header design here.. -->
+        <div class="lg:min-h-[35vh] text-center flex flex-col relative justify-center items-center overflow-hidden">
+
+          <div class="z-[12] flex justify-center items-center h-full">
+            <img class="max-w-[600px] " src="assets/img/illustrations/edu-bg-icons.webp" alt="">
+          </div>
+
+          <div class="z-[11]">
+            <div class="text-lg-custom pb-4 ">Welcome to Educraft Academy!</div>
+            <p>Explore exciting skill-based courses designed for your future!</p>
+            <p class="font-semibold pb-6">🎮 Create games | 🎨 Design in 3D | 🕶 Build VR experiences & More</p>
+            <p>🔓 Ready to unlock your next big skill? Start now!</p>
+          </div>
+
+          <!-- circles -->
+          <div class="absolute -top-[15rem] z-[10] w-[390px] h-[390px]  rounded-full bg-primaryLight">
+          </div>
+
+          <div
+            class="absolute -top-[22rem] z-[9] w-[600px] h-[600px]  rounded-full bg-gradient-to-b from-[#f7c89e] to-[#f9ece1]">
+          </div>
+
+          <div
+            class="absolute -top-[29rem] z-[8] w-[800px] h-[800px]  rounded-full bg-gradient-to-b from-[#efdac8] to-[#fcf7f0]">
+          </div>
+
+
+        </div>
+
+        <!-- Skill based Courses -->
+        <div class="w-full">
+
+          <div class="flex h-10 items-center text-lg-custom gap-2">
+            <p>Skill based courses</p>
+            <span class="bg-primaryDark text-white text-sm py-1 px-3  rounded">5</span>
+          </div>
+
+          <div class="grid lg:grid-cols-4 gap-2">
+
+            <!-- course list in grid - dymanic change here.. -->
+            <div 
+              class="courseCard cursor-pointer bg-white w-full flex flex-col gap-3 border border-black/10 rounded-2xl p-3 relative hover:shadow-md">
+
+              <!-- course locked - hidden or flex class -->
+              <div
+                class="hidden absolute z-10 bg-gray-500/50 top-0 left-0 w-full h-full flex-col pt-8 items-center gap-2 rounded-xl">
+                <img class="w-14 h-14" src="assets/img/lock.png" alt="locked">
+                <p class="text-white bg-[#715849] p-3 mt-2 rounded-xl">Course is Locked</p>
+              </div>
+              <!-- end - course locked container -->
+
+
+              <!-- course image, unit, time -->
+              <div class="h-[160px] w-full relative rounded-xl overflow-hidden">
+                <div class="flex justify-between w-full bg-black/40 backdrop-blur-md  absolute text-white bottom-0 px-2 py-1
+                text-xs items-center">
+                  <p>Unit 1</p>
+                  <div class="flex gap-2 items-center ">
+                    <img class="w-[20px]" src="assets/icons/clock.svg" alt="time">
+                    <p>8 hr 53 mins</p>
+                  </div>
+                </div>
+                <img src="/assets/img/course-thumbnail/network.jpg" alt="course">
+              </div>
+
+              <p class="text-md font-semibold">Fundamentals of Computer Network & Internet</p>
+              <div class="flex justify-between w-full items-center">
+                <div class="flex gap-2">
+                  <img class="min-w-[20px]" src="assets/icons/lesson.svg" alt="lesson">
+                  <span class="font-semibold">11</span>
+                  <p class="text-black/60">Lesson</p>
+                </div>
+
+                <div class="flex gap-2">
+                  <img class="min-w-[20px]" src="assets/icons/star.svg" alt="rating">
+                  <span>4.7</span>
+                </div>
+
+              </div>
+
+              <div class="flex gap-2 items-center">
+                
+                <div class="bg-primaryLight border border-black/10 rounded-full w-[35px] h-[35px] flex justify-center items-center">
+                  <img class=" w-[22px]" src="assets/img/educraft-logo-accent.svg" alt="teacher">
+                </div>
+                <div>
+                  <p class="text-xs font-semibold">Educraft</p>
+                  <p class="text-black/50 text-xs">Author</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div 
+              class="courseCard bg-white w-full flex flex-col gap-3 border border-black/10 rounded-2xl p-3 relative hover:shadow-md">
+
+              <!-- course locked - hidden or flex class -->
+              <div
+                class="hidden absolute z-10 bg-gray-500/50 top-0 left-0 w-full h-full flex-col pt-8 items-center gap-2 rounded-xl">
+                <img class="w-14 h-14" src="assets/img/lock.png" alt="locked">
+                <p class="text-white bg-[#715849] p-3 mt-2 rounded-xl">Course is Locked</p>
+              </div>
+              <!-- end - course locked container -->
+
+
+              <!-- course image, unit, time -->
+              <div class="h-[160px] w-full relative rounded-xl overflow-hidden">
+                <div class="flex justify-between w-full bg-black/40 backdrop-blur-md  absolute text-white bottom-0 px-2 py-1
+              text-xs items-center">
+                  <p>Unit 1</p>
+                  <div class="flex gap-2 items-center ">
+                    <img class="w-[20px]" src="assets/icons/clock.svg" alt="time">
+                    <p>8 hr 53 mins</p>
+                  </div>
+                </div>
+                <img src="/assets/img/course-thumbnail/network.jpg" alt="course">
+              </div>
+
+              <p class="text-md font-semibold">Fundamentals of Computer Network & Internet</p>
+              <div class="flex justify-between w-full items-center">
+                <div class="flex gap-2">
+                  <img class="min-w-[20px]" src="assets/icons/lesson.svg" alt="lesson">
+                  <span class="font-semibold">11</span>
+                  <p class="text-black/60">Lesson</p>
+                </div>
+
+                <div class="flex gap-2">
+                  <img class="min-w-[20px]" src="assets/icons/star.svg" alt="rating">
+                  <span>4.7</span>
+                </div>
+
+              </div>
+
+              <div class="flex gap-2 items-center">
+                <img class="rounded-full w-[40px]" src="assets/img/teacher.png" alt="teacher">
+                <div>
+                  <p class="text-xs font-semibold">Khansa Naveen</p>
+                  <p class="text-black/50 text-xs">Author</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div 
+              class="courseCard bg-white w-full flex flex-col gap-3 border border-black/10 rounded-2xl p-3 relative hover:shadow-md">
+
+              <!-- course locked - hidden or flex class -->
+              <div
+                class="hidden absolute z-10 bg-gray-500/50 top-0 left-0 w-full h-full flex-col pt-8 items-center gap-2 rounded-xl">
+                <img class="w-14 h-14" src="assets/img/lock.png" alt="locked">
+                <p class="text-white bg-[#715849] p-3 mt-2 rounded-xl">Course is Locked</p>
+              </div>
+              <!-- end - course locked container -->
+
+
+              <!-- course image, unit, time -->
+              <div class="h-[160px] w-full relative rounded-xl overflow-hidden">
+                <div class="flex justify-between w-full bg-black/40 backdrop-blur-md  absolute text-white bottom-0 px-2 py-1
+            text-xs items-center">
+                  <p>Unit 1</p>
+                  <div class="flex gap-2 items-center ">
+                    <img class="w-[20px]" src="assets/icons/clock.svg" alt="time">
+                    <p>8 hr 53 mins</p>
+                  </div>
+                </div>
+                <img src="/assets/img/course-thumbnail/network.jpg" alt="course">
+              </div>
+
+              <p class="text-md font-semibold">Fundamentals of Computer Network & Internet</p>
+              <div class="flex justify-between w-full items-center">
+                <div class="flex gap-2">
+                  <img class="min-w-[20px]" src="assets/icons/lesson.svg" alt="lesson">
+                  <span class="font-semibold">11</span>
+                  <p class="text-black/60">Lesson</p>
+                </div>
+
+                <div class="flex gap-2">
+                  <img class="min-w-[20px]" src="assets/icons/star.svg" alt="rating">
+                  <span>4.7</span>
+                </div>
+
+              </div>
+
+              <div class="flex gap-2 items-center">
+                <img class="rounded-full w-[40px]" src="assets/img/teacher.png" alt="teacher">
+                <div>
+                  <p class="text-xs font-semibold">Khansa Naveen</p>
+                  <p class="text-black/50 text-xs">Author</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div
+              class="courseCard bg-white w-full flex flex-col gap-3 border border-black/10 rounded-2xl p-3 relative hover:shadow-md">
+
+              <!-- course locked - hidden or flex class -->
+              <div
+                class="hidden absolute z-10 bg-gray-500/50 top-0 left-0 w-full h-full flex-col pt-8 items-center gap-2 rounded-xl">
+                <img class="w-14 h-14" src="assets/img/lock.png" alt="locked">
+                <p class="text-white bg-[#715849] p-3 mt-2 rounded-xl">Course is Locked</p>
+              </div>
+              <!-- end - course locked container -->
+
+
+              <!-- course image, unit, time -->
+              <div class="h-[160px] w-full relative rounded-xl overflow-hidden">
+                <div class="flex justify-between w-full bg-black/40 backdrop-blur-md  absolute text-white bottom-0 px-2 py-1
+          text-xs items-center">
+                  <p>Unit 1</p>
+                  <div class="flex gap-2 items-center ">
+                    <img class="w-[20px]" src="assets/icons/clock.svg" alt="time">
+                    <p>8 hr 53 mins</p>
+                  </div>
+                </div>
+                <img src="/assets/img/course-thumbnail/network.jpg" alt="course">
+              </div>
+
+              <p class="text-md font-semibold">Fundamentals of Computer Network & Internet</p>
+              <div class="flex justify-between w-full items-center">
+                <div class="flex gap-2">
+                  <img class="min-w-[20px]" src="assets/icons/lesson.svg" alt="lesson">
+                  <span class="font-semibold">11</span>
+                  <p class="text-black/60">Lesson</p>
+                </div>
+
+                <div class="flex gap-2">
+                  <img class="min-w-[20px]" src="assets/icons/star.svg" alt="rating">
+                  <span>4.7</span>
+                </div>
+
+              </div>
+
+              <div class="flex gap-2 items-center">
+                <img class="rounded-full w-[40px]" src="assets/img/teacher.png" alt="teacher">
+                <div>
+                  <p class="text-xs font-semibold">Khansa Naveen</p>
+                  <p class="text-black/50 text-xs">Author</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div
+              class="courseCard bg-white w-full flex flex-col gap-3 border border-black/10 rounded-2xl p-3 relative hover:shadow-md">
+
+              <!-- course locked - hidden or flex class -->
+              <div
+                class="hidden absolute z-10 bg-gray-500/50 top-0 left-0 w-full h-full flex-col pt-8 items-center gap-2 rounded-xl">
+                <img class="w-14 h-14" src="assets/img/lock.png" alt="locked">
+                <p class="text-white bg-[#715849] p-3 mt-2 rounded-xl">Course is Locked</p>
+              </div>
+              <!-- end - course locked container -->
+
+
+              <!-- course image, unit, time -->
+              <div class="h-[160px] w-full relative rounded-xl overflow-hidden">
+                <div class="flex justify-between w-full bg-black/40 backdrop-blur-md  absolute text-white bottom-0 px-2 py-1
+        text-xs items-center">
+                  <p>Unit 1</p>
+                  <div class="flex gap-2 items-center ">
+                    <img class="w-[20px]" src="assets/icons/clock.svg" alt="time">
+                    <p>8 hr 53 mins</p>
+                  </div>
+                </div>
+                <img src="/assets/img/course-thumbnail/network.jpg" alt="course">
+              </div>
+
+              <p class="text-md font-semibold">Fundamentals of Computer Network & Internet</p>
+              <div class="flex justify-between w-full items-center">
+                <div class="flex gap-2">
+                  <img class="min-w-[20px]" src="assets/icons/lesson.svg" alt="lesson">
+                  <span class="font-semibold">11</span>
+                  <p class="text-black/60">Lesson</p>
+                </div>
+
+                <div class="flex gap-2">
+                  <img class="min-w-[20px]" src="assets/icons/star.svg" alt="rating">
+                  <span>4.7</span>
+                </div>
+
+              </div>
+
+              <div class="flex gap-2 items-center">
+                <img class="rounded-full w-[40px]" src="assets/img/teacher.png" alt="teacher">
+                <div>
+                  <p class="text-xs font-semibold">Khansa Naveen</p>
+                  <p class="text-black/50 text-xs">Author</p>
+                </div>
+              </div>
+
+            </div>
+
+
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+
+  </div>
+
+  <!-- ============================= -->
+  <!-- skillbasedEnrollmentPopup Popup  -->
+  <!-- ============================= -->
+
+  <div id="skillbasedEnrollmentPopup"
+    class="fixed top-0 left-0 w-full h-full bg-black/50 flex justify-center items-center z-[80] hidden">
+
+    <div
+      class="bg-gradient-to-b from-[#ffeedc] to-[#ffffff] rounded-xl shadow-lg w-full lg:max-w-[460px] min-h-[350px] flex flex-col items-center justify-between relative text-center overflow-hidden mx-4 lg:mx-0">
+
+      <div class="z-[12] flex justify-center items-center h-full ">
+        <img class="max-w-[600px] " src="assets/img/illustrations/edu-bg-icons.webp" alt="">
+      </div>
+
+      <div class="flex flex-col justify-center items-center pb-[40px]">
+        <p class="text-lg font-semibold pb-6">Skill-Based Course Enrollment</p>
+        <p class="animate-slide-up pb-4 max-w-[70%]">Educraft Academy is offering this course to help you develop
+          essential skills. It is designed to take your learning to the next level – and it's completely FREE!</p>
+        <p class="font-semibold">Would you like to enroll and start learning now?</p>
+      </div>
+
+      <div class="w-full px-4 py-2 border-transparent border-t-black/10 border ">
+
+        <!-- buttons -->
+        <div class="flex justify-between w-full items-center animate-slide-up">
+          <a href="/educraft-academy.html">
+            <button id="cancelBtn"
+              class="border border-black/30 px-4 py-2 rounded-lg w-full lg:min-w-[140px] font-medium">Maybe Later
+            </button>
+          </a>
+          <a href="/course-detail-overview.html">
+            <button id="enrollNowBtn"
+              class="bg-[#bf4b00] text-white px-4 py-2 rounded-lg w-full lg:min-w-[140px] font-medium">Enroll
+              Now
+            </button>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- close x button -->
+      <button id="skillbasedEnrollmentPopupCloseBtn"
+        class="bg-white hover:bg-[#e1d8cc] absolute top-4 right-4 p-1.5 rounded-full z-[200]">
+        <img class="w-5 h-5 " src="/assets/icons/close-line.svg" alt="close">
+      </button>
+
+    </div>
+
+
+
+  </div>
+
+  <!-- custom script -->
+  <script src="./js/main.js"></script>
+
+  <!-- custom js code -->
+  <script>
+
+    document.querySelectorAll('.courseCard').forEach(card => {
+    card.addEventListener('click', function () {
+      document.getElementById('skillbasedEnrollmentPopup').classList.remove('hidden');
+    });
+  });
+
+    document.getElementById('skillbasedEnrollmentPopupCloseBtn').addEventListener('click', function () {
+      document.getElementById('skillbasedEnrollmentPopup').classList.add('hidden');
+    });
+
+
+  </script>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+</body>
+
+</html>
