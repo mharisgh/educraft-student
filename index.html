@@ -17,6 +17,11 @@
 
 
   <style>
+    #skillMapHoverUnlocked {
+      pointer-events: none;
+      /* transform: translate(-50%, -100%); */
+    }
+
     .menu {
       display: block;
     }
@@ -104,6 +109,26 @@
       100% {
         transform: translateX(0) rotate(0deg);
       }
+    }
+
+    @keyframes gradient-border {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .animate-gradient-border {
+      background: linear-gradient(270deg, #f8740b, #d36b25);
+      background-size: 300%;
+      animation: gradient-border 3s ease infinite;
     }
 
     .custom-educy-animation {
@@ -419,26 +444,81 @@
             </div>
 
             <!-- motivational quote texts -->
-            <div class="min-h-[220px] relative bg-[#ffeeb1] rounded-xl overflow-auto">
+            <div
+              class="h-[240px] lg:h-[240px] relative bg-[#fdf6e1] border border-black/10 rounded-xl overflow-hidden">
 
               <!-- content -->
-              <div class="z-10 absolute w-full h-full text-black p-4 flex flex-col justify-between">
-                <div>
-                  <div class="flex gap-2">
-                    <img src="assets/icons/book.svg" alt="">
-                    <p>EduQuote Daily</p>
+              <div
+                class="z-10 absolute w-full h-full text-black px-3 pt-2 flex flex-col justify-between overflow-hidden">
+
+                <!-- icon, status, link -->
+                <div class="flex justify-between ">
+
+                  <div class="flex gap-2 items-center">
+                    <img class="w-6" src="assets/icons/leaderboard-icon.svg" alt="">
+                    <p class="text-[14px] font-semibold">Leaderboard</p>
                   </div>
 
-                  <p id="eduQuoteDailyText" class=" mt-3 my-2 leading-tight font-medium text-[1.1rem]">“Success is the
-                    sum of small efforts, repeated day in and day out.”</p>
-                  <p id="eduQuoteDailyAuthor" class="italic font-thin">Robert Collier</p>
+                  <div class="flex items-center gap-4">
+                    <p class="bg-primaryDark px-2  rounded-full text-white italic">You're <span
+                        class="font-semibold ">#23</span></p>
+                    <a href="#" class="text-primaryDark font-semibold hover:underline">View all</a>
+                  </div>
+
                 </div>
 
-                <div class="flex justify-between gap-6 items-center">
-                  <p>Your success shows your hard work!</p>
-                  <a href="/mycourses.html"
-                    class="bg-primaryDark text-white font-medium py-3 rounded-xl px-4 min-w-[160px] flex justify-center items-center">Resume
-                    Course</a>
+                <!-- 3 profiles -->
+                <div class="absolute h-full flex justify-center items-center w-full mx-auto top-3 z-20 gap-6">
+
+                  <div class="flex flex-col justify-center items-center relative -top-4">
+                    <img class="w-14 h-14 rounded-full border-2 border-white" src="assets/img/std2.png" alt="">
+                    <div
+                      class="absolute px-4 top-[50px] border-2 border-white bg-[#46adcf] rounded-full text-white font-semibold">
+                      2nd</div>
+                    <!-- give a character limit to names - otherwise ui issue will show -->
+                    <p class="font-semibold pt-4">Aleno Donini</p>
+                    <div class="flex gap-1 items-center justify-center ">
+                      <img class="w-4 h-4 object-cover" src="assets/img/educoin-sm.png" alt="educoin">
+                      <p class="font-semibold text-primaryDark">233</p>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col justify-center items-center relative -top-9">
+                    <img class="w-14 h-14 rounded-full border-2 border-white" src="assets/img/std1.png" alt="">
+                    <div
+                      class="absolute px-4 top-[50px] border-2 border-white bg-primaryDark rounded-full text-white font-semibold">
+                      1st</div>
+
+                    <p class="font-semibold pt-4">Abdul Raheem</p>
+                    <div class="flex gap-1 items-center justify-center ">
+                      <img class="w-4 h-4 object-cover" src="assets/img/educoin-sm.png" alt="educoin">
+                      <p class="font-semibold text-primaryDark">294</p>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col justify-center items-center relative ">
+                    <img class="w-14 h-14 rounded-full border-2 border-white" src="assets/img/std3.png" alt="">
+                    <div
+                      class="absolute px-4 top-[50px] border-2 border-white bg-[#18937e] rounded-full text-white font-semibold">
+                      3rd</div>
+                    <p class="font-semibold pt-4">Zayn Mansoor</p>
+                    <div class="flex gap-1 items-center justify-center ">
+                      <img class="w-4 h-4 object-cover" src="assets/img/educoin-sm.png" alt="educoin">
+                      <p class="font-semibold text-primaryDark">202</p>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- steps -->
+                <div class="relative -bottom-1   flex items-center justify-center w-full">
+                  <img class="w-[360px]" src="assets/img/leaderboard-graph.svg" alt="">
+                  <div class="absolute -bottom-3 flex items-center justify-evenly gap-8 w-full">
+                    <p class="font-bold text-[24px] text-white relative bottom-[13px]">2</p>
+                    <p class="font-bold text-[32px] text-white relative bottom-6">1</p>
+                    <p class="font-bold text-[16px] text-white relative bottom-[4px]">3</p>
+                  </div>
+
                 </div>
 
               </div>
@@ -453,7 +533,7 @@
               <p class="text-lg-custom">Profile</p>
               <a href="#" class="text-primaryDark text-xs font-medium hover:underline">View detail</a>
             </div>
-            <div class="border border-black/20 h-[220px] p-2 rounded-2xl flex flex-col justify-between ">
+            <div class="border border-black/20 h-[240px] p-2 rounded-2xl flex flex-col justify-between ">
               <div class="h-1/2  relative">
                 <div class="bg-primary relative rounded-tl-xl rounded-tr-xl  h-[60%] overflow-hidden">
 
@@ -1278,6 +1358,149 @@
     </div>
 
   </div>
+
+  <!-- ============================= -->
+  <!-- Skill Map Popup -->
+  <!-- ============================= -->
+
+  <div id="skillMapPopup"
+    class="fixed top-0 left-0 w-full h-full bg-black/50 flex justify-center items-center z-[80] hidden">
+
+    <div
+      class="bg-gradient-to-b from-[#ffeedc] to-[#ffffff] rounded-xl shadow-lg w-full lg:max-w-[460px] h-[230px] flex flex-col items-center justify-between relative text-center overflow-hidden mx-4 lg:mx-0">
+
+
+      <div class="flex flex-col justify-center items-center  h-full w-full">
+        <img class="w-[120px]" src="assets/img/skillmap/holdon.webp" alt="">
+        <p class="text-lg font-semibold pb-4 pt-2">Hold on!</p>
+        <p class="animate-slide-up max-w-[70%]">
+          Please finish the current course before you start this one 💪
+        </p>
+      </div>
+
+
+      <!-- close x button -->
+      <button id="skillMapPopupCloseBtn"
+        class="bg-white hover:bg-[#e1d8cc] absolute top-4 right-4 p-1.5 rounded-full z-[200]">
+        <img class="w-5 h-5" src="/assets/icons/close-line.svg" alt="close">
+      </button>
+
+    </div>
+  </div>
+
+  <!-- ============================= -->
+  <!-- Skill Map Hover Custom Tooltip Unlocked-->
+  <!-- ============================= -->
+
+  <div id="skillMapHoverUnlocked" class="absolute z-[100] hidden">
+
+    <div
+      class="bg-gradient-to-b from-[#ffeedc] to-[#ffffff] rounded-xl shadow-xl w-[250px] h-[140px] flex flex-col justify-between relative overflow-hidden mx-4 lg:mx-0 p-3 border border-black/20 ">
+
+
+      <div class="flex flex-col h-full w-full">
+        <div class="flex justify-between items-center">
+
+          <div class="">
+            <div class="flex justify-center items-center gap-1">
+              <img class="w-[20px] pb-1" src="assets/img/skillmap/course-lock.webp" alt="">
+              <p class="text-[16px]">Unlocked</p>
+            </div>
+            <p class="leading-tight text-lg pl-1"><span class="font-bold pr-1">2 days</span>ago</p>
+          </div>
+
+          <!-- Date dynamically change here -->
+          <div class="flex flex-col justify-center items-center">
+            <div class="relative ">
+              <img class="w-[40px]" src="assets/img/skillmap/calendar.webp" alt="">
+              <p class="text-primaryDark text-[16px] absolute top-[14px] right-[10px] font-bold">23</p>
+            </div>
+            <p>March</p>
+          </div>
+        </div>
+
+
+
+        <div class="h-[1px] w-full bg-black/10 my-2"></div>
+        <div class="flex gap-2">
+          <svg class="w-[20px] fill-black/40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            fill="currentColor">
+            <path
+              d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 9.5C12.8284 9.5 13.5 8.82843 13.5 8C13.5 7.17157 12.8284 6.5 12 6.5C11.1716 6.5 10.5 7.17157 10.5 8C10.5 8.82843 11.1716 9.5 12 9.5ZM14 15H13V10.5H10V12.5H11V15H10V17H14V15Z">
+            </path>
+          </svg>
+
+          <div>
+            <p class="flex gap-1">Complete this course within<span class="font-semibold">13 days</span></p>
+            <p class="flex gap-1">to earn <span class="flex gap-1 font-semibold text-primaryDark"><img class="w-5"
+                  src="assets//img/educoin-sm.png" alt="">2 EduCoins</span></p>
+
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- ============================= -->
+  <!-- Skill Map Hover Custom Tooltip locked-->
+  <!-- ============================= -->
+
+  <div id="skillMapHoverLocked" class="absolute z-[100] hidden">
+
+    <div
+      class="bg-gray-50 rounded-xl shadow-xl w-[250px] h-[140px] flex flex-col justify-between relative overflow-hidden mx-4 lg:mx-0 p-3 border border-black/20 ">
+
+
+      <div class="flex flex-col h-full w-full">
+        <div class="flex justify-between items-center">
+
+          <div class="">
+            <div class="flex justify-center items-center gap-1">
+              <img class="w-[20px] pb-1" src="assets/img/skillmap/course-lock.webp" alt="">
+              <p class="text-[16px]">Unlocks in</p>
+            </div>
+            <p class="leading-tight text-lg pl-1"><span class="font-bold pr-1">20 days</span></p>
+          </div>
+
+          <!-- Date dynamically change here -->
+          <div class="flex flex-col justify-center items-center">
+            <div class="relative ">
+              <img class="w-[40px] saturate-0" src="assets/img/skillmap/calendar.webp" alt="">
+              <p class=" text-[16px] absolute top-[14px] right-[10px] font-bold">14</p>
+            </div>
+            <p>April</p>
+          </div>
+
+        </div>
+
+
+
+        <div class="h-[1px] w-full bg-black/10 my-2"></div>
+        <div class="flex gap-2">
+          <svg class="w-[20px] fill-black/40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            fill="currentColor">
+            <path
+              d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 9.5C12.8284 9.5 13.5 8.82843 13.5 8C13.5 7.17157 12.8284 6.5 12 6.5C11.1716 6.5 10.5 7.17157 10.5 8C10.5 8.82843 11.1716 9.5 12 9.5ZM14 15H13V10.5H10V12.5H11V15H10V17H14V15Z">
+            </path>
+          </svg>
+
+          <div>
+            <p class="flex gap-1">Complete this course within<span class="font-semibold">15 days</span></p>
+            <p class="flex gap-1">of unlocking to earn <span class="flex gap-1 font-semibold text-primaryDark"><img
+                  class="w-5" src="assets//img/educoin-sm.png" alt="">2 EduCoins</span></p>
+
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
 
 
   <!-- custom script -->
