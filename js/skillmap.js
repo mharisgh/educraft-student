@@ -299,10 +299,13 @@ function generateCourseCards() {
 
     function showSkillMapPopup() {
       skillMapPopup.classList.remove('hidden');
+      skillMapPopup.classList.add('flex');
+      
     }
 
     function closeSkillMapPopup() {
       skillMapPopup.classList.add('hidden');
+      skillMapPopup.classList.remove('flex');
     }
 
     // Close on button click
