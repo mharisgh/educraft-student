@@ -444,8 +444,7 @@
             </div>
 
             <!-- motivational quote texts -->
-            <div
-              class="h-[240px] lg:h-[240px] relative bg-[#fdf6e1] border border-black/10 rounded-xl overflow-hidden">
+            <div class="h-[240px] lg:h-[240px] relative bg-[#fdf6e1] border border-black/10 rounded-xl overflow-hidden">
 
               <!-- content -->
               <div
@@ -468,7 +467,7 @@
                 </div>
 
                 <!-- 3 profiles -->
-                <div class="absolute h-full flex justify-center items-center w-full mx-auto top-3 z-20 gap-6">
+                <div class="absolute h-full flex justify-center items-center w-full mx-auto top-3 z-20 left-0 gap-10">
 
                   <div class="flex flex-col justify-center items-center relative -top-4">
                     <img class="w-14 h-14 rounded-full border-2 border-white" src="assets/img/std2.png" alt="">
@@ -1499,6 +1498,56 @@
 
 
     </div>
+  </div>
+
+  <!-- ============================= -->
+  <!-- skillbasedEnrollmentPopup  -->
+  <!-- ============================= -->
+
+  <div id="skillbasedEnrollmentPopup"
+    class="fixed top-0 left-0 w-full h-full bg-black/50 flex justify-center items-center z-[80] ">
+
+    <div
+      class="bg-gradient-to-b from-[#ffeedc] to-[#ffffff] rounded-xl shadow-lg w-full lg:max-w-[460px] min-h-[350px] flex flex-col items-center justify-between relative text-center overflow-hidden mx-4 lg:mx-0">
+
+      <div class="z-[12] flex justify-center items-center h-full ">
+        <img class="max-w-[600px] " src="assets/img/illustrations/edu-bg-icons.webp" alt="">
+      </div>
+
+      <div class="flex flex-col justify-center items-center pb-[40px]">
+        <p class="text-lg font-semibold pb-6">Skill-Based Course Enrollment</p>
+        <p class="animate-slide-up pb-4 max-w-[70%]">Educraft Academy is offering this course to help you develop
+          essential skills. It is designed to take your learning to the next level – and it's completely FREE!</p>
+        <p class="font-semibold">Would you like to enroll and start learning now?</p>
+      </div>
+
+      <div class="w-full px-4 py-2 border-transparent border-t-black/10 border ">
+
+        <!-- buttons -->
+        <div class="flex justify-between w-full items-center animate-slide-up">
+          <a href="/educraft-academy.html">
+            <button id="cancelBtn"
+              class="border border-black/30 px-4 py-2 rounded-lg w-full lg:min-w-[140px] font-medium">Maybe Later
+            </button>
+          </a>
+          <a href="/course-detail-overview.html">
+            <button id="enrollNowBtn"
+              class="bg-[#bf4b00] text-white px-4 py-2 rounded-lg w-full lg:min-w-[140px] font-medium">Enroll
+              Now
+            </button>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- close x button -->
+      <button id="skillbasedEnrollmentPopupCloseBtn"
+        class="bg-white hover:bg-[#e1d8cc] absolute top-4 right-4 p-1.5 rounded-full z-[200]">
+        <img class="w-5 h-5 " src="/assets/icons/close-line.svg" alt="close">
+      </button>
+
+    </div>
+
   </div>
 
 
