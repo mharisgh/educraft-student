@@ -50,18 +50,57 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // The following script is for choose color
-document.querySelectorAll('input[name="color"]').forEach(input => {
-  input.addEventListener('change', function () {
+// document.querySelectorAll('input[name="color"]').forEach(input => {
+//   input.addEventListener('change', function () {
+//     document.querySelectorAll('input[name="color"] + span + svg').forEach(svg => {
+//       svg.classList.add('hidden');
+//     });
+//     if (this.checked) {
+//       this.nextElementSibling.nextElementSibling.classList.remove('hidden');
+//       const selectedColor = window.getComputedStyle(this.nextElementSibling).backgroundColor;
+//       document.getElementById('notesPopup').style.backgroundColor = selectedColor;
+//     }
+//   });
+// });
+document.addEventListener("DOMContentLoaded", () => {
+  const colorInputs = document.querySelectorAll('input[name="color"]');
+  const notesPopup = document.getElementById("notesPopup");
+
+  if (!colorInputs.length || !notesPopup) {
+    console.error("Missing color inputs or notesPopup");
+    return;
+  }
+
+  // ✅ Function to update color & tick mark
+  function updateColorSelection() {
+    // Hide all tick marks
     document.querySelectorAll('input[name="color"] + span + svg').forEach(svg => {
-      svg.classList.add('hidden');
+      svg.classList.add("hidden");
     });
-    if (this.checked) {
-      this.nextElementSibling.nextElementSibling.classList.remove('hidden');
-      const selectedColor = window.getComputedStyle(this.nextElementSibling).backgroundColor;
-      document.getElementById('notesPopup').style.backgroundColor = selectedColor;
+
+    // Find the checked radio input
+    const selectedInput = document.querySelector('input[name="color"]:checked');
+
+    if (selectedInput) {
+      // ✅ Show tick mark next to the selected input
+      const checkmark = selectedInput.nextElementSibling.nextElementSibling;
+      if (checkmark) checkmark.classList.remove("hidden");
+
+      // ✅ Apply selected color to the notesPopup
+      const selectedColor = window.getComputedStyle(selectedInput.nextElementSibling).backgroundColor;
+      notesPopup.style.backgroundColor = selectedColor;
     }
+  }
+
+  // ✅ Add event listeners to all color inputs
+  colorInputs.forEach(input => {
+    input.addEventListener("change", updateColorSelection);
   });
+
+  // ✅ Ensure one color is selected when notes open
+  updateColorSelection();
 });
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -72,9 +111,9 @@ document.addEventListener("DOMContentLoaded", function () {
         [{ 'size': ['small', false, 'large', 'huge'] }],
         ['bold', 'italic', 'underline'],
         ['image'],
-        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }],
         [{ 'color': [] }, { 'background': [] }],
-        
+
       ]
     }
   });
