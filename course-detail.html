@@ -16,6 +16,12 @@
   <!-- Progres Pie -->
   <script src="https://cdn.jsdelivr.net/npm/progressbar.js/dist/progressbar.min.js"></script>
 
+  <!-- notes  -->
+  <!-- Interact.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.11/dist/interact.min.js"></script>
+  <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
   <style>
     .tab-active {
       color: black;
@@ -239,7 +245,8 @@
           <img class="absolute z-10  w-[90px] top-2 -right-2 " src="assets/img/educy.webp" alt="chat bot">
           <div class="px-3 py-3">
             <p class="">I'm</p>
-            <p class="font-bold text-base tracking-tight -mt-1">EduCat<span class="text-xs font-base">&nbsp;2.0</span></p>
+            <p class="font-bold text-base tracking-tight -mt-1">EduCat<span class="text-xs font-base">&nbsp;2.0</span>
+            </p>
 
             <p class="mt-6">Your AI</p>
             <p class=" text-sm tracking-tight">Learning Assistant</p>
@@ -351,7 +358,7 @@
       class=" bg-primaryLight  max-w-screen-2xl mx-auto transition-all ease-out duration-300  flex flex-col lg:flex-row overflow-auto lg:overflow-hidden h-[calc(100vh-3.5rem)] relative">
 
       <!-- main section-->
-      <section class="relative  px-4 py-2 flex flex-col gap-4 lg:overflow-auto scrollbar-hide lg:h-full w-full">
+      <section class="relative  px-4 py-2 flex flex-col gap-3 lg:overflow-auto scrollbar-hide lg:h-full w-full">
 
         <!-- bottom fixed NEXT buttom  -->
         <section class="w-full h-12  z-[30] lg:z-[10] fixed bottom-0 left-0 flex">
@@ -368,7 +375,11 @@
               <a href="#">
                 <button
                   class="justify-self-end px-4 py-2   lg:w-fit w-full justify-center rounded-lg bg-primaryDark text-white hover:bg-primary flex items-center gap-2">
-                  <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.8284 12.0007L15.7782 16.9504L14.364 18.3646L8 12.0007L14.364 5.63672L15.7782 7.05093L10.8284 12.0007Z"></path></svg>
+                  <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M10.8284 12.0007L15.7782 16.9504L14.364 18.3646L8 12.0007L14.364 5.63672L15.7782 7.05093L10.8284 12.0007Z">
+                    </path>
+                  </svg>
                   Previous : video
 
                 </button>
@@ -397,13 +408,13 @@
         </section>
 
         <!-- back, bredcrums, full screen button -->
-        <div class="flex justify-between items-center">
+        <div class="flex justify-between items-center ">
 
           <div class="flex gap-4 items-center">
-            <a href="#" onclick="history.back(); return false;"
-              class="pl-2 pr-6 h-[36px] rounded-xl bg-white  border border-black/10 hover:border-black/50 flex items-center gap-1">
+            <a href="/course-detail-overview.html"
+              class="pl-2 pr-5 h-[36px] rounded-lg bg-white  border border-black/10 hover:border-black/50 flex items-center gap-1">
               <img class="w-5" src="/assets/icons/arrow-left.svg" alt="back">
-              <p class="font-medium">Back to Courses</p>
+              <p class="font-medium">Back</p>
             </a>
 
             <div class="text-black/50 font-medium">
@@ -412,10 +423,24 @@
             </div>
           </div>
 
-          <div id="viewFullscreen"
-            class="px-3 py-2 bg-white rounded-lg flex gap-2 border cursor-pointer hover:border-black/20">
-            <p id="fullScreenText" class="hidden lg:block">View in Fullscreen</p>
-            <img class="lg:hidden" src="assets/icons/fullscreen.svg" alt="">
+          <!-- notes button -->
+          <div class="flex gap-2">
+            <button id="notesBtn"
+              class="px-1 pr-3 py-1 bg-white rounded-lg flex gap-2 border cursor-pointer hover:border-black/20 items-center">
+
+              <div class="bg-primaryDark w-7 h-7 rounded flex justify-center items-center">
+                <img class="hidden lg:block w-5 h-5" src="assets/img/notes.webp" alt="">
+              </div>
+
+              <p class="font-semibold">Notes</p>
+            </button>
+
+
+            <div id="viewFullscreen"
+              class="px-3 py-2 bg-white rounded-lg flex gap-2 border cursor-pointer hover:border-black/20">
+              <p id="fullScreenText" class="hidden lg:block">View in Fullscreen</p>
+              <img class="lg:hidden" src="assets/icons/fullscreen.svg" alt="">
+            </div>
           </div>
 
         </div>
@@ -1022,98 +1047,98 @@
 
               <!-- timline content item list -->
               <div class="flex justify-between items-center  px-2 py-2 rounded-lg ">
-              
+
                 <div class="flex gap-3 items-center">
-              
+
                   <!-- status - played  -->
                   <div class="min-w-[28px] h-[28px] rounded-full bg-primary flex justify-center items-center">
-              
+
                     <img class="w-[14px]" src="/assets/icons/played.svg" alt="completed">
                   </div>
-              
+
                   <!-- video title -->
                   <p class="font-medium leading-4 ">Fundamental lighting 101</p>
                 </div>
-              
+
                 <!-- video duration -->
                 <p class="text-black/60">28:34</p>
-              
+
               </div>
-              
+
               <!-- timline content item list -->
               <div class="flex justify-between items-center  px-2 py-2 rounded-lg   ">
-              
+
                 <div class="flex gap-3 items-center">
-              
+
                   <!-- status - played  -->
                   <div class=" min-w-[28px] h-[28px] rounded-full bg-primary flex justify-center items-center">
-              
+
                     <img class="w-[14px]" src="/assets/icons/played.svg" alt="completed">
                   </div>
-              
+
                   <!-- video title -->
                   <p class="font-medium leading-4 ">Passing through Key light</p>
                 </div>
-              
+
                 <!-- video duration -->
                 <p class="text-black/60">28:34</p>
-              
+
               </div>
-              
+
               <!-- timline content item list -->
               <div class="flex justify-between items-center  px-2 py-2 rounded-lg timeline-content-item-active">
-              
+
                 <div class="flex gap-3 items-center">
-              
+
                   <!-- status - played  -->
                   <!-- <div class="ml-1 min-w-[28px] h-[28px] rounded-full bg-primary flex justify-center items-center">
                                         
                                                         <img class="w-[14px]" src="/assets/icons/played.svg" alt="completed">
                                                       </div> -->
-              
+
                   <!-- status - play & pause -->
                   <div id="playPauseBtn"
                     class=" min-w-[28px] h-[28px] rounded-full bg-white flex justify-center items-center cursor-pointer">
-              
+
                     <img id="playPauseIcon" class="w-[14px]" src="/assets/icons/pause-orange.svg" alt="completed">
-              
+
                   </div>
-              
+
                   <!-- video title -->
                   <p class="font-medium leading-4 ">High beam realistic lamp</p>
                 </div>
-              
+
                 <!-- video duration -->
                 <p class="text-black/80">28:34</p>
-              
+
               </div>
-              
+
               <!-- timline content item list -->
               <div class="flex justify-between items-center  px-2 py-2 rounded-lg   ">
-              
+
                 <div class="flex gap-3 items-center">
-              
+
                   <!-- status - played  -->
                   <!-- <div class="ml-1 min-w-[28px] h-[28px] rounded-full bg-primary flex justify-center items-center">
                                                 
                                                     <img class="w-[14px]" src="/assets/icons/played.svg" alt="completed">
                                                   </div> -->
-              
+
                   <!-- status - play & pause -->
                   <div id="playPauseBtn"
                     class=" min-w-[28px] h-[28px] rounded-full bg-[#f2f2f2] flex justify-center items-center cursor-pointer">
-              
+
                     <img class="w-[17px] ml-[1px]" src="/assets/icons/video-lock.svg" alt="locked">
-              
+
                   </div>
-              
+
                   <!-- video title -->
                   <p class="font-medium leading-4 ">Environmental lighting</p>
                 </div>
-              
+
                 <!-- video duration -->
                 <p class="text-black/60">28:34</p>
-              
+
               </div>
 
 
@@ -1289,12 +1314,105 @@
 
     </div>
 
+    <!-- ================================ -->
+    <!-- Notes Popup -->
+    <!-- ================================ -->
+
+    <div id="notesPopup"
+      class=" bg-[#ffdea7] text-black rounded-xl shadow-2xl w-[420px] h-[520px] max-h-[90vh] fixed top-[14%] left-[50%]  z-50 border-[3px] border-white  flex-col justify-between hidden">
+
+      <!-- Header (Draggable Area) -->
+      <div id="notesHeader" class="notes-header flex justify-between items-center h-[8%] p-2 bg-white/50 cursor-move ">
+        <div class="flex items-center gap-2">
+          <img src="assets/icons/book.svg" alt="">
+          <p class="font-semibold text-[14px]">Notes</p>
+        </div>
+        <!-- close x button -->
+        <button id="closeNotesBtn" class="bg-white hover:bg-[#e1d8cc]  top-3 right-3 p-1.5 rounded-full z-[200]">
+          <img class="w-4 h-4 " src="/assets/icons/close-line.svg" alt="close">
+        </button>
+      </div>
+
+      <!-- rich text editor -->
+      <div class="content h-full flex flex-col max-h-[82%] overflow-hidden scrollbar-custom">
+        <!-- Create the editor container -->
+        <div id="editor" class="overflow-auto  scrollbar-custom"></div>
+
+      </div>
+
+      <!-- footer -->
+      <div class="bg-white w-full h-[10%] flex justify-between items-center p-2">
+
+        <!-- color picker -->
+        <div class="flex gap-2">
+          <label class="relative">
+            <input type="radio" name="color" value="#ffdea7" class="sr-only">
+            <span class="w-6 h-6 rounded-full bg-[#ffdea7] border border-black/20 inline-block cursor-pointer"></span>
+            <svg class="w-4 h-4 text-white absolute top-1 left-1 hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </label>
+          <label class="relative">
+            <input type="radio" name="color" value="#ff8c00" class="sr-only">
+            <span class="w-6 h-6 rounded-full bg-[#e3d5fe] border border-black/20 inline-block cursor-pointer"></span>
+            <svg class="w-4 h-4 text-white absolute top-1 left-1 hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </label>
+          <label class="relative">
+            <input type="radio" name="color" value="#f8740b" class="sr-only">
+            <span class="w-6 h-6 rounded-full bg-[#e3ef8f] border border-black/20 inline-block cursor-pointer"></span>
+            <svg class="w-4 h-4 text-white absolute top-1 left-1 hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </label>
+          <label class="relative">
+            <input type="radio" name="color" value="#e67300" class="sr-only">
+            <span class="w-6 h-6 rounded-full bg-[#c2e1e7] border border-black/20 inline-block cursor-pointer"></span>
+            <svg class="w-4 h-4 text-white absolute top-1 left-1 hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </label>
+          <label class="relative">
+            <input type="radio" name="color" value="#bf4b00" class="sr-only">
+            <span class="w-6 h-6 rounded-full bg-[#f6d5d5] border border-black/20 inline-block cursor-pointer"></span>
+            <svg class="w-4 h-4 text-white absolute top-1 left-1 hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button id="saveNoteBtn"
+          class="bg-white rounded-lg px-3 py-2 border border-black/20 font-semibold hover:bg-primaryDark hover:text-white flex items-center gap-2">
+
+          <svg class="w-4 h-4 text-primarDark hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            fill="currentColor">
+            <path
+              d="M1.94607 9.31543C1.42353 9.14125 1.4194 8.86022 1.95682 8.68108L21.043 2.31901C21.5715 2.14285 21.8746 2.43866 21.7265 2.95694L16.2733 22.0432C16.1223 22.5716 15.8177 22.59 15.5944 22.0876L11.9999 14L17.9999 6.00005L9.99992 12L1.94607 9.31543Z">
+            </path>
+          </svg>
+
+          Submit</button>
+      </div>
+
+    </div>
+
+    <!-- ================================ -->
 
   </div>
 
+
   <!-- custom script -->
+
   <script src="./js/main.js"></script>
   <script src="./js/courseDetails.js"></script>
+  <script src="./js/notes.js"></script>
 
 
 </body>

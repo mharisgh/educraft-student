@@ -324,37 +324,6 @@ function generateCourseCards() {
       }
     });
 
-
-    // Create a tooltip div
-    // const tooltip = document.getElementById('skillMapHoverUnlocked');
-    // tooltip.classList.add('absolute', 'hidden', 'bg-black', 'text-white', 'text-sm', 'px-2', 'py-1', 'rounded', 'z-50', 'shadow-lg');
-    // document.body.appendChild(tooltip);
-
-    // courseDiv.addEventListener('mouseover', (e) => {
-    //   if (course.courseStatus === 'locked') {
-    //     tooltip.innerHTML = 'Complete this course within 15 days of unlocking to earn 2 EduCoins';
-    //   } else if (course.courseStatus === 'unlocked') {
-    //     tooltip.innerHTML = 'Complete this course within 7 days to earn 2 EduCoins';
-    //   }
-
-    //   if (course.courseStatus === 'locked' || course.courseStatus === 'unlocked') {
-    //     tooltip.classList.remove('hidden');
-    //     tooltip.style.left = `${e.pageX + 10}px`;
-    //     tooltip.style.top = `${e.pageY}px`;
-    //   }
-    // });
-
-    // courseDiv.addEventListener('mousemove', (e) => {
-    //   tooltip.style.left = `${e.pageX + 10}px`;
-    //   tooltip.style.top = `${e.pageY}px`;
-    // });
-
-    // courseDiv.addEventListener('mouseout', () => {
-    //   tooltip.classList.add('hidden');
-    // });
-
-
-
   });
 
 

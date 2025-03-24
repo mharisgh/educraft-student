@@ -443,7 +443,7 @@
 
             </div>
 
-            <!-- motivational quote texts -->
+            <!-- leaderboard -->
             <div class="h-[240px] lg:h-[240px] relative bg-[#fdf6e1] border border-black/10 rounded-xl overflow-hidden">
 
               <!-- content -->
@@ -451,17 +451,17 @@
                 class="z-10 absolute w-full h-full text-black px-3 pt-2 flex flex-col justify-between overflow-hidden">
 
                 <!-- icon, status, link -->
-                <div class="flex justify-between ">
+                <div class="flex justify-between relative z-30">
 
-                  <div class="flex gap-2 items-center">
+                  <div class="flex gap-2 items-center ">
                     <img class="w-6" src="assets/icons/leaderboard-icon.svg" alt="">
-                    <p class="text-[14px] font-semibold">Leaderboard</p>
+                    <p class="text-[14px] font-semibold  ">Leaderboard</p>
                   </div>
 
-                  <div class="flex items-center gap-4">
-                    <p class="bg-primaryDark px-2  rounded-full text-white italic">You're <span
-                        class="font-semibold ">#23</span></p>
-                    <a href="#" class="text-primaryDark font-semibold hover:underline">View all</a>
+                  <div id="learderboardPopupBtn" class="flex items-center gap-4   ">
+                    <div class="bg-primaryDark px-2  rounded-full text-white italic">You're <span
+                        class="font-semibold ">#23</span></div>
+                    <div class="text-primaryDark  cursor-pointer font-semibold hover:underline ">View all</div>
                   </div>
 
                 </div>
@@ -1501,48 +1501,103 @@
   </div>
 
   <!-- ============================= -->
-  <!-- skillbasedEnrollmentPopup  -->
+  <!-- leaderboardPopup  -->
   <!-- ============================= -->
 
-  <div id="skillbasedEnrollmentPopup"
-    class="fixed top-0 left-0 w-full h-full bg-black/50 flex justify-center items-center z-[80] ">
+  <div id="leaderboardPopup"
+    class="fixed top-0 left-0 w-full h-full bg-black/50  justify-center items-center z-[80] hidden">
 
     <div
-      class="bg-gradient-to-b from-[#ffeedc] to-[#ffffff] rounded-xl shadow-lg w-full lg:max-w-[460px] min-h-[350px] flex flex-col items-center justify-between relative text-center overflow-hidden mx-4 lg:mx-0">
+      class="bg-gradient-to-b from-[#fef4e9]  to-white rounded-xl shadow-lg w-full lg:max-w-[460px] min-h-[350px] max-h-[76vh] flex flex-col relative overflow-hidden mx-4 lg:mx-0 px-3 py-2">
 
-      <div class="z-[12] flex justify-center items-center h-full ">
-        <img class="max-w-[600px] " src="assets/img/illustrations/edu-bg-icons.webp" alt="">
+      <!-- header -->
+      <div class="min-h-[44px] flex flex-col justify-between">
+        <div class="flex gap-2 items-center pt-[8px]">
+          <img class="w-6" src="assets/icons/leaderboard-icon.svg" alt="">
+          <p class="text-[16px]  font-semibold">Leaderboard</p>
+        </div>
+        <div class="w-full h-1 border-transparent border-t-black/10 border "></div>
       </div>
 
-      <div class="flex flex-col justify-center items-center pb-[40px]">
-        <p class="text-lg font-semibold pb-6">Skill-Based Course Enrollment</p>
-        <p class="animate-slide-up pb-4 max-w-[70%]">Educraft Academy is offering this course to help you develop
-          essential skills. It is designed to take your learning to the next level – and it's completely FREE!</p>
-        <p class="font-semibold">Would you like to enroll and start learning now?</p>
-      </div>
+      <!-- graph area -->
 
-      <div class="w-full px-4 py-2 border-transparent border-t-black/10 border ">
+      <div class="h-[220px] min-h-[220px] relative overflow-hidden">
 
-        <!-- buttons -->
-        <div class="flex justify-between w-full items-center animate-slide-up">
-          <a href="/educraft-academy.html">
-            <button id="cancelBtn"
-              class="border border-black/30 px-4 py-2 rounded-lg w-full lg:min-w-[140px] font-medium">Maybe Later
-            </button>
-          </a>
-          <a href="/course-detail-overview.html">
-            <button id="enrollNowBtn"
-              class="bg-[#bf4b00] text-white px-4 py-2 rounded-lg w-full lg:min-w-[140px] font-medium">Enroll
-              Now
-            </button>
-          </a>
+        <div class="flex items-center gap-4 absolute top-2 right-2">
+          <p class="bg-primaryDark px-2  rounded-full text-white italic">You're <span class="font-semibold ">#7</span>
+          </p>
         </div>
 
+
+        <!-- 3 profiles -->
+        <div class="absolute h-full flex justify-center items-center w-full mx-auto z-20 left-0 gap-10">
+
+          <div class="flex flex-col justify-center items-center relative -top-4">
+            <img class="w-14 h-14 rounded-full border-2 border-white" src="assets/img/std2.png" alt="">
+            <div
+              class="absolute px-4 top-[50px] border-2 border-white bg-[#46adcf] rounded-full text-white font-semibold">
+              2nd</div>
+            <!-- give a character limit to names - otherwise ui issue will show -->
+            <p class="font-semibold pt-4">Aleno Donini</p>
+            <div class="flex gap-1 items-center justify-center ">
+              <img class="w-4 h-4 object-cover" src="assets/img/educoin-sm.png" alt="educoin">
+              <p class="font-semibold text-primaryDark">233</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col justify-center items-center relative -top-9">
+            <img class="w-14 h-14 rounded-full border-2 border-white" src="assets/img/std1.png" alt="">
+            <div
+              class="absolute px-4 top-[50px] border-2 border-white bg-primaryDark rounded-full text-white font-semibold">
+              1st</div>
+
+            <p class="font-semibold pt-4">Abdul Raheem</p>
+            <div class="flex gap-1 items-center justify-center ">
+              <img class="w-4 h-4 object-cover" src="assets/img/educoin-sm.png" alt="educoin">
+              <p class="font-semibold text-primaryDark">294</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col justify-center items-center relative ">
+            <img class="w-14 h-14 rounded-full border-2 border-white" src="assets/img/std3.png" alt="">
+            <div
+              class="absolute px-4 top-[50px] border-2 border-white bg-[#18937e] rounded-full text-white font-semibold">
+              3rd</div>
+            <p class="font-semibold pt-4">Zayn Mansoor</p>
+            <div class="flex gap-1 items-center justify-center ">
+              <img class="w-4 h-4 object-cover" src="assets/img/educoin-sm.png" alt="educoin">
+              <p class="font-semibold text-primaryDark">202</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- steps -->
+        <div class="relative -bottom-1 h-full flex items-center justify-center w-full">
+          <img class="w-[360px] absolute bottom-0" src="assets/img/leaderboard-graph.svg" alt="">
+          <div class="absolute -bottom-3 flex items-center justify-evenly gap-8 w-full">
+            <p class="font-bold text-[24px] text-white relative bottom-[13px]">2</p>
+            <p class="font-bold text-[32px] text-white relative bottom-6">1</p>
+            <p class="font-bold text-[16px] text-white relative bottom-[4px]">3</p>
+          </div>
+
+        </div>
+
+
+
       </div>
 
+      <!-- all student list -->
+      <div id="leaderboard" class="flex flex-col gap-2 mt-4 px-2 overflow-y-scroll scrollbar-custom">
+
+        <!-- list items will be populated here from JSON leaderboard.js -->
+
+      </div>
+
+
       <!-- close x button -->
-      <button id="skillbasedEnrollmentPopupCloseBtn"
-        class="bg-white hover:bg-[#e1d8cc] absolute top-4 right-4 p-1.5 rounded-full z-[200]">
+      <button id="leaderboardClosebtn"
+        class="bg-white hover:bg-[#e1d8cc] absolute top-3 right-3 p-1.5 rounded-full z-[200]">
         <img class="w-5 h-5 " src="/assets/icons/close-line.svg" alt="close">
       </button>
 
@@ -1557,6 +1612,7 @@
   <script src="./js/main.js"></script>
   <script src="./js/skillmap.js"></script>
   <script src="./js/skillmap-mobile.js"></script>
+  <script src="./js/leaderboard.js"></script>
 
   <!-- Swiper JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
