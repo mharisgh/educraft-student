@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  mode: 'jit',
+module.exports = {  
   content: ["./**/*.{html,js}","./index.html"],
   theme: {
     extend: {
@@ -11,6 +10,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Poppins', 'Arial', 'sans-serif'],
+        raleway: ['Raleway', 'sans-serif']
       },
     },
   },

@@ -13,9 +13,7 @@
 
   <link href="output.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+
 
 
 
@@ -112,8 +110,8 @@
 
             <a href="/index.html">
               <li id="sidemenu-list"
-                class="h-12 flex items-center hover:bg-[#fa9d53] rounded-xl pl-4 transition-all ease-out duration-300 sidemenu-list  cursor-pointer">
-                <div class="flex gap-4">
+                class="h-12 flex items-center hover:bg-[#fa9d53] rounded-xl pl-4 transition-all ease-out duration-300 sidemenu-list  cursor-pointer ">
+                <div class="flex gap-4 ">
                   <img class="w-6 h-6" src="assets/icons/home.svg" alt="home">
                   <span class="sidebar-text">Home</span>
                 </div>
@@ -122,7 +120,7 @@
 
             <a href="mycourses.html">
               <li id="sidemenu-list"
-                class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300 cursor-pointer">
+                class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300 cursor-pointer ">
                 <div class="flex gap-4 items-center">
                   <img class="w-6 h-6" src="assets/icons/my-courses.svg" alt="home">
                   <span class="sidebar-text">Courses</span>
@@ -131,11 +129,20 @@
             </a>
             <li id="sidemenu-list"
               class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300 cursor-pointer active">
-              <a href="#" class="flex gap-4 items-center">
+              <a href="learning-journey.html" class="flex gap-4 items-center">
                 <img class="w-6 h-6" src="assets/icons/learning-journey.svg" alt="home">
                 <span class="sidebar-text">Learning Journey</span>
               </a>
             </li>
+            <a href="/classroom.html">
+              <li id="sidemenu-list"
+                class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300 cursor-pointer ">
+                <div class="flex gap-4 items-center">
+                  <img class="w-6 h-6" src="assets/icons/clasroom.svg" alt="home">
+                  <span class="sidebar-text">Classroom</span>
+                </div>
+              </li>
+            </a>
 
           </ul>
 
@@ -157,17 +164,19 @@
             <p class=" text-sm tracking-tight">Learning Assistant</p>
 
             <button
-              class="bg-white text-[#bf4b00] mt-4 w-full py-2 text-semibold flex gap-1 rounded-lg justify-center items-center font-lg font-semibold">
+              class=" ecChatBotBtn bg-white text-[#bf4b00] mt-4 w-full py-2 text-semibold flex gap-1 rounded-lg justify-center items-center font-lg font-semibold hover:shadow-sm">
               <img src="assets/icons/chat-regular.svg" alt="chat with educat">
               Let's Chat
             </button>
+
+
           </div>
 
         </div>
 
         <!-- shrink educat chatbot button -->
         <button id="educat-sidemenu-sm"
-          class="bg-white text-[#bf4b00] my-6 w-full py-2 text-semibold hidden rounded-lg justify-center items-center">
+          class="ecChatBotBtnSm bg-white text-[#bf4b00] my-6 w-full py-2 text-semibold hidden rounded-lg justify-center items-center">
           <img src="assets/icons/chat-regular.svg" alt="chat with educat">
 
         </button>
@@ -175,20 +184,14 @@
         <!-- bottom menu list -->
         <nav class="pb-4">
           <ul class="flex flex-col gap-1">
-            <li id="sidemenu-list"
+            <!-- <li id="sidemenu-list"
               class="h-12 flex items-center hover:bg-[#fa9d53] rounded-xl pl-4 transition-all ease-out duration-300 sidemenu-list">
               <a href="#" class="flex gap-4">
                 <img class="w-6 h-6" src="assets/icons/help-center.svg" alt="home">
                 <span class="sidebar-text">Help</span>
               </a>
-            </li>
-            <li id="sidemenu-list"
-              class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300">
-              <a href="#" class="flex gap-4 items-center">
-                <img class="w-6 h-6" src="assets/icons/settings.svg" alt="home">
-                <span class="sidebar-text">Settings</span>
-              </a>
-            </li>
+            </li> -->
+
 
             <!-- sperator -->
             <li class="w-full h-[2px] bg-white/20"></li>
@@ -631,7 +634,7 @@
           </div>
 
           <!-- Certificates -->
-          <!-- <div class="w-full">
+          <div class="w-full">
             <div class="h-[60px]  flex items-center">
               <p class="text-lg-custom">Certificates</p>
               <p
@@ -649,42 +652,6 @@
               <p class="font-semibold text-base ">No Certificates Achieved</p>
               <p class="text-black/50">You haven't acquired any skills yet. Keep learning to unlock new skills!</p>
             </div>
-          </div> -->
-
-          <div class="w-full">
-            <div class="h-[60px]  flex items-center">
-              <p class="text-lg-custom">Certificates</p>
-              <p
-                class="text-lg-custom bg-primaryLight w-[30px] h-[30px] flex items-center justify-center border border-black/10 rounded-full ml-2 ">
-                0</p>
-            </div>
-
-            <div
-              class="bg-primaryLight p-4 rounded-xl border border-black/10 w-full flex flex-col justify-around min-h-[200px] relative overflow-hidden">
-
-              <img class="absolute w-[200px] -top-[3rem] -right-[3rem] opacity-10" src="assets/img/certificate.png"
-                alt="">
-
-              <div class="flex gap-2 relative z-[50 ]">
-
-                <div id="openCertificate">
-                  <a href="#">
-                    <img class="w-[200px] border-2 border-primaryLight rounded-xl" src="assets/img/certificate-hs.png"
-                      alt=""></a>
-                  <p class="text-black/60 pt-2">July 2024</p>
-                </div>
-
-                <div id="openCertificate2" class="">
-                  <a class="cursor-pointer" href="#">
-                    <img class="w-[200px] border-2 border-primaryLight rounded-xl"
-                      src="assets/img/ec-certificate-sm-grade.png" alt=""></a>
-                  <p class="text-black/60 pt-2">Mar 2023</p>
-                </div>
-
-              </div>
-
-            </div>
-
           </div>
 
         </div>
@@ -1092,7 +1059,7 @@
                     <!-- seprator -->
                     <div class="h-[3px] bg-gradient-to-r from-transparent via-gray-200 to-transparent w-full "></div>
 
-
+                    
                     <div class="flex justify-between items-center">
 
                       <div class="flex gap-2">
@@ -1132,87 +1099,6 @@
 
     </main>
 
-    <!-- E-Certificate Popup -->
-    <div id="certificatePopup"
-      class="fixed z-[1000] inset-0  items-center justify-center bg-black bg-opacity-50 hidden ">
-      <div class="bg-white p-6 rounded-lg max-w-[800px] min-h-[600px] relative flexf flex-col">
-
-        <p class="text-center pb-4">Issued at 25th 2024</p>
-
-        <div class="rounded-xl overflow-hidden border border-black/20">
-
-          <div id="certificateContent" class="relative bg-red-800">
-            <div class="absolute w-full h-full">
-              <div class="w-full h-full relative ">
-                <p id="studentCertName" class="absolute left-[35%] top-[36%] text-[3rem]  leading-[3rem] "
-                  style="font-family: 'Courgette', 'Poppins';">Faisal <br>Saleem</p>
-
-                <p class="leading-5 absolute left-[35%] top-[60%]">For participating in the Robotics & Al Summer Camp
-                  2024-25<br>
-                  Held by Educraft from 1 st July 2024 to 1 lth July 2024.</p>
-                <p class="font-medium text-base absolute left-[35%] bottom-[8%]">Sep 25th, 2024</p>
-              </div>
-            </div>
-            <img class="" src="/assets/img/certificate-hs.png" alt="Certificate Image" />
-          </div>
-
-        </div>
-
-
-        <div class="flex justify-center pt-4 ">
-          <button id="downloadPdf"
-            class="bg-[#bf4b00] hover:bg-primary text-white px-4 py-2 rounded-lg w-full lg:max-w-[140px]">Download
-            PDF</button>
-        </div>
-
-        <!-- close x button -->
-        <button id="closePopup" class="bg-[#f4f4f4] hover:bg-[#e4e2e2] absolute top-4 right-4 p-1.5 rounded-full">
-          <img class="w-5 h-5" src="/assets/icons/close-line.svg" alt="close">
-        </button>
-      </div>
-    </div>
-
-    <!-- E-Certificate Popup -->
-    <div id="certificate2Popup"
-      class="fixed z-[1000] inset-0  items-center justify-center bg-black bg-opacity-50 hidden ">
-      <div class="bg-white p-6 rounded-lg max-w-[800px] min-h-[600px] relative flexf flex-col">
-
-        <p class="text-center pb-4">Issued at 25th 2024</p>
-
-        <div class="rounded-xl overflow-hidden border border-black/20">
-
-          <div id="certificateContent" class="relative bg-red-800">
-            <div class="absolute w-full h-full">
-              <div class="w-full h-full relative ">
-                <p id="studentCertName" class="absolute left-[35%] top-[36%] text-[3rem]  leading-[3rem] "
-                  style="font-family: 'Courgette', 'Poppins';">Faisal <br>Saleem</p>
-
-                <p class="leading-5 absolute left-[35%] top-[60%]">For participating in the Robotics & Al Summer Camp
-                  2024-25<br>
-                  Held by Educraft from 1 st July 2024 to 1 lth July 2024.</p>
-                <p class="font-medium text-base absolute left-[35%] bottom-[8%]">Sep 25th, 2024</p>
-              </div>
-            </div>
-            <img class="" src="/assets/img/certificate-hs.png" alt="Certificate Image" />
-          </div>
-
-        </div>
-
-
-        <div class="flex justify-center pt-4 ">
-          <button id="downloadPdf"
-            class="bg-[#bf4b00] hover:bg-primary text-white px-4 py-2 rounded-lg w-full lg:max-w-[140px]">Download
-            PDF</button>
-        </div>
-
-        <!-- close x button -->
-        <button id="closePopup" class="bg-[#f4f4f4] hover:bg-[#e4e2e2] absolute top-4 right-4 p-1.5 rounded-full">
-          <img class="w-5 h-5" src="/assets/icons/close-line.svg" alt="close">
-        </button>
-      </div>
-    </div>
-
-
 
   </div>
 
@@ -1223,75 +1109,6 @@
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
   <script src="./js/learningJourney.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js">  </script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
-  <script>
-
-    // close button
-    document.getElementById("closePopup").addEventListener('click', () => {
-      document.getElementById("certificatePopup").classList.add('hidden');
-    });
-
-    // popup opens when cliking the certificate
-    document.getElementById("openCertificate").addEventListener('click', () => {
-      document.getElementById("certificatePopup").classList.remove('hidden');
-      document.getElementById("certificatePopup").classList.add('flex');
-
-    });
-
-    // popup opens when cliking the certificate
-    document.getElementById("openCertificate2").addEventListener('click', () => {
-      document.getElementById("certificatePopup").classList.remove('hidden');
-      document.getElementById("certificatePopup").classList.add('flex');
-
-    });
-
-
-    document.getElementById("downloadPdf").addEventListener("click", function () {
-
-
-      const certificateContent = document.getElementById("certificateContent");
-
-      // Get the student's name from the <p> element
-      const studentName = document.getElementById("studentCertName").innerText.trim().replace(/\s+/g, '_');
-
-      // Get the width and height of the div in pixels
-      const contentWidth = certificateContent.offsetWidth;
-      const contentHeight = certificateContent.offsetHeight;
-
-      // Convert pixel dimensions to millimeters (1 pixel ≈ 0.264583 mm)
-      const mmWidth = contentWidth * 0.264583;
-      const mmHeight = contentHeight * 0.264583;
-
-      const opt = {
-        margin: 0, // Set margin to 0 for exact match
-        filename: `${studentName}_ec_certificate.pdf`, // Use student's name as filename
-        image: { type: 'jpeg', quality: 1 },
-        html2canvas: { scale: 2 },
-        jsPDF: {
-          unit: 'mm',
-          format: [mmWidth, mmHeight], // Set custom size
-          orientation: 'landscape' // or 'portrait' based on your design
-        },
-      };
-
-      html2pdf().from(certificateContent).set(opt).toPdf().get('pdf').then(function (pdf) {
-        const pdfBlob = pdf.output('blob');
-        const blobUrl = URL.createObjectURL(pdfBlob);
-
-        // Open the PDF in a new tab
-        window.open(blobUrl, '_blank');
-
-        // Trigger the download
-        pdf.save(opt.filename);
-      });
-    });
-  </script>
 
 
 </body>
