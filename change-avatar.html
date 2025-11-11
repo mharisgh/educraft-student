@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avatar Unlock Flow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-black/20 flex justify-center items-center h-screen">
+    <!-- Main Container -->
+    <div class="bg-white w-[60%] h-auto rounded-2xl flex flex-col">
+      <div class="flex justify-between items-center p-4">
+        <h1 class="font-semibold">Change Avatar</h1>
+        <div
+          class="bg-[#F4F4F4] flex items-center p-2 w-fit rounded-full cursor-pointer"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="17"
+            height="17"
+            viewBox="0 0 17 17"
+            fill="none"
+          >
+            <path
+              d="M13.4448 12.3496C13.5902 12.4949 13.6719 12.6921 13.6719 12.8977C13.6719 13.1033 13.5902 13.3004 13.4448 13.4458C13.2995 13.5912 13.1023 13.6728 12.8967 13.6728C12.6911 13.6728 12.494 13.5912 12.3486 13.4458L8.25455 9.35044L4.15919 13.4445C4.01383 13.5899 3.81667 13.6715 3.61108 13.6715C3.4055 13.6715 3.20834 13.5899 3.06297 13.4445C2.9176 13.2991 2.83594 13.102 2.83594 12.8964C2.83594 12.6908 2.9176 12.4937 3.06297 12.3483L7.15833 8.25422L3.06426 4.15886C2.91889 4.01349 2.83723 3.81633 2.83723 3.61075C2.83723 3.40517 2.91889 3.20801 3.06426 3.06264C3.20963 2.91727 3.40679 2.83561 3.61237 2.83561C3.81795 2.83561 4.01512 2.91727 4.16048 3.06264L8.25455 7.158L12.3499 3.062C12.4953 2.91663 12.6924 2.83496 12.898 2.83496C13.1036 2.83496 13.3008 2.91663 13.4461 3.062C13.5915 3.20736 13.6732 3.40453 13.6732 3.61011C13.6732 3.81569 13.5915 4.01285 13.4461 4.15822L9.35077 8.25422L13.4448 12.3496Z"
+              fill="black"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="w-full h-[2px] bg-[linear-gradient(90deg,rgba(0,0,0,0.10)_0%,#FE9614_48.57%,rgba(0,0,0,0.10)_100%)] opacity-20"
+      ></div>
+
+      <div class="p-4 flex flex-col flex-1">
+        <div class="flex justify-between items-start">
+          <div>
+            <h2 class="text-[10px] font-semibold leading-[21.957px] opacity-50">
+              CHOOSE AVATAR
+            </h2>
+            <h3 class="text-xs">
+              Unlock avatars using your Educoins and show off your achievements!
+            </h3>
+          </div>
+          <div
+            class="bg-[#FCF7F0] rounded-[20px] flex items-center gap-2 justify-center px-[30px] py-[10px] w-fit"
+          >
+            <div>
+              <p
+                class="text-[10px] font-semibold leading-[21.957px] opacity-50 uppercase"
+              >
+                YOUR BALANCE
+              </p>
+              <p class="text-[#BF4B00] text-[20px] font-bold tracking-[-0.2px]">
+                70
+                <span class="text-sm font-semibold tracking-[-0.14px]"
+                  >Educoins</span
+                >
+              </p>
+            </div>
+            <img src="./assets/coin.png" alt="coin" class="w-10 h-11" />
+          </div>
+        </div>
+
+        <div class="pt-4 flex-1 overflow-hidden">
+          <div
+            id="avatarGrid"
+            class="grid grid-cols-5 gap-4 w-full max-h-[68vh] overflow-y-auto 2xl pr-2"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Backdrop -->
+    <div
+      id="backdrop"
+      class="hidden fixed inset-0 bg-black/40 backdrop-blur-[3px] flex items-center justify-center z-50"
+    >
+      <!-- Confirm Unlock -->
+      <div
+        id="confirmModal"
+        class="relative bg-[linear-gradient(180deg,#FEF2E6_0%,#FEF8F1_19.01%,#FEFEFE_100%)] rounded-[16px] w-[430px] shadow-lg flex flex-col items-center animate-scaleIn"
+      >
+        <div class="absolute right-3 top-3">
+          <div
+            class="bg-white flex items-center p-2 w-fit rounded-full cursor-pointer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="17"
+              height="17"
+              viewBox="0 0 17 17"
+              fill="none"
+            >
+              <path
+                d="M13.4448 12.3496C13.5902 12.4949 13.6719 12.6921 13.6719 12.8977C13.6719 13.1033 13.5902 13.3004 13.4448 13.4458C13.2995 13.5912 13.1023 13.6728 12.8967 13.6728C12.6911 13.6728 12.494 13.5912 12.3486 13.4458L8.25455 9.35044L4.15919 13.4445C4.01383 13.5899 3.81667 13.6715 3.61108 13.6715C3.4055 13.6715 3.20834 13.5899 3.06297 13.4445C2.9176 13.2991 2.83594 13.102 2.83594 12.8964C2.83594 12.6908 2.9176 12.4937 3.06297 12.3483L7.15833 8.25422L3.06426 4.15886C2.91889 4.01349 2.83723 3.81633 2.83723 3.61075C2.83723 3.40517 2.91889 3.20801 3.06426 3.06264C3.20963 2.91727 3.40679 2.83561 3.61237 2.83561C3.81795 2.83561 4.01512 2.91727 4.16048 3.06264L8.25455 7.158L12.3499 3.062C12.4953 2.91663 12.6924 2.83496 12.898 2.83496C13.1036 2.83496 13.3008 2.91663 13.4461 3.062C13.5915 3.20736 13.6732 3.40453 13.6732 3.61011C13.6732 3.81569 13.5915 4.01285 13.4461 4.15822L9.35077 8.25422L13.4448 12.3496Z"
+                fill="black"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="pt-5 flex flex-col items-center w-full">
+          <img
+            src="./assets/avatar.png"
+            alt="lock"
+            class="w-[66px] h-[66px] mb-5"
+          />
+
+          <div class="flex flex-col justify-center items-center gap-5">
+            <h2 class="text-[18px] tracking-[0.186px] font-bold text-black">
+              Unlock Avatar?
+            </h2>
+            <div class="flex flex-col items-center">
+              <p class="text-center text-sm text-black mb-1 flex gap-1">
+                This
+                <span class="font-semibold text-black">Super Coder</span> avatar
+                costs
+                <span class="flex gap-1 text-black font-semibold">
+                  <img
+                    src="./assets//coin.png"
+                    alt=""
+                    srcset=""
+                    class="w-5 h-5"
+                  />50 </span
+                >EduCoins.
+              </p>
+              <p class="text-center text-sm text-black flex gap-1">
+                After unlocking, your new balance will be
+                <span class="flex gap-1 font-semibold">
+                  <img
+                    src="./assets//coin.png"
+                    alt=""
+                    srcset=""
+                    class="w-5 h-5"
+                  />20
+                </span>
+                EduCoins
+              </p>
+            </div>
+            <p class="text-center text-xs text-black mb-5">
+              Are you excited to make it yours? 😄
+            </p>
+          </div>
+          <div class="flex flex-col gap-2 p-2 w-full">
+            <div
+              class="w-full h-[2px] bg-[linear-gradient(90deg,rgba(0,0,0,0.10)_0%,#FE9614_48.57%,rgba(0,0,0,0.10)_100%)] opacity-20"
+            ></div>
+            <div class="flex justify-end gap-3 w-full">
+              <button
+                id="cancelBtn"
+                class="px-4 py-2 w-[94px] rounded-[10px] border-[0.7px] border-[#ACACAC] text-black text-xs font-medium hover:bg-gray-100"
+              >
+                Cancel
+              </button>
+              <button
+                id="confirmUnlock"
+                class="px-5 py-2 rounded-[10px] bg-[#BF4B00] text-white text-xs tracking-[-0.24px] font-semibold hover:bg-[#d85605] cursor-pointer"
+              >
+                Unlock Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success Modal -->
+      <div
+        id="successModal"
+        class="hidden relative bg-[linear-gradient(180deg,#FEF2E6_0%,#FEF8F1_19.01%,#FEFEFE_100%)] rounded-[20px] w-[380px] shadow-lg p-6 flex flex-col items-center relative animate-scaleIn"
+      >
+        <button id="closeSuccess" class="absolute right-3 top-3">
+          <div
+            class="bg-white flex items-center p-2 w-fit rounded-full cursor-pointer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="17"
+              height="17"
+              viewBox="0 0 17 17"
+              fill="none"
+            >
+              <path
+                d="M13.4448 12.3496C13.5902 12.4949 13.6719 12.6921 13.6719 12.8977C13.6719 13.1033 13.5902 13.3004 13.4448 13.4458C13.2995 13.5912 13.1023 13.6728 12.8967 13.6728C12.6911 13.6728 12.494 13.5912 12.3486 13.4458L8.25455 9.35044L4.15919 13.4445C4.01383 13.5899 3.81667 13.6715 3.61108 13.6715C3.4055 13.6715 3.20834 13.5899 3.06297 13.4445C2.9176 13.2991 2.83594 13.102 2.83594 12.8964C2.83594 12.6908 2.9176 12.4937 3.06297 12.3483L7.15833 8.25422L3.06426 4.15886C2.91889 4.01349 2.83723 3.81633 2.83723 3.61075C2.83723 3.40517 2.91889 3.20801 3.06426 3.06264C3.20963 2.91727 3.40679 2.83561 3.61237 2.83561C3.81795 2.83561 4.01512 2.91727 4.16048 3.06264L8.25455 7.158L12.3499 3.062C12.4953 2.91663 12.6924 2.83496 12.898 2.83496C13.1036 2.83496 13.3008 2.91663 13.4461 3.062C13.5915 3.20736 13.6732 3.40453 13.6732 3.61011C13.6732 3.81569 13.5915 4.01285 13.4461 4.15822L9.35077 8.25422L13.4448 12.3496Z"
+                fill="black"
+              />
+            </svg>
+          </div>
+        </button>
+        <div class="absolute top-[-2rem]">
+          <img
+            src="./assets/confetti.png"
+            alt="confetti"
+            class="w-40 h-40 mx-auto animate-bounce"
+          />
+        </div>
+        <h2 class="text-lg font-bold text-black mb-1 mt-16">
+          Avatar Unlocked!
+        </h2>
+        <p class="text-sm text-black text-center mb-6">
+          You’ve unlocked the
+          <span class="font-semibold">Super Coder</span> avatar!
+        </p>
+        <div
+          class="bg-[#FCF7F0] rounded-[20px] flex items-center gap-2 justify-center px-[30px] py-[10px] w-fit"
+        >
+          <div class="flex flex-col items-center">
+            <p class="text-[10px] font-semibold leading-[21.957px] opacity-50">
+              New Balance
+            </p>
+            <p class="text-[#BF4B00] text-[20px] font-bold tracking-[-0.2px]">
+              20
+              <span class="text-sm font-semibold tracking-[-0.14px]"
+                >Educoins</span
+              >
+            </p>
+          </div>
+          <img src="./assets/coin.png" alt="coin" class="w-10 h-11" />
+        </div>
+      </div>
+
+      <!-- Not Enough Modal -->
+
+      <div
+        id="enoughModal"
+        class="hidden relative bg-[linear-gradient(180deg,#FEF2E6_0%,#FEF8F1_19.01%,#FEFEFE_100%)] rounded-[16px] w-[430px] shadow-lg flex flex-col items-center animate-scaleIn"
+      >
+        <button class="absolute right-3 top-3">
+          <div
+            class="bg-white flex items-center p-2 w-fit rounded-full cursor-pointer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="17"
+              height="17"
+              viewBox="0 0 17 17"
+              fill="none"
+            >
+              <path
+                d="M13.4448 12.3496C13.5902 12.4949 13.6719 12.6921 13.6719 12.8977C13.6719 13.1033 13.5902 13.3004 13.4448 13.4458C13.2995 13.5912 13.1023 13.6728 12.8967 13.6728C12.6911 13.6728 12.494 13.5912 12.3486 13.4458L8.25455 9.35044L4.15919 13.4445C4.01383 13.5899 3.81667 13.6715 3.61108 13.6715C3.4055 13.6715 3.20834 13.5899 3.06297 13.4445C2.9176 13.2991 2.83594 13.102 2.83594 12.8964C2.83594 12.6908 2.9176 12.4937 3.06297 12.3483L7.15833 8.25422L3.06426 4.15886C2.91889 4.01349 2.83723 3.81633 2.83723 3.61075C2.83723 3.40517 2.91889 3.20801 3.06426 3.06264C3.20963 2.91727 3.40679 2.83561 3.61237 2.83561C3.81795 2.83561 4.01512 2.91727 4.16048 3.06264L8.25455 7.158L12.3499 3.062C12.4953 2.91663 12.6924 2.83496 12.898 2.83496C13.1036 2.83496 13.3008 2.91663 13.4461 3.062C13.5915 3.20736 13.6732 3.40453 13.6732 3.61011C13.6732 3.81569 13.5915 4.01285 13.4461 4.15822L9.35077 8.25422L13.4448 12.3496Z"
+                fill="black"
+              />
+            </svg>
+          </div>
+        </button>
+        <div class="pt-5 flex flex-col items-center w-full">
+          <img
+            src="./assets/enoughcoin.png"
+            alt="lock"
+            class="w-[66px] h-[66px] mb-5"
+          />
+
+          <div class="flex flex-col justify-center items-center gap-5">
+            <h2 class="text-[18px] tracking-[0.186px] font-bold text-black">
+              Not Enough Educoins
+            </h2>
+            <div class="flex flex-col items-center">
+              <p class="text-center text-sm text-black mb-1 flex gap-1">
+                You need
+                <span class="flex gap-1 text-black font-semibold">
+                  <img
+                    src="./assets//coin.png"
+                    alt=""
+                    srcset=""
+                    class="w-5 h-5"
+                  />80 </span
+                >EduCoins to unlock this avatar
+              </p>
+              <p class="text-center text-sm text-black flex gap-1">
+                You only have
+                <span class="flex gap-1 font-semibold">
+                  <img
+                    src="./assets//coin.png"
+                    alt=""
+                    srcset=""
+                    class="w-5 h-5"
+                  />70
+                </span>
+                EduCoins
+              </p>
+            </div>
+            <p class="text-center text-xs text-black mb-5">
+              Complete more activities to earn educoins!
+            </p>
+          </div>
+          <div class="flex flex-col gap-2 p-2 w-full">
+            <div
+              class="w-full h-[2px] bg-[linear-gradient(90deg,rgba(0,0,0,0.10)_0%,#FE9614_48.57%,rgba(0,0,0,0.10)_100%)] opacity-20"
+            ></div>
+            <div class="flex justify-end gap-3 w-full">
+              <button
+                id="cancelBtn"
+                class="px-4 py-2 w-[94px] rounded-[10px] border-[0.7px] border-[#ACACAC] text-black text-xs font-medium hover:bg-gray-100"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      @keyframes scaleIn {
+        0% {
+          transform: scale(0.9);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      .animate-scaleIn {
+        animation: scaleIn 0.2s ease-out;
+      }
+    </style>
+
+    <script>
+      const avatars = [
+        {
+          name: "Portrait",
+          status: "Currently using",
+          coins: 0,
+          locked: false,
+          img: "./assets/student.png",
+        },
+        {
+          name: "Super Coder",
+          status: "Locked",
+          coins: 50,
+          locked: true,
+          img: "./assets/batman.png",
+        },
+        {
+          name: "Knight Man",
+          status: "Unlocked",
+          coins: 0,
+          locked: false,
+          img: "./assets/superman.png",
+        },
+        {
+          name: "Web Hacker",
+          status: "Unlocked",
+          coins: 0,
+          locked: false,
+          img: "./assets/superman.png",
+        },
+        {
+          name: "Master Coder",
+          status: "Locked",
+          coins: 75,
+          locked: true,
+          img: "./assets/thor.png",
+        },
+        {
+          name: "Expert Coder",
+          status: "Locked",
+          coins: 100,
+          locked: true,
+          img: "./assets/thor.png",
+        },
+        {
+          name: "Pro Coder",
+          status: "Locked",
+          coins: 120,
+          locked: true,
+          img: "./assets/thor.png",
+        },
+      ];
+
+      const container = document.getElementById("avatarGrid");
+      const backdrop = document.getElementById("backdrop");
+      const enoughModal = document.getElementById("enoughModal");
+      const confirmModal = document.getElementById("confirmModal");
+      const successModal = document.getElementById("successModal");
+      const cancelBtn = document.getElementById("cancelBtn");
+      const confirmUnlock = document.getElementById("confirmUnlock");
+      const closeSuccess = document.getElementById("closeSuccess");
+
+      container.innerHTML = avatars
+        .map((avatar) => {
+          const isUsing = avatar.status === "Currently using";
+          const borderClass = isUsing
+            ? "border-2 border-[#EC6106]"
+            : "border border-gray-300";
+          let buttonHTML = "",
+            badgeHTML = "",
+            lockOverlay = "";
+
+          if (avatar.locked) {
+            lockOverlay = `<div class="absolute inset-0 flex items-center justify-center bg-black/50 backdrop-blur-[2px]"><img src="./assets/lock.png" alt="Locked" class="w-8 h-8" /></div>`;
+          }
+
+          if (avatar.status !== "Currently using") {
+            badgeHTML = `<div class="absolute right-2 top-2 z-50"><div class="rounded-full px-[8px] py-[5px] flex items-center bg-black/30 backdrop-blur-[3px]"><p class="text-[8px] font-semibold text-white">${avatar.status}</p></div></div>`;
+          }
+
+          if (avatar.locked) {
+            buttonHTML = `<button data-avatar="${avatar.name}" class="unlock-btn flex items-center justify-center gap-1 bg-[#EC6106] text-[10px] text-white font-semibold px-[12px] py-[8px] rounded-[10px]">
+              <span>Unlock for</span><img src="./assets/coin.png" alt="coin" class="w-5 h-5" /><span class="font-bold text-[14px]">${avatar.coins}</span>
+            </button>`;
+          } else if (isUsing) {
+            buttonHTML = `<button class=" p-[10px]"><p class="text-[10px] font-semibold text-[#EC6106]">Currently using</p></button>`;
+          } else {
+            buttonHTML = `<button class="bg-white text-[10px] font-semibold text-black border border-black/20 p-[10px] rounded-[10px] hover:bg-[#EC6106] hover:text-white transition">Use this Avatar!</button>`;
+          }
+
+          return `<div class="bg-[#FCF7F0] rounded-[14px] overflow-hidden text-center relative ${borderClass}">
+          ${badgeHTML}
+          <div class="relative w-full h-[22vh] overflow-hidden">
+            <img src="${avatar.img}" alt="${
+            avatar.name
+          }" class="w-full h-full object-cover ${
+            avatar.locked ? "opacity-60" : ""
+          }">
+            ${lockOverlay}
+          </div>
+          <div class="flex flex-col gap-2 p-[4px] pt-2">
+            <h3 class="font-semibold text-xs">${avatar.name}</h3>
+            ${buttonHTML}
+          </div>
+        </div>`;
+        })
+        .join("");
+
+      document.querySelectorAll(".unlock-btn").forEach((btn) => {
+        btn.onclick = () => {
+          backdrop.classList.remove("hidden");
+          confirmModal.classList.remove("hidden");
+          successModal.classList.add("hidden");
+        };
+      });
+
+      cancelBtn.onclick = () => backdrop.classList.add("hidden");
+
+      confirmUnlock.onclick = () => {
+        confirmModal.classList.add("hidden");
+        successModal.classList.remove("hidden");
+      };
+
+      closeSuccess.onclick = () => backdrop.classList.add("hidden");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1379 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Journey</title>
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+
+  <style>
+    .active {
+      background-color: #fa9d53;
+    }
+
+    .text-outline {
+      color: black;
+      -webkit-text-stroke: 2px white;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      background: #fff6ef;
+      width: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 1rem;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    /* learning journey timeline */
+
+    .journey-accordion-header {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px;
+      background-color: #fff6ef;
+      /* border: 1px solid #ccc; */
+      /* transition: background-color 0.3s ease; */
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 12px;
+      background-color: #fff6ef;
+
+    }
+
+    .accordion-content.active {
+      display: block;
+    }
+
+    .journey-accordion-header.active {
+      /* background-color: #bf4b00; */
+      border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .journey-accordion-header img {
+      transition: transform 0.3s ease;
+    }
+
+    .journey-accordion-header.active img {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+
+<body class="flex font-sans">
+
+  <!-- =========================================== -->
+  <!-- Nav menu left sidebar -->
+  <!-- =========================================== -->
+
+  <aside id="sidebar"
+    class="bg-primary z-50 text-white w-72 h-screen transition-all ease-out duration-300 hidden lg:block ">
+
+    <div class="h-full overflow-y-auto px-4 flex flex-col justify-between scrollbar-custom">
+
+      <div>
+        <!-- educraft logo -->
+        <div id="sidemenu-logo" class="mt-4 flex items-center  gap-2 ">
+          <img src="./assets/img/educraft-logo-white.svg" alt="educraft logo">
+          <span id="logo-text" class="font-bold text-2xl">EduCraft</span>
+        </div>
+
+        <!-- shrink expand button -->
+        <div id="toggle-btn-area" class="w-full flex justify-end py-4 ">
+          <button id="toggleBtn" class="bg-white/20 p-2  rounded-lg">
+            <img class="w-3 h-3 " src="assets/icons/small.svg" alt="menu expand button">
+          </button>
+        </div>
+
+        <!-- top menu list -->
+        <nav class="flex flex-col justify-between ">
+          <ul class="flex flex-col gap-1">
+
+            <a href="/index.html">
+              <li id="sidemenu-list"
+                class="h-12 flex items-center hover:bg-[#fa9d53] rounded-xl pl-4 transition-all ease-out duration-300 sidemenu-list  cursor-pointer">
+                <div class="flex gap-4">
+                  <img class="w-6 h-6" src="assets/icons/home.svg" alt="home">
+                  <span class="sidebar-text">Home</span>
+                </div>
+              </li>
+            </a>
+
+            <a href="mycourses.html">
+              <li id="sidemenu-list"
+                class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300 cursor-pointer">
+                <div class="flex gap-4 items-center">
+                  <img class="w-6 h-6" src="assets/icons/my-courses.svg" alt="home">
+                  <span class="sidebar-text">Courses</span>
+                </div>
+              </li>
+            </a>
+            <li id="sidemenu-list"
+              class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300 cursor-pointer active">
+              <a href="#" class="flex gap-4 items-center">
+                <img class="w-6 h-6" src="assets/icons/learning-journey.svg" alt="home">
+                <span class="sidebar-text">Learning Journey</span>
+              </a>
+            </li>
+
+          </ul>
+
+        </nav>
+      </div>
+
+
+      <!-- bottom menu list -->
+      <div>
+
+        <!-- expanded educat chatbot button-->
+        <div id="educat-sidemenu-big" class="lg:min-h-[100px] bg-white/20  rounded-2xl relative my-6 overflow-hidden">
+          <img class="absolute z-10  w-[90px] top-2 -right-2 " src="assets/img/educy.webp" alt="chat bot">
+          <div class="px-3 py-3">
+            <p class="">I'm</p>
+            <p class="font-bold text-lg tracking-tight -mt-1">EduCat<span class="text-xs font-base">&nbsp;2.0</span></p>
+
+            <p class="mt-6">Your AI</p>
+            <p class=" text-sm tracking-tight">Learning Assistant</p>
+
+            <button
+              class="bg-white text-[#bf4b00] mt-4 w-full py-2 text-semibold flex gap-1 rounded-lg justify-center items-center font-lg font-semibold">
+              <img src="assets/icons/chat-regular.svg" alt="chat with educat">
+              Let's Chat
+            </button>
+          </div>
+
+        </div>
+
+        <!-- shrink educat chatbot button -->
+        <button id="educat-sidemenu-sm"
+          class="bg-white text-[#bf4b00] my-6 w-full py-2 text-semibold hidden rounded-lg justify-center items-center">
+          <img src="assets/icons/chat-regular.svg" alt="chat with educat">
+
+        </button>
+
+        <!-- bottom menu list -->
+        <nav class="pb-4">
+          <ul class="flex flex-col gap-1">
+            <li id="sidemenu-list"
+              class="h-12 flex items-center hover:bg-[#fa9d53] rounded-xl pl-4 transition-all ease-out duration-300 sidemenu-list">
+              <a href="#" class="flex gap-4">
+                <img class="w-6 h-6" src="assets/icons/help-center.svg" alt="home">
+                <span class="sidebar-text">Help</span>
+              </a>
+            </li>
+            <li id="sidemenu-list"
+              class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300">
+              <a href="#" class="flex gap-4 items-center">
+                <img class="w-6 h-6" src="assets/icons/settings.svg" alt="home">
+                <span class="sidebar-text">Settings</span>
+              </a>
+            </li>
+
+            <!-- sperator -->
+            <li class="w-full h-[2px] bg-white/20"></li>
+
+            <li id="sidemenu-list"
+              class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300">
+              <a href="#" class="flex gap-4 items-center">
+                <img class="w-6 h-6" src="assets/icons/logout.svg" alt="home">
+                <span class="sidebar-text">Logout</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+  </aside>
+
+
+  <!-- =========================================== -->
+  <!-- Main -->
+  <!-- =========================================== -->
+
+  <div class="w-full h-screen  overflow-hidden">
+
+    <!-- =========================================== -->
+    <!-- Top Header Menu -->
+    <!-- =========================================== -->
+
+    <header id="header-menu"
+      class="  bg-white  flex justify-between w-full h-14 items-center  transition-all ease-out duration-300  p-4 border border-b-black/10">
+      <p class="md:block text-xl-custom hidden">Learning Journey</p>
+
+      <!-- Search Input -->
+      <div class="relative w-1/3">
+        <input type="text" placeholder="Search"
+          class="w-full pl-12 pr-4 py-2 rounded-full bg-[#fffaf4] focus:outline-none focus:border-primary border border-gray-200">
+        <img src="assets/icons/search-bar.svg" alt="Search Icon"
+          class="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-red-700" />
+      </div>
+
+      <div>
+        <!-- notification -->
+        <div class="bg-[#fdf0e7] rounded-full w-10 h-10 flex justify-center items-center relative">
+          <span
+            class="w-4 h-4 bg-[#ffbc00] absolute top-1 right-1 rounded-full flex justify-center text-xs font-semibold items-center">4</span>
+          <img src="assets/icons/bell.svg" alt="">
+        </div>
+      </div>
+
+      <!-- user profile -->
+      <div class="flex gap-2 justify-center items-center">
+        <p class="font-semibold">Faisal Saleem</p>
+        <img class="w-10 h-10 rounded-full border-2 border-primary" src="assets/img/user.png" alt="user profile">
+      </div>
+    </header>
+
+    <!-- =========================================== -->
+    <!-- Main Content Area - Dashboard -->
+    <!-- =========================================== -->
+
+    <main id="main"
+      class=" bg-white  max-w-screen-2xl mx-auto transition-all ease-out duration-300  flex flex-col lg:flex-row overflow-auto lg:overflow-hidden h-[calc(100vh-3.5rem)]">
+
+      <!-- main section-->
+      <section class="lg:w-2/3 p-4 flex flex-col gap-4 lg:overflow-auto scrollbar-hide lg:h-full">
+
+        <!-- profile overview -->
+        <div class="w-full   flex-col flex gap-2 ">
+
+          <p class="text-lg-custom pb-3">User Profile</p>
+
+          <div class="border border-black/20  p-2 rounded-2xl flex flex-col justify-between relative">
+
+            <div class="bg-primary relative rounded-tl-xl rounded-tr-xl  h-[60px] overflow-hidden">
+
+              <!-- Badge dyanmic change here -->
+              <div class="absolute right-2 top-3 flex gap-2 items-center">
+                <span class="text-white ">Bronze Gear</span>
+                <img class="w-6" src="assets/img/badge-bronze.png" alt="badge">
+              </div>
+
+              <img src="assets/img/profile-bg.png" class="w-full h-full object-cover" alt="badge">
+            </div>
+
+            <!-- Details here -->
+
+            <!-- profile picture & name -->
+            <div class=" absolute left-[3%] top-[10%] gap-2">
+              <img class="w-[100px] ml-4 rounded-full  border-3 border-white" src="assets/img/user.png"
+                alt="student-image" />
+              <div class="mt-2 flex flex-col justify-center items-center">
+                <p class="font-medium text-md-custom">Faisal Saleem</p>
+                <p>class <span class="font-semibold">6A</span></p>
+              </div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row w-full lg:gap-6 gap-4 lg:pl-[150px] lg:py-2 pt-[140px] lg:mt-2  ">
+
+              <div class="bg-primaryLight rounded-xl flex justify-around lg:w-[60%] items-center p-4 ">
+
+                <!-- chapters -->
+                <div class="flex flex-col items-center">
+                  <img class="w-8" src="assets/img/chapters.png" alt="chapters">
+                  <p class="text-xs font-medium text-black/60">Chapters</p>
+
+                  <!-- chapters completed value change here -->
+                  <span class="text-xl font-semibold text-primaryDark">2</span>
+
+                </div>
+
+                <!-- seprator -->
+                <div class="w-[3px] bg-gradient-to-b from-transparent via-gray-200 to-transparent h-full "></div>
+
+                <!-- quizzes -->
+                <div class="flex flex-col items-center">
+                  <img class="w-8" src="assets/img/quiz.png" alt="chapters">
+                  <p class="text-xs font-medium text-black/60">Quizzes</p>
+
+                  <!-- quizzes completed value change here -->
+                  <span class="text-xl font-semibold text-primaryDark">5</span>
+
+                </div>
+
+                <!-- seprator -->
+                <div class="w-[3px] bg-gradient-to-b from-transparent via-gray-200 to-transparent h-full "></div>
+
+                <!-- educoins -->
+                <div class="flex flex-col items-center">
+                  <img class="w-8" src="assets/img/educoin-sm.png" alt="chapters">
+                  <p class="text-xs font-medium text-black/60">Educoins</p>
+
+                  <!-- Educoins completed value change here -->
+                  <span class="text-xl font-semibold text-primaryDark">23</span>
+
+                </div>
+
+
+              </div>
+
+              <!-- email & syllabus -->
+              <div class="">
+                <div class="flex gap-3">
+                  <img src="/assets/icons/mail.svg" alt="email id">
+                  <p>faisal@nimsdxb.com</p>
+                </div>
+
+                <div class="flex gap-3 mt-2">
+                  <img src="/assets/icons/note.svg" alt="syllabus">
+                  <p>CBSE Morning 6-O</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Badges -->
+        <div class="relative">
+          <p class="h-[40px] text-lg-custom">Badges</p>
+
+          <!-- Swiper -->
+          <div class="swiper BadgeSlider">
+
+            <div class="swiper-wrapper ">
+
+              <!-- Badge container -->
+              <div class="swiper-slide ">
+                <img class="w-[90px]" src="/assets/img/badges/badge1.png" alt="">
+
+                <!-- splitted in two lines -->
+                <div class="text-base mt-1">
+                  <p>Diamond Star </p>
+                  <p class="-mt-1">Collector</p>
+                </div>
+
+                <!-- seprator -->
+                <div class="h-[3px] bg-gradient-to-r from-transparent via-gray-200 to-transparent w-full my-3 "></div>
+
+                <!-- if badge earned -->
+                <p class="text-primary font-semibold">Great Job!</p>
+                <p class="text-black/70">This badge is yours.</p>
+
+                <!-- if badge locked -->
+                <!-- <p class="text-black/70">Unlock this by earning</p> -->
+
+              </div>
+
+              <div class="swiper-slide ">
+                <img class="w-[90px]" src="/assets/img/badges/badge2.png" alt="">
+
+
+                <!-- splitted in two lines -->
+                <div class="text-base mt-1">
+                  <p>Quiz</p>
+                  <p class="-mt-1">Champion</p>
+                </div>
+
+
+                <!-- seprator -->
+                <div class="h-[3px] bg-gradient-to-r from-transparent via-gray-200 to-transparent w-full my-3 "></div>
+
+                <!-- if badge earned -->
+                <p class="text-primary font-semibold">Congratulations!</p>
+                <p class="text-black/70">This badge is yours.</p>
+
+                <!-- if badge locked -->
+                <!-- <p class="text-black/70">Unlock this by earning</p> -->
+
+              </div>
+
+              <div class="swiper-slide ">
+
+                <!-- locked -->
+                <div class="w-full h-full absolute">
+                  <div class="w-full h-full relative">
+                    <img class="w-[44px] absolute right-2 top-2" src="/assets/img/badge-lock.png" alt="">
+                  </div>
+                </div>
+
+                <div class="relative">
+
+                  <!-- black & white shade for locked badge -->
+                  <div class="bg-black w-full h-full absolute mix-blend-hue"></div>
+
+                  <img class="w-[90px]" src="/assets/img/badges/badge3.png" alt="">
+                </div>
+
+                <!-- splitted in two lines -->
+                <div class="text-base mt-1">
+                  <p>Consistency</p>
+                  <p class="-mt-1">King/Queen</p>
+                </div>
+
+                <!-- seprator -->
+                <div class="h-[3px] bg-gradient-to-r from-transparent via-gray-200 to-transparent w-full my-3 "></div>
+
+                <!-- if badge locked -->
+                <p class="text-black/70">Unlock this by earning</p>
+                <div class="flex items-center justify-center">
+                  <img class="w-[28px]" src="assets/img/educoin-sm.png" alt="">
+                  <p class="text-primary font-semibold">150&nbsp;</p>
+                  <span class="text-black/50">educoins</span>
+                </div>
+
+              </div>
+
+              <div class="swiper-slide ">
+
+                <!-- locked -->
+                <div class="w-full h-full absolute">
+                  <div class="w-full h-full relative">
+                    <img class="w-[44px] absolute right-2 top-2" src="/assets/img/badge-lock.png" alt="">
+                  </div>
+                </div>
+
+                <div class="relative">
+
+                  <!-- black & white shade for locked badge -->
+                  <div class="bg-black w-full h-full absolute mix-blend-hue"></div>
+
+                  <img class="w-[90px]" src="/assets/img/badges/badge4.png" alt="">
+                </div>
+
+                <!-- splitted in two lines -->
+                <div class="text-base mt-1">
+                  <p>Fast</p>
+                  <p class="-mt-1">Learner</p>
+                </div>
+
+                <!-- seprator -->
+                <div class="h-[3px] bg-gradient-to-r from-transparent via-gray-200 to-transparent w-full my-3 "></div>
+
+                <!-- if badge locked -->
+                <p class="text-black/70">Unlock this by earning</p>
+                <div class="flex items-center justify-center">
+                  <img class="w-[28px]" src="assets/img/educoin-sm.png" alt="">
+                  <p class="text-primary font-semibold">200&nbsp;</p>
+                  <span class="text-black/50">educoins</span>
+                </div>
+
+              </div>
+
+
+              <div class="swiper-slide ">
+
+                <!-- locked -->
+                <div class="w-full h-full absolute">
+                  <div class="w-full h-full relative">
+                    <img class="w-[44px] absolute right-2 top-2" src="/assets/img/badge-lock.png" alt="">
+                  </div>
+                </div>
+
+                <div class="relative">
+
+                  <!-- black & white shade for locked badge -->
+                  <div class="bg-black w-full h-full absolute mix-blend-hue"></div>
+
+                  <img class="w-[90px]" src="/assets/img/badges/badge4.png" alt="">
+                </div>
+
+                <!-- splitted in two lines -->
+                <div class="text-base mt-1">
+                  <p>Fast</p>
+                  <p class="-mt-1">Learner</p>
+                </div>
+
+                <!-- seprator -->
+                <div class="h-[3px] bg-gradient-to-r from-transparent via-gray-200 to-transparent w-full my-3 "></div>
+
+                <!-- if badge locked -->
+                <p class="text-black/70">Unlock this by earning</p>
+                <div class="flex items-center justify-center">
+                  <img class="w-[28px]" src="assets/img/educoin-sm.png" alt="">
+                  <p class="text-primary font-semibold">200&nbsp;</p>
+                  <span class="text-black/50">educoins</span>
+                </div>
+
+              </div>
+
+
+
+              <div class="swiper-slide ">
+
+                <!-- locked -->
+                <div class="w-full h-full absolute">
+                  <div class="w-full h-full relative">
+                    <img class="w-[44px] absolute right-2 top-2" src="/assets/img/badge-lock.png" alt="">
+                  </div>
+                </div>
+
+                <div class="relative">
+
+                  <!-- black & white shade for locked badge -->
+                  <div class="bg-black w-full h-full absolute mix-blend-hue"></div>
+
+                  <img class="w-[90px]" src="/assets/img/badges/badge4.png" alt="">
+                </div>
+
+                <!-- splitted in two lines -->
+                <div class="text-base mt-1">
+                  <p>Fast</p>
+                  <p class="-mt-1">Learner</p>
+                </div>
+
+                <!-- seprator -->
+                <div class="h-[3px] bg-gradient-to-r from-transparent via-gray-200 to-transparent w-full my-3 "></div>
+
+                <!-- if badge locked -->
+                <p class="text-black/70">Unlock this by earning</p>
+                <div class="flex items-center justify-center">
+                  <img class="w-[28px]" src="assets/img/educoin-sm.png" alt="">
+                  <p class="text-primary font-semibold">200&nbsp;</p>
+                  <span class="text-black/50">educoins</span>
+                </div>
+
+              </div>
+
+
+
+
+            </div>
+            <!-- <div class="swiper-pagination"></div> -->
+          </div>
+
+        </div>
+
+        <!-- Skills -->
+        <!-- <div class="w-full mt-8">
+          <div class="h-[60px]  flex items-center">
+            <p class="text-lg-custom">Badges</p>
+          </div>
+
+          <div
+            class="bg-primaryLight  p-4 rounded-xl border border-black/10 w-full flex flex-col justify-around min-h-[150px] relative overflow-hidden">
+
+            <img class="absolute w-[200px] -top-[3rem] -right-[3rem] opacity-10" src="assets/img/skills.png" alt="">
+
+            <img class="w-[60px]" src="assets/img/skills.png" alt="">
+            <p class="font-semibold text-base">No Skills Achieved</p>
+            <p class="text-black/50">You haven't acquired any skills yet. Keep learning to unlock new skills!</p>
+          </div>
+        </div> -->
+
+        <!-- Certificates -->
+        <!-- <div class="w-full">
+          <div class="h-[60px]  flex items-center">
+            <p class="text-lg-custom">Certificates</p>
+          </div>
+
+          <div
+            class="bg-primaryLight p-4 rounded-xl border border-black/10 w-full flex flex-col justify-around min-h-[150px] relative overflow-hidden">
+
+            <img class="absolute w-[200px] -top-[3rem] -right-[3rem] opacity-10" src="assets/img/certificate.png"
+              alt="">
+
+            <img class="w-[50px]" src="assets/img/certificate.png" alt="">
+            <p class="font-semibold text-base ">No Certificates Achieved</p>
+            <p class="text-black/50">You haven't acquired any skills yet. Keep learning to unlock new skills!</p>
+          </div>
+        </div> -->
+
+        <!-- Skills & certificates-->
+        <div class="flex lg:flex-row flex-col gap-4  mt-8">
+
+          <!-- Skills -->
+          <div class="w-full">
+            <div class="h-[60px]  flex items-center">
+              <p class="text-lg-custom">Skills</p>
+
+              <!-- dyanmic value -->
+              <p
+                class="text-lg-custom bg-primaryLight w-[30px] h-[30px] flex items-center justify-center border border-black/10 rounded-full ml-2 ">
+                5</p>
+            </div>
+
+            <div
+              class="bg-primaryLight  p-4 rounded-xl border border-black/10 w-full flex flex-col min-h-[200px] relative overflow-hidden">
+
+              <!-- skill names -->
+              <div class="w-full h-full flex flex-wrap gap-2">
+                <p class="px-3 py-2 bg-white rounded-md w-fit border border-black/10">Basic Computer Literacy</p>
+                <p class="px-3 py-2 bg-white rounded-md w-fit border border-black/10">Internet Safety</p>
+                <p class="px-3 py-2 bg-white rounded-md w-fit border border-black/10">Introduction to Coding</p>
+                <p class="px-3 py-2 bg-white rounded-md w-fit border border-black/10">Word Processing</p>
+                <p class="px-3 py-2 bg-white rounded-md w-fit border border-black/10">Basic Hardware</p>
+              </div>
+
+              <img class="absolute w-[200px] -top-[3rem] -right-[3rem] opacity-10" src="assets/img/skills.png" alt="">
+
+              <!--below is placeholder for - if no skills to show -->
+              <!-- 
+              <img class="w-[80px]" src="assets/img/skills.png" alt="">
+              <p class="font-semibold text-base">No Skills Achieved</p>
+              <p class="text-black/50">You haven't acquired any skills yet. Keep learning to unlock new skills!</p> -->
+            </div>
+
+          </div>
+
+          <!-- Certificates -->
+          <!-- <div class="w-full">
+            <div class="h-[60px]  flex items-center">
+              <p class="text-lg-custom">Certificates</p>
+              <p
+                class="text-lg-custom bg-primaryLight w-[30px] h-[30px] flex items-center justify-center border border-black/10 rounded-full ml-2 ">
+                0</p>
+            </div>
+
+            <div
+              class="bg-primaryLight p-4 rounded-xl border border-black/10 w-full flex flex-col justify-around min-h-[200px] relative overflow-hidden">
+
+              <img class="absolute w-[200px] -top-[3rem] -right-[3rem] opacity-10" src="assets/img/certificate.png"
+                alt="">
+
+              <img class="w-[60px]" src="assets/img/certificate.png" alt="">
+              <p class="font-semibold text-base ">No Certificates Achieved</p>
+              <p class="text-black/50">You haven't acquired any skills yet. Keep learning to unlock new skills!</p>
+            </div>
+          </div> -->
+
+          <div class="w-full">
+            <div class="h-[60px]  flex items-center">
+              <p class="text-lg-custom">Certificates</p>
+              <p
+                class="text-lg-custom bg-primaryLight w-[30px] h-[30px] flex items-center justify-center border border-black/10 rounded-full ml-2 ">
+                0</p>
+            </div>
+
+            <div
+              class="bg-primaryLight p-4 rounded-xl border border-black/10 w-full flex flex-col justify-around min-h-[200px] relative overflow-hidden">
+
+              <img class="absolute w-[200px] -top-[3rem] -right-[3rem] opacity-10" src="assets/img/certificate.png"
+                alt="">
+
+              <div class="flex gap-2 relative z-[50 ]">
+
+                <div id="openCertificate">
+                  <a href="#">
+                    <img class="w-[200px] border-2 border-primaryLight rounded-xl" src="assets/img/certificate-hs.png"
+                      alt=""></a>
+                  <p class="text-black/60 pt-2">July 2024</p>
+                </div>
+
+                <div id="openCertificate2" class="">
+                  <a class="cursor-pointer" href="#">
+                    <img class="w-[200px] border-2 border-primaryLight rounded-xl"
+                      src="assets/img/ec-certificate-sm-grade.png" alt=""></a>
+                  <p class="text-black/60 pt-2">Mar 2023</p>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </section>
+
+      <!-- right side section -->
+      <section
+        class="bg-white border border-l-black/20 flex flex-col lg:w-1/3 p-4 gap-4 lg:overflow-auto scrollbar-hide">
+
+        <!-- learning journey timline -->
+        <div>
+          <p class="text-lg-custom pb-4">Learning Journey</p>
+
+          <div class="flex flex-col gap-4">
+
+            <!-- 2024 -->
+            <div class="rounded-xl overflow-hidden">
+
+              <div class="journey-accordion-header active">
+                <div class="flex gap-2 items-center justify-center">
+                  <p class="font-semibold text-base">2024</p>
+                  <p class="font-semibold text-primaryDark">Grade 6A</p>
+
+                </div>
+                <div class="w-[30px] h-[30px] bg-primary flex justify-center items-center rounded-lg">
+                  <img class="w-[20px] invert" src="/assets/icons/arrow.svg" alt="arrow">
+                </div>
+              </div>
+
+              <div class="accordion-content active">
+
+                <!-- Total educoins & badges count -->
+                <div class="flex justify-between ">
+                  <!-- grade total educoins count -->
+                  <div class="flex gap-1 items-center ">
+                    <img class="w-[28px]" src="assets/img/educoin-sm.png" alt="educoin">
+                    <p class="text-black/50">Educoins</p>
+                    <p class="font-bold text-primaryDark">26</p>
+                  </div>
+
+                  <!-- & badges count -->
+                  <div class="flex gap-1 items-center ">
+                    <img class="w-[26px]" src="assets/img/badges/badge1.png" alt="educoin">
+                    <img class="w-[26px]" src="assets/img/badges/badge2.png" alt="educoin">
+                    <p class="text-black/50">Badges</p>
+                    <p class="font-bold text-primaryDark">2</p>
+                  </div>
+
+                </div>
+
+                <!-- Units list -->
+                <div class="mt-6 relative">
+
+                  <div class="flex flex-col gap-3 z-10 relative">
+
+                    <div class="flex justify-between items-center">
+
+                      <div class="flex gap-2">
+                        <img class="w-[44px]" src="/assets/img/lvl1.png" alt="level 1">
+
+                        <div>
+                          <p class="font-medium">Computer Network & Internet</p>
+                          <p class="text-black/60 text-sm">Unit 1</p>
+                        </div>
+                      </div>
+
+                      <div class="flex gap-1 items-center ">
+                        <img class="w-[28px]" src="assets/img/educoin-sm.png" alt="educoin">
+                        <p class="font-bold text-primaryDark">7</p>
+                      </div>
+
+                    </div>
+
+                    <!-- seprator -->
+                    <div class="h-[3px] bg-gradient-to-r from-transparent via-gray-200 to-transparent w-full "></div>
+
+                    <div class="flex justify-between items-center">
+
+                      <div class="flex gap-2">
+                        <img class="w-[44px]" src="/assets/img/lvl2.png" alt="level 1">
+
+                        <div>
+                          <p class="font-medium">Familiarization of Microbit</p>
+                          <p class="text-black/60 text-sm">Unit 2</p>
+                        </div>
+                      </div>
+
+                      <div class="flex gap-1 items-center ">
+                        <img class="w-[28px]" src="assets/img/educoin-sm.png" alt="educoin">
+                        <p class="font-bold text-primaryDark">6</p>
+                      </div>
+
+                    </div>
+
+                    <!-- seprator -->
+                    <div class="h-[3px] bg-gradient-to-r from-transparent via-gray-200 to-transparent w-full "></div>
+
+
+                    <div class="flex justify-between items-center">
+
+                      <div class="flex gap-2">
+                        <img class="w-[44px]" src="/assets/img/lvl-locked.png" alt="level is locked">
+
+                        <div>
+                          <p class="font-medium">Introduction to Google sheets</p>
+                          <p class="text-black/60 text-sm">Unit 3</p>
+                        </div>
+                      </div>
+
+                      <div class="flex gap-1 items-center ">
+                        <img class="w-[28px]" src="assets/img/educoin-sm.png" alt="educoin">
+                        <p class="font-bold text-primaryDark">-</p>
+                      </div>
+
+                    </div>
+
+                    <!-- seprator -->
+                    <div class="h-[3px] bg-gradient-to-r from-transparent via-gray-200 to-transparent w-full "></div>
+
+                    <div class="flex justify-between items-center">
+
+                      <div class="flex gap-2">
+                        <img class="w-[44px]" src="/assets/img/lvl-locked.png" alt="level is locked">
+
+                        <div>
+                          <p class="font-medium">Introduction to Logo Programming</p>
+                          <p class="text-black/60 text-sm">Unit 4</p>
+                        </div>
+                      </div>
+
+                      <div class="flex gap-1 items-center ">
+                        <img class="w-[28px]" src="assets/img/educoin-sm.png" alt="educoin">
+                        <p class="font-bold text-primaryDark">-</p>
+                      </div>
+
+                    </div>
+
+                    <!-- seprator -->
+                    <div class="h-[3px] bg-gradient-to-r from-transparent via-gray-200 to-transparent w-full "></div>
+
+                    <div class="flex justify-between items-center">
+
+                      <div class="flex gap-2">
+                        <img class="w-[44px]" src="/assets/img/lvl-locked.png" alt="level is locked">
+
+                        <div>
+                          <p class="font-medium">Introduction to Artificial Intelligence</p>
+                          <p class="text-black/60 text-sm">Unit 5</p>
+                        </div>
+                      </div>
+
+                      <div class="flex gap-1 items-center ">
+                        <img class="w-[28px]" src="assets/img/educoin-sm.png" alt="educoin">
+                        <p class="font-bold text-primaryDark">-</p>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <!-- skill map line illustration -->
+                  <div class="z-5 h-[90%] w-[6px] top-2 bg-black/10 absolute left-5"></div>
+
+                </div>
+
+              </div>
+            </div>
+
+
+            <!-- 2023 -->
+            <div class="rounded-xl overflow-hidden">
+
+              <div class="journey-accordion-header ">
+                <div class="flex gap-2 items-center justify-center">
+                  <p class="font-semibold text-base">2023</p>
+                  <p class="font-semibold text-primaryDark">Grade 5B</p>
+                </div>
+                <div class="w-[30px] h-[30px] bg-primary flex justify-center items-center rounded-lg">
+                  <img class="w-[20px] invert" src="/assets/icons/arrow.svg" alt="arrow">
+                </div>
+              </div>
+
+              <div class="accordion-content ">
+
+                <!-- Total educoins & badges count -->
+                <div class="flex justify-between ">
+                  <!-- grade total educoins count -->
+                  <div class="flex gap-1 items-center ">
+                    <img class="w-[28px]" src="assets/img/educoin-sm.png" alt="educoin">
+                    <p class="text-black/50">Educoins</p>
+                    <p class="font-bold text-primaryDark">13</p>
+                  </div>
+
+                  <!-- & badges count -->
+                  <div class="flex gap-1 items-center ">
+
+                    <p class="text-black/50">Badges</p>
+                    <p class="font-bold text-primaryDark">0</p>
+                  </div>
+
+                </div>
+
+                <!-- Units list -->
+                <div class="mt-6 relative">
+
+                  <div class="flex flex-col gap-3 z-10 relative">
+
+                    <div class="flex justify-between items-center">
+
+                      <div class="flex gap-2">
+                        <img class="w-[44px]" src="/assets/img/lvl1.png" alt="level 1">
+
+                        <div>
+                          <p class="font-medium">Computer Network & Internet</p>
+                          <p class="text-black/60 text-sm">Unit 1</p>
+                        </div>
+                      </div>
+
+                      <div class="flex gap-1 items-center ">
+                        <img class="w-[28px]" src="assets/img/educoin-sm.png" alt="educoin">
+                        <p class="font-bold text-primaryDark">7</p>
+                      </div>
+
+                    </div>
+
+                    <!-- seprator -->
+                    <div class="h-[3px] bg-gradient-to-r from-transparent via-gray-200 to-transparent w-full "></div>
+
+
+                    <div class="flex justify-between items-center">
+
+                      <div class="flex gap-2">
+                        <img class="w-[44px]" src="/assets/img/lvl2.png" alt="level 1">
+
+                        <div>
+                          <p class="font-medium">Familiarization of Microbit</p>
+                          <p class="text-black/60 text-sm">Unit 2</p>
+                        </div>
+                      </div>
+
+                      <div class="flex gap-1 items-center ">
+                        <img class="w-[28px]" src="assets/img/educoin-sm.png" alt="educoin">
+                        <p class="font-bold text-primaryDark">6</p>
+                      </div>
+
+                    </div>
+
+                    <!-- seprator -->
+                    <div class="h-[3px] bg-gradient-to-r from-transparent via-gray-200 to-transparent w-full "></div>
+
+
+                    <div class="flex justify-between items-center">
+
+                      <div class="flex gap-2">
+                        <img class="w-[44px]" src="/assets/img/lvl1.png" alt="level 1">
+
+                        <div>
+                          <p class="font-medium">Computer Network & Internet</p>
+                          <p class="text-black/60 text-sm">Unit 1</p>
+                        </div>
+                      </div>
+
+                      <div class="flex gap-1 items-center ">
+                        <img class="w-[28px]" src="assets/img/educoin-sm.png" alt="educoin">
+                        <p class="font-bold text-primaryDark">7</p>
+                      </div>
+
+                    </div>
+
+
+                    <!-- seprator -->
+                    <div class="h-[3px] bg-gradient-to-r from-transparent via-gray-200 to-transparent w-full "></div>
+
+
+                    <div class="flex justify-between items-center">
+
+                      <div class="flex gap-2">
+                        <img class="w-[44px]" src="/assets/img/lvl2.png" alt="level 1">
+
+                        <div>
+                          <p class="font-medium">Familiarization of Microbit</p>
+                          <p class="text-black/60 text-sm">Unit 2</p>
+                        </div>
+                      </div>
+
+                      <div class="flex gap-1 items-center ">
+                        <img class="w-[28px]" src="assets/img/educoin-sm.png" alt="educoin">
+                        <p class="font-bold text-primaryDark">6</p>
+                      </div>
+
+                    </div>
+
+
+                  </div>
+
+                  <!-- skill map line illustration -->
+                  <div class="z-5 h-[90%] w-[6px] top-2 bg-black/10 absolute left-5"></div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <!-- 2022 -->
+            <div class="rounded-xl overflow-hidden">
+
+              <div class="journey-accordion-header ">
+                <div class="flex gap-2 items-center justify-center">
+                  <p class="font-semibold text-base">2022</p>
+                  <p class="font-semibold text-primaryDark">Grade 4B</p>
+                </div>
+                <div class="w-[30px] h-[30px] bg-primary flex justify-center items-center rounded-lg">
+                  <img class="w-[20px] invert" src="/assets/icons/arrow.svg" alt="arrow">
+                </div>
+              </div>
+
+              <div class="accordion-content ">
+
+                <!-- Total educoins & badges count -->
+                <div class="flex justify-between ">
+                  <!-- grade total educoins count -->
+                  <div class="flex gap-1 items-center ">
+                    <img class="w-[28px]" src="assets/img/educoin-sm.png" alt="educoin">
+                    <p class="text-black/50">Educoins</p>
+                    <p class="font-bold text-primaryDark">22</p>
+                  </div>
+
+                  <!-- & badges count -->
+                  <div class="flex gap-1 items-center ">
+                    <img class="w-[26px]" src="assets/img/badges/badge1.png" alt="educoin">
+
+                    <p class="text-black/50">Badges</p>
+                    <p class="font-bold text-primaryDark">1</p>
+                  </div>
+
+                </div>
+
+                <!-- Units list -->
+                <div class="mt-6 relative">
+
+                  <div class="flex flex-col gap-3 z-10 relative">
+
+                    <div class="flex justify-between items-center">
+
+                      <div class="flex gap-2">
+                        <img class="w-[44px]" src="/assets/img/lvl1.png" alt="level 1">
+
+                        <div>
+                          <p class="font-medium">Computer Network & Internet</p>
+                          <p class="text-black/60 text-sm">Unit 1</p>
+                        </div>
+                      </div>
+
+                      <div class="flex gap-1 items-center ">
+                        <img class="w-[28px]" src="assets/img/educoin-sm.png" alt="educoin">
+                        <p class="font-bold text-primaryDark">7</p>
+                      </div>
+
+                    </div>
+
+                    <!-- seprator -->
+                    <div class="h-[3px] bg-gradient-to-r from-transparent via-gray-200 to-transparent w-full "></div>
+
+
+                    <div class="flex justify-between items-center">
+
+                      <div class="flex gap-2">
+                        <img class="w-[44px]" src="/assets/img/lvl2.png" alt="level 1">
+
+                        <div>
+                          <p class="font-medium">Familiarization of Microbit</p>
+                          <p class="text-black/60 text-sm">Unit 2</p>
+                        </div>
+                      </div>
+
+                      <div class="flex gap-1 items-center ">
+                        <img class="w-[28px]" src="assets/img/educoin-sm.png" alt="educoin">
+                        <p class="font-bold text-primaryDark">6</p>
+                      </div>
+
+                    </div>
+
+                    <!-- seprator -->
+                    <div class="h-[3px] bg-gradient-to-r from-transparent via-gray-200 to-transparent w-full "></div>
+
+                    <div class="flex justify-between items-center">
+
+                      <div class="flex gap-2">
+                        <img class="w-[44px]" src="/assets/img/lvl1.png" alt="level 1">
+
+                        <div>
+                          <p class="font-medium">Computer Network & Internet</p>
+                          <p class="text-black/60 text-sm">Unit 1</p>
+                        </div>
+                      </div>
+
+                      <div class="flex gap-1 items-center ">
+                        <img class="w-[28px]" src="assets/img/educoin-sm.png" alt="educoin">
+                        <p class="font-bold text-primaryDark">7</p>
+                      </div>
+
+                    </div>
+
+                    <!-- seprator -->
+                    <div class="h-[3px] bg-gradient-to-r from-transparent via-gray-200 to-transparent w-full "></div>
+
+
+                    <div class="flex justify-between items-center">
+
+                      <div class="flex gap-2">
+                        <img class="w-[44px]" src="/assets/img/lvl2.png" alt="level 1">
+
+                        <div>
+                          <p class="font-medium">Familiarization of Microbit</p>
+                          <p class="text-black/60 text-sm">Unit 2</p>
+                        </div>
+                      </div>
+
+                      <div class="flex gap-1 items-center ">
+                        <img class="w-[28px]" src="assets/img/educoin-sm.png" alt="educoin">
+                        <p class="font-bold text-primaryDark">6</p>
+                      </div>
+
+                    </div>
+
+
+                  </div>
+
+                  <!-- skill map line illustration -->
+                  <div class="z-5 h-[90%] w-[6px] top-2 bg-black/10 absolute left-5"></div>
+
+                </div>
+
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+    </main>
+
+    <!-- E-Certificate Popup -->
+    <div id="certificatePopup" class="fixed z-[1000] inset-0  items-center justify-center bg-black bg-opacity-50    ">
+      <div class="bg-white p-6 rounded-lg max-w-[800px] min-h-[600px] relative flexf flex-col">
+
+        <p class="text-center pb-4">Issued at 25th 2024</p>
+
+        <div class="rounded-xl overflow-hidden border border-black/20">
+
+          <div id="certificateContentHigh" class="relative ">
+
+            <div class="absolute w-full h-full flex flex-col justify-between p-8">
+
+              <div class="flex justify-between">
+                <h1 id="certificateName" class="max-w-[60%] font-[Raleway] uppercase  text-4xl font-black tracking-wider  text-outline "></h1>
+                <h1  class="max-w-[60%] font-[Raleway] uppercase  text-4xl font-black tracking-wider text-white drop-shadow-[6px_10px_0px_10px_#000] ">TEST</TEST></h1>
+                <img id="educraftLogo" class="mx-auto h-10" />
+              </div>
+
+
+
+              <div class="flex justify-between">
+
+                <div>
+                  <p class="text-gray-600">This certificate is proudly presented to</p>
+
+                  <p id="studentName" class="text-xl font-semibold"></p>
+
+                  <p>For completion of skill course <span id="courseName" class="text-gray-700"></span> course on <span
+                      id="completionDate" class="font-semibold"></span></p>
+                  <p>Certification ID : <span id="certificationID" class="text-xs text-gray-500"></span></p>
+                </div>
+
+                <div class="">
+                  <img id="badgeImg" class="h-10" />
+                  <span id="badgeText" class="text-sm font-medium text-blue-600"></span>
+                  <img id="schoolLogo" class="mx-auto h-12" />
+                </div>
+
+              </div>
+
+
+              <div class="flex justify-between items-end">
+
+                <div>
+                  <p id="issueDate" class=""></p>
+                  <p>Issued Date</p>
+                </div>
+
+                <div>
+                  <img id="signature" class="h-12" />
+                  <p id="signatureName" class="text-sm font-medium"></p>
+                  <p id="signatureDesignation" class="text-xs text-gray-500"></p>
+                </div>
+              </div>
+
+            </div>
+
+            <img class="" src="/assets/img/certificate/cert-high-bg.webp" alt="Certificate Image" />
+
+          </div>
+
+        </div>
+
+
+        <div class="flex justify-center pt-4 ">
+          <button id="downloadPdf"
+            class="bg-[#bf4b00] hover:bg-primary text-white px-4 py-2 rounded-lg w-full lg:max-w-[140px]">Download
+            PDF</button>
+        </div>
+
+        <!-- close x button -->
+        <button id="closePopup" class="bg-[#f4f4f4] hover:bg-[#e4e2e2] absolute top-4 right-4 p-1.5 rounded-full">
+          <img class="w-5 h-5" src="/assets/icons/close-line.svg" alt="close">
+        </button>
+      </div>
+    </div>
+
+    <!-- E-Certificate Popup -->
+    <div id="certificate2Popup"
+      class="fixed z-[1000] inset-0  items-center justify-center bg-black bg-opacity-50  hidden">
+      <div class="bg-white p-6 rounded-lg max-w-[800px] min-h-[600px] relative flexf flex-col">
+
+        <p class="text-center pb-4">Issued at 25th 2024</p>
+
+        <div class="rounded-xl overflow-hidden border border-black/20">
+
+          <div id="certificateContent" class="relative bg-red-800">
+            <div class="absolute w-full h-full">
+              <div class="w-full h-full relative ">
+                <p id="studentCertName" class="absolute left-[35%] top-[36%] text-[3rem]  leading-[3rem] "
+                  style="font-family: 'Courgette', 'Poppins';">Faisal <br>Saleem</p>
+
+                <p class="leading-5 absolute left-[35%] top-[60%]">For participating in the Robotics & Al Summer Camp
+                  2024-25<br>
+                  Held by Educraft from 1 st July 2024 to 1 lth July 2024.</p>
+                <p class="font-medium text-base absolute left-[35%] bottom-[8%]">Sep 25th, 2024</p>
+              </div>
+            </div>
+            <img class="" src="/assets/img/certificate-hs.png" alt="Certificate Image" />
+          </div>
+
+        </div>
+
+
+        <div class="flex justify-center pt-4 ">
+          <button id="downloadPdf"
+            class="bg-[#bf4b00] hover:bg-primary text-white px-4 py-2 rounded-lg w-full lg:max-w-[140px]">Download
+            PDF</button>
+        </div>
+
+        <!-- close x button -->
+        <button id="closePopup" class="bg-[#f4f4f4] hover:bg-[#e4e2e2] absolute top-4 right-4 p-1.5 rounded-full">
+          <img class="w-5 h-5" src="/assets/icons/close-line.svg" alt="close">
+        </button>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <!-- custom script -->
+  <script src="./js/main.js"></script>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <script src="./js/learningJourney.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js">  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <script>
+
+
+    const certificateContentHigh = {
+      "certificateName": "Certificate of Skill Excellence",
+      "studentName": "Faisal Saleem",
+      "courseName": "Python Programming",
+      "certificationID": "k08239489N",
+      "issueDate": "Sep 25 2024",
+      "completionDate": "Aug 03 2024",
+      "signature": "/assets/img/certificate/signature.png",
+      "signatureName": "Kadeeja Firous",
+      "signatureDesignation": "Principal",
+      "badgeImg": "/assets/img/certificate/badge1.png",
+      "badgeText": "Quiz Champion",
+      "schoolLogo": "/assets/img/certificate/nims-school-logo.png",
+      "educraftLogo": "/assets/img/certificate/educraft-logo-with-text.png"
+    };
+
+    document.getElementById("certificateName").textContent = certificateContentHigh.certificateName;
+    document.getElementById("studentName").textContent = certificateContentHigh.studentName;
+    document.getElementById("courseName").textContent = certificateContentHigh.courseName;
+
+    document.getElementById("certificationID").textContent = "ID: " + certificateContentHigh.certificationID;
+    document.getElementById("issueDate").textContent = "Issued: " + certificateContentHigh.issueDate;
+
+    document.getElementById("badgeImg").src = certificateContentHigh.badgeImg;
+    document.getElementById("badgeText").textContent = certificateContentHigh.badgeText;
+
+    document.getElementById("signature").src = certificateContentHigh.signature;
+    document.getElementById("signatureName").textContent = certificateContentHigh.signatureName;
+    document.getElementById("signatureDesignation").textContent = certificateContentHigh.signatureDesignation;
+
+    document.getElementById("schoolLogo").src = certificateContentHigh.schoolLogo;
+    document.getElementById("educraftLogo").src = certificateContentHigh.educraftLogo;
+
+
+
+    // close button
+    document.getElementById("closePopup").addEventListener('click', () => {
+      document.getElementById("certificatePopup").classList.add('hidden');
+    });
+
+    // popup opens when cliking the certificate
+    document.getElementById("openCertificate").addEventListener('click', () => {
+      document.getElementById("certificatePopup").classList.remove('hidden');
+      document.getElementById("certificatePopup").classList.add('flex');
+
+    });
+
+    // popup opens when cliking the certificate
+    document.getElementById("openCertificate2").addEventListener('click', () => {
+      document.getElementById("certificatePopup").classList.remove('hidden');
+      document.getElementById("certificatePopup").classList.add('flex');
+
+    });
+
+
+    document.getElementById("downloadPdf").addEventListener("click", function () {
+
+
+      const certificateContent = document.getElementById("certificateContent");
+
+      // Get the student's name from the <p> element
+      const studentName = document.getElementById("studentCertName").innerText.trim().replace(/\s+/g, '_');
+
+      // Get the width and height of the div in pixels
+      const contentWidth = certificateContent.offsetWidth;
+      const contentHeight = certificateContent.offsetHeight;
+
+      // Convert pixel dimensions to millimeters (1 pixel ≈ 0.264583 mm)
+      const mmWidth = contentWidth * 0.264583;
+      const mmHeight = contentHeight * 0.264583;
+
+      const opt = {
+        margin: 0, // Set margin to 0 for exact match
+        filename: `${studentName}_ec_certificate.pdf`, // Use student's name as filename
+        image: { type: 'jpeg', quality: 1 },
+        html2canvas: { scale: 2 },
+        jsPDF: {
+          unit: 'mm',
+          format: [mmWidth, mmHeight], // Set custom size
+          orientation: 'landscape' // or 'portrait' based on your design
+        },
+      };
+
+      html2pdf().from(certificateContent).set(opt).toPdf().get('pdf').then(function (pdf) {
+        const pdfBlob = pdf.output('blob');
+        const blobUrl = URL.createObjectURL(pdfBlob);
+
+        // Open the PDF in a new tab
+        window.open(blobUrl, '_blank');
+
+        // Trigger the download
+        pdf.save(opt.filename);
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>

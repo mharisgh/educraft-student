@@ -16,7 +16,7 @@
     <link href="output.css" rel="stylesheet" />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,6 +29,11 @@
       rel="stylesheet"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Courgette&display=swap"
+    />
+
     <style>
       .active {
         background-color: #fa9d53;
@@ -38,8 +43,12 @@
         font-family: "Raleway", sans-serif;
       }
 
-      .font-poppins {
-        font-family: "Poppins", sans-serif;
+      .font-comic {
+        font-family: "Comic Neue", sans-serif;
+      }
+
+      .font-courgette {
+        font-family: "Courgette", sans-serif;
       }
 
       /* .underline-dashed {
@@ -1466,74 +1475,73 @@
           <p class="text-center pb-4">Issued at 25th 2024</p>
 
           <div class="rounded overflow-hidden border border-black/20">
-            <div id="certificateContentHigh" class="relative font-raleway">
+            <div id="certificateContentHigh" class="relative font-comic">
+              <!-- certificate contents -->
               <div
-                class="absolute w-full h-full flex flex-col justify-between px-12 pt-12 pb-4 "
+                class="absolute w-full h-full flex flex-col justify-between px-12 pt-4 pb-4"
               >
-                <div
-                  class="flex justify-between items-start h-[30%] "
-                >
+                <!-- part 1 -->
+                <div class=" flex flex-col items-center text-center">
+                  <!-- educraft logo with text -->
                   <img
-                    class=""
-                    src="assets/img/certificate/annual-rec-text.svg"
-                    alt=""
-                  />
-                  <img
-                    class="w-[140px]"
+                    class="w-[100px] pb-6"
                     src="assets/img/certificate/educraft-logo-with-text.png"
                     alt=""
                   />
-                </div>
 
-                <div class="flex justify-between h-[40%] ">
+                  <!-- certificate name -->
+                  <img
+                    class="pb-4"
+                    src="assets/img/certificate/annual-rec-textcenter.svg"
+                    alt=""
+                  />
+
+                  <!-- Student name, text, badge -->
                   <div class="flex flex-col justify-between h-full">
-                    <div>
-                      <p class="">This certificate is proudly presented to</p>
+                    <p
+                      id="studentNameInCertficate"
+                      class="font-courgette text-5xl font-medium py-4 underline underline-offset-8 [text-decoration-style:dashed] [text-decoration-color:#ffd8a1] [text-decoration-thickness:2px]"
+                    ></p>
 
-                      <p
-                        id="studentNameInCertficate"
-                        class="text-4xl uppercase font-semibold py-4 underline underline-offset-8 [text-decoration-style:dashed] [text-decoration-color:#ffd8a1] [text-decoration-thickness:2px]"
-                      ></p>
-
-                      <p class="">
-                        For completion of skill course
-                        <span id="courseName" class="font-bold"></span> course
-                        <br />
-                        on <span id="completionDate" class="font-bold"></span>
-                      </p>
-                    </div>
-
-                    <p>
-                      Certification ID :
-                      <span
-                        id="certificationID"
-                        class="text-xs text-gray-500 font-sans"
-                      ></span>
+                    <p class="text-[16px] pb-8">
+                      for successfully completing the
+                      <span id="courseName" class="font-bold"></span>
+                      <br />
+                      courses conducted by Educraft on
+                      <span id="completionDate" class="font-bold"></span>
                     </p>
-                  </div>
 
-                  <div class="flex flex-col justify-between items-center h-full">
+                    <!-- quiz badge -->
                     <div
-                      class="flex flex-col justify-between items-center gap-2"
+                      class="flex flex-col justify-between items-center gap-2 "
                     >
-                      <img id="badgeImg" class="h-14" />
+                      <img id="badgeImg" class="h-10" />
                       <p
                         id="badgeText"
                         class="text-xs font-medium color-black/70"
                       ></p>
                     </div>
-                    <img id="schoolLogo" class="mx-auto h-12" />
                   </div>
                 </div>
 
-                <div class="flex justify-between items-end h-[30%] ">
-                  <div class="">
+                <!-- part 2 -->
+                <div class="flex justify-between items-center px-20">
+                  
+                  <!-- Issue date -->
+                  <div class=" w-[33%]">
                     <p id="issueDate" class="font-bold text-[14px]"></p>
                     <p class="text-xs">Issued Date</p>
                   </div>
 
-                  <div>
-                    <img id="signature" class="h-14" />
+                  <!-- school logo -->
+                  <div class="w-[34%] flex justify-center items-center">
+
+                    <img id="schoolLogo" class="mx-auto h-10" />
+                  </div>
+
+                  <!-- authority name and signature -->
+                  <div class="w-[33%] flex items-end flex-col">
+                    <!-- <img id="signature" class="h-10" /> -->
                     <p id="signatureName" class="text-sm font-bold"></p>
                     <p
                       id="signatureDesignation"
@@ -1541,11 +1549,22 @@
                     ></p>
                   </div>
                 </div>
+
+                <!-- certificate id at bottom -->
+                <div class="flex w-full justify-center items-center">
+                  <p>
+                    Certification ID :
+                    <span
+                      id="certificationID"
+                      class="text-xs text-gray-500 font-sans"
+                    ></span>
+                  </p>
+                </div>
               </div>
 
               <img
                 class=""
-                src="/assets/img/certificate/cert-high-bg.webp"
+                src="/assets/img/certificate/cert-low-bg.webp"
                 alt="Certificate Image"
               />
             </div>
@@ -1687,8 +1706,9 @@
       document.getElementById("badgeText").textContent =
         certificateContentHigh.badgeText;
 
-      document.getElementById("signature").src =
-        certificateContentHigh.signature;
+      // document.getElementById("signature").src =
+      //   certificateContentHigh.signature;
+
       document.getElementById("signatureName").textContent =
         certificateContentHigh.signatureName;
       document.getElementById("signatureDesignation").textContent =
