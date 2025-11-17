@@ -277,6 +277,105 @@
             </div>
           </div>
 
+          <!-- Modal Popup -->
+          <div
+            id="uploadModal"
+            class="fixed inset-0 bg-black/50 flex justify-center items-center z-50"
+          >
+            <div
+              class="bg-white w-[500px] rounded-xl shadow-lg flex flex-col relative "
+            >
+              <div class="flex justify-between items-center p-4">
+                <h3 class="text-base font-semibold text-black">
+                  Upload Assignment
+                </h3>
+                <div class="flex justify-center items-center gap-1">
+                  <a href="/robotics-camp.html">
+                  <button
+                    id="closeModal"
+                    class="text-black bg-[#F4F4F4] flex justify-center items-center p-2 rounded-full"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="11"
+                      height="11"
+                      viewBox="0 0 11 11"
+                      fill="none"
+                    >
+                      <path
+                        d="M10.6089 9.51461C10.7543 9.65998 10.8359 9.85714 10.8359 10.0627C10.8359 10.2683 10.7543 10.4655 10.6089 10.6108C10.4635 10.7562 10.2664 10.8379 10.0608 10.8379C9.85521 10.8379 9.65805 10.7562 9.51268 10.6108L5.41861 6.51548L1.32326 10.6095C1.17789 10.7549 0.980728 10.8366 0.775146 10.8366C0.569565 10.8366 0.372403 10.7549 0.227035 10.6095C0.081667 10.4642 3.0634e-09 10.267 0 10.0614C-3.0634e-09 9.85585 0.081667 9.65869 0.227035 9.51332L4.32239 5.41926L0.228325 1.3239C0.0829565 1.17853 0.0012897 0.981372 0.0012897 0.775791C0.0012897 0.570209 0.0829565 0.373048 0.228325 0.22768C0.373693 0.0823118 0.570854 0.00064473 0.776435 0.000644728C0.982017 0.000644726 1.17918 0.0823118 1.32455 0.22768L5.41861 4.32304L9.51397 0.227035C9.65934 0.0816668 9.8565 -3.42499e-09 10.0621 0C10.2677 3.42499e-09 10.4648 0.0816668 10.6102 0.227035C10.7556 0.372403 10.8372 0.569564 10.8372 0.775146C10.8372 0.980727 10.7556 1.17789 10.6102 1.32326L6.51483 5.41926L10.6089 9.51461Z"
+                        fill="black"
+                      />
+                    </svg>
+                  </button>
+                  </a>
+                </div>
+              </div>
+
+              <div
+                class="bg-[linear-gradient(90deg,rgba(0,0,0,0.10)_0%,#FE9614_48.57%,rgba(0,0,0,0.10)_100%)] w-full h-[1px]"
+              ></div>
+              
+              <div
+                class="flex flex-col gap-4 items-start p-4  "
+              >
+                <div class="flex flex-col gap-2 items-start w-full">
+                  <p class="text-[10px] font-semibold text-black/50">
+                    QUESTION
+                  </p>
+                  <div class="">
+                    <p class="text-xs text-black">
+                      Explain the difference between useState and useEffect
+                      hooks. Provide practical examples of when to use each
+                      hook, and demonstrate your understanding by writing code
+                      snippets that showcase common use cases.?
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex flex-col gap-2 mt-4  items-start w-full">
+                  <p class="text-[10px] font-semibold text-black/50">
+                    UPLOAD DOCUMENT (OPTIONAL)
+                  </p>
+                  <div
+                    class="rounded-[10px] border border-dashed border-[#DFDFDF] bg-[#F5F3F1] flex justify-center items-center p-2 w-full min-h-[100px] "
+                  >
+                    <div
+                      class="flex flex-col justify-center items-center gap-1 "
+                    >
+                      <img src="./assets/img/pdfimg.png" alt="" srcset="" />
+                      <p
+                        class="text-[10px] font-medium underline text-[#BF4B00]"
+                      >
+                        Click to upload or drag & drop
+                      </p>
+                      <p class="text-[10px] text-black/60">
+                        Max file size : 5 MB
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex justify-end items-center w-full">
+                  <div class="flex items-center justify-center gap-2">
+                    <button
+                      class="border border-gray-300 rounded-[10px] text-sm font-medium text-gray-700 hover:bg-gray-100 transition w-[95px] h-[36px]"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      class="bg-[#C55300] text-white rounded-[10px] text-sm font-medium hover:bg-[#a84700] transition px-4 w-auto h-[36px]"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
           <!-- Quiz -->
           <div
             class="relative bg-gradient-to-br from-[#fef1eb] via-white to-[#fae2d9] border border-black/10 rounded-2xl px-4 py-2"
@@ -390,23 +489,20 @@
               <div
                 class="bg-[#45392c] rounded-xl p-4 mt-6 border-black/10 border-[3px] hover:border-[#f8740b] text-white flex flex-col gap-1 cursor-pointer"
               >
-                <a href="upload-assignment.html">
-                  <div class="flex justify-between items-center">
-                    <div class="flex items-center gap-2">
-                      <p>01</p>
-                      <p class="text-[14px] font-semibold">
-                        Introduction to React Hooks
-                      </p>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <img class="w-6" src="assets/img/educoin-sm.png" alt="" />
-                      <p>Educoins : -</p>
-                      <p class="bg-white/30 px-3 py-1 rounded-xl">
-                        Not Started
-                      </p>
-                    </div>
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center gap-2">
+                    <p>01</p>
+                    <p class="text-[14px] font-semibold">
+                      Introduction to React Hooks
+                    </p>
                   </div>
-                </a>
+                  <div class="flex items-center gap-2">
+                    <img class="w-6" src="assets/img/educoin-sm.png" alt="" />
+                    <p>Educoins : -</p>
+                    <p class="bg-white/30 px-3 py-1 rounded-xl">Not Started</p>
+                  </div>
+                </div>
+
                 <p>
                   Explain the difference between useState and useEffect hooks.
                   Provide practical examples of when to use each hook...
