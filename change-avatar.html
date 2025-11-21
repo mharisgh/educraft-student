@@ -10,7 +10,7 @@
   <body class="bg-black/20 flex justify-center items-center h-screen">
     <!-- Main Container -->
     <div class="bg-white w-[60%] h-auto rounded-2xl flex flex-col">
-      <div class="flex justify-between items-center p-4">
+      <div class="flex justify-between items-center px-4 py-3">
         <h1 class="font-semibold">Change Avatar</h1>
         <div
           class="bg-[#F4F4F4] flex items-center p-2 w-fit rounded-full cursor-pointer"
@@ -33,16 +33,13 @@
         class="w-full h-[2px] bg-[linear-gradient(90deg,rgba(0,0,0,0.10)_0%,#FE9614_48.57%,rgba(0,0,0,0.10)_100%)] opacity-20"
       ></div>
 
-      <div class="p-4 flex flex-col flex-1">
-        <div class="flex justify-between items-start">
-          <div>
-            <h2 class="text-[10px] font-semibold leading-[21.957px] opacity-50">
-              CHOOSE AVATAR
-            </h2>
-            <h3 class="text-xs">
-              Unlock avatars using your Educoins and show off your achievements!
+      <div class="px-4 py-2 flex flex-col flex-1">
+        <div class="flex justify-between items-center">
+          
+            <h3 class="text-xs leading-5 text-black/60 ">
+              Unlock avatars using your Educoins and <br> upgrade your profile picture with characters you earn along the way.
             </h3>
-          </div>
+          
           <div
             class="bg-[#FCF7F0] rounded-[20px] flex items-center gap-2 justify-center px-[30px] py-[10px] w-fit"
           >
@@ -59,7 +56,7 @@
                 >
               </p>
             </div>
-            <img src="./assets/coin.png" alt="coin" class="w-10 h-11" />
+            <img src="/assets/img/educoin-sm.png" alt="coin" class="w-14 " />
           </div>
         </div>
 
@@ -320,7 +317,7 @@
       const avatars = [
         {
           name: "Portrait",
-          status: "Currently using",
+          status: "Selected",
           coins: 0,
           locked: false,
           img: "./assets/student.png",
@@ -380,7 +377,7 @@
 
       container.innerHTML = avatars
         .map((avatar) => {
-          const isUsing = avatar.status === "Currently using";
+          const isUsing = avatar.status === "Selected";
           const borderClass = isUsing
             ? "border-2 border-[#EC6106]"
             : "border border-gray-300";
@@ -392,18 +389,22 @@
             lockOverlay = `<div class="absolute inset-0 flex items-center justify-center bg-black/50 backdrop-blur-[2px]"><img src="./assets/lock.png" alt="Locked" class="w-8 h-8" /></div>`;
           }
 
-          if (avatar.status !== "Currently using") {
-            badgeHTML = `<div class="absolute right-2 top-2 z-50"><div class="rounded-full px-[8px] py-[5px] flex items-center bg-black/30 backdrop-blur-[3px]"><p class="text-[8px] font-semibold text-white">${avatar.status}</p></div></div>`;
+          if (avatar.status !== "Selected") {
+            badgeHTML = ``;
           }
 
           if (avatar.locked) {
             buttonHTML = `<button data-avatar="${avatar.name}" class="unlock-btn flex items-center justify-center gap-1 bg-[#EC6106] text-[10px] text-white font-semibold px-[12px] py-[8px] rounded-[10px]">
-              <span>Unlock for</span><img src="./assets/coin.png" alt="coin" class="w-5 h-5" /><span class="font-bold text-[14px]">${avatar.coins}</span>
+              <span>Unlock for</span><img src="/assets/img/educoin-sm.png" alt="coin" class="w-5" /><span class="font-bold text-[14px]">${avatar.coins}</span>
             </button>`;
           } else if (isUsing) {
-            buttonHTML = `<button class=" p-[10px]"><p class="text-[10px] font-semibold text-[#EC6106]">Currently using</p></button>`;
+            buttonHTML = `<button class=" p-[10px] flex gap-1 items-center justify-center"><p class="text-[10px] font-semibold text-[#EC6106]">Selected</p>
+              
+              <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#ec6106"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>
+              
+              </button>`;
           } else {
-            buttonHTML = `<button class="bg-white text-[10px] font-semibold text-black border border-black/20 p-[10px] rounded-[10px] hover:bg-[#EC6106] hover:text-white transition">Use this Avatar!</button>`;
+            buttonHTML = `<p class="text-[10px] text-black/50">Select as your avatar</p>`;
           }
 
           return `<div class="bg-[#FCF7F0] rounded-[14px] overflow-hidden text-center relative ${borderClass}">
