@@ -380,7 +380,7 @@
           const isUsing = avatar.status === "Selected";
           const borderClass = isUsing
             ? "border-2 border-[#EC6106]"
-            : "border border-gray-300";
+            : "border-2 border-gray-100 hover:border-gray-300";
           let buttonHTML = "",
             badgeHTML = "",
             lockOverlay = "";
@@ -407,7 +407,7 @@
             buttonHTML = `<p class="text-[10px] text-black/50">Select as your avatar</p>`;
           }
 
-          return `<div class="bg-[#FCF7F0] rounded-[14px] overflow-hidden text-center relative ${borderClass}">
+          return `<div class="bg-[#FCF7F0] rounded-[14px] overflow-hidden text-center relative ${borderClass} cursor-pointer ">
           ${badgeHTML}
           <div class="relative w-full h-[22vh] overflow-hidden">
             <img src="${avatar.img}" alt="${
