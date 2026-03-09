@@ -1,0 +1,64 @@
+﻿{
+  "heroCards": [
+    { "img": "assets/img/teacher2.jpg", "alt": "Student story profile" },
+    { "img": "assets/img/std1.png", "alt": "Student story profile" },
+    { "img": "assets/img/std2.png", "alt": "Student story profile" },
+    { "img": "assets/img/user.png", "alt": "Student story profile" },
+    { "img": "assets/img/std3.png", "alt": "Student story profile" },
+    { "img": "assets/img/student.jpg", "alt": "Student story profile" },
+    { "img": "assets/img/teacher.png", "alt": "Student story profile" },
+    { "img": "assets/img/student.png", "alt": "Student story profile" },
+    { "img": "assets/img/tariq.png", "alt": "Student story profile" },
+    { "img": "assets/img/teacher2.jpg", "alt": "Student story profile" }
+  ],
+  "stories": [
+    {
+      "storyTitle": "Built a Smart Irrigation Helper",
+      "authorName": "Areeba Fatima",
+      "authorClass": "Grade 8 - Robotics",
+      "authorImg": "assets/img/std1.png"
+    },
+    {
+      "storyTitle": "Designed a 3D Eco Classroom",
+      "authorName": "Hamza Tariq",
+      "authorClass": "Grade 9 - Design Lab",
+      "authorImg": "assets/img/std2.png"
+    },
+    {
+      "storyTitle": "Made a Voice Quiz Assistant",
+      "authorName": "Mariam Noor",
+      "authorClass": "Grade 7 - AI Basics",
+      "authorImg": "assets/img/std3.png"
+    },
+    {
+      "storyTitle": "Created an Attendance Bot",
+      "authorName": "Saad Ahmed",
+      "authorClass": "Grade 10 - Coding",
+      "authorImg": "assets/img/user.png"
+    },
+    {
+      "storyTitle": "Built a Digital Science Fair Booth",
+      "authorName": "Zainab Ali",
+      "authorClass": "Grade 8 - STEM",
+      "authorImg": "assets/img/teacher2.jpg"
+    },
+    {
+      "storyTitle": "Animated a Space Mission Story",
+      "authorName": "Raza Haider",
+      "authorClass": "Grade 6 - Creative Tech",
+      "authorImg": "assets/img/student.jpg"
+    },
+    {
+      "storyTitle": "Prototyped a Safety Wearable",
+      "authorName": "Hina Javed",
+      "authorClass": "Grade 9 - Innovation Lab",
+      "authorImg": "assets/img/teacher.png"
+    },
+    {
+      "storyTitle": "Built an AR Museum Guide",
+      "authorName": "Usman Khalid",
+      "authorClass": "Grade 10 - Future Skills",
+      "authorImg": "assets/img/tariq.png"
+    }
+  ]
+}

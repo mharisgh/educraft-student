@@ -1,0 +1,38 @@
+﻿[
+  {
+    "toolName": "MakeCode Arcade",
+    "toolLogoImg": "assets/logos/make-code.png",
+    "alt": "MakeCode Arcade logo",
+    "toolLink": "https://arcade.makecode.com/"
+  },
+  {
+    "toolName": "micro:bit",
+    "toolLogoImg": "assets/logos/microbit.png",
+    "alt": "micro:bit logo",
+    "toolLink": "https://makecode.microbit.org/"
+  },
+  {
+    "toolName": "Arduino",
+    "toolLogoImg": "assets/logos/arduino.png",
+    "alt": "Arduino logo",
+    "toolLink": "https://www.arduino.cc/"
+  },
+  {
+    "toolName": "Tinkercad",
+    "toolLogoImg": "assets/logos/tinkercad.png",
+    "alt": "Tinkercad logo",
+    "toolLink": "https://www.tinkercad.com/"
+  },
+  {
+    "toolName": "Canva",
+    "toolLogoImg": "assets/logos/canva.png",
+    "alt": "Canva logo",
+    "toolLink": "https://www.canva.com/"
+  },
+  {
+    "toolName": "Figma",
+    "toolLogoImg": "assets/logos/figma.png",
+    "alt": "Figma logo",
+    "toolLink": "https://www.figma.com/"
+  }
+]
