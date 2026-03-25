@@ -4634,3 +4634,64 @@ body {
     }
   }
 }
+/* Shared motion utilities */
+@keyframes slide-up-fade-once {
+  0% {
+    opacity: 0;
+    translate: 0 18px;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+.slide-up-fade {
+  opacity: 0;
+  animation: slide-up-fade-once 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+  will-change: opacity, translate;
+}
+
+@keyframes zoom-in-fade-once {
+  0% {
+    opacity: 0;
+    scale: 0.96;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.zoom-in-fade {
+  opacity: 0;
+  transform-origin: center;
+  animation: zoom-in-fade-once 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+  will-change: opacity, scale;
+}
+
+@keyframes slide-down-up-loop {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 8px;
+  }
+}
+
+.slide-down-up-infinite {
+  animation: slide-down-up-loop 5.5s ease-in-out infinite;
+  will-change: translate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide-up-fade,
+  .zoom-in-fade,
+  .slide-down-up-infinite {
+    animation: none !important;
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+}

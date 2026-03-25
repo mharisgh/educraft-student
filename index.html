@@ -1,328 +1,388 @@
 <!doctype html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Educraft</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Educraft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="output.css" rel="stylesheet" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500&display=swap" rel="stylesheet">
-  <link href="output.css" rel="stylesheet">
-
-
-
-
-  <style>
-    #skillMapHoverUnlocked {
-      pointer-events: none;
-      /* transform: translate(-50%, -100%); */
-    }
-
-    .menu {
-      display: block;
-    }
-
-    .menu.active {
-      display: block;
-    }
-
-    .active {
-      background-color: #fa9d53;
-    }
-
-    .flip {
-      -webkit-transform: scaleX(-1);
-      transform: scaleX(-1);
-    }
-
-    /* ================================== */
-    /* Carousal Swiper  */
-    /* ================================== */
-
-    .swiper-slide {
-      max-width: 90%;
-    }
-
-    /* Change the color of the pagination bullets */
-    .swiper-pagination-bullet {
-      background-color: #f9d1b6;
-      /* Custom color for bullets (e.g., tomato color) */
-    }
-
-    /* Change the color of the active pagination bullet */
-    .swiper-pagination-bullet-active {
-      background-color: #ec650a;
-      /* Custom color for the active bullet (e.g., orange red) */
-    }
-
-    /* ====================================================== */
-    /* Custom animation  */
-    /* ====================================================== */
-
-    @keyframes rotateChat {
-      0% {
-        transform: rotate(0deg);
+    <style>
+      #skillMapHoverUnlocked {
+        pointer-events: none;
+        /* transform: translate(-50%, -100%); */
       }
 
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    /* Tailwind extension */
-    .rotate-chat {
-      animation: rotateChat 10s cubic-bezier(0.42, 0, 0.58, 1) infinite;
-    }
-
-
-    /* ====================================================== */
-    /* Custom animation */
-    /* ====================================================== */
-
-    @keyframes custom-ping {
-      0% {
-        transform: scale(.8);
+      .menu {
+        display: block;
       }
 
-      50% {
-        transform: scale(1)
+      .menu.active {
+        display: block;
       }
 
-      100% {
-        transform: scale(.8);
-      }
-    }
-
-    @keyframes now-educy {
-      0% {
-        transform: translateX(0) rotate(0deg);
+      .active {
+        background-color: #fa9d53;
       }
 
-      50% {
-        transform: translateX(10px) rotate(10deg) scale(1.1);
+      .flip {
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
       }
 
-      100% {
-        transform: translateX(0) rotate(0deg);
-      }
-    }
+      /* ================================== */
+      /* Carousal Swiper  */
+      /* ================================== */
 
-    @keyframes gradient-border {
-      0% {
-        background-position: 0% 50%;
+      .swiper-slide {
+        max-width: 90%;
       }
 
-      50% {
-        background-position: 100% 50%;
+      /* Change the color of the pagination bullets */
+      .swiper-pagination-bullet {
+        background-color: #f9d1b6;
+        /* Custom color for bullets (e.g., tomato color) */
       }
 
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-
-    .animate-gradient-border {
-      background: linear-gradient(270deg, #f8740b, #d36b25);
-      background-size: 300%;
-      animation: gradient-border 3s ease infinite;
-    }
-
-    .custom-educy-animation {
-      display: block;
-      animation: now-educy 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-    }
-
-    .custom-ping {
-      animation: custom-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-    }
-
-
-
-    /* ====================================================== */
-    /* Custom animation  */
-    /* ====================================================== */
-
-    @keyframes staticMovement {
-      0% {
-        transform: rotate(0deg) translateX(0px);
+      /* Change the color of the active pagination bullet */
+      .swiper-pagination-bullet-active {
+        background-color: #ec650a;
+        /* Custom color for the active bullet (e.g., orange red) */
       }
 
-      50% {
-        transform: rotate(2deg) translateX(6px);
+      /* ====================================================== */
+      /* Custom animation  */
+      /* ====================================================== */
+
+      @keyframes rotateChat {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
       }
 
-      100% {
-        transform: rotate(0deg) translateX(0px);
-      }
-    }
-
-    .static-movement {
-      animation: staticMovement 8s ease-in-out infinite;
-    }
-
-    /* ====================================================== */
-    /* Custom animation for rotating the globe */
-    /* ====================================================== */
-
-    @keyframes staticMovement2 {
-      0% {
-        transform: rotate(0deg) translateY(0px);
+      /* Tailwind extension */
+      .rotate-chat {
+        animation: rotateChat 10s cubic-bezier(0.42, 0, 0.58, 1) infinite;
       }
 
-      50% {
-        transform: rotate(2deg) translateY(6px);
+      /* ====================================================== */
+      /* Custom animation */
+      /* ====================================================== */
+
+      @keyframes custom-ping {
+        0% {
+          transform: scale(0.8);
+        }
+
+        50% {
+          transform: scale(1);
+        }
+
+        100% {
+          transform: scale(0.8);
+        }
       }
 
-      100% {
-        transform: rotate(0deg) translateY(0px);
-      }
-    }
+      @keyframes now-educy {
+        0% {
+          transform: translateX(0) rotate(0deg);
+        }
 
-    .static-movement2 {
-      animation: staticMovement2 8s ease-in-out infinite;
-    }
+        50% {
+          transform: translateX(10px) rotate(10deg) scale(1.1);
+        }
 
-    /* ====================================================== */
-    /* Custom animation */
-    /* ====================================================== */
-
-    @keyframes moveAndHide {
-
-      0% {
-        left: -10rem;
+        100% {
+          transform: translateX(0) rotate(0deg);
+        }
       }
 
-      100% {
-        left: 100%;
+      @keyframes gradient-border {
+        0% {
+          background-position: 0% 50%;
+        }
+
+        50% {
+          background-position: 100% 50%;
+        }
+
+        100% {
+          background-position: 0% 50%;
+        }
       }
-    }
 
-    .move-repeat {
-      position: absolute;
-      animation: moveAndHide 16s linear infinite;
-    }
-  </style>
-</head>
+      .animate-gradient-border {
+        background: linear-gradient(270deg, #f8740b, #d36b25);
+        background-size: 300%;
+        animation: gradient-border 3s ease infinite;
+      }
 
-<body class="flex ">
+      .custom-educy-animation {
+        display: block;
+        animation: now-educy 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+      }
 
-  <!-- =========================================== -->
-  <!-- Nav menu left sidebar -->
-  <!-- =========================================== -->
+      .custom-ping {
+        animation: custom-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+      }
 
-  <aside id="sidebar"
-    class="bg-primary z-50 text-white w-72 h-screen transition-all ease-out duration-300 hidden lg:block ">
+      /* ====================================================== */
+      /* Custom animation  */
+      /* ====================================================== */
 
-    <div class="h-full overflow-y-auto px-4 flex flex-col justify-between scrollbar-custom">
+      @keyframes staticMovement {
+        0% {
+          transform: rotate(0deg) translateX(0px);
+        }
 
-      <div>
-        <!-- educraft logo -->
-        <div id="sidemenu-logo" class="mt-4 flex items-center  gap-2 ">
-          <img src="./assets/img/educraft-logo-white.svg" alt="educraft logo">
-          <span id="logo-text" class="font-bold text-2xl">EduCraft</span>
-        </div>
+        50% {
+          transform: rotate(2deg) translateX(6px);
+        }
 
-        <!-- shrink expand button -->
-        <div id="toggle-btn-area" class="w-full flex justify-end py-4 ">
-          <button id="toggleBtn" class="bg-white/20 p-2  rounded-lg">
-            <img class="w-3 h-3 " src="assets/icons/small.svg" alt="menu expand button">
-          </button>
-        </div>
+        100% {
+          transform: rotate(0deg) translateX(0px);
+        }
+      }
 
-        <!-- top menu list -->
-        <nav class="flex flex-col justify-between ">
-          <ul class="flex flex-col gap-1">
+      .static-movement {
+        animation: staticMovement 8s ease-in-out infinite;
+      }
 
-            <a href="/index.html">
-              <li id="sidemenu-list"
-                class="h-12 flex items-center hover:bg-[#fa9d53] rounded-xl pl-4 transition-all ease-out duration-300 sidemenu-list  cursor-pointer active">
-                <div class="flex gap-4 ">
-                  <img class="w-6 h-6" src="assets/icons/home.svg" alt="home">
-                  <span class="sidebar-text">Home</span>
-                </div>
-              </li>
-            </a>
+      /* ====================================================== */
+      /* Custom animation for rotating the globe */
+      /* ====================================================== */
 
-            <a href="mycourses.html">
-              <li id="sidemenu-list"
-                class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300 cursor-pointer ">
-                <div class="flex gap-4 items-center">
-                  <img class="w-6 h-6" src="assets/icons/my-courses.svg" alt="home">
-                  <span class="sidebar-text">Courses</span>
-                </div>
-              </li>
-            </a>
-            <li id="sidemenu-list"
-              class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300 cursor-pointer">
-              <a href="learning-journey.html" class="flex gap-4 items-center">
-                <img class="w-6 h-6" src="assets/icons/learning-journey.svg" alt="home">
-                <span class="sidebar-text">Learning Journey</span>
-              </a>
-            </li>
-            <a href="/classroom.html">
-              <li id="sidemenu-list"
-                class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300 cursor-pointer ">
-                <div class="flex gap-4 items-center">
-                  <img class="w-6 h-6" src="assets/icons/clasroom.svg" alt="home">
-                  <span class="sidebar-text">Classroom</span>
-                </div>
-              </li>
-            </a>
-            <a href="/educraft-academy.html">
-              <li id="sidemenu-list"
-                class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300 cursor-pointer ">
-                <div class="flex gap-4 items-center">
-                  <img class="w-6 h-6" src="assets/icons/edu-academy.svg" alt="home">
-                  <span class="sidebar-text">Educraft Academy</span>
-                </div>
-              </li>
-            </a>
+      @keyframes staticMovement2 {
+        0% {
+          transform: rotate(0deg) translateY(0px);
+        }
 
-          </ul>
+        50% {
+          transform: rotate(2deg) translateY(6px);
+        }
 
-        </nav>
-      </div>
+        100% {
+          transform: rotate(0deg) translateY(0px);
+        }
+      }
 
+      .static-movement2 {
+        animation: staticMovement2 8s ease-in-out infinite;
+      }
 
-      <!-- bottom menu list -->
-      <div>
+      /* ====================================================== */
+      /* Custom animation */
+      /* ====================================================== */
 
-        <!-- expanded educat chatbot button-->
-        <div id="educat-sidemenu-big" class="lg:min-h-[100px] bg-white/20  rounded-2xl relative my-6 overflow-hidden">
-          <img class="absolute z-10  w-[90px] top-2 -right-2 " src="assets/img/educy.webp" alt="chat bot">
-          <div class="px-3 py-3">
-            <p class="">I'm</p>
-            <p class="font-bold text-lg tracking-tight -mt-1">EduCat<span class="text-xs font-base">&nbsp;2.0</span></p>
+      @keyframes moveAndHide {
+        0% {
+          left: -10rem;
+        }
 
-            <p class="mt-6">Your AI</p>
-            <p class=" text-sm tracking-tight">Learning Assistant</p>
+        100% {
+          left: 100%;
+        }
+      }
 
-            <button
-              class=" ecChatBotBtn bg-white text-[#bf4b00] mt-4 w-full py-2 text-semibold flex gap-1 rounded-lg justify-center items-center font-lg font-semibold hover:shadow-sm">
-              <img src="assets/icons/chat-regular.svg" alt="chat with educat">
-              Let's Chat
-            </button>
+      .move-repeat {
+        position: absolute;
+        animation: moveAndHide 16s linear infinite;
+      }
+    </style>
+  </head>
 
+  <body class="flex">
+    <!-- =========================================== -->
+    <!-- Nav menu left sidebar -->
+    <!-- =========================================== -->
 
+    <aside
+      id="sidebar"
+      class="bg-primary z-50 text-white w-72 h-screen transition-all ease-out duration-300 hidden lg:block"
+    >
+      <div
+        class="h-full overflow-y-auto px-4 flex flex-col justify-between scrollbar-custom"
+      >
+        <div>
+          <!-- educraft logo -->
+          <div id="sidemenu-logo" class="mt-4 flex items-center gap-2">
+            <img
+              src="./assets/img/educraft-logo-white.svg"
+              alt="educraft logo"
+            />
+            <span id="logo-text" class="font-bold text-2xl">EduCraft</span>
           </div>
 
+          <!-- shrink expand button -->
+          <div id="toggle-btn-area" class="w-full flex justify-end py-4">
+            <button id="toggleBtn" class="bg-white/20 p-2 rounded-lg">
+              <img
+                class="w-3 h-3"
+                src="assets/icons/small.svg"
+                alt="menu expand button"
+              />
+            </button>
+          </div>
+
+          <!-- top menu list -->
+          <nav class="flex flex-col justify-between">
+            <ul class="flex flex-col gap-1">
+              <a href="/index.html">
+                <li
+                  id="sidemenu-list"
+                  class="h-12 flex items-center hover:bg-[#fa9d53] rounded-xl pl-4 transition-all ease-out duration-300 sidemenu-list cursor-pointer active"
+                >
+                  <div class="flex gap-4">
+                    <img
+                      class="w-6 h-6"
+                      src="assets/icons/home.svg"
+                      alt="home"
+                    />
+                    <span class="sidebar-text">Home</span>
+                  </div>
+                </li>
+              </a>
+
+              <a href="mycourses.html">
+                <li
+                  id="sidemenu-list"
+                  class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300 cursor-pointer"
+                >
+                  <div class="flex gap-4 items-center">
+                    <img
+                      class="w-6 h-6"
+                      src="assets/icons/my-courses.svg"
+                      alt="home"
+                    />
+                    <span class="sidebar-text">Courses</span>
+                  </div>
+                </li>
+              </a>
+              <li
+                id="sidemenu-list"
+                class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300 cursor-pointer"
+              >
+                <a href="learning-journey.html" class="flex gap-4 items-center">
+                  <img
+                    class="w-6 h-6"
+                    src="assets/icons/learning-journey.svg"
+                    alt="home"
+                  />
+                  <span class="sidebar-text">Learning Journey</span>
+                </a>
+              </li>
+              <a href="/classroom.html">
+                <li
+                  id="sidemenu-list"
+                  class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300 cursor-pointer"
+                >
+                  <div class="flex gap-4 items-center">
+                    <img
+                      class="w-6 h-6"
+                      src="assets/icons/clasroom.svg"
+                      alt="home"
+                    />
+                    <span class="sidebar-text">Classroom</span>
+                  </div>
+                </li>
+              </a>
+              <a href="/educraft-academy.html">
+                <li
+                  id="sidemenu-list"
+                  class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300 cursor-pointer"
+                >
+                  <div class="flex gap-4 items-center">
+                    <img
+                      class="w-6 h-6"
+                      src="assets/icons/edu-academy.svg"
+                      alt="home"
+                    />
+                    <span class="sidebar-text">Educraft Academy</span>
+                  </div>
+                </li>
+              </a>
+              <a href="/student-story.html">
+                <li
+                  id="sidemenu-list"
+                  class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300 cursor-pointer"
+                >
+                  <div class="flex gap-4 items-center">
+                    <img
+                      class="w-6 h-6 text-white fill-white"
+                      src="assets/icons/story.svg"
+                      alt="home"
+                    />
+                    <span class="sidebar-text">Student Stories</span>
+                  </div>
+                </li>
+              </a>
+            </ul>
+          </nav>
         </div>
 
-        <!-- shrink educat chatbot button -->
-        <button id="educat-sidemenu-sm"
-          class="ecChatBotBtnSm bg-white text-[#bf4b00] my-6 w-full py-2 text-semibold hidden rounded-lg justify-center items-center">
-          <img src="assets/icons/chat-regular.svg" alt="chat with educat">
-
-        </button>
-
         <!-- bottom menu list -->
-        <nav class="pb-4">
-          <ul class="flex flex-col gap-1">
-            <!-- <li id="sidemenu-list"
+        <div>
+          <!-- expanded educat chatbot button-->
+          <div
+            id="educat-sidemenu-big"
+            class="lg:min-h-[100px] bg-white/20 rounded-2xl relative my-6 overflow-hidden"
+          >
+            <img
+              class="absolute z-10 w-[90px] top-2 -right-2"
+              src="assets/img/educy.webp"
+              alt="chat bot"
+            />
+            <div class="px-3 py-3">
+              <p class="">I'm</p>
+              <p class="font-bold text-lg tracking-tight -mt-1">
+                EduCat<span class="text-xs font-base">&nbsp;2.0</span>
+              </p>
+
+              <p class="mt-6">Your AI</p>
+              <p class="text-sm tracking-tight">Learning Assistant</p>
+
+              <button
+                class="ecChatBotBtn bg-white text-[#bf4b00] mt-4 w-full py-2 text-semibold flex gap-1 rounded-lg justify-center items-center font-lg font-semibold hover:shadow-sm"
+              >
+                <img
+                  src="assets/icons/chat-regular.svg"
+                  alt="chat with educat"
+                />
+                Let's Chat
+              </button>
+            </div>
+          </div>
+
+          <!-- shrink educat chatbot button -->
+          <button
+            id="educat-sidemenu-sm"
+            class="ecChatBotBtnSm bg-white text-[#bf4b00] my-6 w-full py-2 text-semibold hidden rounded-lg justify-center items-center"
+          >
+            <img src="assets/icons/chat-regular.svg" alt="chat with educat" />
+          </button>
+
+          <!-- bottom menu list -->
+          <nav class="pb-4">
+            <ul class="flex flex-col gap-1">
+              <!-- <li id="sidemenu-list"
               class="h-12 flex items-center hover:bg-[#fa9d53] rounded-xl pl-4 transition-all ease-out duration-300 sidemenu-list">
               <a href="#" class="flex gap-4">
                 <img class="w-6 h-6" src="assets/icons/help-center.svg" alt="home">
@@ -330,1293 +390,1682 @@
               </a>
             </li> -->
 
+              <!-- sperator -->
+              <li class="w-full h-[2px] bg-white/20"></li>
 
-            <!-- sperator -->
-            <li class="w-full h-[2px] bg-white/20"></li>
-
-            <li id="sidemenu-list"
-              class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300">
-              <a href="#" class="flex gap-4 items-center">
-                <img class="w-6 h-6" src="assets/icons/logout.svg" alt="home">
-                <span class="sidebar-text">Logout</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
+              <li
+                id="sidemenu-list"
+                class="h-12 pl-4 flex items-center hover:bg-[#fa9d53] rounded-xl sidemenu-list transition-all ease-out duration-300"
+              >
+                <a href="#" class="flex gap-4 items-center">
+                  <img
+                    class="w-6 h-6"
+                    src="assets/icons/logout.svg"
+                    alt="home"
+                  />
+                  <span class="sidebar-text">Logout</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
-    </div>
-
-  </aside>
-
-
-  <!-- =========================================== -->
-  <!-- Main -->
-  <!-- =========================================== -->
-
-  <div class="w-full h-screen overflow-hidden">
+    </aside>
 
     <!-- =========================================== -->
-    <!-- Top Header Menu -->
+    <!-- Main -->
     <!-- =========================================== -->
 
-    <header id="header-menu"
-      class="  bg-white  flex justify-between w-full h-14 items-center  transition-all ease-out duration-300  p-4 border border-b-black/10">
+    <div class="w-full h-screen overflow-hidden">
+      <!-- =========================================== -->
+      <!-- Top Header Menu -->
+      <!-- =========================================== -->
 
-      <div class="flex gap-2">
-        <button id="hamburger" class="focus:outline-none text-primaryDark lg:hidden">
-          <svg class="w-6 h-6" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path class="" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
-            </path>
-          </svg>
-        </button>
+      <header
+        id="header-menu"
+        class="bg-white flex justify-between w-full h-14 items-center transition-all ease-out duration-300 p-4 border border-b-black/10"
+      >
+        <div class="flex gap-2">
+          <button
+            id="hamburger"
+            class="focus:outline-none text-primaryDark lg:hidden"
+          >
+            <svg
+              class="w-6 h-6"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class=""
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
 
-        <p class="text-xl-custom">Dashboard</p>
-      </div>
-
-      <!-- Search Input -->
-      <div class="relative w-1/3 lg:block hidden">
-        <input type="text" placeholder="Search"
-          class="w-full pl-12 pr-4 py-2 rounded-full bg-[#fffaf4] focus:outline-none focus:border-primary border border-gray-200">
-        <img src="assets/icons/search-bar.svg" alt="Search Icon"
-          class="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-red-700" />
-      </div>
-
-      <!-- full screen toggle & notification -->
-      <div class="flex gap-4">
-
-        <!-- Fullscreen Toggle Button -->
-        <div id="fullscreenToggle"
-          class="bg-[#fdf0e7] rounded-full w-10 h-10 lg:flex justify-center items-center relative hidden">
-
-          <img src="assets/icons/fullscreen.svg" alt="fullscreen">
-
+          <p class="text-xl-custom">Dashboard</p>
         </div>
 
-        <!-- notification -->
-        <div class="bg-[#fdf0e7] rounded-full w-10 h-10 lg:flex justify-center items-center relative hidden">
-          <span
-            class="w-4 h-4 bg-[#ffbc00] absolute top-1 right-1 rounded-full flex justify-center text-xs font-semibold items-center">4</span>
-          <img src="assets/icons/bell.svg" alt="">
+        <!-- Search Input -->
+        <div class="relative w-1/3 lg:block hidden">
+          <input
+            type="text"
+            placeholder="Search"
+            class="w-full pl-12 pr-4 py-2 rounded-full bg-[#fffaf4] focus:outline-none focus:border-primary border border-gray-200"
+          />
+          <img
+            src="assets/icons/search-bar.svg"
+            alt="Search Icon"
+            class="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-red-700"
+          />
         </div>
 
-      </div>
+        <!-- full screen toggle & notification -->
+        <div class="flex gap-4">
+          <!-- Fullscreen Toggle Button -->
+          <div
+            id="fullscreenToggle"
+            class="bg-[#fdf0e7] rounded-full w-10 h-10 lg:flex justify-center items-center relative hidden"
+          >
+            <img src="assets/icons/fullscreen.svg" alt="fullscreen" />
+          </div>
 
-      <!-- user profile -->
-      <div class="flex gap-2 justify-center items-center">
-        <p class="font-semibold lg:block hidden">Faisal Saleem</p>
-
-        <!-- notification -->
-        <div class="bg-[#fdf0e7] rounded-full w-10 h-10 flex justify-center items-center relative lg:hidden">
-          <span
-            class="w-4 h-4 bg-[#ffbc00] absolute top-1 right-1 rounded-full flex justify-center text-xs font-semibold items-center">4</span>
-          <img src="assets/icons/bell.svg" alt="">
+          <!-- notification -->
+          <div
+            class="bg-[#fdf0e7] rounded-full w-10 h-10 lg:flex justify-center items-center relative hidden"
+          >
+            <span
+              class="w-4 h-4 bg-[#ffbc00] absolute top-1 right-1 rounded-full flex justify-center text-xs font-semibold items-center"
+              >4</span
+            >
+            <img src="assets/icons/bell.svg" alt="" />
+          </div>
         </div>
 
-        <img class="w-10 h-10 rounded-full border-2 border-primary" src="assets/img/user.png" alt="user profile">
-      </div>
-    </header>
+        <!-- user profile -->
+        <div class="flex gap-2 justify-center items-center">
+          <p class="font-semibold lg:block hidden">Faisal Saleem</p>
 
+          <!-- notification -->
+          <div
+            class="bg-[#fdf0e7] rounded-full w-10 h-10 flex justify-center items-center relative lg:hidden"
+          >
+            <span
+              class="w-4 h-4 bg-[#ffbc00] absolute top-1 right-1 rounded-full flex justify-center text-xs font-semibold items-center"
+              >4</span
+            >
+            <img src="assets/icons/bell.svg" alt="" />
+          </div>
 
+          <img
+            class="w-10 h-10 rounded-full border-2 border-primary"
+            src="assets/img/user.png"
+            alt="user profile"
+          />
+        </div>
+      </header>
 
-    <!-- =========================================== -->
-    <!-- Main Content Area - Dashboard -->
-    <!-- =========================================== -->
+      <!-- =========================================== -->
+      <!-- Main Content Area - Dashboard -->
+      <!-- =========================================== -->
 
-    <main id="main"
-      class="max-w-screen-2xl mx-auto transition-all ease-out duration-300  flex flex-col lg:flex-row lg:overflow-hidden h-[calc(100vh-3.5rem)]">
+      <main
+        id="main"
+        class="max-w-screen-2xl mx-auto transition-all ease-out duration-300 flex flex-col lg:flex-row lg:overflow-hidden h-[calc(100vh-3.5rem)]"
+      >
+        <!-- main section-->
+        <section
+          class="lg:w-2/3 p-4 flex flex-col gap-4 overflow-auto min-h-full scrollbar-custom"
+        >
+          <!-- welcome & user profile -->
+          <div class="flex gap-4 flex-col lg:flex-row">
+            <!-- motivation message  -->
+            <div class="w-full flex-col flex gap-2">
+              <div class="flex h-10 items-center text-lg-custom gap-2">
+                <p>Welcome back,</p>
 
-      <!-- main section-->
-      <section class="lg:w-2/3 p-4 flex flex-col gap-4 overflow-auto min-h-full scrollbar-custom">
+                <!-- user name dynamic change here -->
+                <span class="font-semibold">Faisal</span>
 
-        <!-- welcome & user profile -->
-        <div class="flex gap-4 flex-col lg:flex-row ">
+                <img class="w-8 h-8" src="assets/img/hi.webp" alt="hi" />
+              </div>
 
-          <!-- motivation message  -->
-          <div class="w-full flex-col flex gap-2  ">
-            <div class=" flex h-10 items-center text-lg-custom gap-2 ">
-              <p>Welcome back,</p>
-
-              <!-- user name dynamic change here -->
-              <span class="font-semibold">Faisal</span>
-
-              <img class="w-8 h-8" src="assets/img/hi.webp" alt="hi">
-
-            </div>
-
-            <!-- leaderboard -->
-            <div class="h-[240px] lg:h-[240px] relative bg-[#fdf6e1] border border-black/10 rounded-xl overflow-hidden">
-
-              <!-- content -->
+              <!-- leaderboard -->
               <div
-                class="z-10 absolute w-full h-full text-black px-3 pt-2 flex flex-col justify-between overflow-hidden">
+                class="h-[240px] lg:h-[240px] relative bg-[#fdf6e1] border border-black/10 rounded-xl overflow-hidden"
+              >
+                <!-- content -->
+                <div
+                  class="z-10 absolute w-full h-full text-black px-3 pt-2 flex flex-col justify-between overflow-hidden"
+                >
+                  <!-- icon, status, link -->
+                  <div class="flex justify-between relative z-30">
+                    <div class="flex gap-2 items-center">
+                      <img
+                        class="w-6"
+                        src="assets/icons/leaderboard-icon.svg"
+                        alt=""
+                      />
+                      <p class="text-[14px] font-semibold">Leaderboard</p>
+                    </div>
 
-                <!-- icon, status, link -->
-                <div class="flex justify-between relative z-30">
-
-                  <div class="flex gap-2 items-center ">
-                    <img class="w-6" src="assets/icons/leaderboard-icon.svg" alt="">
-                    <p class="text-[14px] font-semibold  ">Leaderboard</p>
-                  </div>
-
-                  <div id="learderboardPopupBtn" class="flex items-center gap-4   ">
-                    <div class="bg-primaryDark px-2  rounded-full text-white italic">You're <span
-                        class="font-semibold ">#23</span></div>
-                    <div class="text-primaryDark  cursor-pointer font-semibold hover:underline ">View all</div>
-                  </div>
-
-                </div>
-
-                <!-- 3 profiles -->
-                <div class="absolute h-full flex justify-center items-center w-full mx-auto top-3 z-20 left-0 gap-10">
-
-                  <div class="flex flex-col justify-center items-center relative -top-4">
-                    <img class="w-14 h-14 rounded-full border-2 border-white" src="assets/img/std2.png" alt="">
                     <div
-                      class="absolute px-4 top-[50px] border-2 border-white bg-[#46adcf] rounded-full text-white font-semibold">
-                      2nd</div>
-                    <!-- give a character limit to names - otherwise ui issue will show -->
-                    <p class="font-semibold pt-4">Aleno Donini</p>
-                    <div class="flex gap-1 items-center justify-center ">
-                      <img class="w-4 h-4 object-cover" src="assets/img/educoin-sm.png" alt="educoin">
-                      <p class="font-semibold text-primaryDark">233</p>
+                      id="learderboardPopupBtn"
+                      class="flex items-center gap-4"
+                    >
+                      <div
+                        class="bg-primaryDark px-2 rounded-full text-white italic"
+                      >
+                        You're <span class="font-semibold">#23</span>
+                      </div>
+                      <div
+                        class="text-primaryDark cursor-pointer font-semibold hover:underline"
+                      >
+                        View all
+                      </div>
                     </div>
                   </div>
 
-                  <div class="flex flex-col justify-center items-center relative -top-9">
-                    <img class="w-14 h-14 rounded-full border-2 border-white" src="assets/img/std1.png" alt="">
+                  <!-- 3 profiles -->
+                  <div
+                    class="absolute h-full flex justify-center items-center w-full mx-auto top-3 z-20 left-0 gap-10"
+                  >
                     <div
-                      class="absolute px-4 top-[50px] border-2 border-white bg-primaryDark rounded-full text-white font-semibold">
-                      1st</div>
+                      class="flex flex-col justify-center items-center relative -top-4"
+                    >
+                      <img
+                        class="w-14 h-14 rounded-full border-2 border-white"
+                        src="assets/img/std2.png"
+                        alt=""
+                      />
+                      <div
+                        class="absolute px-4 top-[50px] border-2 border-white bg-[#46adcf] rounded-full text-white font-semibold"
+                      >
+                        2nd
+                      </div>
+                      <!-- give a character limit to names - otherwise ui issue will show -->
+                      <p class="font-semibold pt-4">Aleno Donini</p>
+                      <div class="flex gap-1 items-center justify-center">
+                        <img
+                          class="w-4 h-4 object-cover"
+                          src="assets/img/educoin-sm.png"
+                          alt="educoin"
+                        />
+                        <p class="font-semibold text-primaryDark">233</p>
+                      </div>
+                    </div>
 
-                    <p class="font-semibold pt-4">Abdul Raheem</p>
-                    <div class="flex gap-1 items-center justify-center ">
-                      <img class="w-4 h-4 object-cover" src="assets/img/educoin-sm.png" alt="educoin">
-                      <p class="font-semibold text-primaryDark">294</p>
+                    <div
+                      class="flex flex-col justify-center items-center relative -top-9"
+                    >
+                      <img
+                        class="w-14 h-14 rounded-full border-2 border-white"
+                        src="assets/img/std1.png"
+                        alt=""
+                      />
+                      <div
+                        class="absolute px-4 top-[50px] border-2 border-white bg-primaryDark rounded-full text-white font-semibold"
+                      >
+                        1st
+                      </div>
+
+                      <p class="font-semibold pt-4">Abdul Raheem</p>
+                      <div class="flex gap-1 items-center justify-center">
+                        <img
+                          class="w-4 h-4 object-cover"
+                          src="assets/img/educoin-sm.png"
+                          alt="educoin"
+                        />
+                        <p class="font-semibold text-primaryDark">294</p>
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col justify-center items-center relative"
+                    >
+                      <img
+                        class="w-14 h-14 rounded-full border-2 border-white"
+                        src="assets/img/std3.png"
+                        alt=""
+                      />
+                      <div
+                        class="absolute px-4 top-[50px] border-2 border-white bg-[#18937e] rounded-full text-white font-semibold"
+                      >
+                        3rd
+                      </div>
+                      <p class="font-semibold pt-4">Zayn Mansoor</p>
+                      <div class="flex gap-1 items-center justify-center">
+                        <img
+                          class="w-4 h-4 object-cover"
+                          src="assets/img/educoin-sm.png"
+                          alt="educoin"
+                        />
+                        <p class="font-semibold text-primaryDark">202</p>
+                      </div>
                     </div>
                   </div>
 
-                  <div class="flex flex-col justify-center items-center relative ">
-                    <img class="w-14 h-14 rounded-full border-2 border-white" src="assets/img/std3.png" alt="">
+                  <!-- steps -->
+                  <div
+                    class="relative -bottom-1 flex items-center justify-center w-full"
+                  >
+                    <img
+                      class="w-[360px]"
+                      src="assets/img/leaderboard-graph.svg"
+                      alt=""
+                    />
                     <div
-                      class="absolute px-4 top-[50px] border-2 border-white bg-[#18937e] rounded-full text-white font-semibold">
-                      3rd</div>
-                    <p class="font-semibold pt-4">Zayn Mansoor</p>
-                    <div class="flex gap-1 items-center justify-center ">
-                      <img class="w-4 h-4 object-cover" src="assets/img/educoin-sm.png" alt="educoin">
-                      <p class="font-semibold text-primaryDark">202</p>
+                      class="absolute -bottom-3 flex items-center justify-evenly gap-8 w-full"
+                    >
+                      <p
+                        class="font-bold text-[24px] text-white relative bottom-[13px]"
+                      >
+                        2
+                      </p>
+                      <p
+                        class="font-bold text-[32px] text-white relative bottom-6"
+                      >
+                        1
+                      </p>
+                      <p
+                        class="font-bold text-[16px] text-white relative bottom-[4px]"
+                      >
+                        3
+                      </p>
                     </div>
                   </div>
-
                 </div>
+              </div>
+            </div>
 
-                <!-- steps -->
-                <div class="relative -bottom-1   flex items-center justify-center w-full">
-                  <img class="w-[360px]" src="assets/img/leaderboard-graph.svg" alt="">
-                  <div class="absolute -bottom-3 flex items-center justify-evenly gap-8 w-full">
-                    <p class="font-bold text-[24px] text-white relative bottom-[13px]">2</p>
-                    <p class="font-bold text-[32px] text-white relative bottom-6">1</p>
-                    <p class="font-bold text-[16px] text-white relative bottom-[4px]">3</p>
+            <!-- profile overview -->
+            <div class="w-full flex-col flex gap-2">
+              <div class="h-10 items-center flex justify-between">
+                <p class="text-lg-custom">Profile</p>
+                <a
+                  href="#"
+                  class="text-primaryDark text-xs font-medium hover:underline"
+                  >View detail</a
+                >
+              </div>
+              <div
+                class="border border-black/20 h-[240px] p-2 rounded-2xl flex flex-col justify-between"
+              >
+                <div class="h-1/2 relative">
+                  <div
+                    class="bg-primary relative rounded-tl-xl rounded-tr-xl h-[60%] overflow-hidden"
+                  >
+                    <!-- Badge dyanmic change here -->
+                    <div class="absolute right-2 top-3 flex gap-2 items-center">
+                      <span class="text-white">Bronze Gear</span>
+                      <img
+                        class="w-6"
+                        src="assets/img/badge-bronze.png"
+                        alt="badge"
+                      />
+                    </div>
+
+                    <img
+                      src="assets/img/profile-bg.png"
+                      class="w-full h-full object-cover"
+                      alt="badge"
+                    />
                   </div>
 
+                  <!-- Student picture, name & class change here -->
+                  <div
+                    class="flex justify-between w-full items-end absolute bottom-2"
+                  >
+                    <div class="flex items-end gap-2">
+                      <img
+                        class="w-[60px] ml-4 rounded-full border-3 border-white"
+                        src="assets/img/user.png"
+                        alt="student-image"
+                      />
+                      <p class="font-medium text-md-custom">Faisal Saleem</p>
+                    </div>
+                    <span
+                      class="w-6 h-6 text-xs bg-primaryLight text-primaryDark rounded-full flex justify-center items-center font-semibold"
+                      >3A</span
+                    >
+                  </div>
                 </div>
+                <div
+                  class="bg-primaryLight h-1/2 rounded-xl flex justify-around items-center px-4"
+                >
+                  <!-- chapters -->
+                  <div class="flex flex-col items-center">
+                    <img
+                      class="w-8"
+                      src="assets/img/chapters.png"
+                      alt="chapters"
+                    />
+                    <p class="text-xs font-medium text-black/60">Chapters</p>
 
-              </div>
-
-            </div>
-
-          </div>
-
-          <!-- profile overview -->
-          <div class="w-full  flex-col flex gap-2 ">
-            <div class="  h-10 items-center flex justify-between">
-              <p class="text-lg-custom">Profile</p>
-              <a href="#" class="text-primaryDark text-xs font-medium hover:underline">View detail</a>
-            </div>
-            <div class="border border-black/20 h-[240px] p-2 rounded-2xl flex flex-col justify-between ">
-              <div class="h-1/2  relative">
-                <div class="bg-primary relative rounded-tl-xl rounded-tr-xl  h-[60%] overflow-hidden">
-
-                  <!-- Badge dyanmic change here -->
-                  <div class="absolute right-2 top-3 flex gap-2 items-center">
-                    <span class="text-white ">Bronze Gear</span>
-                    <img class="w-6" src="assets/img/badge-bronze.png" alt="badge">
+                    <!-- chapters completed value change here -->
+                    <span class="text-xl font-semibold text-primaryDark"
+                      >2</span
+                    >
                   </div>
 
-                  <img src="assets/img/profile-bg.png" class="w-full h-full object-cover" alt="badge">
-                </div>
+                  <!-- seprator -->
+                  <div
+                    class="w-[3px] bg-gradient-to-b from-transparent via-gray-200 to-transparent h-full"
+                  ></div>
 
+                  <!-- quizzes -->
+                  <div class="flex flex-col items-center">
+                    <img class="w-8" src="assets/img/quiz.png" alt="chapters" />
+                    <p class="text-xs font-medium text-black/60">Quizzes</p>
 
-                <!-- Student picture, name & class change here -->
-                <div class="flex justify-between w-full items-end absolute bottom-2 ">
-                  <div class="flex items-end gap-2">
-                    <img class="w-[60px] ml-4 rounded-full  border-3 border-white" src="assets/img/user.png"
-                      alt="student-image">
-                    <p class="font-medium text-md-custom">Faisal Saleem</p>
+                    <!-- quizzes completed value change here -->
+                    <span class="text-xl font-semibold text-primaryDark"
+                      >5</span
+                    >
                   </div>
-                  <span
-                    class="w-6 h-6 text-xs bg-primaryLight text-primaryDark rounded-full flex justify-center items-center font-semibold">3A</span>
 
+                  <!-- seprator -->
+                  <div
+                    class="w-[3px] bg-gradient-to-b from-transparent via-gray-200 to-transparent h-full"
+                  ></div>
+
+                  <!-- educoins -->
+                  <div class="flex flex-col items-center">
+                    <img
+                      class="w-8"
+                      src="assets/img/educoin-sm.png"
+                      alt="chapters"
+                    />
+                    <p class="text-xs font-medium text-black/60">Educoins</p>
+
+                    <!-- Educoins completed value change here -->
+                    <span class="text-xl font-semibold text-primaryDark"
+                      >23</span
+                    >
+                  </div>
                 </div>
-
-              </div>
-              <div class="bg-primaryLight h-1/2 rounded-xl flex justify-around items-center px-4">
-
-                <!-- chapters -->
-                <div class="flex flex-col items-center">
-                  <img class="w-8" src="assets/img/chapters.png" alt="chapters">
-                  <p class="text-xs font-medium text-black/60">Chapters</p>
-
-                  <!-- chapters completed value change here -->
-                  <span class="text-xl font-semibold text-primaryDark">2</span>
-
-                </div>
-
-                <!-- seprator -->
-                <div class="w-[3px] bg-gradient-to-b from-transparent via-gray-200 to-transparent h-full "></div>
-
-                <!-- quizzes -->
-                <div class="flex flex-col items-center">
-                  <img class="w-8" src="assets/img/quiz.png" alt="chapters">
-                  <p class="text-xs font-medium text-black/60">Quizzes</p>
-
-                  <!-- quizzes completed value change here -->
-                  <span class="text-xl font-semibold text-primaryDark">5</span>
-
-                </div>
-
-                <!-- seprator -->
-                <div class="w-[3px] bg-gradient-to-b from-transparent via-gray-200 to-transparent h-full "></div>
-
-                <!-- educoins -->
-                <div class="flex flex-col items-center">
-                  <img class="w-8" src="assets/img/educoin-sm.png" alt="chapters">
-                  <p class="text-xs font-medium text-black/60">Educoins</p>
-
-                  <!-- Educoins completed value change here -->
-                  <span class="text-xl font-semibold text-primaryDark">23</span>
-
-                </div>
-
-
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- skill map for desktop-->
-        <div class="hidden lg:block rounded-2xl  w-full bg-primaryLight border border-black/10 relative">
+          <!-- skill map for desktop-->
+          <div
+            class="hidden lg:block rounded-2xl w-full bg-primaryLight border border-black/10 relative"
+          >
+            <!-- title, coins , level -->
+            <div class="flex justify-between p-4">
+              <div>
+                <p class="text-lg-custom">Skill Map</p>
 
-          <!-- title, coins , level -->
-          <div class="flex justify-between p-4">
-            <div>
-              <p class="text-lg-custom ">Skill Map</p>
+                <!-- change values here  -->
+                <div class="flex gap-1 justify-center items-center mt-1">
+                  Earn
 
-              <!-- change values here  -->
-              <div class="flex gap-1 justify-center items-center mt-1">Earn
+                  <!-- points required  -->
+                  <span>12</span>
 
-                <!-- points required  -->
-                <span>12</span>
+                  <img
+                    class="w-[20px] h-[17px]"
+                    src="/assets/img/educoin-sm.png"
+                    alt="educoin"
+                  />
 
-                <img class="w-[20px] h-[17px]" src="/assets/img/educoin-sm.png" alt="educoin">
+                  <p class="text-primary font-medium">educoins</p>
 
-                <p class="text-primary font-medium">educoins</p>
+                  to unlock
 
-                to unlock
+                  <!-- to which level -->
+                  <span class="text-primaryDark">Level 3</span>
+                  -
 
-                <!-- to which level -->
-                <span class="text-primaryDark">Level 3</span>
-                -
-
-                <!-- to which badge -->
-                <span class="text-primaryDark">Silver Circuit</span>
-
-              </div>
-            </div>
-
-            <div class="flex gap-4">
-              <!-- educoin -->
-              <div class="flex gap-2 justify-center items-center">
-                <img class="w-[40px] h-[38px] " src="assets/img/educoin-sm.png" alt="educoin">
-                <div>
-                  <p class="text-xs text-black/50">Educoins</p>
-
-                  <!-- change value here -->
-                  <span class="font-semibold">23</span>
-
+                  <!-- to which badge -->
+                  <span class="text-primaryDark">Silver Circuit</span>
                 </div>
               </div>
 
-              <!-- badge level -->
-              <div class="flex gap-2 justify-center items-center">
-
-                <!-- change image here -->
-                <img class="w-[38px] h-[38px] " src="assets/img/badge-bronze.png" alt="educoin">
-                <div>
-
-                  <!-- change value here -->
-                  <p class="text-xs text-black/50">Level &nbsp;<span>2</span></p>
-
-                  <!-- change name here -->
-                  <span class="font-semibold">Bronze Gear</span>
-
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- skill map Journey -->
-          <div class="w-full relative flex justify-center">
-
-            <!-- skill map path -->
-            <div class="flex flex-col gap-10 w-full pt-8 pb-20 overflow-auto scrollbar-hide"
-              id="skillMapCourseContainer">
-            </div>
-
-            <!-- bg and train animation -->
-            <div class="absolute h-full w-full overflow-hidden ">
-              <div class="w-full h-full relative">
-                <img class="static-movement2 w-[90px] absolute left-[40px] top-[50px] opacity-40"
-                  src="/assets/img/skillmap/rocket.png" alt="skill-illustrations">
-                <img class="static-movement2 w-[180px] absolute -right-[50px] top-[0px] opacity-40"
-                  src="/assets/img/skillmap/satelite.png" alt="skill-illustrations">
-                <img class="static-movement2 w-[80px] absolute left-[70px] top-[320px] opacity-40"
-                  src="/assets/img/skillmap/keyboard-wifi.png" alt="skill-illustrations">
-                <img class="static-movement w-[150px] absolute right-[30px] top-[390px] opacity-40"
-                  src="/assets/img/skillmap/ufo.png" alt="skill-illustrations">
-
-                <img class="h-[190px] absolute bottom-0 opacity-40" src="/assets/img/skillmap/skill-bg.webp" alt="">
-                <img class="absolute bottom-[42px] w-[160px] move-repeat opacity-60"
-                  src="/assets/img/skillmap/train.png" alt="">
-                <img class="absolute bottom-0  opacity-40" src="/assets/img/skillmap/skill-bg-bld.webp" alt="">
-              </div>
-            </div>
-
-          </div>
-
-
-
-        </div>
-
-        <!-- skill map for mobile -->
-        <div class="lg:hidden rounded-2xl  w-full bg-primaryLight border border-black/10 relative">
-
-          <!-- title, coins , level -->
-          <div class="p-4">
-            <div class="flex justify-between">
-              <p class="text-lg-custom ">Skill Map</p>
               <div class="flex gap-4">
                 <!-- educoin -->
                 <div class="flex gap-2 justify-center items-center">
-                  <img class="w-[40px] h-[38px] " src="assets/img/educoin-sm.png" alt="educoin">
+                  <img
+                    class="w-[40px] h-[38px]"
+                    src="assets/img/educoin-sm.png"
+                    alt="educoin"
+                  />
                   <div>
                     <p class="text-xs text-black/50">Educoins</p>
 
                     <!-- change value here -->
                     <span class="font-semibold">23</span>
-
                   </div>
                 </div>
 
                 <!-- badge level -->
                 <div class="flex gap-2 justify-center items-center">
-
                   <!-- change image here -->
-                  <img class="w-[38px] h-[38px] " src="assets/img/badge-bronze.png" alt="educoin">
+                  <img
+                    class="w-[38px] h-[38px]"
+                    src="assets/img/badge-bronze.png"
+                    alt="educoin"
+                  />
                   <div>
-
                     <!-- change value here -->
-                    <p class="text-xs text-black/50">Level &nbsp;<span>2</span></p>
+                    <p class="text-xs text-black/50">
+                      Level &nbsp;<span>2</span>
+                    </p>
 
                     <!-- change name here -->
                     <span class="font-semibold">Bronze Gear</span>
-
                   </div>
                 </div>
               </div>
-
             </div>
 
-            <div class="flex flex-wrap gap-1 mt-1">Earn
-
-              <!-- points required  -->
-              <span>12</span>
-
-              <img class="w-[20px] h-[17px]" src="/assets/img/educoin-sm.png" alt="educoin">
-
-              <p class="text-primary font-medium">educoins</p>
-              <p>to unlock - Silver Badge</p>
-            </div>
-
-
-          </div>
-
-          <!-- skill map Journey -->
-          <div class="w-full relative flex justify-center">
-
-            <!-- skill map path -->
-            <div class="flex flex-col gap-10 w-full pt-8 pb-20 overflow-auto scrollbar-hide"
-              id="skillMapCourseContainerMobile">
-            </div>
-
-            <!-- bg and train animation -->
-            <div class="absolute h-full w-full overflow-hidden ">
-              <div class="w-full h-full relative">
-                <img class="static-movement2 w-[90px] absolute left-[40px] top-[50px] opacity-40"
-                  src="/assets/img/skillmap/rocket.png" alt="skill-illustrations">
-                <img class="static-movement2 w-[180px] absolute -right-[50px] top-[0px] opacity-40"
-                  src="/assets/img/skillmap/satelite.png" alt="skill-illustrations">
-                <img class="static-movement2 w-[80px] absolute left-[70px] top-[320px] opacity-40"
-                  src="/assets/img/skillmap/keyboard-wifi.png" alt="skill-illustrations">
-                <img class="static-movement w-[150px] absolute right-[30px] top-[390px] opacity-40"
-                  src="/assets/img/skillmap/ufo.png" alt="skill-illustrations">
-
-                <img class="h-[190px] absolute bottom-0 opacity-40" src="/assets/img/skillmap/skill-bg.webp" alt="">
-                <img class="absolute bottom-[42px] w-[160px] move-repeat opacity-60"
-                  src="/assets/img/skillmap/train.png" alt="">
-                <img class="absolute bottom-0  opacity-40" src="/assets/img/skillmap/skill-bg-bld.webp" alt="">
-              </div>
-            </div>
-
-          </div>
-
-
-
-        </div>
-
-
-      </section>
-
-      <!-- right side section -->
-      <section class="border border-l-black/20 flex flex-col lg:w-1/3 p-4 gap-4 lg:overflow-auto scrollbar-hide">
-
-        <!-- whats new -->
-        <div class="w-full flex flex-col gap-2">
-          <div class="h-10  flex justify-between items-center">
-            <p class="text-lg-custom">What's New</p>
-          </div>
-
-          <div class=" min-h-[220px]">
-
-            <!-- swiper carousel -->
-            <div class="swiper whatsNewSlider h-full">
-              <div class="swiper-wrapper">
-
-                <div class="swiper-slide rounded-2xl overflow-hidden relative ">
-
-                  <!-- text content here -->
-                  <div class="absolute w-full h-full  p-4 flex z-20  flex-col justify-between">
-
-                    <div>
-                      <!-- category name -->
-                      <p class="w-fit p-2 bg-primary rounded-full text-white text-xs-custom">Events</p>
-                    </div>
-
-                    <div class="mb-4">
-
-                      <!-- source name -->
-                      <div class="flex gap-2 items-center text-white">
-                        <a class="underline " href="#">Linkedin</a>
-
-                        <!-- post time -->
-                        <div class="w-1.5 h-1.5 bg-white rounded-full">
-                        </div>
-
-                        <span class="text-xs">6 hours ago</span>
-
-                      </div>
-
-                      <!-- title in max 3 lines -->
-                      <a href="https://www.linkedin.com/posts/educraft-dubai-india_educraft-littleinnovators-robotics-activity-7227946782620573696-FY7c/?utm_source=share&utm_medium=member_desktop"
-                        target="_blank" class="font-medium tracking-wide pt-2 text-white">Exciting News! EduCraft
-                        Robotics Program
-                        Launching in
-                        Abudhabi School This Fall..
-                      </a>
-
-                    </div>
-
-                  </div>
-
-                  <!-- carousal slide image here -->
-                  <div class="absolute w-full h-full ">
-                    <div class="absolute w-full h-full bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <img class="w-full h-full object-cover" src="assets/img/carousal-1.webp" alt="news">
-                  </div>
-
-                </div>
-
-                <div class="swiper-slide rounded-2xl overflow-hidden relative ">
-
-                  <!-- text content here -->
-                  <div class="absolute w-full h-full  p-4 flex z-20  flex-col justify-between">
-
-                    <div>
-                      <!-- category name -->
-                      <p class="w-fit p-2 bg-primary rounded-full text-white text-xs-custom">Events</p>
-                    </div>
-
-                    <div class="mb-4">
-
-                      <!-- source name -->
-                      <div class="flex gap-2 items-center text-white">
-                        <a class="underline " href="#">Linkedin</a>
-
-                        <!-- post time -->
-                        <div class="w-1.5 h-1.5 bg-white rounded-full">
-                        </div>
-
-                        <span class="text-xs">6 hours ago</span>
-
-                      </div>
-
-                      <!-- title in max 3 lines -->
-                      <a href="https://www.linkedin.com/posts/educraft-dubai-india_educraft-littleinnovators-robotics-activity-7227946782620573696-FY7c/?utm_source=share&utm_medium=member_desktop"
-                        target="_blank" class="font-medium tracking-wide pt-2 text-white">Exciting News! EduCraft
-                        Robotics Program
-                        Launching in
-                        Abudhabi School This Fall..
-                      </a>
-
-                    </div>
-
-                  </div>
-
-                  <!-- carousal slide image here -->
-                  <div class="absolute w-full h-full ">
-                    <div class="absolute w-full h-full bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <img class="w-full h-full object-cover" src="assets/img/carousal-2.jpg" alt="news">
-                  </div>
-
-                </div>
-
-                <div class="swiper-slide rounded-2xl overflow-hidden relative ">
-
-                  <!-- text content here -->
-                  <div class="absolute w-full h-full  p-4 flex z-20  flex-col justify-between">
-
-                    <div>
-                      <!-- category name -->
-                      <p class="w-fit p-2 bg-primary rounded-full text-white text-xs-custom">Events</p>
-                    </div>
-
-                    <div class="mb-4">
-
-                      <!-- source name -->
-                      <div class="flex gap-2 items-center text-white">
-                        <a class="underline " href="#">Linkedin</a>
-
-                        <!-- post time -->
-                        <div class="w-1.5 h-1.5 bg-white rounded-full">
-                        </div>
-
-                        <span class="text-xs">6 hours ago</span>
-
-                      </div>
-
-                      <!-- title in max 3 lines -->
-                      <a href="https://www.linkedin.com/posts/educraft-dubai-india_educraft-littleinnovators-robotics-activity-7227946782620573696-FY7c/?utm_source=share&utm_medium=member_desktop"
-                        target="_blank" class="font-medium tracking-wide pt-2 text-white">Exciting News! EduCraft
-                        Robotics Program
-                        Launching in
-                        Abudhabi School This Fall..
-                      </a>
-
-                    </div>
-
-                  </div>
-
-                  <!-- carousal slide image here -->
-                  <div class="absolute w-full h-full ">
-                    <div class="absolute w-full h-full bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <img class="w-full h-full object-cover" src="assets/img/carousal-3.jpg" alt="news">
-                  </div>
-
-                </div>
-
-                <div class="swiper-slide rounded-2xl overflow-hidden relative ">
-
-                  <!-- text content here -->
-                  <div class="absolute w-full h-full  p-4 flex z-20  flex-col justify-between">
-
-                    <div>
-                      <!-- category name -->
-                      <p class="w-fit p-2 bg-primary rounded-full text-white text-xs-custom">Events</p>
-                    </div>
-
-                    <div class="mb-4">
-
-                      <!-- source name -->
-                      <div class="flex gap-2 items-center text-white">
-                        <a class="underline " href="#">Linkedin</a>
-
-                        <!-- post time -->
-                        <div class="w-1.5 h-1.5 bg-white rounded-full">
-                        </div>
-
-                        <span class="text-xs">6 hours ago</span>
-
-                      </div>
-
-                      <!-- title in max 3 lines -->
-                      <a href="https://www.linkedin.com/posts/educraft-dubai-india_educraft-littleinnovators-robotics-activity-7227946782620573696-FY7c/?utm_source=share&utm_medium=member_desktop"
-                        target="_blank" class="font-medium tracking-wide pt-2 text-white">Exciting News! EduCraft
-                        Robotics Program
-                        Launching in
-                        Abudhabi School This Fall..
-                      </a>
-
-                    </div>
-
-                  </div>
-
-                  <!-- carousal slide image here -->
-                  <div class="absolute w-full h-full ">
-                    <div class="absolute w-full h-full bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <img class="w-full h-full object-cover" src="assets/img/carousal-4.jpg" alt="news">
-                  </div>
-
-                </div>
-
-                <div class="swiper-slide rounded-2xl overflow-hidden relative ">
-
-                  <!-- text content here -->
-                  <div class="absolute w-full h-full  p-4 flex z-20  flex-col justify-between">
-
-                    <div>
-                      <!-- category name -->
-                      <p class="w-fit p-2 bg-primary rounded-full text-white text-xs-custom">Events</p>
-                    </div>
-
-                    <div class="mb-4">
-
-                      <!-- source name -->
-                      <div class="flex gap-2 items-center text-white">
-                        <a class="underline " href="#">Linkedin</a>
-
-                        <!-- post time -->
-                        <div class="w-1.5 h-1.5 bg-white rounded-full">
-                        </div>
-
-                        <span class="text-xs">6 hours ago</span>
-
-                      </div>
-
-                      <!-- title in max 3 lines -->
-                      <a href="https://www.linkedin.com/posts/educraft-dubai-india_educraft-littleinnovators-robotics-activity-7227946782620573696-FY7c/?utm_source=share&utm_medium=member_desktop"
-                        target="_blank" class="font-medium tracking-wide pt-2 text-white">Exciting News! EduCraft
-                        Robotics Program
-                        Launching in
-                        Abudhabi School This Fall..
-                      </a>
-
-                    </div>
-
-                  </div>
-
-                  <!-- carousal slide image here -->
-                  <div class="absolute w-full h-full ">
-                    <div class="absolute w-full h-full bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <img class="w-full h-full object-cover" src="assets/img/carousal-5.jpg" alt="news">
-                  </div>
-
-                </div>
-
-
-              </div>
-              <div class="swiper-pagination "></div>
-            </div>
-
-
-          </div>
-        </div>
-
-        <!-- seprator -->
-        <div class="w-full bg-gradient-to-r from-transparent via-gray-200 to-transparent min-h-[3px] "></div>
-
-        <!-- Announcements -->
-        <div class="w-full min-h-[240px] overflow-hidden">
-
-          <!-- heading -->
-          <div class="h-[44px] flex justify-between items-center">
-            <p class="text-lg-custom">Announcements</p>
-            <a href="#" class="text-primaryDark text-xs font-medium hover:underline">View All</a>
-          </div>
-
-
-          <div class="flex flex-col h-[calc(240px-44px)] gap-6 pt-4 pr-4 scrollbar-custom  overflow-auto">
-
-            <!-- change content here.. -->
-            <div class="flex gap-3">
+            <!-- skill map Journey -->
+            <div class="w-full relative flex justify-center">
+              <!-- skill map path -->
               <div
-                class="min-w-16 max-h-16 border-2 border-primary rounded-xl flex justify-center items-center bg-primaryLight">
-                <img class="w-10 h-10" src="/assets/img/tips.png" alt="study tips">
-              </div>
-              <div>
-                <div class="flex justify-between">
-                  <p class="font-semibold">Study Tips</p>
-                  <p class="text-xs font-semibold text-primaryDark">3hr ago</p>
+                class="flex flex-col gap-10 w-full pt-8 pb-20 overflow-auto scrollbar-hide"
+                id="skillMapCourseContainer"
+              ></div>
+
+              <!-- bg and train animation -->
+              <div class="absolute h-full w-full overflow-hidden">
+                <div class="w-full h-full relative">
+                  <img
+                    class="static-movement2 w-[90px] absolute left-[40px] top-[50px] opacity-40"
+                    src="/assets/img/skillmap/rocket.png"
+                    alt="skill-illustrations"
+                  />
+                  <img
+                    class="static-movement2 w-[180px] absolute -right-[50px] top-[0px] opacity-40"
+                    src="/assets/img/skillmap/satelite.png"
+                    alt="skill-illustrations"
+                  />
+                  <img
+                    class="static-movement2 w-[80px] absolute left-[70px] top-[320px] opacity-40"
+                    src="/assets/img/skillmap/keyboard-wifi.png"
+                    alt="skill-illustrations"
+                  />
+                  <img
+                    class="static-movement w-[150px] absolute right-[30px] top-[390px] opacity-40"
+                    src="/assets/img/skillmap/ufo.png"
+                    alt="skill-illustrations"
+                  />
+
+                  <img
+                    class="h-[190px] absolute bottom-0 opacity-40"
+                    src="/assets/img/skillmap/skill-bg.webp"
+                    alt=""
+                  />
+                  <img
+                    class="absolute bottom-[42px] w-[160px] move-repeat opacity-60"
+                    src="/assets/img/skillmap/train.png"
+                    alt=""
+                  />
+                  <img
+                    class="absolute bottom-0 opacity-40"
+                    src="/assets/img/skillmap/skill-bg-bld.webp"
+                    alt=""
+                  />
                 </div>
-                <p class="text-black/50 leading-tight mt-1">Check out our latest blog post on mastering
-                  game development...</p>
               </div>
             </div>
-
-            <div class="flex gap-3">
-              <div
-                class="min-w-16 max-h-16 border-2 border-primary rounded-xl flex justify-center items-center bg-primaryLight">
-                <img class="w-12 h-12" src="/assets/img/notice2.webp" alt="study tips">
-              </div>
-              <div>
-                <div class="flex justify-between">
-                  <p class="font-semibold">Important Notice</p>
-                  <p class="text-xs font-semibold text-primaryDark">3hr ago</p>
-                </div>
-                <p class="text-black/50 tracking-tight leading-tight mt-1">Ensure all IoT project submissions are
-                  uploaded by the end of this week...</p>
-              </div>
-            </div>
-
-            <div class="flex gap-3">
-              <div
-                class="min-w-16 max-h-16 border-2 border-primary rounded-xl flex justify-center items-center bg-primaryLight">
-                <img class="w-12 h-12" src="/assets/img/tips.png" alt="study tips">
-              </div>
-              <div>
-                <div class="flex justify-between">
-                  <p class="font-semibold">Study Tips</p>
-                  <p class="text-xs font-semibold text-primaryDark">3hr ago</p>
-                </div>
-                <p class="text-black/50 tracking-tight leading-tight mt-2">Check out our latest blog post on mastering
-                  game development. Enhance your
-                  learning!</p>
-              </div>
-            </div>
-
-            <div class="flex gap-3">
-              <div
-                class="min-w-16 max-h-16 border-2 border-primary rounded-xl flex justify-center items-center bg-primaryLight">
-                <img class="w-12 h-12" src="/assets/img/tips.png" alt="study tips">
-              </div>
-              <div>
-                <div class="flex justify-between">
-                  <p class="font-semibold">Study Tips</p>
-                  <p class="text-xs font-semibold text-primaryDark">3hr ago</p>
-                </div>
-                <p class="text-black/50 tracking-tight leading-tight mt-2">Check out our latest blog post on mastering
-                  game development. Enhance your
-                  learning!</p>
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-
-        <!-- seprator -->
-        <div class="w-full bg-gradient-to-r from-transparent via-gray-200 to-transparent min-h-[3px] "></div>
-
-        <!-- Comments -->
-        <div class="w-full min-h-[390px] overflow-hidden">
-
-          <!-- heading -->
-          <div class="h-[44px] flex justify-between items-center">
-            <p class="text-lg-custom">Comments</p>
-            <!-- <a href="#" class="text-primaryDark text-xs font-medium hover:underline">View detail</a> -->
           </div>
 
+          <!-- skill map for mobile -->
+          <div
+            class="lg:hidden rounded-2xl w-full bg-primaryLight border border-black/10 relative"
+          >
+            <!-- title, coins , level -->
+            <div class="p-4">
+              <div class="flex justify-between">
+                <p class="text-lg-custom">Skill Map</p>
+                <div class="flex gap-4">
+                  <!-- educoin -->
+                  <div class="flex gap-2 justify-center items-center">
+                    <img
+                      class="w-[40px] h-[38px]"
+                      src="assets/img/educoin-sm.png"
+                      alt="educoin"
+                    />
+                    <div>
+                      <p class="text-xs text-black/50">Educoins</p>
 
-          <div class="flex flex-col h-[calc(390px-44px)] gap-4 pt-4 pr-4 scrollbar-custom  overflow-auto">
+                      <!-- change value here -->
+                      <span class="font-semibold">23</span>
+                    </div>
+                  </div>
 
-            <!-- comment 1 -->
-            <div>
+                  <!-- badge level -->
+                  <div class="flex gap-2 justify-center items-center">
+                    <!-- change image here -->
+                    <img
+                      class="w-[38px] h-[38px]"
+                      src="assets/img/badge-bronze.png"
+                      alt="educoin"
+                    />
+                    <div>
+                      <!-- change value here -->
+                      <p class="text-xs text-black/50">
+                        Level &nbsp;<span>2</span>
+                      </p>
 
-              <div class="bg-[#fae3d2] h-[6px] w-[90%] mx-auto rounded-tl-lg rounded-tr-lg "></div>
+                      <!-- change name here -->
+                      <span class="font-semibold">Bronze Gear</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
+              <div class="flex flex-wrap gap-1 mt-1">
+                Earn
+
+                <!-- points required  -->
+                <span>12</span>
+
+                <img
+                  class="w-[20px] h-[17px]"
+                  src="/assets/img/educoin-sm.png"
+                  alt="educoin"
+                />
+
+                <p class="text-primary font-medium">educoins</p>
+                <p>to unlock - Silver Badge</p>
+              </div>
+            </div>
+
+            <!-- skill map Journey -->
+            <div class="w-full relative flex justify-center">
+              <!-- skill map path -->
+              <div
+                class="flex flex-col gap-10 w-full pt-8 pb-20 overflow-auto scrollbar-hide"
+                id="skillMapCourseContainerMobile"
+              ></div>
+
+              <!-- bg and train animation -->
+              <div class="absolute h-full w-full overflow-hidden">
+                <div class="w-full h-full relative">
+                  <img
+                    class="static-movement2 w-[90px] absolute left-[40px] top-[50px] opacity-40"
+                    src="/assets/img/skillmap/rocket.png"
+                    alt="skill-illustrations"
+                  />
+                  <img
+                    class="static-movement2 w-[180px] absolute -right-[50px] top-[0px] opacity-40"
+                    src="/assets/img/skillmap/satelite.png"
+                    alt="skill-illustrations"
+                  />
+                  <img
+                    class="static-movement2 w-[80px] absolute left-[70px] top-[320px] opacity-40"
+                    src="/assets/img/skillmap/keyboard-wifi.png"
+                    alt="skill-illustrations"
+                  />
+                  <img
+                    class="static-movement w-[150px] absolute right-[30px] top-[390px] opacity-40"
+                    src="/assets/img/skillmap/ufo.png"
+                    alt="skill-illustrations"
+                  />
+
+                  <img
+                    class="h-[190px] absolute bottom-0 opacity-40"
+                    src="/assets/img/skillmap/skill-bg.webp"
+                    alt=""
+                  />
+                  <img
+                    class="absolute bottom-[42px] w-[160px] move-repeat opacity-60"
+                    src="/assets/img/skillmap/train.png"
+                    alt=""
+                  />
+                  <img
+                    class="absolute bottom-0 opacity-40"
+                    src="/assets/img/skillmap/skill-bg-bld.webp"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- right side section -->
+        <section
+          class="border border-l-black/20 flex flex-col lg:w-1/3 p-4 gap-4 lg:overflow-auto scrollbar-hide"
+        >
+          <!-- whats new -->
+          <div class="w-full flex flex-col gap-2">
+            <div class="h-10 flex justify-between items-center">
+              <p class="text-lg-custom">What's New</p>
+            </div>
+
+            <div class="min-h-[220px]">
+              <!-- swiper carousel -->
+              <div class="swiper whatsNewSlider h-full">
+                <div class="swiper-wrapper">
+                  <div
+                    class="swiper-slide rounded-2xl overflow-hidden relative"
+                  >
+                    <!-- text content here -->
+                    <div
+                      class="absolute w-full h-full p-4 flex z-20 flex-col justify-between"
+                    >
+                      <div>
+                        <!-- category name -->
+                        <p
+                          class="w-fit p-2 bg-primary rounded-full text-white text-xs-custom"
+                        >
+                          Events
+                        </p>
+                      </div>
+
+                      <div class="mb-4">
+                        <!-- source name -->
+                        <div class="flex gap-2 items-center text-white">
+                          <a class="underline" href="#">Linkedin</a>
+
+                          <!-- post time -->
+                          <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+
+                          <span class="text-xs">6 hours ago</span>
+                        </div>
+
+                        <!-- title in max 3 lines -->
+                        <a
+                          href="https://www.linkedin.com/posts/educraft-dubai-india_educraft-littleinnovators-robotics-activity-7227946782620573696-FY7c/?utm_source=share&utm_medium=member_desktop"
+                          target="_blank"
+                          class="font-medium tracking-wide pt-2 text-white"
+                          >Exciting News! EduCraft Robotics Program Launching in
+                          Abudhabi School This Fall..
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- carousal slide image here -->
+                    <div class="absolute w-full h-full">
+                      <div
+                        class="absolute w-full h-full bg-gradient-to-t from-black/70 to-transparent"
+                      ></div>
+                      <img
+                        class="w-full h-full object-cover"
+                        src="assets/img/carousal-1.webp"
+                        alt="news"
+                      />
+                    </div>
+                  </div>
+
+                  <div
+                    class="swiper-slide rounded-2xl overflow-hidden relative"
+                  >
+                    <!-- text content here -->
+                    <div
+                      class="absolute w-full h-full p-4 flex z-20 flex-col justify-between"
+                    >
+                      <div>
+                        <!-- category name -->
+                        <p
+                          class="w-fit p-2 bg-primary rounded-full text-white text-xs-custom"
+                        >
+                          Events
+                        </p>
+                      </div>
+
+                      <div class="mb-4">
+                        <!-- source name -->
+                        <div class="flex gap-2 items-center text-white">
+                          <a class="underline" href="#">Linkedin</a>
+
+                          <!-- post time -->
+                          <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+
+                          <span class="text-xs">6 hours ago</span>
+                        </div>
+
+                        <!-- title in max 3 lines -->
+                        <a
+                          href="https://www.linkedin.com/posts/educraft-dubai-india_educraft-littleinnovators-robotics-activity-7227946782620573696-FY7c/?utm_source=share&utm_medium=member_desktop"
+                          target="_blank"
+                          class="font-medium tracking-wide pt-2 text-white"
+                          >Exciting News! EduCraft Robotics Program Launching in
+                          Abudhabi School This Fall..
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- carousal slide image here -->
+                    <div class="absolute w-full h-full">
+                      <div
+                        class="absolute w-full h-full bg-gradient-to-t from-black/70 to-transparent"
+                      ></div>
+                      <img
+                        class="w-full h-full object-cover"
+                        src="assets/img/carousal-2.jpg"
+                        alt="news"
+                      />
+                    </div>
+                  </div>
+
+                  <div
+                    class="swiper-slide rounded-2xl overflow-hidden relative"
+                  >
+                    <!-- text content here -->
+                    <div
+                      class="absolute w-full h-full p-4 flex z-20 flex-col justify-between"
+                    >
+                      <div>
+                        <!-- category name -->
+                        <p
+                          class="w-fit p-2 bg-primary rounded-full text-white text-xs-custom"
+                        >
+                          Events
+                        </p>
+                      </div>
+
+                      <div class="mb-4">
+                        <!-- source name -->
+                        <div class="flex gap-2 items-center text-white">
+                          <a class="underline" href="#">Linkedin</a>
+
+                          <!-- post time -->
+                          <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+
+                          <span class="text-xs">6 hours ago</span>
+                        </div>
+
+                        <!-- title in max 3 lines -->
+                        <a
+                          href="https://www.linkedin.com/posts/educraft-dubai-india_educraft-littleinnovators-robotics-activity-7227946782620573696-FY7c/?utm_source=share&utm_medium=member_desktop"
+                          target="_blank"
+                          class="font-medium tracking-wide pt-2 text-white"
+                          >Exciting News! EduCraft Robotics Program Launching in
+                          Abudhabi School This Fall..
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- carousal slide image here -->
+                    <div class="absolute w-full h-full">
+                      <div
+                        class="absolute w-full h-full bg-gradient-to-t from-black/70 to-transparent"
+                      ></div>
+                      <img
+                        class="w-full h-full object-cover"
+                        src="assets/img/carousal-3.jpg"
+                        alt="news"
+                      />
+                    </div>
+                  </div>
+
+                  <div
+                    class="swiper-slide rounded-2xl overflow-hidden relative"
+                  >
+                    <!-- text content here -->
+                    <div
+                      class="absolute w-full h-full p-4 flex z-20 flex-col justify-between"
+                    >
+                      <div>
+                        <!-- category name -->
+                        <p
+                          class="w-fit p-2 bg-primary rounded-full text-white text-xs-custom"
+                        >
+                          Events
+                        </p>
+                      </div>
+
+                      <div class="mb-4">
+                        <!-- source name -->
+                        <div class="flex gap-2 items-center text-white">
+                          <a class="underline" href="#">Linkedin</a>
+
+                          <!-- post time -->
+                          <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+
+                          <span class="text-xs">6 hours ago</span>
+                        </div>
+
+                        <!-- title in max 3 lines -->
+                        <a
+                          href="https://www.linkedin.com/posts/educraft-dubai-india_educraft-littleinnovators-robotics-activity-7227946782620573696-FY7c/?utm_source=share&utm_medium=member_desktop"
+                          target="_blank"
+                          class="font-medium tracking-wide pt-2 text-white"
+                          >Exciting News! EduCraft Robotics Program Launching in
+                          Abudhabi School This Fall..
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- carousal slide image here -->
+                    <div class="absolute w-full h-full">
+                      <div
+                        class="absolute w-full h-full bg-gradient-to-t from-black/70 to-transparent"
+                      ></div>
+                      <img
+                        class="w-full h-full object-cover"
+                        src="assets/img/carousal-4.jpg"
+                        alt="news"
+                      />
+                    </div>
+                  </div>
+
+                  <div
+                    class="swiper-slide rounded-2xl overflow-hidden relative"
+                  >
+                    <!-- text content here -->
+                    <div
+                      class="absolute w-full h-full p-4 flex z-20 flex-col justify-between"
+                    >
+                      <div>
+                        <!-- category name -->
+                        <p
+                          class="w-fit p-2 bg-primary rounded-full text-white text-xs-custom"
+                        >
+                          Events
+                        </p>
+                      </div>
+
+                      <div class="mb-4">
+                        <!-- source name -->
+                        <div class="flex gap-2 items-center text-white">
+                          <a class="underline" href="#">Linkedin</a>
+
+                          <!-- post time -->
+                          <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+
+                          <span class="text-xs">6 hours ago</span>
+                        </div>
+
+                        <!-- title in max 3 lines -->
+                        <a
+                          href="https://www.linkedin.com/posts/educraft-dubai-india_educraft-littleinnovators-robotics-activity-7227946782620573696-FY7c/?utm_source=share&utm_medium=member_desktop"
+                          target="_blank"
+                          class="font-medium tracking-wide pt-2 text-white"
+                          >Exciting News! EduCraft Robotics Program Launching in
+                          Abudhabi School This Fall..
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- carousal slide image here -->
+                    <div class="absolute w-full h-full">
+                      <div
+                        class="absolute w-full h-full bg-gradient-to-t from-black/70 to-transparent"
+                      ></div>
+                      <img
+                        class="w-full h-full object-cover"
+                        src="assets/img/carousal-5.jpg"
+                        alt="news"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- seprator -->
+          <div
+            class="w-full bg-gradient-to-r from-transparent via-gray-200 to-transparent min-h-[3px]"
+          ></div>
+
+          <!-- Announcements -->
+          <div class="w-full min-h-[240px] overflow-hidden">
+            <!-- heading -->
+            <div class="h-[44px] flex justify-between items-center">
+              <p class="text-lg-custom">Announcements</p>
+              <a
+                href="#"
+                class="text-primaryDark text-xs font-medium hover:underline"
+                >View All</a
+              >
+            </div>
+
+            <div
+              class="flex flex-col h-[calc(240px-44px)] gap-6 pt-4 pr-4 scrollbar-custom overflow-auto"
+            >
               <!-- change content here.. -->
-              <div class="bg-[#fff6ef] w-full rounded-xl px-2 py-4 relative border border-black/10">
-                <div class=" gap-4 flex flex-col">
-
-                  <div class="flex items-center  gap-2">
-
-                    <!-- teacher profile details - dynamic content -->
-                    <img class="w-[44x] h-[44px] rounded-full" src="/assets/img/teacher.png" alt="user-profile-picture">
-
-                    <div class="w-full">
-                      <div class="flex justify-between w-full">
-                        <p class="font-semibold ">Sarah Ahmed <span class="font-normal text-black/50 pl-2">replied to
-                            you</span></p>
-
-                        <!-- time - dyanmic value -->
-                        <p class="text-xs font-semibold text-primaryDark">3hr</p>
-
-                      </div>
-
-                      <!-- student comment - dyanmic text -->
-                      <p class="text-black/50 pt-1">I have a question about the assign...</p>
-                    </div>
-
+              <div class="flex gap-3">
+                <div
+                  class="min-w-16 max-h-16 border-2 border-primary rounded-xl flex justify-center items-center bg-primaryLight"
+                >
+                  <img
+                    class="w-10 h-10"
+                    src="/assets/img/tips.png"
+                    alt="study tips"
+                  />
+                </div>
+                <div>
+                  <div class="flex justify-between">
+                    <p class="font-semibold">Study Tips</p>
+                    <p class="text-xs font-semibold text-primaryDark">
+                      3hr ago
+                    </p>
                   </div>
+                  <p class="text-black/50 leading-tight mt-1">
+                    Check out our latest blog post on mastering game
+                    development...
+                  </p>
+                </div>
+              </div>
 
-                  <!-- seperator -->
-                  <div class="w-full min-h-[1px] bg-gray-200"></div>
-
-                  <div class="flex justify-between items-center">
-                    <div class="flex gap-2  items-center">
-                      <img class="w-8" src="/assets/icons/book.svg" alt="comments-section">
-                      <p>Computer network & Internet</p>
-
-
-                    </div>
-                    <a href="#" class="text-xs font-semibold text-primaryDark hover:underline">View reply</a>
+              <div class="flex gap-3">
+                <div
+                  class="min-w-16 max-h-16 border-2 border-primary rounded-xl flex justify-center items-center bg-primaryLight"
+                >
+                  <img
+                    class="w-12 h-12"
+                    src="/assets/img/notice2.webp"
+                    alt="study tips"
+                  />
+                </div>
+                <div>
+                  <div class="flex justify-between">
+                    <p class="font-semibold">Important Notice</p>
+                    <p class="text-xs font-semibold text-primaryDark">
+                      3hr ago
+                    </p>
                   </div>
+                  <p class="text-black/50 tracking-tight leading-tight mt-1">
+                    Ensure all IoT project submissions are uploaded by the end
+                    of this week...
+                  </p>
+                </div>
+              </div>
 
+              <div class="flex gap-3">
+                <div
+                  class="min-w-16 max-h-16 border-2 border-primary rounded-xl flex justify-center items-center bg-primaryLight"
+                >
+                  <img
+                    class="w-12 h-12"
+                    src="/assets/img/tips.png"
+                    alt="study tips"
+                  />
+                </div>
+                <div>
+                  <div class="flex justify-between">
+                    <p class="font-semibold">Study Tips</p>
+                    <p class="text-xs font-semibold text-primaryDark">
+                      3hr ago
+                    </p>
+                  </div>
+                  <p class="text-black/50 tracking-tight leading-tight mt-2">
+                    Check out our latest blog post on mastering game
+                    development. Enhance your learning!
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-3">
+                <div
+                  class="min-w-16 max-h-16 border-2 border-primary rounded-xl flex justify-center items-center bg-primaryLight"
+                >
+                  <img
+                    class="w-12 h-12"
+                    src="/assets/img/tips.png"
+                    alt="study tips"
+                  />
+                </div>
+                <div>
+                  <div class="flex justify-between">
+                    <p class="font-semibold">Study Tips</p>
+                    <p class="text-xs font-semibold text-primaryDark">
+                      3hr ago
+                    </p>
+                  </div>
+                  <p class="text-black/50 tracking-tight leading-tight mt-2">
+                    Check out our latest blog post on mastering game
+                    development. Enhance your learning!
+                  </p>
                 </div>
               </div>
             </div>
-
-            <!-- comment 2 -->
-            <div>
-
-              <div class="bg-[#f3eacf] h-[6px] w-[90%] mx-auto rounded-tl-lg rounded-tr-lg"></div>
-
-              <!-- change content here.. -->
-              <div class="bg-[#fdf6e1] w-full rounded-xl px-2 py-4 relative border border-black/10">
-                <div class=" gap-4 flex flex-col  ">
-
-                  <div class="flex items-center  gap-2">
-
-                    <!-- teacher profile details - dynamic content -->
-                    <img class="w-[44x] h-[44px] rounded-full" src="/assets/img/teacher2.jpg"
-                      alt="user-profile-picture">
-
-                    <div class="w-full">
-                      <div class="flex justify-between w-full">
-                        <p class="font-semibold ">Hamza Yusuf <span class="font-normal text-black/50 pl-2">replied to
-                            you</span></p>
-
-                        <!-- time - dyanmic value -->
-                        <p class="text-xs font-semibold text-primaryDark">3hr</p>
-
-                      </div>
-
-                      <!-- student comment - dyanmic text -->
-                      <p class="text-black/50 pt-1">Is there a way to get extra educoins...</p>
-                    </div>
-
-                  </div>
-
-                  <!-- seperator -->
-                  <div class="w-full min-h-[1px] bg-gray-200"></div>
-
-                  <div class="flex justify-between items-center">
-                    <div class="flex gap-2  items-center">
-                      <img class="w-8" src="/assets/icons/book.svg" alt="comments-section">
-                      <p>Familiarization of Microbit</p>
-
-
-                    </div>
-                    <a href="#" class="text-xs font-semibold text-primaryDark hover:underline">View reply</a>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-
-            <!-- comment 3 -->
-            <div>
-
-              <div class="bg-[#fae3d2] h-[6px] w-[90%] mx-auto rounded-tl-lg rounded-tr-lg "></div>
-
-              <!-- change content here.. -->
-              <div class="bg-[#fff6ef] w-full rounded-xl px-2 py-4 relative border border-black/10">
-                <div class=" gap-4 flex flex-col">
-
-                  <div class="flex items-center  gap-2">
-
-                    <!-- teacher profile details - dynamic content -->
-                    <img class="w-[44x] h-[44px] rounded-full" src="/assets/img/teacher.png" alt="user-profile-picture">
-
-                    <div class="w-full">
-                      <div class="flex justify-between w-full">
-                        <p class="font-semibold ">Sarah Ahmed <span class="font-normal text-black/50 pl-2">replied to
-                            you</span></p>
-
-                        <!-- time - dyanmic value -->
-                        <p class="text-xs font-semibold text-primaryDark">3hr</p>
-
-                      </div>
-
-                      <!-- student comment - dyanmic text -->
-                      <p class="text-black/50 pt-1">I have a question about the assign...</p>
-                    </div>
-
-                  </div>
-
-                  <!-- seperator -->
-                  <div class="w-full min-h-[1px] bg-gray-200"></div>
-
-                  <div class="flex justify-between items-center">
-                    <div class="flex gap-2  items-center">
-                      <img class="w-8" src="/assets/icons/book.svg" alt="comments-section">
-                      <p>Computer network & Internet</p>
-
-
-                    </div>
-                    <a href="#" class="text-xs font-semibold text-primaryDark hover:underline">View reply</a>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-
-
-
           </div>
-        </div>
 
-      </section>
+          <!-- seprator -->
+          <div
+            class="w-full bg-gradient-to-r from-transparent via-gray-200 to-transparent min-h-[3px]"
+          ></div>
 
+          <!-- Comments -->
+          <div class="w-full min-h-[390px] overflow-hidden">
+            <!-- heading -->
+            <div class="h-[44px] flex justify-between items-center">
+              <p class="text-lg-custom">Comments</p>
+              <!-- <a href="#" class="text-primaryDark text-xs font-medium hover:underline">View detail</a> -->
+            </div>
 
-    </main>
+            <div
+              class="flex flex-col h-[calc(390px-44px)] gap-4 pt-4 pr-4 scrollbar-custom overflow-auto"
+            >
+              <!-- comment 1 -->
+              <div>
+                <div
+                  class="bg-[#fae3d2] h-[6px] w-[90%] mx-auto rounded-tl-lg rounded-tr-lg"
+                ></div>
 
+                <!-- change content here.. -->
+                <div
+                  class="bg-[#fff6ef] w-full rounded-xl px-2 py-4 relative border border-black/10"
+                >
+                  <div class="gap-4 flex flex-col">
+                    <div class="flex items-center gap-2">
+                      <!-- teacher profile details - dynamic content -->
+                      <img
+                        class="w-[44x] h-[44px] rounded-full"
+                        src="/assets/img/teacher.png"
+                        alt="user-profile-picture"
+                      />
 
-  </div>
+                      <div class="w-full">
+                        <div class="flex justify-between w-full">
+                          <p class="font-semibold">
+                            Sarah Ahmed
+                            <span class="font-normal text-black/50 pl-2"
+                              >replied to you</span
+                            >
+                          </p>
 
-  <!-- =========================================== -->
-  <!-- ham menu for mobile device -->
-  <!-- =========================================== -->
+                          <!-- time - dyanmic value -->
+                          <p class="text-xs font-semibold text-primaryDark">
+                            3hr
+                          </p>
+                        </div>
 
-  <div id="menu" class="menu z-[100] fixed top-0 right-0 bg-primaryLight shadow-lg p-4 w-full h-screen hidden">
-    <button id="close-menu" class="text-primaryDark text-lg absolute top-4 right-4">✖</button>
-    <ul id="menu-items" class="flex flex-col space-y-8 pt-[20vh] items-center h-full">
-      <!-- Menu items will be populated here from JSON -->
-    </ul>
-  </div>
+                        <!-- student comment - dyanmic text -->
+                        <p class="text-black/50 pt-1">
+                          I have a question about the assign...
+                        </p>
+                      </div>
+                    </div>
 
-  <!-- =========================================== -->
-  <!-- chat bot -->
-  <!-- =========================================== -->
+                    <!-- seperator -->
+                    <div class="w-full min-h-[1px] bg-gray-200"></div>
 
-  <!-- Chatbot popup -->
-  <div id="ecChatBotPopup"
-    class="fixed translate-x-[390px] right-0 opacity-0 bottom-0 w-[390px] h-screen bg-primaryLight border border-gray-300 rounded-l-lg  drop-shadow-[-70px_0px_200px_rgba(0,0,0,0.35)] overflow-hidden z-[1000]  flex-col transition-all duration-300">
+                    <div class="flex justify-between items-center">
+                      <div class="flex gap-2 items-center">
+                        <img
+                          class="w-8"
+                          src="/assets/icons/book.svg"
+                          alt="comments-section"
+                        />
+                        <p>Computer network & Internet</p>
+                      </div>
+                      <a
+                        href="#"
+                        class="text-xs font-semibold text-primaryDark hover:underline"
+                        >View reply</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-    <!-- Header -->
-    <div class=" flex justify-between items-center h-[60px]">
+              <!-- comment 2 -->
+              <div>
+                <div
+                  class="bg-[#f3eacf] h-[6px] w-[90%] mx-auto rounded-tl-lg rounded-tr-lg"
+                ></div>
 
-      <div class="flex gap-2 items-center justify-center">
-        <img src="assets/img/educy.webp" class="w-[40px] flip" alt="">
-        <p><span class="font-semibold">Educat AI</span> Assistant</p>
-      </div>
+                <!-- change content here.. -->
+                <div
+                  class="bg-[#fdf6e1] w-full rounded-xl px-2 py-4 relative border border-black/10"
+                >
+                  <div class="gap-4 flex flex-col">
+                    <div class="flex items-center gap-2">
+                      <!-- teacher profile details - dynamic content -->
+                      <img
+                        class="w-[44x] h-[44px] rounded-full"
+                        src="/assets/img/teacher2.jpg"
+                        alt="user-profile-picture"
+                      />
 
-      <!-- close x button -->
-      <button id="ecChatBotCloseBtn" class="bg-white hover:bg-[#e4e2e2] absolute top-3 right-3 p-1.5 rounded-full">
-        <img class="w-5 h-5" src="/assets/icons/close-line.svg" alt="close">
+                      <div class="w-full">
+                        <div class="flex justify-between w-full">
+                          <p class="font-semibold">
+                            Hamza Yusuf
+                            <span class="font-normal text-black/50 pl-2"
+                              >replied to you</span
+                            >
+                          </p>
+
+                          <!-- time - dyanmic value -->
+                          <p class="text-xs font-semibold text-primaryDark">
+                            3hr
+                          </p>
+                        </div>
+
+                        <!-- student comment - dyanmic text -->
+                        <p class="text-black/50 pt-1">
+                          Is there a way to get extra educoins...
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- seperator -->
+                    <div class="w-full min-h-[1px] bg-gray-200"></div>
+
+                    <div class="flex justify-between items-center">
+                      <div class="flex gap-2 items-center">
+                        <img
+                          class="w-8"
+                          src="/assets/icons/book.svg"
+                          alt="comments-section"
+                        />
+                        <p>Familiarization of Microbit</p>
+                      </div>
+                      <a
+                        href="#"
+                        class="text-xs font-semibold text-primaryDark hover:underline"
+                        >View reply</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- comment 3 -->
+              <div>
+                <div
+                  class="bg-[#fae3d2] h-[6px] w-[90%] mx-auto rounded-tl-lg rounded-tr-lg"
+                ></div>
+
+                <!-- change content here.. -->
+                <div
+                  class="bg-[#fff6ef] w-full rounded-xl px-2 py-4 relative border border-black/10"
+                >
+                  <div class="gap-4 flex flex-col">
+                    <div class="flex items-center gap-2">
+                      <!-- teacher profile details - dynamic content -->
+                      <img
+                        class="w-[44x] h-[44px] rounded-full"
+                        src="/assets/img/teacher.png"
+                        alt="user-profile-picture"
+                      />
+
+                      <div class="w-full">
+                        <div class="flex justify-between w-full">
+                          <p class="font-semibold">
+                            Sarah Ahmed
+                            <span class="font-normal text-black/50 pl-2"
+                              >replied to you</span
+                            >
+                          </p>
+
+                          <!-- time - dyanmic value -->
+                          <p class="text-xs font-semibold text-primaryDark">
+                            3hr
+                          </p>
+                        </div>
+
+                        <!-- student comment - dyanmic text -->
+                        <p class="text-black/50 pt-1">
+                          I have a question about the assign...
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- seperator -->
+                    <div class="w-full min-h-[1px] bg-gray-200"></div>
+
+                    <div class="flex justify-between items-center">
+                      <div class="flex gap-2 items-center">
+                        <img
+                          class="w-8"
+                          src="/assets/icons/book.svg"
+                          alt="comments-section"
+                        />
+                        <p>Computer network & Internet</p>
+                      </div>
+                      <a
+                        href="#"
+                        class="text-xs font-semibold text-primaryDark hover:underline"
+                        >View reply</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- =========================================== -->
+    <!-- ham menu for mobile device -->
+    <!-- =========================================== -->
+
+    <div
+      id="menu"
+      class="menu z-[100] fixed top-0 right-0 bg-primaryLight shadow-lg p-4 w-full h-screen hidden"
+    >
+      <button
+        id="close-menu"
+        class="text-primaryDark text-lg absolute top-4 right-4"
+      >
+        ✖
       </button>
-
+      <ul
+        id="menu-items"
+        class="flex flex-col space-y-8 pt-[20vh] items-center h-full"
+      >
+        <!-- Menu items will be populated here from JSON -->
+      </ul>
     </div>
 
-    <!-- Chat area -->
-    <div class="chat-area h-full p-4  flex flex-col justify-end overflow-y-auto relative">
+    <!-- =========================================== -->
+    <!-- chat bot -->
+    <!-- =========================================== -->
 
-      <div
-        class="welcome-message text-center absolute inset-0 flex flex-col justify-center items-center text-base font-medium gap-4">
-
-        <div class="relative w-[75px] h-[75px] -mt-[120px]">
-          <img class="absolute z-[20] rotate-chat w-full h-full" src="assets/img/chat-ellipse.png" alt="chat">
-          <div class="absolute -bottom-20 blur-3xl w-[80px] h-[80px] bg-orange-400"></div>
+    <!-- Chatbot popup -->
+    <div
+      id="ecChatBotPopup"
+      class="fixed translate-x-[390px] right-0 opacity-0 bottom-0 w-[390px] h-screen bg-primaryLight border border-gray-300 rounded-l-lg drop-shadow-[-70px_0px_200px_rgba(0,0,0,0.35)] overflow-hidden z-[1000] flex-col transition-all duration-300"
+    >
+      <!-- Header -->
+      <div class="flex justify-between items-center h-[60px]">
+        <div class="flex gap-2 items-center justify-center">
+          <img src="assets/img/educy.webp" class="w-[40px] flip" alt="" />
+          <p><span class="font-semibold">Educat AI</span> Assistant</p>
         </div>
 
-        <div>
-          <p>Hi,&nbsp;<span class="font-bold">Faisal Saleem</span></p>
-          <p>Welcome back!</p>
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- Input area -->
-    <div class="input-area  m-2 rounded-xl overflow-hidden  flex flex-col shadow-md border border-black/10">
-
-      <div class="flex h-[60px]">
-        <input type="text" id="chatInput" placeholder="Ask me anything..." class="w-full pl-4  focus:outline-none ">
-        <button id="sendButton" class=" px-4 hover:bg-[#ebe2d5] bg-white">
-          <img src="assets/icons/send-btn.svg" alt="send">
+        <!-- close x button -->
+        <button
+          id="ecChatBotCloseBtn"
+          class="bg-white hover:bg-[#e4e2e2] absolute top-3 right-3 p-1.5 rounded-full"
+        >
+          <img class="w-5 h-5" src="/assets/icons/close-line.svg" alt="close" />
         </button>
-
-
       </div>
 
-      <div class="pl-4 h-[60px] flex gap-2 items-center cursor-pointer  ">
-        <img src="assets/icons/ai-star.svg" alt="topic">
-        <p class="font-medium">Topics</p>
-      </div>
-
-    </div>
-
-  </div>
-
-  <!-- ============================= -->
-  <!-- Skill Map Popup -->
-  <!-- ============================= -->
-
-  <div id="skillMapPopup"
-    class="fixed top-0 left-0 w-full h-full bg-black/50  justify-center items-center z-[80] hidden">
-
-    <div
-      class="bg-gradient-to-b from-[#ffeedc] to-[#ffffff] rounded-xl shadow-lg w-full lg:max-w-[460px] h-[230px] flex flex-col items-center justify-between relative text-center overflow-hidden mx-4 lg:mx-0">
-
-
-      <div class="flex flex-col justify-center items-center  h-full w-full">
-        <img class="w-[120px]" src="assets/img/skillmap/holdon.webp" alt="">
-        <p class="text-lg font-semibold pb-4 pt-2">Hold on!</p>
-        <p class="animate-slide-up max-w-[70%]">
-          Please finish the current course before you start this one 💪
-        </p>
-      </div>
-
-
-      <!-- close x button -->
-      <button id="skillMapPopupCloseBtn"
-        class="bg-white hover:bg-[#e1d8cc] absolute top-4 right-4 p-1.5 rounded-full z-[200]">
-        <img class="w-5 h-5" src="/assets/icons/close-line.svg" alt="close">
-      </button>
-
-    </div>
-  </div>
-
-  <!-- ============================= -->
-  <!-- Skill Map Hover Custom Tooltip Unlocked-->
-  <!-- ============================= -->
-
-  <div id="skillMapHoverUnlocked" class="absolute z-[100] hidden">
-
-    <div
-      class="bg-gradient-to-b from-[#ffeedc] to-[#ffffff] rounded-xl shadow-xl w-[250px] h-[140px] flex flex-col justify-between relative overflow-hidden mx-4 lg:mx-0 p-3 border border-black/20 ">
-
-
-      <div class="flex flex-col h-full w-full">
-        <div class="flex justify-between items-center">
-
-          <div class="">
-            <div class="flex justify-center items-center gap-1">
-              <img class="w-[20px] pb-1" src="assets/img/skillmap/course-lock.webp" alt="">
-              <p class="text-[16px]">Unlocked</p>
-            </div>
-            <p class="leading-tight text-lg pl-1"><span class="font-bold pr-1">2 days</span>ago</p>
+      <!-- Chat area -->
+      <div
+        class="chat-area h-full p-4 flex flex-col justify-end overflow-y-auto relative"
+      >
+        <div
+          class="welcome-message text-center absolute inset-0 flex flex-col justify-center items-center text-base font-medium gap-4"
+        >
+          <div class="relative w-[75px] h-[75px] -mt-[120px]">
+            <img
+              class="absolute z-[20] rotate-chat w-full h-full"
+              src="assets/img/chat-ellipse.png"
+              alt="chat"
+            />
+            <div
+              class="absolute -bottom-20 blur-3xl w-[80px] h-[80px] bg-orange-400"
+            ></div>
           </div>
-
-          <!-- Date dynamically change here -->
-          <div class="flex flex-col justify-center items-center">
-            <div class="relative ">
-              <img class="w-[40px]" src="assets/img/skillmap/calendar.webp" alt="">
-              <p class="text-primaryDark text-[16px] absolute top-[14px] right-[10px] font-bold">23</p>
-            </div>
-            <p>March</p>
-          </div>
-        </div>
-
-
-
-        <div class="h-[1px] w-full bg-black/10 my-2"></div>
-        <div class="flex gap-2">
-          <svg class="w-[20px] fill-black/40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-            fill="currentColor">
-            <path
-              d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 9.5C12.8284 9.5 13.5 8.82843 13.5 8C13.5 7.17157 12.8284 6.5 12 6.5C11.1716 6.5 10.5 7.17157 10.5 8C10.5 8.82843 11.1716 9.5 12 9.5ZM14 15H13V10.5H10V12.5H11V15H10V17H14V15Z">
-            </path>
-          </svg>
 
           <div>
-            <p class="flex gap-1">Complete this course within<span class="font-semibold">13 days</span></p>
-            <p class="flex gap-1">to earn <span class="flex gap-1 font-semibold text-primaryDark"><img class="w-5"
-                  src="assets//img/educoin-sm.png" alt="">2 EduCoins</span></p>
-
-
+            <p>Hi,&nbsp;<span class="font-bold">Faisal Saleem</span></p>
+            <p>Welcome back!</p>
           </div>
         </div>
       </div>
 
+      <!-- Input area -->
+      <div
+        class="input-area m-2 rounded-xl overflow-hidden flex flex-col shadow-md border border-black/10"
+      >
+        <div class="flex h-[60px]">
+          <input
+            type="text"
+            id="chatInput"
+            placeholder="Ask me anything..."
+            class="w-full pl-4 focus:outline-none"
+          />
+          <button id="sendButton" class="px-4 hover:bg-[#ebe2d5] bg-white">
+            <img src="assets/icons/send-btn.svg" alt="send" />
+          </button>
+        </div>
 
+        <div class="pl-4 h-[60px] flex gap-2 items-center cursor-pointer">
+          <img src="assets/icons/ai-star.svg" alt="topic" />
+          <p class="font-medium">Topics</p>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <!-- ============================= -->
-  <!-- Skill Map Hover Custom Tooltip locked-->
-  <!-- ============================= -->
-
-  <div id="skillMapHoverLocked" class="absolute z-[100] hidden">
+    <!-- ============================= -->
+    <!-- Skill Map Popup -->
+    <!-- ============================= -->
 
     <div
-      class="bg-gray-50 rounded-xl shadow-xl w-[250px] h-[140px] flex flex-col justify-between relative overflow-hidden mx-4 lg:mx-0 p-3 border border-black/20 ">
-
-
-      <div class="flex flex-col h-full w-full">
-        <div class="flex justify-between items-center">
-
-          <div class="">
-            <div class="flex justify-center items-center gap-1">
-              <img class="w-[20px] pb-1" src="assets/img/skillmap/course-lock.webp" alt="">
-              <p class="text-[16px]">Unlocks in</p>
-            </div>
-            <p class="leading-tight text-lg pl-1"><span class="font-bold pr-1">20 days</span></p>
-          </div>
-
-          <!-- Date dynamically change here -->
-          <div class="flex flex-col justify-center items-center">
-            <div class="relative ">
-              <img class="w-[40px] saturate-0" src="assets/img/skillmap/calendar.webp" alt="">
-              <p class=" text-[16px] absolute top-[14px] right-[10px] font-bold">14</p>
-            </div>
-            <p>April</p>
-          </div>
-
-        </div>
-
-
-
-        <div class="h-[1px] w-full bg-black/10 my-2"></div>
-        <div class="flex gap-2">
-          <svg class="w-[20px] fill-black/40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-            fill="currentColor">
-            <path
-              d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 9.5C12.8284 9.5 13.5 8.82843 13.5 8C13.5 7.17157 12.8284 6.5 12 6.5C11.1716 6.5 10.5 7.17157 10.5 8C10.5 8.82843 11.1716 9.5 12 9.5ZM14 15H13V10.5H10V12.5H11V15H10V17H14V15Z">
-            </path>
-          </svg>
-
-          <div>
-            <p class="flex gap-1">Complete this course within<span class="font-semibold">15 days</span></p>
-            <p class="flex gap-1">of unlocking to earn <span class="flex gap-1 font-semibold text-primaryDark"><img
-                  class="w-5" src="assets//img/educoin-sm.png" alt="">2 EduCoins</span></p>
-
-
-          </div>
-        </div>
-      </div>
-
-
-    </div>
-  </div>
-
-  <!-- ============================= -->
-  <!-- leaderboardPopup  -->
-  <!-- ============================= -->
-
-  <div id="leaderboardPopup"
-    class="fixed top-0 left-0 w-full h-full bg-black/50  justify-center items-center z-[80] hidden">
-
-    <div
-      class="bg-gradient-to-b from-[#fef4e9]  to-white rounded-xl shadow-lg w-full lg:max-w-[460px] min-h-[350px] max-h-[76vh] flex flex-col relative overflow-hidden mx-4 lg:mx-0 px-3 py-2">
-
-      <!-- header -->
-      <div class="min-h-[44px] flex flex-col justify-between">
-        <div class="flex gap-2 items-center pt-[8px]">
-          <img class="w-6" src="assets/icons/leaderboard-icon.svg" alt="">
-          <p class="text-[16px]  font-semibold">Leaderboard</p>
-        </div>
-        <div class="w-full h-1 border-transparent border-t-black/10 border "></div>
-      </div>
-
-      <!-- graph area -->
-
-      <div class="h-[220px] min-h-[220px] relative overflow-hidden">
-
-        <div class="flex items-center gap-4 absolute top-2 right-2">
-          <p class="bg-primaryDark px-2  rounded-full text-white italic">You're <span class="font-semibold ">#7</span>
+      id="skillMapPopup"
+      class="fixed top-0 left-0 w-full h-full bg-black/50 justify-center items-center z-[80] hidden"
+    >
+      <div
+        class="bg-gradient-to-b from-[#ffeedc] to-[#ffffff] rounded-xl shadow-lg w-full lg:max-w-[460px] h-[230px] flex flex-col items-center justify-between relative text-center overflow-hidden mx-4 lg:mx-0"
+      >
+        <div class="flex flex-col justify-center items-center h-full w-full">
+          <img class="w-[120px]" src="assets/img/skillmap/holdon.webp" alt="" />
+          <p class="text-lg font-semibold pb-4 pt-2">Hold on!</p>
+          <p class="animate-slide-up max-w-[70%]">
+            Please finish the current course before you start this one 💪
           </p>
         </div>
 
-
-        <!-- 3 profiles -->
-        <div class="absolute h-full flex justify-center items-center w-full mx-auto z-20 left-0 gap-10">
-
-          <div class="flex flex-col justify-center items-center relative -top-4">
-            <img class="w-14 h-14 rounded-full border-2 border-white" src="assets/img/std2.png" alt="">
-            <div
-              class="absolute px-4 top-[50px] border-2 border-white bg-[#46adcf] rounded-full text-white font-semibold">
-              2nd</div>
-            <!-- give a character limit to names - otherwise ui issue will show -->
-            <p class="font-semibold pt-4">Aleno Donini</p>
-            <div class="flex gap-1 items-center justify-center ">
-              <img class="w-4 h-4 object-cover" src="assets/img/educoin-sm.png" alt="educoin">
-              <p class="font-semibold text-primaryDark">233</p>
-            </div>
-          </div>
-
-          <div class="flex flex-col justify-center items-center relative -top-9">
-            <img class="w-14 h-14 rounded-full border-2 border-white" src="assets/img/std1.png" alt="">
-            <div
-              class="absolute px-4 top-[50px] border-2 border-white bg-primaryDark rounded-full text-white font-semibold">
-              1st</div>
-
-            <p class="font-semibold pt-4">Abdul Raheem</p>
-            <div class="flex gap-1 items-center justify-center ">
-              <img class="w-4 h-4 object-cover" src="assets/img/educoin-sm.png" alt="educoin">
-              <p class="font-semibold text-primaryDark">294</p>
-            </div>
-          </div>
-
-          <div class="flex flex-col justify-center items-center relative ">
-            <img class="w-14 h-14 rounded-full border-2 border-white" src="assets/img/std3.png" alt="">
-            <div
-              class="absolute px-4 top-[50px] border-2 border-white bg-[#18937e] rounded-full text-white font-semibold">
-              3rd</div>
-            <p class="font-semibold pt-4">Zayn Mansoor</p>
-            <div class="flex gap-1 items-center justify-center ">
-              <img class="w-4 h-4 object-cover" src="assets/img/educoin-sm.png" alt="educoin">
-              <p class="font-semibold text-primaryDark">202</p>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- steps -->
-        <div class="relative -bottom-1 h-full flex items-center justify-center w-full">
-          <img class="w-[360px] absolute bottom-0" src="assets/img/leaderboard-graph.svg" alt="">
-          <div class="absolute -bottom-3 flex items-center justify-evenly gap-8 w-full">
-            <p class="font-bold text-[24px] text-white relative bottom-[13px]">2</p>
-            <p class="font-bold text-[32px] text-white relative bottom-6">1</p>
-            <p class="font-bold text-[16px] text-white relative bottom-[4px]">3</p>
-          </div>
-
-        </div>
-
-
-
+        <!-- close x button -->
+        <button
+          id="skillMapPopupCloseBtn"
+          class="bg-white hover:bg-[#e1d8cc] absolute top-4 right-4 p-1.5 rounded-full z-[200]"
+        >
+          <img class="w-5 h-5" src="/assets/icons/close-line.svg" alt="close" />
+        </button>
       </div>
-
-      <!-- all student list -->
-      <div id="leaderboard" class="flex flex-col gap-2 mt-4 px-2 overflow-y-scroll scrollbar-custom">
-
-        <!-- list items will be populated here from JSON leaderboard.js -->
-
-      </div>
-
-
-      <!-- close x button -->
-      <button id="leaderboardClosebtn"
-        class="bg-white hover:bg-[#e1d8cc] absolute top-3 right-3 p-1.5 rounded-full z-[200]">
-        <img class="w-5 h-5 " src="/assets/icons/close-line.svg" alt="close">
-      </button>
-
     </div>
 
-  </div>
+    <!-- ============================= -->
+    <!-- Skill Map Hover Custom Tooltip Unlocked-->
+    <!-- ============================= -->
 
+    <div id="skillMapHoverUnlocked" class="absolute z-[100] hidden">
+      <div
+        class="bg-gradient-to-b from-[#ffeedc] to-[#ffffff] rounded-xl shadow-xl w-[250px] h-[140px] flex flex-col justify-between relative overflow-hidden mx-4 lg:mx-0 p-3 border border-black/20"
+      >
+        <div class="flex flex-col h-full w-full">
+          <div class="flex justify-between items-center">
+            <div class="">
+              <div class="flex justify-center items-center gap-1">
+                <img
+                  class="w-[20px] pb-1"
+                  src="assets/img/skillmap/course-lock.webp"
+                  alt=""
+                />
+                <p class="text-[16px]">Unlocked</p>
+              </div>
+              <p class="leading-tight text-lg pl-1">
+                <span class="font-bold pr-1">2 days</span>ago
+              </p>
+            </div>
 
+            <!-- Date dynamically change here -->
+            <div class="flex flex-col justify-center items-center">
+              <div class="relative">
+                <img
+                  class="w-[40px]"
+                  src="assets/img/skillmap/calendar.webp"
+                  alt=""
+                />
+                <p
+                  class="text-primaryDark text-[16px] absolute top-[14px] right-[10px] font-bold"
+                >
+                  23
+                </p>
+              </div>
+              <p>March</p>
+            </div>
+          </div>
 
-  <!-- custom script -->
-  <script src="./js/chatbot.js"></script>
-  <script src="./js/main.js"></script>
-  <script src="./js/skillmap.js"></script>
-  <script src="./js/skillmap-mobile.js"></script>
-  <script src="./js/leaderboard.js"></script>
+          <div class="h-[1px] w-full bg-black/10 my-2"></div>
+          <div class="flex gap-2">
+            <svg
+              class="w-[20px] fill-black/40"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 9.5C12.8284 9.5 13.5 8.82843 13.5 8C13.5 7.17157 12.8284 6.5 12 6.5C11.1716 6.5 10.5 7.17157 10.5 8C10.5 8.82843 11.1716 9.5 12 9.5ZM14 15H13V10.5H10V12.5H11V15H10V17H14V15Z"
+              ></path>
+            </svg>
 
-  <!-- Swiper JS -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+            <div>
+              <p class="flex gap-1">
+                Complete this course within<span class="font-semibold"
+                  >13 days</span
+                >
+              </p>
+              <p class="flex gap-1">
+                to earn
+                <span class="flex gap-1 font-semibold text-primaryDark"
+                  ><img class="w-5" src="assets//img/educoin-sm.png" alt="" />2
+                  EduCoins</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-</body>
+    <!-- ============================= -->
+    <!-- Skill Map Hover Custom Tooltip locked-->
+    <!-- ============================= -->
 
+    <div id="skillMapHoverLocked" class="absolute z-[100] hidden">
+      <div
+        class="bg-gray-50 rounded-xl shadow-xl w-[250px] h-[140px] flex flex-col justify-between relative overflow-hidden mx-4 lg:mx-0 p-3 border border-black/20"
+      >
+        <div class="flex flex-col h-full w-full">
+          <div class="flex justify-between items-center">
+            <div class="">
+              <div class="flex justify-center items-center gap-1">
+                <img
+                  class="w-[20px] pb-1"
+                  src="assets/img/skillmap/course-lock.webp"
+                  alt=""
+                />
+                <p class="text-[16px]">Unlocks in</p>
+              </div>
+              <p class="leading-tight text-lg pl-1">
+                <span class="font-bold pr-1">20 days</span>
+              </p>
+            </div>
+
+            <!-- Date dynamically change here -->
+            <div class="flex flex-col justify-center items-center">
+              <div class="relative">
+                <img
+                  class="w-[40px] saturate-0"
+                  src="assets/img/skillmap/calendar.webp"
+                  alt=""
+                />
+                <p
+                  class="text-[16px] absolute top-[14px] right-[10px] font-bold"
+                >
+                  14
+                </p>
+              </div>
+              <p>April</p>
+            </div>
+          </div>
+
+          <div class="h-[1px] w-full bg-black/10 my-2"></div>
+          <div class="flex gap-2">
+            <svg
+              class="w-[20px] fill-black/40"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 9.5C12.8284 9.5 13.5 8.82843 13.5 8C13.5 7.17157 12.8284 6.5 12 6.5C11.1716 6.5 10.5 7.17157 10.5 8C10.5 8.82843 11.1716 9.5 12 9.5ZM14 15H13V10.5H10V12.5H11V15H10V17H14V15Z"
+              ></path>
+            </svg>
+
+            <div>
+              <p class="flex gap-1">
+                Complete this course within<span class="font-semibold"
+                  >15 days</span
+                >
+              </p>
+              <p class="flex gap-1">
+                of unlocking to earn
+                <span class="flex gap-1 font-semibold text-primaryDark"
+                  ><img class="w-5" src="assets//img/educoin-sm.png" alt="" />2
+                  EduCoins</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================= -->
+    <!-- leaderboardPopup  -->
+    <!-- ============================= -->
+
+    <div
+      id="leaderboardPopup"
+      class="fixed top-0 left-0 w-full h-full bg-black/50 justify-center items-center z-[80] hidden"
+    >
+      <div
+        class="bg-gradient-to-b from-[#fef4e9] to-white rounded-xl shadow-lg w-full lg:max-w-[460px] min-h-[350px] max-h-[76vh] flex flex-col relative overflow-hidden mx-4 lg:mx-0 px-3 py-2"
+      >
+        <!-- header -->
+        <div class="min-h-[44px] flex flex-col justify-between">
+          <div class="flex gap-2 items-center pt-[8px]">
+            <img class="w-6" src="assets/icons/leaderboard-icon.svg" alt="" />
+            <p class="text-[16px] font-semibold">Leaderboard</p>
+          </div>
+          <div
+            class="w-full h-1 border-transparent border-t-black/10 border"
+          ></div>
+        </div>
+
+        <!-- graph area -->
+
+        <div class="h-[220px] min-h-[220px] relative overflow-hidden">
+          <div class="flex items-center gap-4 absolute top-2 right-2">
+            <p class="bg-primaryDark px-2 rounded-full text-white italic">
+              You're <span class="font-semibold">#7</span>
+            </p>
+          </div>
+
+          <!-- 3 profiles -->
+          <div
+            class="absolute h-full flex justify-center items-center w-full mx-auto z-20 left-0 gap-10"
+          >
+            <div
+              class="flex flex-col justify-center items-center relative -top-4"
+            >
+              <img
+                class="w-14 h-14 rounded-full border-2 border-white"
+                src="assets/img/std2.png"
+                alt=""
+              />
+              <div
+                class="absolute px-4 top-[50px] border-2 border-white bg-[#46adcf] rounded-full text-white font-semibold"
+              >
+                2nd
+              </div>
+              <!-- give a character limit to names - otherwise ui issue will show -->
+              <p class="font-semibold pt-4">Aleno Donini</p>
+              <div class="flex gap-1 items-center justify-center">
+                <img
+                  class="w-4 h-4 object-cover"
+                  src="assets/img/educoin-sm.png"
+                  alt="educoin"
+                />
+                <p class="font-semibold text-primaryDark">233</p>
+              </div>
+            </div>
+
+            <div
+              class="flex flex-col justify-center items-center relative -top-9"
+            >
+              <img
+                class="w-14 h-14 rounded-full border-2 border-white"
+                src="assets/img/std1.png"
+                alt=""
+              />
+              <div
+                class="absolute px-4 top-[50px] border-2 border-white bg-primaryDark rounded-full text-white font-semibold"
+              >
+                1st
+              </div>
+
+              <p class="font-semibold pt-4">Abdul Raheem</p>
+              <div class="flex gap-1 items-center justify-center">
+                <img
+                  class="w-4 h-4 object-cover"
+                  src="assets/img/educoin-sm.png"
+                  alt="educoin"
+                />
+                <p class="font-semibold text-primaryDark">294</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col justify-center items-center relative">
+              <img
+                class="w-14 h-14 rounded-full border-2 border-white"
+                src="assets/img/std3.png"
+                alt=""
+              />
+              <div
+                class="absolute px-4 top-[50px] border-2 border-white bg-[#18937e] rounded-full text-white font-semibold"
+              >
+                3rd
+              </div>
+              <p class="font-semibold pt-4">Zayn Mansoor</p>
+              <div class="flex gap-1 items-center justify-center">
+                <img
+                  class="w-4 h-4 object-cover"
+                  src="assets/img/educoin-sm.png"
+                  alt="educoin"
+                />
+                <p class="font-semibold text-primaryDark">202</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- steps -->
+          <div
+            class="relative -bottom-1 h-full flex items-center justify-center w-full"
+          >
+            <img
+              class="w-[360px] absolute bottom-0"
+              src="assets/img/leaderboard-graph.svg"
+              alt=""
+            />
+            <div
+              class="absolute -bottom-3 flex items-center justify-evenly gap-8 w-full"
+            >
+              <p
+                class="font-bold text-[24px] text-white relative bottom-[13px]"
+              >
+                2
+              </p>
+              <p class="font-bold text-[32px] text-white relative bottom-6">
+                1
+              </p>
+              <p class="font-bold text-[16px] text-white relative bottom-[4px]">
+                3
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- all student list -->
+        <div
+          id="leaderboard"
+          class="flex flex-col gap-2 mt-4 px-2 overflow-y-scroll scrollbar-custom"
+        >
+          <!-- list items will be populated here from JSON leaderboard.js -->
+        </div>
+
+        <!-- close x button -->
+        <button
+          id="leaderboardClosebtn"
+          class="bg-white hover:bg-[#e1d8cc] absolute top-3 right-3 p-1.5 rounded-full z-[200]"
+        >
+          <img class="w-5 h-5" src="/assets/icons/close-line.svg" alt="close" />
+        </button>
+      </div>
+    </div>
+
+    <!-- custom script -->
+    <script src="./js/chatbot.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/skillmap.js"></script>
+    <script src="./js/skillmap-mobile.js"></script>
+    <script src="./js/leaderboard.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  </body>
 </html>

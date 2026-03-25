@@ -1,0 +1,562 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Story</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    />
+
+    <style>
+      .active {
+        background-color: #fa9d53;
+      }
+    </style>
+  </head>
+
+  <body class="flex font-sans">
+    <aside
+      id="sidebar"
+      class="bg-primary z-50 hidden h-screen w-72 text-white transition-all duration-300 ease-out lg:block"
+    >
+      <div
+        class="scrollbar-custom flex h-full flex-col justify-between overflow-y-auto px-4"
+      >
+        <div>
+          <div id="sidemenu-logo" class="mt-4 flex items-center gap-2">
+            <img src="./assets/img/educraft-logo-white.svg" alt="educraft logo" />
+            <span id="logo-text" class="text-2xl font-bold">EduCraft</span>
+          </div>
+
+          <div id="toggle-btn-area" class="flex w-full justify-end py-4">
+            <button id="toggleBtn" class="rounded-lg bg-white/20 p-2">
+              <img
+                class="h-3 w-3"
+                src="assets/icons/small.svg"
+                alt="menu expand button"
+              />
+            </button>
+          </div>
+
+          <nav class="flex flex-col justify-between">
+            <ul class="flex flex-col gap-1">
+              <a href="/index.html">
+                <li
+                  id="sidemenu-list"
+                  class="sidemenu-list flex h-12 cursor-pointer items-center rounded-xl pl-4 transition-all duration-300 ease-out hover:bg-[#fa9d53]"
+                >
+                  <div class="flex gap-4">
+                    <img class="h-6 w-6" src="assets/icons/home.svg" alt="home" />
+                    <span class="sidebar-text">Home</span>
+                  </div>
+                </li>
+              </a>
+
+              <a href="mycourses.html">
+                <li
+                  id="sidemenu-list"
+                  class="sidemenu-list flex h-12 cursor-pointer items-center rounded-xl pl-4 transition-all duration-300 ease-out hover:bg-[#fa9d53]"
+                >
+                  <div class="flex items-center gap-4">
+                    <img class="h-6 w-6" src="assets/icons/my-courses.svg" alt="courses" />
+                    <span class="sidebar-text">Courses</span>
+                  </div>
+                </li>
+              </a>
+
+              <li
+                id="sidemenu-list"
+                class="sidemenu-list flex h-12 cursor-pointer items-center rounded-xl pl-4 transition-all duration-300 ease-out hover:bg-[#fa9d53]"
+              >
+                <a href="#" class="flex items-center gap-4">
+                  <img
+                    class="h-6 w-6"
+                    src="assets/icons/learning-journey.svg"
+                    alt="learning journey"
+                  />
+                  <span class="sidebar-text">Learning Journey</span>
+                </a>
+              </li>
+
+              <a href="/classroom.html">
+                <li
+                  id="sidemenu-list"
+                  class="sidemenu-list flex h-12 cursor-pointer items-center rounded-xl pl-4 transition-all duration-300 ease-out hover:bg-[#fa9d53]"
+                >
+                  <div class="flex items-center gap-4">
+                    <img class="h-6 w-6" src="assets/icons/clasroom.svg" alt="classroom" />
+                    <span class="sidebar-text">Classroom</span>
+                  </div>
+                </li>
+              </a>
+
+              <a href="/educraft-academy.html">
+                <li
+                  id="sidemenu-list"
+                  class="sidemenu-list flex h-12 cursor-pointer items-center rounded-xl pl-4 transition-all duration-300 ease-out hover:bg-[#fa9d53]"
+                >
+                  <div class="flex items-center gap-4">
+                    <img class="h-6 w-6" src="assets/icons/edu-academy.svg" alt="academy" />
+                    <span class="sidebar-text">Educraft Academy</span>
+                  </div>
+                </li>
+              </a>
+
+              <li
+                id="sidemenu-list"
+                class="active sidemenu-list flex h-12 cursor-pointer items-center rounded-xl pl-4 transition-all duration-300 ease-out"
+              >
+                <a href="/student-story.html" class="flex items-center gap-4">
+                  <img class="h-6 w-6" src="assets/icons/story.svg" alt="student story" />
+                  <span class="sidebar-text">Student Story</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div>
+          <nav class="pb-4">
+            <ul class="flex flex-col gap-1">
+              <li
+                id="sidemenu-list"
+                class="sidemenu-list flex h-12 items-center rounded-xl pl-4 transition-all duration-300 ease-out hover:bg-[#fa9d53]"
+              >
+                <a href="#" class="flex gap-4">
+                  <img class="h-6 w-6" src="assets/icons/help-center.svg" alt="help" />
+                  <span class="sidebar-text">Help Center</span>
+                </a>
+              </li>
+              <li
+                id="sidemenu-list"
+                class="sidemenu-list flex h-12 items-center rounded-xl pl-4 transition-all duration-300 ease-out hover:bg-[#fa9d53]"
+              >
+                <a href="#" class="flex items-center gap-4">
+                  <img class="h-6 w-6" src="assets/icons/settings.svg" alt="settings" />
+                  <span class="sidebar-text">Settings</span>
+                </a>
+              </li>
+              <li class="h-[2px] w-full bg-white/20"></li>
+              <li
+                id="sidemenu-list"
+                class="sidemenu-list flex h-12 items-center rounded-xl pl-4 transition-all duration-300 ease-out hover:bg-[#fa9d53]"
+              >
+                <a href="#" class="flex items-center gap-4">
+                  <img class="h-6 w-6" src="assets/icons/logout.svg" alt="logout" />
+                  <span class="sidebar-text">Log out</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </aside>
+
+    <div class="h-screen w-full overflow-hidden">
+      <header
+        id="header-menu"
+        class="flex h-14 w-full items-center justify-between border border-b-black/10 bg-white p-4 transition-all duration-300 ease-out"
+      >
+        <p class="text-xl-custom">Student Stories</p>
+
+        <div class="relative hidden w-1/3 md:block">
+          <input
+            type="text"
+            placeholder="Search"
+            class="w-full rounded-full border border-gray-200 bg-[#fffaf4] py-2 pl-12 pr-4 focus:border-primary focus:outline-none"
+          />
+          <img
+            src="assets/icons/search-bar.svg"
+            alt="Search Icon"
+            class="absolute left-4 top-1/2 h-6 w-6 -translate-y-1/2"
+          />
+        </div>
+
+        <div>
+          <div
+            class="relative flex h-10 w-10 items-center justify-center rounded-full bg-[#fdf0e7]"
+          >
+            <span
+              class="absolute right-1 top-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#ffbc00] text-xs font-semibold"
+              >4</span
+            >
+            <img src="assets/icons/bell.svg" alt="notification" />
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center gap-2">
+          <p class="hidden font-semibold md:block">Faisal Saleem</p>
+          <img
+            class="h-10 w-10 rounded-full border-2 border-primary"
+            src="assets/img/user.png"
+            alt="user profile"
+          />
+        </div>
+      </header>
+
+      <main
+        id="main"
+        class="scrollbar-custom mx-auto flex h-[calc(100vh-3.5rem)] flex-col "
+      >
+        <section class="w-full px-4 py-6 sm:px-6 lg:px-8 mx-auto max-w-screen-2xl">
+          <div class="mx-auto  pb-10">
+            <a
+              href="./student-story.html"
+              class="mb-5 inline-flex items-center gap-2 rounded-xl border border-black/10 bg-white px-4 py-2 text-sm font-medium text-black/70 transition hover:border-black/20 hover:text-black"
+            >
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6"></path>
+              </svg>
+              Back
+            </a>
+            <div
+              class="rounded-[16px] border border-[#f4d8c4] bg-gradient-to-r from-[#fff5ec] to-[#ffe8d7] p-6"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#fff1e6] text-lg text-[#f8740b]"
+                >
+                  i
+                </div>
+                <div>
+                  <h1 class="text-xl font-semibold text-black sm:text-2xl">
+                    Share your amazing project!
+                  </h1>
+                  <p class="mt-2 max-w-2xl text-sm leading-7 text-black/65 sm:text-[15px]">
+                    Tell us about what you built, what you learned, and how it made a difference. All stories are reviewed by our team before publishing to keep everyone safe and inspired.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <form class="mt-8 space-y-8" action="#">
+              <div>
+                <label class="mb-3 block text-base font-semibold text-black">
+                  Project Photo *
+                </label>
+                <label
+                  for="story-photo"
+                  class="flex min-h-[200px] cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-black/20 bg-[#fbfbfb] px-6 text-center"
+                >
+                  <div
+                    class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-[#f8740b] text-[#f8740b]"
+                  >
+                    <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                      <circle cx="8.5" cy="10" r="1.5"></circle>
+                      <path d="M21 16l-5.5-5.5L6 20"></path>
+                    </svg>
+                  </div>
+                  <p class="mt-5 text-xl font-semibold text-black">Click to upload the main cover image</p>
+                  <p class="mt-2 text-sm text-black/45">
+                    JPG or PNG . max 3MB preferred
+                  </p>
+                  <input id="story-photo" type="file" class="hidden" />
+                </label>
+              </div>
+
+              <div>
+                <label for="story-title" class="mb-3 block text-base font-semibold text-black">
+                  Story Title *
+                </label>
+                <input
+                  id="story-title"
+                  type="text"
+                  placeholder="e.g., My Smart Plant Watering System"
+                  class="w-full rounded-xl border border-black/10 bg-white px-5 py-4 text-[15px] outline-none transition focus:border-[#f8740b]"
+                />
+              </div>
+
+
+
+              <div>
+                <label class="mb-3 block text-base font-semibold text-black">
+                  Category *
+                </label>
+                <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                  <label class="block cursor-pointer">
+                    <input type="radio" name="story-category" value="Robotics" class="peer sr-only" checked />
+                    <span class="flex items-center justify-center rounded-xl border border-black/10 bg-white px-4 py-4 text-sm font-semibold text-black transition peer-checked:border-[#f8740b] peer-checked:text-[#bf4b00] peer-checked:ring-1 peer-checked:ring-[#f8740b]">Robotics</span>
+                  </label>
+                  <label class="block cursor-pointer">
+                    <input type="radio" name="story-category" value="AI" class="peer sr-only" />
+                    <span class="flex items-center justify-center rounded-xl border border-black/10 bg-white px-4 py-4 text-sm font-semibold text-black transition peer-checked:border-[#f8740b] peer-checked:text-[#bf4b00] peer-checked:ring-1 peer-checked:ring-[#f8740b]">AI</span>
+                  </label>
+                  <label class="block cursor-pointer">
+                    <input type="radio" name="story-category" value="3D Design" class="peer sr-only" />
+                    <span class="flex items-center justify-center rounded-xl border border-black/10 bg-white px-4 py-4 text-sm font-semibold text-black transition peer-checked:border-[#f8740b] peer-checked:text-[#bf4b00] peer-checked:ring-1 peer-checked:ring-[#f8740b]">3D Design</span>
+                  </label>
+                  <label class="block cursor-pointer">
+                    <input type="radio" name="story-category" value="Design &amp; Media" class="peer sr-only" />
+                    <span class="flex items-center justify-center rounded-xl border border-black/10 bg-white px-4 py-4 text-sm font-semibold text-black transition peer-checked:border-[#f8740b] peer-checked:text-[#bf4b00] peer-checked:ring-1 peer-checked:ring-[#f8740b]">Design &amp; Media</span>
+                  </label>
+                  <label class="block cursor-pointer">
+                    <input type="radio" name="story-category" value="Social Impact" class="peer sr-only" />
+                    <span class="flex items-center justify-center rounded-xl border border-black/10 bg-white px-4 py-4 text-sm font-semibold text-black transition peer-checked:border-[#f8740b] peer-checked:text-[#bf4b00] peer-checked:ring-1 peer-checked:ring-[#f8740b]">Social Impact</span>
+                  </label>
+                  <label class="block cursor-pointer">
+                    <input type="radio" name="story-category" value="Other" class="peer sr-only" />
+                    <span class="flex items-center justify-center rounded-xl border border-black/10 bg-white px-4 py-4 text-sm font-semibold text-black transition peer-checked:border-[#f8740b] peer-checked:text-[#bf4b00] peer-checked:ring-1 peer-checked:ring-[#f8740b]">Other</span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label for="tool-used" class="mb-3 block text-base font-semibold text-black">
+                  Tool Used *
+                </label>
+                <input
+                  id="tool-used"
+                  type="text"
+                  placeholder="Arduino Create"
+                  class="w-full rounded-xl border border-black/10 bg-white px-5 py-4 text-[15px] outline-none transition focus:border-[#f8740b]"
+                />
+              </div>
+
+              <div>
+                <label for="idea" class="mb-3 block text-base font-semibold text-black">
+                  The Idea *
+                </label>
+                <p class="mb-3 text-sm text-black/45">
+                  What problem did you want to solve? What inspired you?
+                </p>
+                <textarea
+                  id="idea"
+                  rows="5"
+                  placeholder="Tell us what inspired your project..."
+                  class="w-full rounded-xl border border-black/10 bg-white px-5 py-4 text-[15px] outline-none transition focus:border-[#f8740b]"
+                ></textarea>
+              </div>
+
+              <div>
+                <label for="built" class="mb-3 block text-base font-semibold text-black">
+                  What I Built *
+                </label>
+                <p class="mb-3 text-sm text-black/45">
+                  Describe your project. How does it work?
+                </p>
+                <textarea
+                  id="built"
+                  rows="6"
+                  placeholder="Explain what you created and how it works..."
+                  class="w-full rounded-xl border border-black/10 bg-white px-5 py-4 text-[15px] outline-none transition focus:border-[#f8740b]"
+                ></textarea>
+
+                <div class="mt-5">
+                  <label class="mb-3 block text-sm font-semibold text-black">
+                    Upload build images
+                  </label>
+                  <p class="mb-3 text-sm text-black/45">
+                    You can upload multiple images, up to 4 total.
+                  </p>
+                  <label
+                    for="build-gallery"
+                    class="flex min-h-[132px] cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-black/15 bg-[#fbfbfb] px-5 text-center transition hover:border-[#f8740b]"
+                  >
+                    <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#fff1e6] text-[#f8740b]">
+                      <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M12 5v14"></path>
+                        <path d="M5 12h14"></path>
+                      </svg>
+                    </div>
+                    <p class="mt-4 text-base font-semibold text-black">
+                      Click to upload project images
+                    </p>
+                    <p class="mt-1 text-sm text-black/45">
+                      JPG or PNG . max 4 images
+                    </p>
+                    <input
+                      id="build-gallery"
+                      type="file"
+                      accept="image/*"
+                      multiple
+                      class="hidden"
+                    />
+                  </label>
+
+                  <div
+                    id="build-gallery-error"
+                    class="mt-3 hidden text-sm font-medium text-[#bf4b00]"
+                  ></div>
+
+                  <div
+                    id="build-gallery-preview"
+                    class="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <label for="learned" class="mb-3 block text-base font-semibold text-black">
+                  What I Learned *
+                </label>
+                <p class="mb-3 text-sm text-black/45">
+                  What new skills did you learn? What are you proud of?
+                </p>
+                <textarea
+                  id="learned"
+                  rows="5"
+                  placeholder="Share what you learned from this project..."
+                  class="w-full rounded-xl border border-black/10 bg-white px-5 py-4 text-[15px] outline-none transition focus:border-[#f8740b]"
+                ></textarea>
+              </div>
+
+              <div>
+                <label for="materials" class="mb-3 block text-base font-semibold text-black">
+                  Other Tools/Materials (Optional)
+                </label>
+                <p class="mb-3 text-sm text-black/45">
+                  List any other tools, sensors, or materials you used (separate with commas)
+                </p>
+                <input
+                  id="materials"
+                  type="text"
+                  placeholder="e.g., Arduino Uno, LED lights, Moisture sensor"
+                  class="w-full rounded-xl border border-black/10 bg-white px-5 py-4 text-[15px] outline-none transition focus:border-[#f8740b]"
+                />
+              </div>
+
+              <div class="border-t border-black/5 pt-6">
+                <button
+                  id="submitStoryBtn"
+                  type="button"
+                  class="flex w-full items-center justify-center gap-3 rounded-xl bg-[#f9b27b] px-6 py-5 text-lg font-semibold text-white transition hover:bg-[#f8740b]"
+                >
+                  <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 16V4"></path>
+                    <path d="M7 9l5-5 5 5"></path>
+                    <path d="M4 20h16"></path>
+                  </svg>
+                  Submit My Story
+                </button>
+                <p class="mt-4 text-center text-sm text-black/45">
+                  By submitting, you agree that your story can be shared on Educraft
+                </p>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      (function () {
+        var input = document.getElementById("build-gallery");
+        var preview = document.getElementById("build-gallery-preview");
+        var error = document.getElementById("build-gallery-error");
+        if (!input || !preview || !error) return;
+
+        var selectedFiles = [];
+
+        function syncInputFiles() {
+          var dataTransfer = new DataTransfer();
+          selectedFiles.forEach(function (file) {
+            dataTransfer.items.add(file);
+          });
+          input.files = dataTransfer.files;
+        }
+
+        function showError(message) {
+          if (!message) {
+            error.textContent = "";
+            error.classList.add("hidden");
+            return;
+          }
+          error.textContent = message;
+          error.classList.remove("hidden");
+        }
+
+        function renderPreview() {
+          preview.innerHTML = "";
+          selectedFiles.forEach(function (file, index) {
+            var card = document.createElement("div");
+            card.className = "relative overflow-hidden rounded-xl border border-black/10 bg-white";
+
+            var img = document.createElement("img");
+            img.className = "h-28 w-full object-cover";
+            img.alt = file.name;
+            img.src = URL.createObjectURL(file);
+            img.onload = function () {
+              URL.revokeObjectURL(img.src);
+            };
+
+            var removeBtn = document.createElement("button");
+            removeBtn.type = "button";
+            removeBtn.className = "absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full bg-black/75 text-sm font-semibold text-white";
+            removeBtn.textContent = "x";
+            removeBtn.addEventListener("click", function () {
+              selectedFiles.splice(index, 1);
+              syncInputFiles();
+              renderPreview();
+              showError("");
+            });
+
+            var caption = document.createElement("p");
+            caption.className = "truncate px-3 py-2 text-xs text-black/55";
+            caption.textContent = file.name;
+
+            card.appendChild(img);
+            card.appendChild(removeBtn);
+            card.appendChild(caption);
+            preview.appendChild(card);
+          });
+        }
+
+        input.addEventListener("change", function (event) {
+          var incomingFiles = Array.from(event.target.files || []);
+          var remainingSlots = 4 - selectedFiles.length;
+
+          if (remainingSlots <= 0) {
+            showError("Maximum 4 images allowed.");
+            syncInputFiles();
+            input.value = "";
+            return;
+          }
+
+          if (incomingFiles.length > remainingSlots) {
+            showError("You can upload up to 4 images only.");
+            incomingFiles = incomingFiles.slice(0, remainingSlots);
+          } else {
+            showError("");
+          }
+
+          incomingFiles.forEach(function (file) {
+            if (file.type && file.type.indexOf("image/") === 0) {
+              selectedFiles.push(file);
+            }
+          });
+
+          syncInputFiles();
+          renderPreview();
+          input.value = "";
+        });
+      })();
+    </script>
+    <script src="./js/main.js"></script>
+    <script src="./js/celebration-popup.js"></script>
+    <script>
+      initCelebrationPopup({
+        triggerSelector: "#submitStoryBtn",
+        badgeImage: "./assets/img/student-story/story-3d.webp",
+        title: "You did something incredible!",
+        message: "Your story is ready for the next step. Sharing what you built can inspire other students to create something amazing too.",
+        chipText: "Brilliant job . Keep exploring",
+        primaryLabel: "Read the created story",
+        primaryHref: "./story-detail.html",
+        secondaryLabel: "Go Home",
+        secondaryHref: "./index.html",
+        compliments: [
+          "Your project is full of courage, creativity, and effort.",
+          "You built something meaningful and that deserves a celebration.",
+          "Amazing job. You turned your idea into something real.",
+          "This is the kind of student work that can inspire a whole class."
+        ]
+      });
+    </script>
+  </body>
+</html>
