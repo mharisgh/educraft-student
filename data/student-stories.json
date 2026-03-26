@@ -1,64 +1,314 @@
-﻿{
-  "heroCards": [
-    { "img": "assets/img/teacher2.jpg", "alt": "Student story profile" },
-    { "img": "assets/img/std1.png", "alt": "Student story profile" },
-    { "img": "assets/img/std2.png", "alt": "Student story profile" },
-    { "img": "assets/img/user.png", "alt": "Student story profile" },
-    { "img": "assets/img/std3.png", "alt": "Student story profile" },
-    { "img": "assets/img/student.jpg", "alt": "Student story profile" },
-    { "img": "assets/img/teacher.png", "alt": "Student story profile" },
-    { "img": "assets/img/student.png", "alt": "Student story profile" },
-    { "img": "assets/img/tariq.png", "alt": "Student story profile" },
-    { "img": "assets/img/teacher2.jpg", "alt": "Student story profile" }
-  ],
+{
   "stories": [
     {
-      "storyTitle": "Built a Smart Irrigation Helper",
-      "authorName": "Areeba Fatima",
-      "authorClass": "Grade 8 - Robotics",
-      "authorImg": "assets/img/std1.png"
+      "id": "solar-oven-science-project",
+      "title": "Solar Oven Science Project",
+      "coverImg": "./assets/img/student-story/covers/solar-oven-science-project.webp",
+      "authorImg": "./assets/img/student-story/authors/author (1).png",
+      "authorName": "Aarav Nair",
+      "authorGrade": "Grade 6",
+      "isEditorsChoice": true,
+      "category": "Science & Sustainability",
+      "publishedDate": "2026-03-24",
+      "readTime": "3 min read",
+      "reactions": {
+        "like": 54,
+        "clap": 72,
+        "inspired": 38
+      },
+      "keySummary": "I made a simple solar oven that uses sunlight to warm small snacks. The project helped me understand how heat, light, and reflective surfaces work together.",
+      "idea": "I wanted to build something useful with clean energy. I liked the idea of cooking with sunlight because it felt fun, smart, and good for the planet.",
+      "whatIBuilt": "I used a cardboard box, foil, black paper, and clear plastic to trap heat inside the box. I tested different angles in the sun and saw which setup made the oven warmer and faster.",
+      "buildImages": [
+        "./assets/img/student-story/covers/solar-oven-science-project.webp",
+        "./assets/img/carousal-1.webp",
+        "./assets/img/carousal-3.jpg"
+      ],
+      "toolsUsed": [
+        "Cardboard Box",
+        "Aluminium Foil",
+        "Black Paper",
+        "Plastic Sheet",
+        "Tape"
+      ],
+      "whatILearned": "I learned that small changes in angle and insulation can make a big difference. I also learned that science feels more exciting when I can test an idea in real life.",
+      "teacherNote": "Aarav showed great curiosity and patience. He tested his idea carefully and explained his results in a very clear and confident way.",
+      "relatedStoryIds": [
+        "smart-plant-watering-system",
+        "mini-weather-tracker",
+        "clean-water-filteration",
+        "motion-sensor-night-light"
+      ]
     },
     {
-      "storyTitle": "Designed a 3D Eco Classroom",
-      "authorName": "Hamza Tariq",
-      "authorClass": "Grade 9 - Design Lab",
-      "authorImg": "assets/img/std2.png"
+      "id": "smart-plant-watering-system",
+      "title": "Smart Plant Watering System",
+      "coverImg": "./assets/img/student-story/covers/smart-plant-watering-system.webp",
+      "authorImg": "./assets/img/student-story/authors/author (2).png",
+      "authorName": "Sarah Khan",
+      "authorGrade": "Grade 8",
+      "isEditorsChoice": true,
+      "category": "Robotics",
+      "publishedDate": "2026-03-24",
+      "readTime": "4 min read",
+      "reactions": {
+        "like": 84,
+        "clap": 126,
+        "inspired": 62
+      },
+      "keySummary": "I built a smart watering system that checks soil moisture and waters the plant only when it needs help. It is a simple project, but it solves a real problem at home.",
+      "idea": "I noticed that our plants were sometimes watered too early and sometimes too late. I wanted to make a small helper that could make a better choice than guessing every day.",
+      "whatIBuilt": "I used a moisture sensor, an Arduino board, wires, and a small pump idea to create a basic smart plant setup. When the soil becomes dry, the system can trigger watering and make plant care easier.",
+      "buildImages": [
+        "./assets/img/student-story/covers/smart-plant-watering-system.webp",
+        "./assets/img/carousal-1.webp",
+        "./assets/img/carousal-2.jpg"
+      ],
+      "toolsUsed": [
+        "Arduino Create",
+        "Moisture Sensor",
+        "Jumper Wires",
+        "Breadboard"
+      ],
+      "whatILearned": "I learned how sensors collect real-world data and how code can turn that data into an action. I also learned that testing again and again is a big part of building something useful.",
+      "teacherNote": "Sarah showed excellent problem-solving skills and strong ownership of her work. She improved the idea step by step and kept the project practical and easy to understand.",
+      "relatedStoryIds": [
+        "mini-weather-tracker",
+        "motion-sensor-night-light",
+        "recycled-robot-arm",
+        "solar-oven-science-project"
+      ]
     },
     {
-      "storyTitle": "Made a Voice Quiz Assistant",
-      "authorName": "Mariam Noor",
-      "authorClass": "Grade 7 - AI Basics",
-      "authorImg": "assets/img/std3.png"
+      "id": "3d-printed-pencil-holder",
+      "title": "3D Printed Pencil Holder",
+      "coverImg": "./assets/img/student-story/covers/3d-printed-pencil-holder.webp",
+      "authorImg": "./assets/img/student-story/authors/author (3).png",
+      "authorName": "Riya Thomas",
+      "authorGrade": "Grade 7",
+      "isEditorsChoice": false,
+      "category": "3D Design",
+      "publishedDate": "2026-03-20",
+      "readTime": "3 min read",
+      "reactions": {
+        "like": 48,
+        "clap": 51,
+        "inspired": 33
+      },
+      "keySummary": "I designed and printed a pencil holder for my study desk. It looks simple, but it helped me learn how to turn an idea into a real object.",
+      "idea": "My pens and pencils were always messy. I wanted to make a holder that looked neat and also had enough space for the things I use every day.",
+      "whatIBuilt": "I sketched a small desk organizer, created the shape in 3D software, and printed a first version. Then I changed the size and thickness so it would be stronger and more useful.",
+      "buildImages": [
+        "./assets/img/student-story/covers/3d-printed-pencil-holder.webp",
+        "./assets/img/carousal-4.jpg",
+        "./assets/img/carousal-5.jpg"
+      ],
+      "toolsUsed": [
+        "Tinkercad",
+        "3D Printer",
+        "Measuring Scale"
+      ],
+      "whatILearned": "I learned that even small products need planning, testing, and changes. I also learned how fun it feels to hold something in my hand that started as a digital design.",
+      "teacherNote": "Riya worked with great focus and creativity. She accepted feedback well and used it to improve both the design and the final print.",
+      "relatedStoryIds": [
+        "clean-water-awareness-poster",
+        "smart-plant-watering-system",
+        "mini-weather-tracker",
+        "recycled-robot-arm"
+      ]
     },
     {
-      "storyTitle": "Created an Attendance Bot",
-      "authorName": "Saad Ahmed",
-      "authorClass": "Grade 10 - Coding",
-      "authorImg": "assets/img/user.png"
+      "id": "clean-water-awareness-poster",
+      "title": "Clean Water Awareness Poster",
+      "coverImg": "./assets/img/student-story/covers/clean-water-awareness-poster.webp",
+      "authorImg": "./assets/img/student-story/authors/author (4).png",
+      "authorName": "Ibrahim Noor",
+      "authorGrade": "Grade 5",
+      "isEditorsChoice": false,
+      "category": "Design & Media",
+      "publishedDate": "2026-03-18",
+      "readTime": "2 min read",
+      "reactions": {
+        "like": 42,
+        "clap": 45,
+        "inspired": 32
+      },
+      "keySummary": "I made a bright poster about saving water and keeping it clean. My goal was to share one simple message in a way that younger students could understand quickly.",
+      "idea": "We talk a lot about water in school, but many people still waste it without thinking. I wanted to make a poster that felt clear, friendly, and easy to remember.",
+      "whatIBuilt": "I chose simple words, strong colours, and easy icons to explain why water matters. I also arranged the text in a way that feels easy to read from top to bottom.",
+      "buildImages": [
+        "./assets/img/student-story/covers/clean-water-awareness-poster.webp",
+        "./assets/img/carousal-3.jpg",
+        "./assets/img/carousal-5.jpg"
+      ],
+      "toolsUsed": [
+        "Canva",
+        "Colour Palette",
+        "Printed Drafts"
+      ],
+      "whatILearned": "I learned that good design is not only about making something look nice. It is also about helping people understand an important message quickly.",
+      "teacherNote": "Ibrahim communicated a meaningful idea with strong visual choices. His work showed empathy for the audience and a clear sense of purpose.",
+      "relatedStoryIds": [
+        "clean-water-filteration",
+        "3d-printed-pencil-holder",
+        "solar-oven-science-project",
+        "mini-weather-tracker"
+      ]
     },
     {
-      "storyTitle": "Built a Digital Science Fair Booth",
-      "authorName": "Zainab Ali",
-      "authorClass": "Grade 8 - STEM",
-      "authorImg": "assets/img/teacher2.jpg"
+      "id": "clean-water-filteration",
+      "title": "Clean Water Filteration",
+      "coverImg": "./assets/img/student-story/covers/clean-water-filteration.webp",
+      "authorImg": "./assets/img/student-story/authors/author (5).png",
+      "authorName": "Meera Joseph",
+      "authorGrade": "Grade 7",
+      "isEditorsChoice": false,
+      "category": "Science & Sustainability",
+      "publishedDate": "2026-03-16",
+      "readTime": "3 min read",
+      "reactions": {
+        "like": 55,
+        "clap": 49,
+        "inspired": 39
+      },
+      "keySummary": "I created a simple water filter model to show how dirty water can become clearer through layers. The project helped me understand purification in a hands-on way.",
+      "idea": "I wanted to learn how filtration works in real life. Instead of only reading about it, I thought it would be more fun to build a small model and test it myself.",
+      "whatIBuilt": "I used sand, gravel, cotton, and a bottle to create a layer-based filter model. Then I poured cloudy water through it and compared the water before and after the test.",
+      "buildImages": [
+        "./assets/img/student-story/covers/clean-water-filteration.webp",
+        "./assets/img/carousal-2.jpg",
+        "./assets/img/carousal-4.jpg"
+      ],
+      "toolsUsed": [
+        "Plastic Bottle",
+        "Sand",
+        "Gravel",
+        "Cotton"
+      ],
+      "whatILearned": "I learned that problem solving becomes easier when I break a big system into small parts. I also learned how science experiments can help me understand important community issues.",
+      "teacherNote": "Meera connected classroom learning with a real-world topic in a thoughtful way. Her explanation was calm, clear, and well supported by the experiment.",
+      "relatedStoryIds": [
+        "clean-water-awareness-poster",
+        "solar-oven-science-project",
+        "mini-weather-tracker",
+        "smart-plant-watering-system"
+      ]
     },
     {
-      "storyTitle": "Animated a Space Mission Story",
-      "authorName": "Raza Haider",
-      "authorClass": "Grade 6 - Creative Tech",
-      "authorImg": "assets/img/student.jpg"
+      "id": "mini-weather-tracker",
+      "title": "Mini Weather Tracker",
+      "coverImg": "./assets/img/student-story/covers/mini-weather-tracker.webp",
+      "authorImg": "./assets/img/student-story/authors/author (6).png",
+      "authorName": "Daniel Roy",
+      "authorGrade": "Grade 6",
+      "isEditorsChoice": false,
+      "category": "AI & Data",
+      "publishedDate": "2026-03-14",
+      "readTime": "3 min read",
+      "reactions": {
+        "like": 41,
+        "clap": 34,
+        "inspired": 22
+      },
+      "keySummary": "I built a simple weather tracker that records temperature and basic daily changes. It helped me see how data can tell a story over time.",
+      "idea": "I like checking the weather every morning. I wanted to make a small project that could collect weather details and show patterns in an easy way.",
+      "whatIBuilt": "I made a simple tracker that stores readings and turns them into a small chart. I tested it over a few days and compared cool mornings, warm afternoons, and changes in the sky.",
+      "buildImages": [
+        "./assets/img/student-story/covers/mini-weather-tracker.webp",
+        "./assets/img/carousal-1.webp",
+        "./assets/img/carousal-4.jpg"
+      ],
+      "toolsUsed": [
+        "Spreadsheet",
+        "Temperature Sensor",
+        "Chart View"
+      ],
+      "whatILearned": "I learned that data becomes much more interesting when it is organised clearly. I also learned that patterns are easier to notice when I collect information every day.",
+      "teacherNote": "Daniel stayed consistent and careful throughout the project. He showed strong attention to detail and used data in a clear and meaningful way.",
+      "relatedStoryIds": [
+        "smart-plant-watering-system",
+        "motion-sensor-night-light",
+        "solar-oven-science-project",
+        "clean-water-filteration"
+      ]
     },
     {
-      "storyTitle": "Prototyped a Safety Wearable",
-      "authorName": "Hina Javed",
-      "authorClass": "Grade 9 - Innovation Lab",
-      "authorImg": "assets/img/teacher.png"
+      "id": "motion-sensor-night-light",
+      "title": "Motion Sensor Night Light",
+      "coverImg": "./assets/img/student-story/covers/motion-sensor-night-light.webp",
+      "authorImg": "./assets/img/student-story/authors/author (7).png",
+      "authorName": "Zoya Ahmed",
+      "authorGrade": "Grade 8",
+      "isEditorsChoice": false,
+      "category": "Coding & Electronics",
+      "publishedDate": "2026-03-12",
+      "readTime": "3 min read",
+      "reactions": {
+        "like": 37,
+        "clap": 44,
+        "inspired": 27
+      },
+      "keySummary": "I made a motion sensor night light that turns on when someone walks nearby. It is a small project, but it feels helpful and real.",
+      "idea": "At night, it can be hard to find the switch in a dark room. I wanted to build something that reacts automatically and makes movement safer and easier.",
+      "whatIBuilt": "I connected a motion sensor to a light output and tested the timing. Then I adjusted the code so the light turns on smoothly and stays on just long enough to be useful.",
+      "buildImages": [
+        "./assets/img/student-story/covers/motion-sensor-night-light.webp",
+        "./assets/img/carousal-2.jpg",
+        "./assets/img/carousal-5.jpg"
+      ],
+      "toolsUsed": [
+        "Motion Sensor",
+        "LED Light",
+        "Arduino",
+        "Basic Code"
+      ],
+      "whatILearned": "I learned how sensors and code can work together to solve everyday problems. I also learned that timing matters a lot when a project needs to feel natural to use.",
+      "teacherNote": "Zoya focused on both function and user experience. She thought carefully about how the project would feel for a real person using it at home.",
+      "relatedStoryIds": [
+        "smart-plant-watering-system",
+        "recycled-robot-arm",
+        "mini-weather-tracker",
+        "3d-printed-pencil-holder"
+      ]
     },
     {
-      "storyTitle": "Built an AR Museum Guide",
-      "authorName": "Usman Khalid",
-      "authorClass": "Grade 10 - Future Skills",
-      "authorImg": "assets/img/tariq.png"
+      "id": "recycled-robot-arm",
+      "title": "Recycled Robot Arm",
+      "coverImg": "./assets/img/student-story/covers/recycled-robot-arm.webp",
+      "authorImg": "./assets/img/student-story/authors/author (8).png",
+      "authorName": "Kabir Sen",
+      "authorGrade": "Grade 7",
+      "isEditorsChoice": false,
+      "category": "Robotics",
+      "publishedDate": "2026-03-10",
+      "readTime": "4 min read",
+      "reactions": {
+        "like": 46,
+        "clap": 53,
+        "inspired": 27
+      },
+      "keySummary": "I built a model robot arm using recycled materials and simple joints. The project showed me how movement and structure work together.",
+      "idea": "I enjoy making things with my hands, and I wanted to turn waste materials into something mechanical and interesting. A robot arm felt like the perfect challenge.",
+      "whatIBuilt": "I used cardboard, sticks, string, and simple connectors to build a moving arm. I tested how far it could reach and changed the joint positions to make the movement smoother.",
+      "buildImages": [
+        "./assets/img/student-story/covers/recycled-robot-arm.webp",
+        "./assets/img/carousal-3.jpg",
+        "./assets/img/carousal-4.jpg"
+      ],
+      "toolsUsed": [
+        "Cardboard",
+        "String",
+        "Glue",
+        "Craft Sticks"
+      ],
+      "whatILearned": "I learned that strong ideas do not always need expensive materials. I also learned how design, balance, and patience can turn simple parts into a working model.",
+      "teacherNote": "Kabir showed imagination and persistence throughout the project. He used everyday materials in a creative way and kept improving the design after each test.",
+      "relatedStoryIds": [
+        "motion-sensor-night-light",
+        "smart-plant-watering-system",
+        "3d-printed-pencil-holder",
+        "solar-oven-science-project"
+      ]
     }
   ]
 }

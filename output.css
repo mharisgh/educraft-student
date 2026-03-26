@@ -4648,14 +4648,14 @@ body {
 
 .slide-up-fade {
   opacity: 0;
-  animation: slide-up-fade-once 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+  animation: slide-up-fade-once 1s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
   will-change: opacity, translate;
 }
 
 @keyframes zoom-in-fade-once {
   0% {
     opacity: 0;
-    scale: 0.96;
+    scale: 0.90;
   }
   100% {
     opacity: 1;
@@ -4666,7 +4666,7 @@ body {
 .zoom-in-fade {
   opacity: 0;
   transform-origin: center;
-  animation: zoom-in-fade-once 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+  animation: zoom-in-fade-once 1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
   will-change: opacity, scale;
 }
 

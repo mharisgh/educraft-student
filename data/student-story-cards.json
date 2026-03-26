@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Solar Oven Science Project",
+    "coverImg": "./assets/img/student-story/covers/solar-oven-science-project.webp",
+    "authorImg": "./assets/img/student-story/authors/author (1).png",
+    "authorName": "Aarav Nair",
+    "appreciationCount": 164,
+    "readStoryLink": "./story-detail.html",
+    "isEditorsChoice": true
+  },
+  {
+    "title": "Smart Plant Watering System",
+    "coverImg": "./assets/img/student-story/covers/smart-plant-watering-system.webp",
+    "authorImg": "./assets/img/student-story/authors/author (2).png",
+    "authorName": "Sarah Khan",
+    "appreciationCount": 150,
+    "readStoryLink": "./story-detail.html",
+    "isEditorsChoice": true
+  },
+  {
+    "title": "3D Printed Pencil Holder",
+    "coverImg": "./assets/img/student-story/covers/3d-printed-pencil-holder.webp",
+    "authorImg": "./assets/img/student-story/authors/author (3).png",
+    "authorName": "Riya Thomas",
+    "appreciationCount": 132,
+    "readStoryLink": "./story-detail.html",
+    "isEditorsChoice": false
+  },
+  {
+    "title": "Clean Water Awareness Poster",
+    "coverImg": "./assets/img/student-story/covers/clean-water-awareness-poster.webp",
+    "authorImg": "./assets/img/student-story/authors/author (4).png",
+    "authorName": "Ibrahim Noor",
+    "appreciationCount": 119,
+    "readStoryLink": "./story-detail.html",
+    "isEditorsChoice": false
+  },
+  {
+    "title": "Clean Water Filteration",
+    "coverImg": "./assets/img/student-story/covers/clean-water-filteration.webp",
+    "authorImg": "./assets/img/student-story/authors/author (5).png",
+    "authorName": "Meera Joseph",
+    "appreciationCount": 143,
+    "readStoryLink": "./story-detail.html",
+    "isEditorsChoice": false
+  },
+  {
+    "title": "Mini Weather Tracker",
+    "coverImg": "./assets/img/student-story/covers/mini-weather-tracker.webp",
+    "authorImg": "./assets/img/student-story/authors/author (6).png",
+    "authorName": "Daniel Roy",
+    "appreciationCount": 97,
+    "readStoryLink": "./story-detail.html",
+    "isEditorsChoice": false
+  },
+  {
+    "title": "Motion Sensor Night Light",
+    "coverImg": "./assets/img/student-story/covers/motion-sensor-night-light.webp",
+    "authorImg": "./assets/img/student-story/authors/author (7).png",
+    "authorName": "Zoya Ahmed",
+    "appreciationCount": 108,
+    "readStoryLink": "./story-detail.html",
+    "isEditorsChoice": false
+  },
+  {
+    "title": "Recycled Robot Arm",
+    "coverImg": "./assets/img/student-story/covers/recycled-robot-arm.webp",
+    "authorImg": "./assets/img/student-story/authors/author (8).png",
+    "authorName": "Kabir Sen",
+    "appreciationCount": 126,
+    "readStoryLink": "./story-detail.html",
+    "isEditorsChoice": false
+  }
+]
