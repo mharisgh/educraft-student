@@ -2,7 +2,7 @@
   {
     "title": "Solar Oven Science Project",
     "coverImg": "./assets/img/student-story/covers/solar-oven-science-project.webp",
-    "authorImg": "./assets/img/student-story/authors/author (1).png",
+    "authorImg": "./assets/img/student-story/authors/aarav-nair.png",
     "authorName": "Aarav Nair",
     "appreciationCount": 164,
     "readStoryLink": "./story-detail.html",
@@ -11,7 +11,7 @@
   {
     "title": "Smart Plant Watering System",
     "coverImg": "./assets/img/student-story/covers/smart-plant-watering-system.webp",
-    "authorImg": "./assets/img/student-story/authors/author (2).png",
+    "authorImg": "./assets/img/student-story/authors/sarah--khan.png",
     "authorName": "Sarah Khan",
     "appreciationCount": 150,
     "readStoryLink": "./story-detail.html",
@@ -20,7 +20,7 @@
   {
     "title": "3D Printed Pencil Holder",
     "coverImg": "./assets/img/student-story/covers/3d-printed-pencil-holder.webp",
-    "authorImg": "./assets/img/student-story/authors/author (3).png",
+    "authorImg": "./assets/img/student-story/authors/riya-thomas.png",
     "authorName": "Riya Thomas",
     "appreciationCount": 132,
     "readStoryLink": "./story-detail.html",
@@ -29,8 +29,8 @@
   {
     "title": "Clean Water Awareness Poster",
     "coverImg": "./assets/img/student-story/covers/clean-water-awareness-poster.webp",
-    "authorImg": "./assets/img/student-story/authors/author (4).png",
-    "authorName": "Ibrahim Noor",
+    "authorImg": "./assets/img/student-story/authors/noor-ibrahim.png",
+    "authorName": "Noora Ibrahim",
     "appreciationCount": 119,
     "readStoryLink": "./story-detail.html",
     "isEditorsChoice": false
@@ -38,8 +38,8 @@
   {
     "title": "Clean Water Filteration",
     "coverImg": "./assets/img/student-story/covers/clean-water-filteration.webp",
-    "authorImg": "./assets/img/student-story/authors/author (5).png",
-    "authorName": "Meera Joseph",
+    "authorImg": "./assets/img/student-story/authors/ahmed.png",
+    "authorName": "Ahmed",
     "appreciationCount": 143,
     "readStoryLink": "./story-detail.html",
     "isEditorsChoice": false
@@ -47,7 +47,7 @@
   {
     "title": "Mini Weather Tracker",
     "coverImg": "./assets/img/student-story/covers/mini-weather-tracker.webp",
-    "authorImg": "./assets/img/student-story/authors/author (6).png",
+    "authorImg": "./assets/img/student-story/authors/daniel-roy.png",
     "authorName": "Daniel Roy",
     "appreciationCount": 97,
     "readStoryLink": "./story-detail.html",
@@ -56,7 +56,7 @@
   {
     "title": "Motion Sensor Night Light",
     "coverImg": "./assets/img/student-story/covers/motion-sensor-night-light.webp",
-    "authorImg": "./assets/img/student-story/authors/author (7).png",
+    "authorImg": "./assets/img/student-story/authors/zoya.png",
     "authorName": "Zoya Ahmed",
     "appreciationCount": 108,
     "readStoryLink": "./story-detail.html",
@@ -65,10 +65,13 @@
   {
     "title": "Recycled Robot Arm",
     "coverImg": "./assets/img/student-story/covers/recycled-robot-arm.webp",
-    "authorImg": "./assets/img/student-story/authors/author (8).png",
+    "authorImg": "./assets/img/student-story/authors/kabir-sen.png",
     "authorName": "Kabir Sen",
     "appreciationCount": 126,
     "readStoryLink": "./story-detail.html",
     "isEditorsChoice": false
   }
 ]
+
+
+
