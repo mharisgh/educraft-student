@@ -50,20 +50,19 @@ document.addEventListener('DOMContentLoaded', () => {
     'logout.svg': 'ph:sign-out'
   };
 
-  function iconSizeStyle(className) {
+  function iconSizeValue(className) {
     const match = String(className).match(/h-(\d+)/);
     if (!match) {
-      return 'width: 1.75rem; height: 1.75rem;';
+      return '1.75rem';
     }
 
-    const rem = Number(match[1]) / 4;
-    return `width: ${rem}rem; height: ${rem}rem;`;
+    return `${Number(match[1]) / 4}rem`;
   }
 
-  function iconMarkup(icon, className = 'h-12 w-12') {
+  function iconMarkup(icon, className = 'h-10 w-10') {
     const iconName = iconMap[icon] || icon;
-    const sizeStyle = iconSizeStyle(className);
-    return `<span class="help-ph-icon-shell ${className}"><iconify-icon icon="${escapeHtml(iconName)}" class="help-ph-icon" style="${sizeStyle}"></iconify-icon></span>`;
+    const size = iconSizeValue(className);
+    return `<span class="help-ph-icon-shell ${className}"><iconify-icon icon="${escapeHtml(iconName)}" class="help-ph-icon" width="${size}" height="${size}" style="font-size: ${size};"></iconify-icon></span>`;
   }
 
   function buttonActionAttrs(action) {
@@ -263,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 class="group rounded-[28px] border border-[#efe2d5] bg-white px-4 py-4 text-left shadow-[0_20px_45px_rgba(191,75,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(191,75,0,0.12)]"
               >
                 <div class="flex h-12 w-12 items-center justify-center rounded-[12px] bg-[#fff2e5] text-primaryDark">
-                  ${iconMarkup(card.icon, 'h-10 w-10')}
+                  ${iconMarkup(card.icon, 'h-8 w-8')}
                 </div>
                 <h3 class="mt-4 text-lg font-semibold tracking-tight text-slate-950">${escapeHtml(card.title)}</h3>
                 <p class="mt-2 text-sm leading-6 text-slate-500">${escapeHtml(card.description)}</p>
@@ -287,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 >
                   <div class="flex items-center gap-4">
                     <span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#fff2e5] text-primaryDark">
-                      ${iconMarkup(link.icon, 'h-9 w-9')}
+                      ${iconMarkup(link.icon, 'h-8 w-8')}
                     </span>
                     <div>
                       <p class="text-lg font-semibold text-slate-950">${escapeHtml(link.title)}</p>
@@ -331,7 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   <p class="mt-3 max-w-[16rem] text-xs leading-5 text-slate-500">${escapeHtml(category.description)}</p>
                 </div>
                 <span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#fff2e5] text-primaryDark">
-                  ${iconMarkup(category.icon, 'h-9 w-9')}
+                  ${iconMarkup(category.icon, 'h-11 w-11')}
                 </span>
               </div>
             </button>
@@ -374,7 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
             >
               <div class="flex items-center gap-4">
                 <span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f6f3ee] text-slate-700">
-                  ${iconMarkup(category.icon, 'h-7 w-7')}
+                  ${iconMarkup(category.icon, 'h-9 w-9')}
                 </span>
                 <div>
                   <h3 class="text-xl font-semibold text-slate-950">${escapeHtml(article.title)}</h3>
@@ -474,7 +473,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <div class="mt-5 overflow-hidden rounded-[24px] bg-[radial-gradient(circle_at_top,#4a1b62_0%,#111827_38%,#020617_100%)] p-3">
                 ${article.coverImage
                   ? `<img src="${escapeHtml(article.coverImage)}" alt="${escapeHtml(article.title)}" class="h-[220px] w-full rounded-[20px] object-cover object-center opacity-95 transition duration-300 group-hover:scale-[1.01]" />`
-                  : `<div class="flex h-[220px] items-center justify-center rounded-[20px] border border-white/10 text-white/90">${iconMarkup(category.icon, 'h-12 w-12')}</div>`}
+                  : `<div class="flex h-[220px] items-center justify-center rounded-[20px] border border-white/10 text-white/90">${iconMarkup(category.icon, 'h-14 w-14')}</div>`}
               </div>
             </button>
           `).join('')}
@@ -527,7 +526,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <section class="mt-6 rounded-[28px] border border-[#ffd8b5] bg-[#fff7ee] px-6 py-6 shadow-[0_12px_24px_rgba(248,116,11,0.06)]">
             <div class="flex items-start gap-4">
               <span class="flex h-12 w-12 items-center justify-center rounded-full bg-[#fff0df] text-primaryDark">
-                ${iconMarkup('ai-star.svg', 'h-6 w-6')}
+                ${iconMarkup('ai-star.svg', 'h-8 w-8')}
               </span>
               <div>
                 <p class="text-lg font-semibold text-slate-950">Tip</p>
@@ -597,7 +596,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button type="button" data-category-id="${escapeHtml(category.id)}" class="rounded-[24px] border border-[#ece0d4] bg-white px-5 py-5 text-left transition hover:border-primary">
                   <div class="flex items-center gap-4">
                     <span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#fff2e5] text-primaryDark">
-                      ${iconMarkup(category.icon, 'h-7 w-7')}
+                      ${iconMarkup(category.icon, 'h-9 w-9')}
                     </span>
                     <div>
                       <p class="text-lg font-semibold text-slate-950">${escapeHtml(category.title)}</p>
@@ -851,6 +850,9 @@ document.addEventListener('DOMContentLoaded', () => {
       openDrawer();
     });
 });
+
+
+
 
 
 
