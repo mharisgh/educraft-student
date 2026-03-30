@@ -1,0 +1,491 @@
+{
+  "home": {
+    "headline": "Help Center",
+    "description": "Find quick answers, guided walkthroughs, and in-context support for common Educraft student tasks.",
+    "popularCategoryIds": [
+      "courses-learning",
+      "assignments-quizzes",
+      "progress-rewards",
+      "ai-educy-chat"
+    ],
+    "cards": [
+      {
+        "title": "Getting started",
+        "description": "New to EduCraft? Start here",
+        "icon": "help.svg",
+        "action": {
+          "type": "category",
+          "target": "courses-learning"
+        }
+      },
+      {
+        "title": "Knowledge base",
+        "description": "Find every articles you need",
+        "icon": "book.svg",
+        "action": {
+          "type": "knowledge-base"
+        }
+      },
+      {
+        "title": "AI Educy Chat",
+        "description": "Get instant answers",
+        "icon": "chat-regular.svg",
+        "action": {
+          "type": "category",
+          "target": "ai-educy-chat"
+        }
+      }
+    ],
+    "quickLinks": [
+      {
+        "title": "Progress & Rewards",
+        "description": "Badges, certificates, and leaderboard tips",
+        "icon": "certificate.svg",
+        "action": {
+          "type": "category",
+          "target": "progress-rewards"
+        }
+      },
+      {
+        "title": "What's new",
+        "description": "Latest improvements for students",
+        "icon": "ai-star.svg",
+        "action": {
+          "type": "category",
+          "target": "whats-new"
+        }
+      }
+    ]
+  },
+  "categories": [
+    {
+      "id": "courses-learning",
+      "title": "Courses & Learning",
+      "description": "Start courses, move through lessons, and stay confident from day one.",
+      "icon": "book.svg"
+    },
+    {
+      "id": "assignments-quizzes",
+      "title": "Assignments & Quizzes",
+      "description": "Everything about homework, submissions, retries, and quiz flow.",
+      "icon": "quiz.svg"
+    },
+    {
+      "id": "progress-rewards",
+      "title": "Progress & Rewards",
+      "description": "Track streaks, badges, certificates, and your leaderboard momentum.",
+      "icon": "certificate.svg"
+    },
+    {
+      "id": "ai-educy-chat",
+      "title": "AI Educy Chat",
+      "description": "Use Educy for explanations, revision support, and quick study help.",
+      "icon": "chat-regular.svg"
+    },
+    {
+      "id": "classroom-community",
+      "title": "Classroom & Community",
+      "description": "Join classroom sessions, read notices, and take part in discussions.",
+      "icon": "clasroom.svg"
+    },
+    {
+      "id": "account-settings",
+      "title": "Account & Settings",
+      "description": "Personalize your profile and control how you receive updates.",
+      "icon": "settings.svg"
+    },
+    {
+      "id": "whats-new",
+      "title": "What's New",
+      "description": "Fresh platform updates and recently launched student features.",
+      "icon": "ai-star.svg"
+    }
+  ],
+  "articles": [
+    {
+      "id": "how-to-start-a-course",
+      "categoryId": "courses-learning",
+      "title": "How to start a course",
+      "summary": "Begin your learning journey",
+      "updated": "March 2026",
+      "steps": [
+        {
+          "title": "Go to My Courses from the left menu",
+          "description": "Open your course library to see everything you are enrolled in and what is ready to begin.",
+          "image": "../assets/img/course-thumbnail/course-thumbnail.webp"
+        },
+        {
+          "title": "Choose a course card that interests you",
+          "description": "Each course card shows the topic, progress snapshot, and the quickest path back into learning."
+        },
+        {
+          "title": "Click the Start Learning button",
+          "description": "This opens the course detail page and takes you into the lesson flow for that subject."
+        },
+        {
+          "title": "Watch lessons and complete activities",
+          "description": "Finish videos, notes, assignments, and quizzes to keep your progress bar moving forward."
+        }
+      ],
+      "tip": "Complete lessons regularly to unlock badges, improve your streak, and climb the leaderboard."
+    },
+    {
+      "id": "understand-course-progress",
+      "categoryId": "courses-learning",
+      "title": "Understand your course progress",
+      "summary": "Read progress indicators with confidence",
+      "updated": "March 2026",
+      "steps": [
+        {
+          "title": "Look for completion labels on your course cards",
+          "description": "Cards can show not started, in progress, or completed states so you know where to jump back in."
+        },
+        {
+          "title": "Open the course detail page for deeper tracking",
+          "description": "Inside the course, lesson progress and quiz completion give you a more detailed status view."
+        },
+        {
+          "title": "Finish pending activities to update the tracker",
+          "description": "Progress updates after required lessons and activities have been completed successfully."
+        }
+      ],
+      "tip": "If progress looks stuck, refresh the page after finishing the latest required activity."
+    },
+    {
+      "id": "use-learning-journey",
+      "categoryId": "courses-learning",
+      "title": "Use the Learning Journey page",
+      "summary": "See where you are headed next",
+      "updated": "March 2026",
+      "steps": [
+        {
+          "title": "Open Learning Journey from the sidebar",
+          "description": "This page gives you a visual route through your current path and upcoming milestones."
+        },
+        {
+          "title": "Review unlocked and locked milestones",
+          "description": "Unlocked items are ready now, while locked ones usually depend on finishing earlier courses."
+        },
+        {
+          "title": "Use milestone tooltips for timing and rewards",
+          "description": "Milestones can show bonus windows, EduCoin rewards, and helpful completion hints."
+        }
+      ],
+      "tip": "Check this page before starting a new course so you focus on the next highest-impact milestone."
+    },
+    {
+      "id": "submit-assignments",
+      "categoryId": "assignments-quizzes",
+      "title": "Submit assignments",
+      "summary": "Turn in your homework on time",
+      "updated": "March 2026",
+      "steps": [
+        {
+          "title": "Open your course or classroom assignment area",
+          "description": "Assignments usually appear inside the relevant course detail page or classroom section."
+        },
+        {
+          "title": "Attach the required file or response",
+          "description": "Double-check the format, title, and instructions before uploading your final work."
+        },
+        {
+          "title": "Press submit and wait for confirmation",
+          "description": "A successful submission should show a confirmation state or message in the interface."
+        }
+      ],
+      "tip": "Upload a few minutes early whenever possible so you have time to fix any file issues."
+    },
+    {
+      "id": "take-a-quiz",
+      "categoryId": "assignments-quizzes",
+      "title": "Take a quiz",
+      "summary": "Test your knowledge with confidence",
+      "updated": "March 2026",
+      "steps": [
+        {
+          "title": "Open the quiz from your lesson or classroom",
+          "description": "Quiz access usually appears after lesson content or in the classroom activity list."
+        },
+        {
+          "title": "Read every question carefully before answering",
+          "description": "Take your time and use lesson notes or memory prompts when allowed."
+        },
+        {
+          "title": "Submit and review your score",
+          "description": "After submission, check the result and any teacher feedback that appears."
+        }
+      ],
+      "tip": "If retries are allowed, review weak areas first instead of immediately reattempting."
+    },
+    {
+      "id": "upload-late-work",
+      "categoryId": "assignments-quizzes",
+      "title": "Upload late work the right way",
+      "summary": "Share delayed work without confusion",
+      "updated": "March 2026",
+      "steps": [
+        {
+          "title": "Check whether the assignment still accepts uploads",
+          "description": "Some tasks allow late submissions while others may require teacher approval first."
+        },
+        {
+          "title": "Add a short note if your teacher expects context",
+          "description": "A simple explanation helps the reviewer understand why the assignment arrived late."
+        },
+        {
+          "title": "Confirm the upload status after sending",
+          "description": "Make sure the new file appears in the assignment area rather than staying in draft form."
+        }
+      ],
+      "tip": "When in doubt, message the teacher after uploading so they know to review the new submission."
+    },
+    {
+      "id": "earn-badges",
+      "categoryId": "progress-rewards",
+      "title": "Earn badges",
+      "summary": "Unlock recognition as you learn",
+      "updated": "March 2026",
+      "steps": [
+        {
+          "title": "Complete required lessons and activities",
+          "description": "Badges are usually connected to consistent completion, performance, or milestone events."
+        },
+        {
+          "title": "Watch for badge updates in progress areas",
+          "description": "Your profile, learning journey, or reward-related pages may show newly unlocked badges."
+        },
+        {
+          "title": "Keep a steady streak to unlock more opportunities",
+          "description": "Regular activity often matters just as much as single high scores."
+        }
+      ],
+      "tip": "Small, steady wins often unlock more rewards than one-off bursts of activity."
+    },
+    {
+      "id": "find-certificates",
+      "categoryId": "progress-rewards",
+      "title": "Find your certificates",
+      "summary": "Access your earned proof of achievement",
+      "updated": "March 2026",
+      "steps": [
+        {
+          "title": "Open your progress or certificate area",
+          "description": "Certificates normally appear after the required course or milestone has been fully completed."
+        },
+        {
+          "title": "Choose the certificate you want to view",
+          "description": "Some learners can unlock multiple recognitions over time, so look for the correct one."
+        },
+        {
+          "title": "Preview before downloading or sharing",
+          "description": "Check your name, course title, and completion details before using the certificate externally."
+        }
+      ],
+      "tip": "If a certificate is missing, confirm the final required activity has been marked complete first."
+    },
+    {
+      "id": "improve-your-streak",
+      "categoryId": "progress-rewards",
+      "title": "Improve your streak",
+      "summary": "Stay consistent and build momentum",
+      "updated": "March 2026",
+      "steps": [
+        {
+          "title": "Log in regularly and complete one meaningful task",
+          "description": "A short, focused session is often enough to keep your progress rhythm alive."
+        },
+        {
+          "title": "Use reminders for your preferred study time",
+          "description": "Streaks are easier to keep when your learning time fits your actual routine."
+        },
+        {
+          "title": "Check progress visuals for encouragement",
+          "description": "Seeing visible momentum helps you maintain healthy consistency week to week."
+        }
+      ],
+      "tip": "Aim for repeatable habits, not perfect study sessions."
+    },
+    {
+      "id": "use-educy-for-revision",
+      "categoryId": "ai-educy-chat",
+      "title": "Use Educy for revision",
+      "summary": "Turn quick questions into clearer understanding",
+      "updated": "March 2026",
+      "steps": [
+        {
+          "title": "Ask one focused question at a time",
+          "description": "Specific prompts usually produce the most useful and understandable answers."
+        },
+        {
+          "title": "Request simpler explanations when needed",
+          "description": "Educy can often reframe a concept in a clearer or more student-friendly way."
+        },
+        {
+          "title": "Use follow-up prompts to deepen understanding",
+          "description": "A good conversation usually comes from refining the same topic step by step."
+        }
+      ],
+      "tip": "Treat Educy like a revision partner, not a one-shot answer box."
+    },
+    {
+      "id": "ask-for-examples",
+      "categoryId": "ai-educy-chat",
+      "title": "Ask Educy for examples",
+      "summary": "See difficult concepts in a more practical way",
+      "updated": "March 2026",
+      "steps": [
+        {
+          "title": "Name the topic you are struggling with",
+          "description": "The clearer the topic, the easier it is for Educy to provide useful examples."
+        },
+        {
+          "title": "Ask for a real-world or simple classroom example",
+          "description": "Concrete examples often make abstract concepts easier to remember."
+        },
+        {
+          "title": "Compare two examples if you still feel unsure",
+          "description": "Seeing variation can help you understand what changes and what stays constant."
+        }
+      ],
+      "tip": "If the first example feels too advanced, ask for one aimed at your grade level."
+    },
+    {
+      "id": "join-a-classroom-session",
+      "categoryId": "classroom-community",
+      "title": "Join a classroom session",
+      "summary": "Enter class smoothly and on time",
+      "updated": "March 2026",
+      "steps": [
+        {
+          "title": "Open the classroom area from the sidebar",
+          "description": "This is usually where live sessions, notices, and class-specific activity appear."
+        },
+        {
+          "title": "Select the active or upcoming session",
+          "description": "Look for timing details and join controls before the session begins."
+        },
+        {
+          "title": "Check audio, instructions, and attendance prompts",
+          "description": "A quick check at the start helps you avoid missing the first few minutes."
+        }
+      ],
+      "tip": "Join a little early if the class includes live discussion or attendance tracking."
+    },
+    {
+      "id": "read-classroom-notices",
+      "categoryId": "classroom-community",
+      "title": "Read classroom notices",
+      "summary": "Stay updated on teacher instructions",
+      "updated": "March 2026",
+      "steps": [
+        {
+          "title": "Open your classroom feed or notice section",
+          "description": "Important reminders, due dates, and changes often appear here first."
+        },
+        {
+          "title": "Look for the latest pinned or highlighted message",
+          "description": "Teachers may pin the most urgent notice to make it easier to spot."
+        },
+        {
+          "title": "Take action on any linked task or reminder",
+          "description": "Some notices include direct links to lessons, assignments, or forms."
+        }
+      ],
+      "tip": "Check notices before asking for help since the answer is often already there."
+    },
+    {
+      "id": "update-notification-preferences",
+      "categoryId": "account-settings",
+      "title": "Update notification preferences",
+      "summary": "Control the reminders you receive",
+      "updated": "March 2026",
+      "steps": [
+        {
+          "title": "Open your account settings",
+          "description": "Notification preferences usually live beside profile and account controls."
+        },
+        {
+          "title": "Choose which alerts matter most",
+          "description": "Keep important reminders for classes, assignments, and achievements switched on."
+        },
+        {
+          "title": "Save and test the new preference",
+          "description": "Make sure you still receive the updates that help you stay on track."
+        }
+      ],
+      "tip": "Too many alerts can make you ignore important ones, so keep only the essentials enabled."
+    },
+    {
+      "id": "ai-powered-study-briefs",
+      "categoryId": "whats-new",
+      "title": "AI-powered study briefs are now live",
+      "summary": "Get instant recaps of lesson highlights and key updates the moment they are posted.",
+      "updated": "March 27, 2026",
+      "releaseDate": "Mar 27",
+      "coverImage": "../assets/img/illustrations/ai.png",
+      "steps": [
+        {
+          "title": "Open a supported course or update stream",
+          "description": "Recent releases can now show AI-generated summaries at the top of the content area."
+        },
+        {
+          "title": "Scan the short brief before reading in full",
+          "description": "The summary highlights the most important changes so you can decide where to focus next."
+        },
+        {
+          "title": "Use the brief to jump into lessons faster",
+          "description": "This is especially useful when a course has new notes, edits, or announcements you missed."
+        }
+      ],
+      "tip": "Use the brief as a quick orientation tool, then open the full lesson for the complete context."
+    },
+    {
+      "id": "smarter-document-highlights",
+      "categoryId": "whats-new",
+      "title": "A faster way to analyze course updates",
+      "summary": "Explore new notes, document highlights, and grouped updates faster with a clearer reading flow.",
+      "updated": "March 26, 2026",
+      "releaseDate": "Mar 26",
+      "coverImage": "../assets/img/notes.webp",
+      "steps": [
+        {
+          "title": "Open a lesson with attached notes or documents",
+          "description": "The newest reading experience groups important items more clearly for faster scanning."
+        },
+        {
+          "title": "Use highlighted sections to spot key changes",
+          "description": "New visual emphasis helps you understand what is fresh without rereading everything."
+        },
+        {
+          "title": "Return to the grouped view when reviewing later",
+          "description": "This makes it easier to compare new updates against previous material."
+        }
+      ],
+      "tip": "If you revisit lessons often, start with highlighted sections before reading the full document again."
+    },
+    {
+      "id": "badges-and-reward-updates",
+      "categoryId": "whats-new",
+      "title": "Stronger reward visibility across your journey",
+      "summary": "Badges, milestones, and celebration moments are easier to spot throughout the student experience.",
+      "updated": "March 24, 2026",
+      "releaseDate": "Mar 24",
+      "coverImage": "../assets/img/tips.webp",
+      "steps": [
+        {
+          "title": "Check the Learning Journey after completing a lesson",
+          "description": "Reward moments are now surfaced more clearly after important progress events."
+        },
+        {
+          "title": "Look for new celebration feedback on achievement screens",
+          "description": "The updated visual treatment helps milestones feel more noticeable and rewarding."
+        },
+        {
+          "title": "Use reward views to understand what to unlock next",
+          "description": "The refreshed flow makes the next target easier to understand at a glance."
+        }
+      ],
+      "tip": "When a badge appears new, open the related milestone and review what unlocked it so you can repeat the pattern."
+    }
+  ]
+}

@@ -1,0 +1,422 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtual City | EduCraft</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="../output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    />
+
+    <style>
+      .active {
+        background-color: #fa9d53;
+      }
+
+      .virtual-city-shell {
+        background:
+          radial-gradient(
+            circle at top,
+            rgba(248, 116, 11, 0.16),
+            transparent 40%
+          ),
+          linear-gradient(180deg, #fffaf5 0%, #fff6ed 100%);
+      }
+
+      .countdown-card {
+        box-shadow: 0 20px 50px rgba(191, 75, 0, 0.08);
+      }
+    </style>
+  </head>
+
+  <body class="flex min-h-screen bg-primaryLight font-sans text-slate-900">
+    <aside
+      id="sidebar"
+      class="bg-primary z-50 hidden h-screen w-72 text-white transition-all duration-300 ease-out lg:block"
+    >
+      <div
+        class="flex h-full flex-col justify-between overflow-y-auto px-4 scrollbar-custom"
+      >
+        <div>
+          <div id="sidemenu-logo" class="mt-4 flex items-center gap-2">
+            <img
+              src="../assets/img/educraft-logo-white.svg"
+              alt="educraft logo"
+            />
+            <span id="logo-text" class="text-2xl font-bold">EduCraft</span>
+          </div>
+
+          <div id="toggle-btn-area" class="flex w-full justify-end py-4">
+            <button id="toggleBtn" class="rounded-lg bg-white/20 p-2">
+              <img
+                class="h-3 w-3"
+                src="../assets/icons/small.svg"
+                alt="menu expand button"
+              />
+            </button>
+          </div>
+
+          <nav class="flex flex-col justify-between">
+            <ul class="flex flex-col gap-1">
+              <a href="../index.html">
+                <li
+                  class="sidemenu-list flex h-12 cursor-pointer items-center rounded-xl pl-4 transition-all duration-300 ease-out hover:bg-[#fa9d53]"
+                >
+                  <div class="flex gap-4">
+                    <img
+                      class="h-6 w-6"
+                      src="../assets/icons/home.svg"
+                      alt="home"
+                    />
+                    <span class="sidebar-text">Home</span>
+                  </div>
+                </li>
+              </a>
+
+              <a href="../mycourses.html">
+                <li
+                  class="sidemenu-list flex h-12 cursor-pointer items-center rounded-xl pl-4 transition-all duration-300 ease-out hover:bg-[#fa9d53]"
+                >
+                  <div class="flex items-center gap-4">
+                    <img
+                      class="h-6 w-6"
+                      src="../assets/icons/my-courses.svg"
+                      alt="courses"
+                    />
+                    <span class="sidebar-text">My Courses</span>
+                  </div>
+                </li>
+              </a>
+
+              <a href="../learning-journey.html">
+                <li
+                  class="sidemenu-list flex h-12 cursor-pointer items-center rounded-xl pl-4 transition-all duration-300 ease-out hover:bg-[#fa9d53]"
+                >
+                  <div class="flex items-center gap-4">
+                    <img
+                      class="h-6 w-6"
+                      src="../assets/icons/learning-journey.svg"
+                      alt="learning journey"
+                    />
+                    <span class="sidebar-text">Learning Journey</span>
+                  </div>
+                </li>
+              </a>
+
+              <a href="../classroom.html">
+                <li
+                  class="sidemenu-list flex h-12 cursor-pointer items-center rounded-xl pl-4 transition-all duration-300 ease-out hover:bg-[#fa9d53]"
+                >
+                  <div class="flex items-center gap-4">
+                    <img
+                      class="h-6 w-6"
+                      src="../assets/icons/clasroom.svg"
+                      alt="classroom"
+                    />
+                    <span class="sidebar-text">Classrooms</span>
+                  </div>
+                </li>
+              </a>
+
+              <a href="./index.html">
+                <li
+                  class="active sidemenu-list flex h-12 cursor-pointer items-center rounded-xl pl-4 transition-all duration-300 ease-out hover:bg-[#fa9d53]"
+                >
+                  <div class="flex items-center gap-4">
+                    <img
+                      class="h-6 w-6"
+                      src="../assets/icons/game.svg"
+                      alt="virtual city"
+                    />
+                    <span class="sidebar-text">Virtual City</span>
+                  </div>
+                </li>
+              </a>
+
+              <a href="../student-story.html">
+                <li
+                  class="sidemenu-list flex h-12 cursor-pointer items-center rounded-xl pl-4 transition-all duration-300 ease-out hover:bg-[#fa9d53]"
+                >
+                  <div class="flex items-center gap-4">
+                    <img
+                      class="h-6 w-6"
+                      src="../assets/icons/story.svg"
+                      alt="student stories"
+                    />
+                    <span class="sidebar-text">Student Stories</span>
+                  </div>
+                </li>
+              </a>
+            </ul>
+          </nav>
+        </div>
+
+        <div>
+          <button
+            id="educat-sidemenu-sm"
+            class="hidden w-full items-center justify-center rounded-lg bg-white py-2 text-primaryDark"
+          >
+            <img
+              src="../assets/icons/chat-regular.svg"
+              alt="chat with educat"
+            />
+          </button>
+
+          <nav class="pb-4">
+            <ul class="flex flex-col gap-1">
+              <li
+                class="sidemenu-list mb-2 flex h-12 cursor-pointer items-center rounded-xl pl-4 transition-all duration-300 ease-out hover:bg-[#fa9d53]"
+              >
+                <a href="../help/index.html" class="flex items-center gap-4">
+                  <img
+                    class="h-6 w-6"
+                    src="../assets/icons/help.svg"
+                    alt="help"
+                  />
+                  <span class="sidebar-text">Help Center</span>
+                </a>
+              </li>
+
+              <li
+                class="sidemenu-list flex h-12 cursor-pointer items-center rounded-xl pl-4 transition-all duration-300 ease-out hover:bg-[#fa9d53]"
+              >
+                <a href="#" class="flex items-center gap-4">
+                  <img
+                    class="h-6 w-6"
+                    src="../assets/icons/settings.svg"
+                    alt="settings"
+                  />
+                  <span class="sidebar-text">Settings</span>
+                </a>
+              </li>
+
+              <li class="h-[2px] w-full bg-white/20"></li>
+
+              <li
+                class="sidemenu-list flex h-12 cursor-pointer items-center rounded-xl pl-4 transition-all duration-300 ease-out hover:bg-[#fa9d53]"
+              >
+                <a href="#" class="flex items-center gap-4">
+                  <img
+                    class="h-6 w-6"
+                    src="../assets/icons/logout.svg"
+                    alt="logout"
+                  />
+                  <span class="sidebar-text">Log out</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </aside>
+
+    <div class="flex h-screen w-full flex-col overflow-hidden">
+      <header
+        id="header-menu"
+        class="flex h-16 items-center justify-between border-b border-black/10 bg-white px-4 transition-all duration-300 ease-out lg:px-6"
+      >
+        <div class="flex items-center gap-3">
+          <button id="hamburger" class="text-primaryDark lg:hidden">
+            <svg
+              class="h-6 w-6"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+          <p class="text-xl font-semibold text-slate-950">Virtual City</p>
+        </div>
+
+        <div class="relative hidden w-full max-w-xl lg:block">
+          <input
+            type="text"
+            placeholder="Search"
+            class="w-full rounded-full border border-[#eedbcc] bg-[#fffaf4] py-2 pl-12 pr-4 focus:border-primary focus:outline-none"
+          />
+          <img
+            src="../assets/icons/search-bar.svg"
+            alt="Search Icon"
+            class="absolute left-4 top-1/2 h-6 w-6 -translate-y-1/2"
+          />
+        </div>
+
+        <div class="flex items-center gap-4">
+          <div
+            class="relative hidden h-10 w-10 items-center justify-center rounded-full bg-[#fdf0e7] lg:flex"
+          >
+            <span
+              class="absolute right-1 top-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#ffbc00] text-[10px] font-semibold"
+              >4</span
+            >
+            <img src="../assets/icons/bell.svg" alt="notifications" />
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="hidden text-right lg:block">
+              <p class="font-semibold text-slate-950">Faisal Saleem</p>
+              <p class="text-sm text-slate-500">faisal@educraft.com</p>
+            </div>
+            <img
+              class="h-10 w-10 rounded-full border-2 border-primary object-cover"
+              src="../assets/img/user.png"
+              alt="user profile"
+            />
+          </div>
+        </div>
+      </header>
+
+      <main id="main" class="relative h-[calc(100vh-4rem)] overflow-auto px-4">
+        <section
+          class="mx-auto flex min-h-full max-w-5xl items-center justify-center"
+        >
+          <div class="w-full text-center lg:p-6">
+            <div
+              class="mx-auto flex h-12 w-12 items-center justify-center rounded-[12px] bg-primary text-primaryDark shadow-[0_14px_30px_rgba(248,116,11,0.14)]"
+            >
+              <img
+                class="h-6 w-6"
+                src="../assets/icons/game.svg"
+                alt="Virtual City icon"
+              />
+            </div>
+
+            <p
+              class="mt-4 text-sm font-semibold uppercase tracking-[0.28em] text-primaryDark/80"
+            >
+              Launching Soon
+            </p>
+            <h1
+              class="mt-1 text-2xl font-semibold tracking-tight text-slate-950 lg:text-3xl"
+            >
+              The Virtual City Mission
+            </h1>
+            <p
+              class="mx-auto mt-4 max-w-2xl text-sm text-slate-500 lg:text-base"
+            >
+              A fresh interactive world is on the way. Explore missions,
+              discover real problems & solutions, and unlock new learning
+              adventures when Virtual City goes live.
+            </p>
+
+            <div class="mx-auto max-w-2xl rounded-[28px] p-5">
+              <!-- <p id="launchDateLabel" class="mt-3 text-sm text-slate-500">Countdown to launch</p> -->
+              <div class="flex justify-center items-center">
+                <img
+                  class="w-[50vh]"
+                  src="/assets/virtualcity/virtualcity.webp"
+                  alt=""
+                />
+              </div>
+              <div
+                id="virtualCityCountdown"
+                data-launch-days="21"
+                data-launch-hours="14"
+                data-launch-minutes="3"
+                data-launch-label="21 days, 14 hours, 3 minutes remaining"
+                class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4"
+              >
+                <div
+                  class="rounded-[12px] border border-[#efdccf] bg-white px-3 py-3"
+                >
+                  <div
+                    id="countDays"
+                    class="text-2xl font-semibold tracking-tight text-slate-950"
+                  >
+                    00
+                  </div>
+                  <div
+                    class="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400"
+                  >
+                    Days
+                  </div>
+                </div>
+                <div
+                  class="rounded-[12px] border border-[#efdccf] bg-white px-3 py-3"
+                >
+                  <div
+                    id="countHours"
+                    class="text-2xl font-semibold tracking-tight text-slate-950"
+                  >
+                    00
+                  </div>
+                  <div
+                    class="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400"
+                  >
+                    Hours
+                  </div>
+                </div>
+                <div
+                  class="rounded-[12px] border border-[#efdccf] bg-white px-3 py-3"
+                >
+                  <div
+                    id="countMinutes"
+                    class="text-2xl font-semibold tracking-tight text-slate-950"
+                  >
+                    00
+                  </div>
+                  <div
+                    class="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400"
+                  >
+                    Minutes
+                  </div>
+                </div>
+                <div
+                  class="rounded-[12px] border border-[#efdccf] bg-white px-3 py-3"
+                >
+                  <div
+                    id="countSeconds"
+                    class="text-2xl font-semibold tracking-tight text-slate-950"
+                  >
+                    00
+                  </div>
+                  <div
+                    class="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400"
+                  >
+                    Seconds
+                  </div>
+                </div>
+              </div>
+              <p
+                id="launchMessage"
+                class="mt-8  font-semibold text-primaryDark text-base "
+              >
+                Stay tuned for the upcoming launch!
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div
+      id="menu"
+      class="menu fixed right-0 top-0 z-[100] hidden h-screen w-full bg-primaryLight p-4 shadow-lg lg:hidden"
+    >
+      <button
+        id="close-menu"
+        class="absolute right-4 top-4 text-lg text-primaryDark"
+      >
+        x
+      </button>
+      <ul
+        id="menu-items"
+        class="flex h-full flex-col items-center space-y-8 pt-[20vh]"
+      ></ul>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/virtualcity-countdown.js"></script>
+  </body>
+</html>
+
